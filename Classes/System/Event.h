@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "Retronator.Xni.Framework.classes.h"
+#import "System.classes.h"
 
 @interface Event : NSObject {
     NSMutableSet *delegates;

@@ -8,7 +8,7 @@
 
 #import "Event.h"
 
-#import "Retronator.Xni.Framework.h"
+#import "System.h"
 
 @implementation Event
 
