@@ -26,6 +26,10 @@
 		B5DE190511F88AF500BF3275 /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE190311F88AF500BF3275 /* Rectangle.m */; };
 		B5DE190711F88B5D00BF3275 /* RectangleStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE190611F88B5D00BF3275 /* RectangleStruct.h */; };
 		B5DE193111F898AE00BF3275 /* DisplayOrientation.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE193011F898AE00BF3275 /* DisplayOrientation.h */; };
+		B5DE194A11F89C0900BF3275 /* GameViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE194811F89C0900BF3275 /* GameViewController.h */; };
+		B5DE194B11F89C0900BF3275 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE194911F89C0900BF3275 /* GameViewController.m */; };
+		B5DE194E11F89C1F00BF3275 /* GameView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE194C11F89C1F00BF3275 /* GameView.h */; };
+		B5DE194F11F89C1F00BF3275 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE194D11F89C1F00BF3275 /* GameView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +53,10 @@
 		B5DE190311F88AF500BF3275 /* Rectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rectangle.m; sourceTree = "<group>"; };
 		B5DE190611F88B5D00BF3275 /* RectangleStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectangleStruct.h; sourceTree = "<group>"; };
 		B5DE193011F898AE00BF3275 /* DisplayOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayOrientation.h; sourceTree = "<group>"; };
+		B5DE194811F89C0900BF3275 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		B5DE194911F89C0900BF3275 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		B5DE194C11F89C1F00BF3275 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
+		B5DE194D11F89C1F00BF3275 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libXNI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXNI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,12 +139,16 @@
 				B5DE18A011F8888B00BF3275 /* Retronator.Xni.Framework.h */,
 				B5DE18FA11F88AD900BF3275 /* GameHost.h */,
 				B5DE18FB11F88AD900BF3275 /* GameHost.m */,
+				B5DE193011F898AE00BF3275 /* DisplayOrientation.h */,
 				B5DE18FC11F88AD900BF3275 /* GameWindow.h */,
 				B5DE18FD11F88AD900BF3275 /* GameWindow.m */,
 				B5DE190611F88B5D00BF3275 /* RectangleStruct.h */,
 				B5DE190211F88AF500BF3275 /* Rectangle.h */,
 				B5DE190311F88AF500BF3275 /* Rectangle.m */,
-				B5DE193011F898AE00BF3275 /* DisplayOrientation.h */,
+				B5DE194811F89C0900BF3275 /* GameViewController.h */,
+				B5DE194911F89C0900BF3275 /* GameViewController.m */,
+				B5DE194C11F89C1F00BF3275 /* GameView.h */,
+				B5DE194D11F89C1F00BF3275 /* GameView.m */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -175,6 +187,8 @@
 				B5DE190411F88AF500BF3275 /* Rectangle.h in Headers */,
 				B5DE190711F88B5D00BF3275 /* RectangleStruct.h in Headers */,
 				B5DE193111F898AE00BF3275 /* DisplayOrientation.h in Headers */,
+				B5DE194A11F89C0900BF3275 /* GameViewController.h in Headers */,
+				B5DE194E11F89C1F00BF3275 /* GameView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +241,8 @@
 				B5DE18FF11F88AD900BF3275 /* GameHost.m in Sources */,
 				B5DE190111F88AD900BF3275 /* GameWindow.m in Sources */,
 				B5DE190511F88AF500BF3275 /* Rectangle.m in Sources */,
+				B5DE194B11F89C0900BF3275 /* GameViewController.m in Sources */,
+				B5DE194F11F89C1F00BF3275 /* GameView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

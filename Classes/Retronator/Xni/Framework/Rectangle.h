@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #import "Retronator.Xni.Framework.classes.h"
 
@@ -21,6 +22,7 @@
 + (Rectangle*) rectangleWithX:(int)x Y:(int)y Width:(int)width Height:(int)height;
 + (Rectangle*) rectangleWithStruct:(RectangleStruct*) rectangleStruct;
 + (Rectangle*) rectangleWithRectangle:(Rectangle*) rectangle;
++ (Rectangle*) rectangleWithCGRect:(CGRect) cgRect;
 
 @property (nonatomic) int x;
 @property (nonatomic) int y;
@@ -28,6 +30,8 @@
 @property (nonatomic) int height;
 
 @property (nonatomic, readonly) RectangleStruct *data;
+
+- (BOOL) equals:(Rectangle*)rectangle;
 
 + (Rectangle*) empty;
 
