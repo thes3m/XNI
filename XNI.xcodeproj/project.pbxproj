@@ -59,8 +59,9 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B5DE188611F885E500BF3275 /* Retronator */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
@@ -69,6 +70,29 @@
 				AA747D9E0F9514B9006C5449 /* XNI_Prefix.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		B5DE188611F885E500BF3275 /* Retronator */ = {
+			isa = PBXGroup;
+			children = (
+				B5DE188711F8861500BF3275 /* Xni */,
+			);
+			path = Retronator;
+			sourceTree = "<group>";
+		};
+		B5DE188711F8861500BF3275 /* Xni */ = {
+			isa = PBXGroup;
+			children = (
+				B5DE188811F8862900BF3275 /* Framework */,
+			);
+			path = Xni;
+			sourceTree = "<group>";
+		};
+		B5DE188811F8862900BF3275 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
