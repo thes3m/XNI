@@ -9,11 +9,30 @@
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* XNI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* XNI_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		B5DE189811F8884A00BF3275 /* Delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189211F8884A00BF3275 /* Delegate.h */; };
+		B5DE189911F8884A00BF3275 /* Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE189311F8884A00BF3275 /* Delegate.m */; };
+		B5DE189A11F8884A00BF3275 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189411F8884A00BF3275 /* Event.h */; };
+		B5DE189B11F8884A00BF3275 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE189511F8884A00BF3275 /* Event.m */; };
+		B5DE189C11F8884A00BF3275 /* EventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189611F8884A00BF3275 /* EventArgs.h */; };
+		B5DE189D11F8884A00BF3275 /* EventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE189711F8884A00BF3275 /* EventArgs.m */; };
+		B5DE18A111F8888B00BF3275 /* Retronator.Xni.Framework.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189F11F8888B00BF3275 /* Retronator.Xni.Framework.classes.h */; };
+		B5DE18A211F8888B00BF3275 /* Retronator.Xni.Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18A011F8888B00BF3275 /* Retronator.Xni.Framework.h */; };
+		B5DE18A411F888BC00BF3275 /* System.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18A311F888BC00BF3275 /* System.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA747D9E0F9514B9006C5449 /* XNI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNI_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B5DE189211F8884A00BF3275 /* Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Delegate.h; sourceTree = "<group>"; };
+		B5DE189311F8884A00BF3275 /* Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Delegate.m; sourceTree = "<group>"; };
+		B5DE189411F8884A00BF3275 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		B5DE189511F8884A00BF3275 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		B5DE189611F8884A00BF3275 /* EventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventArgs.h; sourceTree = "<group>"; };
+		B5DE189711F8884A00BF3275 /* EventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventArgs.m; sourceTree = "<group>"; };
+		B5DE189E11F8886D00BF3275 /* System.classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System.classes.h; sourceTree = "<group>"; };
+		B5DE189F11F8888B00BF3275 /* Retronator.Xni.Framework.classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.classes.h; sourceTree = "<group>"; };
+		B5DE18A011F8888B00BF3275 /* Retronator.Xni.Framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.h; sourceTree = "<group>"; };
+		B5DE18A311F888BC00BF3275 /* System.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System.h; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libXNI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXNI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -60,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				B5DE188611F885E500BF3275 /* Retronator */,
+				B5DE188F11F887D200BF3275 /* System */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -75,24 +95,41 @@
 		B5DE188611F885E500BF3275 /* Retronator */ = {
 			isa = PBXGroup;
 			children = (
-				B5DE188711F8861500BF3275 /* Xni */,
+				B5DE188D11F8879500BF3275 /* Xni */,
 			);
 			path = Retronator;
 			sourceTree = "<group>";
 		};
-		B5DE188711F8861500BF3275 /* Xni */ = {
+		B5DE188D11F8879500BF3275 /* Xni */ = {
 			isa = PBXGroup;
 			children = (
-				B5DE188811F8862900BF3275 /* Framework */,
+				B5DE188E11F887A000BF3275 /* Framework */,
 			);
 			path = Xni;
 			sourceTree = "<group>";
 		};
-		B5DE188811F8862900BF3275 /* Framework */ = {
+		B5DE188E11F887A000BF3275 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				B5DE189F11F8888B00BF3275 /* Retronator.Xni.Framework.classes.h */,
+				B5DE18A011F8888B00BF3275 /* Retronator.Xni.Framework.h */,
 			);
 			path = Framework;
+			sourceTree = "<group>";
+		};
+		B5DE188F11F887D200BF3275 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				B5DE189E11F8886D00BF3275 /* System.classes.h */,
+				B5DE18A311F888BC00BF3275 /* System.h */,
+				B5DE189211F8884A00BF3275 /* Delegate.h */,
+				B5DE189311F8884A00BF3275 /* Delegate.m */,
+				B5DE189411F8884A00BF3275 /* Event.h */,
+				B5DE189511F8884A00BF3275 /* Event.m */,
+				B5DE189611F8884A00BF3275 /* EventArgs.h */,
+				B5DE189711F8884A00BF3275 /* EventArgs.m */,
+			);
+			path = System;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,6 +140,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA747D9F0F9514B9006C5449 /* XNI_Prefix.pch in Headers */,
+				B5DE189811F8884A00BF3275 /* Delegate.h in Headers */,
+				B5DE189A11F8884A00BF3275 /* Event.h in Headers */,
+				B5DE189C11F8884A00BF3275 /* EventArgs.h in Headers */,
+				B5DE18A111F8888B00BF3275 /* Retronator.Xni.Framework.classes.h in Headers */,
+				B5DE18A211F8888B00BF3275 /* Retronator.Xni.Framework.h in Headers */,
+				B5DE18A411F888BC00BF3275 /* System.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +192,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5DE189911F8884A00BF3275 /* Delegate.m in Sources */,
+				B5DE189B11F8884A00BF3275 /* Event.m in Sources */,
+				B5DE189D11F8884A00BF3275 /* EventArgs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
