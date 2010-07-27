@@ -2,6 +2,7 @@
 
 // Data structures
 #import "Rectangle.h"
+#import "Color.h"
 
 // Game
 #import "IGraphicsDeviceManager.h"

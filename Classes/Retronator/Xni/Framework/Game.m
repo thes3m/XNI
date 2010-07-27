@@ -44,7 +44,7 @@
 }
 
 - (GraphicsDevice*) graphicsDevice {
-    return [graphicsDeviceService graphicsDevice];
+	return [graphicsDeviceService graphicsDevice];
 }
 
 @synthesize isActive;

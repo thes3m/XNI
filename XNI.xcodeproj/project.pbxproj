@@ -30,6 +30,13 @@
 		B5DDE85D11FF1326000DB38B /* GraphicsDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE85B11FF1326000DB38B /* GraphicsDevice.m */; };
 		B5DDE89611FF16A3000DB38B /* Protocols.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE89411FF16A3000DB38B /* Protocols.h */; };
 		B5DDE89711FF16A3000DB38B /* Protocols.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE89511FF16A3000DB38B /* Protocols.m */; };
+		B5DDE8C311FF29E8000DB38B /* ReachGraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C111FF29E8000DB38B /* ReachGraphicsDevice.h */; };
+		B5DDE8C411FF29E8000DB38B /* ReachGraphicsDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE8C211FF29E8000DB38B /* ReachGraphicsDevice.m */; };
+		B5DDE8C711FF2A23000DB38B /* HiDefGraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C511FF2A23000DB38B /* HiDefGraphicsDevice.h */; };
+		B5DDE8C811FF2A23000DB38B /* HiDefGraphicsDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE8C611FF2A23000DB38B /* HiDefGraphicsDevice.m */; };
+		B5DDE8CA11FF2AD6000DB38B /* Enums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C911FF2AD6000DB38B /* Enums.h */; };
+		B5DDE90911FF352E000DB38B /* Color.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE90711FF352E000DB38B /* Color.h */; };
+		B5DDE90A11FF352E000DB38B /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE90811FF352E000DB38B /* Color.m */; };
 		B5DE189811F8884A00BF3275 /* Delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189211F8884A00BF3275 /* Delegate.h */; };
 		B5DE189911F8884A00BF3275 /* Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE189311F8884A00BF3275 /* Delegate.m */; };
 		B5DE189A11F8884A00BF3275 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189411F8884A00BF3275 /* Event.h */; };
@@ -77,6 +84,13 @@
 		B5DDE85B11FF1326000DB38B /* GraphicsDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsDevice.m; sourceTree = "<group>"; };
 		B5DDE89411FF16A3000DB38B /* Protocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Protocols.h; sourceTree = "<group>"; };
 		B5DDE89511FF16A3000DB38B /* Protocols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Protocols.m; sourceTree = "<group>"; };
+		B5DDE8C111FF29E8000DB38B /* ReachGraphicsDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachGraphicsDevice.h; sourceTree = "<group>"; };
+		B5DDE8C211FF29E8000DB38B /* ReachGraphicsDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachGraphicsDevice.m; sourceTree = "<group>"; };
+		B5DDE8C511FF2A23000DB38B /* HiDefGraphicsDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiDefGraphicsDevice.h; sourceTree = "<group>"; };
+		B5DDE8C611FF2A23000DB38B /* HiDefGraphicsDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiDefGraphicsDevice.m; sourceTree = "<group>"; };
+		B5DDE8C911FF2AD6000DB38B /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
+		B5DDE90711FF352E000DB38B /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		B5DDE90811FF352E000DB38B /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
 		B5DE189211F8884A00BF3275 /* Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Delegate.h; sourceTree = "<group>"; };
 		B5DE189311F8884A00BF3275 /* Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Delegate.m; sourceTree = "<group>"; };
 		B5DE189411F8884A00BF3275 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
@@ -163,9 +177,14 @@
 			children = (
 				B5DDE82E11FF1213000DB38B /* Retronator.Xni.Framework.Graphics.classes.h */,
 				B5DDE83011FF1222000DB38B /* Retronator.Xni.Framework.Graphics.h */,
+				B5DDE8C911FF2AD6000DB38B /* Enums.h */,
 				B5DDE82A11FF10EF000DB38B /* IGraphicsDeviceService.h */,
 				B5DDE85A11FF1326000DB38B /* GraphicsDevice.h */,
 				B5DDE85B11FF1326000DB38B /* GraphicsDevice.m */,
+				B5DDE8C111FF29E8000DB38B /* ReachGraphicsDevice.h */,
+				B5DDE8C211FF29E8000DB38B /* ReachGraphicsDevice.m */,
+				B5DDE8C511FF2A23000DB38B /* HiDefGraphicsDevice.h */,
+				B5DDE8C611FF2A23000DB38B /* HiDefGraphicsDevice.m */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -197,6 +216,8 @@
 				B5DE190611F88B5D00BF3275 /* RectangleStruct.h */,
 				B5DE190211F88AF500BF3275 /* Rectangle.h */,
 				B5DE190311F88AF500BF3275 /* Rectangle.m */,
+				B5DDE90711FF352E000DB38B /* Color.h */,
+				B5DDE90811FF352E000DB38B /* Color.m */,
 				B5DE18FA11F88AD900BF3275 /* GameHost.h */,
 				B5DE18FB11F88AD900BF3275 /* GameHost.m */,
 				B5DDE7E911FF04E3000DB38B /* Game.h */,
@@ -274,6 +295,10 @@
 				B5DDE83111FF1222000DB38B /* Retronator.Xni.Framework.Graphics.h in Headers */,
 				B5DDE85C11FF1326000DB38B /* GraphicsDevice.h in Headers */,
 				B5DDE89611FF16A3000DB38B /* Protocols.h in Headers */,
+				B5DDE8C311FF29E8000DB38B /* ReachGraphicsDevice.h in Headers */,
+				B5DDE8C711FF2A23000DB38B /* HiDefGraphicsDevice.h in Headers */,
+				B5DDE8CA11FF2AD6000DB38B /* Enums.h in Headers */,
+				B5DDE90911FF352E000DB38B /* Color.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +363,9 @@
 				B5DDE82311FF0D4F000DB38B /* GameTime.m in Sources */,
 				B5DDE85D11FF1326000DB38B /* GraphicsDevice.m in Sources */,
 				B5DDE89711FF16A3000DB38B /* Protocols.m in Sources */,
+				B5DDE8C411FF29E8000DB38B /* ReachGraphicsDevice.m in Sources */,
+				B5DDE8C811FF2A23000DB38B /* HiDefGraphicsDevice.m in Sources */,
+				B5DDE90A11FF352E000DB38B /* Color.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
