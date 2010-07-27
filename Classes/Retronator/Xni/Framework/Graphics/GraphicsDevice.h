@@ -26,6 +26,8 @@
 	GLuint defaultFramebuffer, colorRenderbuffer, depthRenderbuffer;
 }
 
+@property (nonatomic, readonly) GraphicsProfile graphicsProfile;
+
 - (id) initWithGame:(Game*) theGame;
 
 // Presentation

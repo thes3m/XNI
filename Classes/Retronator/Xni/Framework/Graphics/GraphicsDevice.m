@@ -48,6 +48,8 @@
 	return self;
 }
 
+@synthesize graphicsProfile;
+
 // Presentation
 - (void) reset {
     CAEAGLLayer *layer = (CAEAGLLayer*)game.window.handle;
@@ -75,8 +77,19 @@
 }
 
 // Render buffers
-- (void) clearWithColor:(Color*)color {}
-- (void) clearWithOptions:(ClearOptions)options color:(Color*)color depth:(float)depth stencil:(int)stencil {}
+
+- (void) clearWithColor:(Color *)color {
+    glClearColor(color.r / 255.0, color.g / 255.0, color.b / 255.0, color.a / 255.0);
+    glClearDepthf(1);
+    glClear(ClearOptionsTarget | ClearOptionsDepthBuffer);
+}
+
+- (void) clearWithOptions:(ClearOptions)options color:(Color *)color depth:(float)depth stencil:(int)stencil {
+    glClearColor(color.r / 255.0, color.g / 255.0, color.b / 255.0, color.a / 255.0);
+    glClearDepthf(depth);
+    glClearStencil(stencil);
+    glClear(options);    
+}
 
 - (EAGLContext*) createContext { return nil; }
 

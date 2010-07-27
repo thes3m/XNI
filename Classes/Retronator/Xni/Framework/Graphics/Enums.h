@@ -2,13 +2,10 @@
 #import <OpenGLES/ES2/gl.h>
 
 typedef enum {
-    DataTypeUnsignedByte = GL_UNSIGNED_BYTE,
-    DataTypeByte = GL_BYTE,
-    DataTypeUnsignedShort = GL_UNSIGNED_SHORT,
-    DataTypeShort = GL_SHORT,
-    DataTypeFixed = GL_FIXED,
-    DataTypeFloat = GL_FLOAT
-} DataType;
+    ClearOptionsDepthBuffer = GL_DEPTH_BUFFER_BIT,
+    ClearOptionsStencil = GL_STENCIL_BUFFER_BIT,
+    ClearOptionsTarget = GL_COLOR_BUFFER_BIT
+} ClearOptions;
 
 typedef enum {
     CompareFunctionAlways = GL_ALWAYS,
@@ -22,10 +19,20 @@ typedef enum {
 } CompareFunction;
 
 typedef enum {
-    ClearOptionsDepthBuffer = GL_DEPTH_BUFFER_BIT,
-    ClearOptionsStencil = GL_STENCIL_BUFFER_BIT,
-    ClearOptionsTarget = GL_COLOR_BUFFER_BIT
-} ClearOptions;
+    DataTypeUnsignedByte = GL_UNSIGNED_BYTE,
+    DataTypeByte = GL_BYTE,
+    DataTypeUnsignedShort = GL_UNSIGNED_SHORT,
+    DataTypeShort = GL_SHORT,
+    DataTypeFixed = GL_FIXED,
+    DataTypeFloat = GL_FLOAT
+} DataType;
+
+typedef enum {
+    DepthFormatNone,
+    DepthFormatDepth16,
+    DepthFormatDepth24,
+    DepthFormatDepth24Stencil8	
+} DepthFormat;
 
 typedef enum {
     FogModeNone = 0,
@@ -35,9 +42,23 @@ typedef enum {
 } FogMode;
 
 typedef enum {
+	GraphicsProfileReach,
+	GraphicsProfileHiDef
+} GraphicsProfile;
+
+typedef enum {
     IndexElementSizeEightBits = 1,
     IndexElementSizeSixteenBits = 2,
 } IndexElementSize;
+
+typedef enum {
+    PrimitiveTypePointList = GL_POINTS,
+    PrimitiveTypeLineList = GL_LINES,
+    PrimitiveTypeLineStrip = GL_LINE_STRIP,
+    PrimitiveTypeTriangleList = GL_TRIANGLES,
+    PrimitiveTypeTriangleStrip = GL_TRIANGLE_STRIP,
+    PrimitiveTypeTriangleFan = GL_TRIANGLE_FAN
+} PrimitiveType;
 
 typedef enum {
     ResourceUsageStatic = GL_STATIC_DRAW,
@@ -49,6 +70,29 @@ typedef enum {
     ResourceTypeIndexBuffer = GL_ELEMENT_ARRAY_BUFFER,
     ResourceTypeVertexBuffer = GL_ARRAY_BUFFER
 } ResourceType;
+
+typedef enum {
+    SurfaceFormatColor,
+    SurfaceFormatBgr565,
+    SurfaceFormatBgra5551,
+    SurfaceFormatBgra4444,
+    SurfaceFormatDxt1,
+    SurfaceFormatDxt3,
+    SurfaceFormatDxt5,
+    SurfaceFormatNormalizedByte2,
+    SurfaceFormatNormalizedByte4,
+    SurfaceFormatRgba1010102,
+    SurfaceFormatRg32,
+    SurfaceFormatRgba64,
+    SurfaceFormatAlpha8,
+    SurfaceFormatSingle,
+    SurfaceFormatVector2,
+    SurfaceFormatVector4,
+    SurfaceFormatHalfSingle,
+    SurfaceFormatHalfVector2,
+    SurfaceFormatHalfVector4,
+    SurfaceFormatHdrBlendable	
+} SurfaceFormat;
 
 typedef enum {
     VertexElementFormatSingle,
@@ -78,12 +122,3 @@ typedef enum {
     VertexElementUsageTextureCoordinate = GL_TEXTURE_COORD_ARRAY,
     VertexElementUsagePointSize = GL_POINT_SIZE_ARRAY_OES
 } VertexElementUsage;
-
-typedef enum {
-    PrimitiveTypePointList = GL_POINTS,
-    PrimitiveTypeLineList = GL_LINES,
-    PrimitiveTypeLineStrip = GL_LINE_STRIP,
-    PrimitiveTypeTriangleList = GL_TRIANGLES,
-    PrimitiveTypeTriangleStrip = GL_TRIANGLE_STRIP,
-    PrimitiveTypeTriangleFan = GL_TRIANGLE_FAN
-} PrimitiveType;

@@ -31,7 +31,7 @@
 @synthesize orientationChanged;
 
 - (id) handle {
-    return nil;//(id)gameViewController.view.layer;
+    return (id)gameViewController.view.layer;
 }
 
 // METHODS

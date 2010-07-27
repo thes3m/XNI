@@ -9,7 +9,7 @@
 #import "Game.h"
 #import "GameTime.h"
 #import "GameServiceContainer.h"
-//#import "GraphicsDeviceManager.h"
+#import "GraphicsDeviceManager.h"
 
 // Game host
 #import "GameHost.h"

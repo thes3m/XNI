@@ -37,6 +37,8 @@
 		B5DDE8CA11FF2AD6000DB38B /* Enums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C911FF2AD6000DB38B /* Enums.h */; };
 		B5DDE90911FF352E000DB38B /* Color.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE90711FF352E000DB38B /* Color.h */; };
 		B5DDE90A11FF352E000DB38B /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE90811FF352E000DB38B /* Color.m */; };
+		B5DDE99111FF546B000DB38B /* GraphicsDeviceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE98F11FF546B000DB38B /* GraphicsDeviceManager.h */; };
+		B5DDE99211FF546B000DB38B /* GraphicsDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE99011FF546B000DB38B /* GraphicsDeviceManager.m */; };
 		B5DE189811F8884A00BF3275 /* Delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189211F8884A00BF3275 /* Delegate.h */; };
 		B5DE189911F8884A00BF3275 /* Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE189311F8884A00BF3275 /* Delegate.m */; };
 		B5DE189A11F8884A00BF3275 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189411F8884A00BF3275 /* Event.h */; };
@@ -91,6 +93,8 @@
 		B5DDE8C911FF2AD6000DB38B /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
 		B5DDE90711FF352E000DB38B /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		B5DDE90811FF352E000DB38B /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
+		B5DDE98F11FF546B000DB38B /* GraphicsDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsDeviceManager.h; sourceTree = "<group>"; };
+		B5DDE99011FF546B000DB38B /* GraphicsDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsDeviceManager.m; sourceTree = "<group>"; };
 		B5DE189211F8884A00BF3275 /* Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Delegate.h; sourceTree = "<group>"; };
 		B5DE189311F8884A00BF3275 /* Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Delegate.m; sourceTree = "<group>"; };
 		B5DE189411F8884A00BF3275 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 				B5DDE7ED11FF06BB000DB38B /* GameServiceContainer.h */,
 				B5DDE7EE11FF06BB000DB38B /* GameServiceContainer.m */,
 				B5DDE82C11FF10FD000DB38B /* IGraphicsDeviceManager.h */,
+				B5DDE98F11FF546B000DB38B /* GraphicsDeviceManager.h */,
+				B5DDE99011FF546B000DB38B /* GraphicsDeviceManager.m */,
 				B5DDE80111FF0AE3000DB38B /* IGameComponent.h */,
 				B5DDE80411FF0B2D000DB38B /* IUpdatable.h */,
 				B5DDE80611FF0B3C000DB38B /* IDrawable.h */,
@@ -299,6 +305,7 @@
 				B5DDE8C711FF2A23000DB38B /* HiDefGraphicsDevice.h in Headers */,
 				B5DDE8CA11FF2AD6000DB38B /* Enums.h in Headers */,
 				B5DDE90911FF352E000DB38B /* Color.h in Headers */,
+				B5DDE99111FF546B000DB38B /* GraphicsDeviceManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +373,7 @@
 				B5DDE8C411FF29E8000DB38B /* ReachGraphicsDevice.m in Sources */,
 				B5DDE8C811FF2A23000DB38B /* HiDefGraphicsDevice.m in Sources */,
 				B5DDE90A11FF352E000DB38B /* Color.m in Sources */,
+				B5DDE99211FF546B000DB38B /* GraphicsDeviceManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
