@@ -29,7 +29,7 @@
     // Hijack the run loop.
     NSLog(@"Starting the game loop.");
     
-    //game = [self delegate];
+    game = [self delegate];
     
     SInt32 runResult;
     
@@ -43,7 +43,7 @@
             runResult = CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, YES);
         } while (runResult == kCFRunLoopRunHandledSource);
         
-        //[game tick];
+        [game tick];
         
         // We release memory every frame.
         [pool release];

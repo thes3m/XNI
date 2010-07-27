@@ -13,7 +13,7 @@
 
 @interface GameHost : UIApplication {
     BOOL isExiting;
-    //Game *game; 
+    Game *game; 
     GameWindow *window;
 }
 
