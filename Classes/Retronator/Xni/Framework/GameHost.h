@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
 #import "Retronator.Xni.Framework.classes.h"
 
 @interface GameHost : UIApplication {

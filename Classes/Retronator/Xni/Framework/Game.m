@@ -158,7 +158,11 @@
         [component initialize];
     }
     initializeDone = YES;
+	
+	[self loadContent];
 }
+
+- (void) loadContent {}
 
 - (void) beginRun {}
 
@@ -194,6 +198,8 @@
     [graphicsDeviceManager endDraw];
 }
 
+- (void) unloadContent {}
+
 - (void) endRun {}
 
 // Private methods
@@ -206,6 +212,7 @@
 
 - (void) dealloc
 {       
+	[self unloadContent];
     [gameTime release];
     
     [components release];

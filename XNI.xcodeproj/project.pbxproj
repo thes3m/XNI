@@ -7,63 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA747D9F0F9514B9006C5449 /* XNI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* XNI_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		B5DDE7EB11FF04E3000DB38B /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7E911FF04E3000DB38B /* Game.h */; };
+		B5DDE7EB11FF04E3000DB38B /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7E911FF04E3000DB38B /* Game.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE7EC11FF04E3000DB38B /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE7EA11FF04E3000DB38B /* Game.m */; };
-		B5DDE7EF11FF06BB000DB38B /* GameServiceContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7ED11FF06BB000DB38B /* GameServiceContainer.h */; };
+		B5DDE7EF11FF06BB000DB38B /* GameServiceContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7ED11FF06BB000DB38B /* GameServiceContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE7F011FF06BB000DB38B /* GameServiceContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE7EE11FF06BB000DB38B /* GameServiceContainer.m */; };
-		B5DDE7FF11FF0A0F000DB38B /* GameComponentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7FD11FF0A0F000DB38B /* GameComponentCollection.h */; };
+		B5DDE7FF11FF0A0F000DB38B /* GameComponentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7FD11FF0A0F000DB38B /* GameComponentCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE80011FF0A0F000DB38B /* GameComponentCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE7FE11FF0A0F000DB38B /* GameComponentCollection.m */; };
-		B5DDE80211FF0AE3000DB38B /* IGameComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80111FF0AE3000DB38B /* IGameComponent.h */; };
-		B5DDE80511FF0B2D000DB38B /* IUpdatable.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80411FF0B2D000DB38B /* IUpdatable.h */; };
-		B5DDE80711FF0B3C000DB38B /* IDrawable.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80611FF0B3C000DB38B /* IDrawable.h */; };
-		B5DDE80A11FF0C24000DB38B /* GameComponentCollectionEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80811FF0C24000DB38B /* GameComponentCollectionEventArgs.h */; };
+		B5DDE80211FF0AE3000DB38B /* IGameComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80111FF0AE3000DB38B /* IGameComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DDE80511FF0B2D000DB38B /* IUpdatable.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80411FF0B2D000DB38B /* IUpdatable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DDE80711FF0B3C000DB38B /* IDrawable.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80611FF0B3C000DB38B /* IDrawable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DDE80A11FF0C24000DB38B /* GameComponentCollectionEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80811FF0C24000DB38B /* GameComponentCollectionEventArgs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE80B11FF0C24000DB38B /* GameComponentCollectionEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE80911FF0C24000DB38B /* GameComponentCollectionEventArgs.m */; };
-		B5DDE82211FF0D4F000DB38B /* GameTime.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82011FF0D4F000DB38B /* GameTime.h */; };
+		B5DDE82211FF0D4F000DB38B /* GameTime.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82011FF0D4F000DB38B /* GameTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE82311FF0D4F000DB38B /* GameTime.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE82111FF0D4F000DB38B /* GameTime.m */; };
-		B5DDE82B11FF10EF000DB38B /* IGraphicsDeviceService.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82A11FF10EF000DB38B /* IGraphicsDeviceService.h */; };
-		B5DDE82D11FF10FD000DB38B /* IGraphicsDeviceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82C11FF10FD000DB38B /* IGraphicsDeviceManager.h */; };
-		B5DDE82F11FF1213000DB38B /* Retronator.Xni.Framework.Graphics.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82E11FF1213000DB38B /* Retronator.Xni.Framework.Graphics.classes.h */; };
-		B5DDE83111FF1222000DB38B /* Retronator.Xni.Framework.Graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE83011FF1222000DB38B /* Retronator.Xni.Framework.Graphics.h */; };
-		B5DDE85C11FF1326000DB38B /* GraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE85A11FF1326000DB38B /* GraphicsDevice.h */; };
+		B5DDE82B11FF10EF000DB38B /* IGraphicsDeviceService.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82A11FF10EF000DB38B /* IGraphicsDeviceService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DDE82D11FF10FD000DB38B /* IGraphicsDeviceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82C11FF10FD000DB38B /* IGraphicsDeviceManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DDE82F11FF1213000DB38B /* Retronator.Xni.Framework.Graphics.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82E11FF1213000DB38B /* Retronator.Xni.Framework.Graphics.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DDE83111FF1222000DB38B /* Retronator.Xni.Framework.Graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE83011FF1222000DB38B /* Retronator.Xni.Framework.Graphics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DDE85C11FF1326000DB38B /* GraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE85A11FF1326000DB38B /* GraphicsDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE85D11FF1326000DB38B /* GraphicsDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE85B11FF1326000DB38B /* GraphicsDevice.m */; };
-		B5DDE89611FF16A3000DB38B /* Protocols.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE89411FF16A3000DB38B /* Protocols.h */; };
+		B5DDE89611FF16A3000DB38B /* Protocols.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE89411FF16A3000DB38B /* Protocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE89711FF16A3000DB38B /* Protocols.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE89511FF16A3000DB38B /* Protocols.m */; };
-		B5DDE8C311FF29E8000DB38B /* ReachGraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C111FF29E8000DB38B /* ReachGraphicsDevice.h */; };
+		B5DDE8C311FF29E8000DB38B /* ReachGraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C111FF29E8000DB38B /* ReachGraphicsDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE8C411FF29E8000DB38B /* ReachGraphicsDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE8C211FF29E8000DB38B /* ReachGraphicsDevice.m */; };
-		B5DDE8C711FF2A23000DB38B /* HiDefGraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C511FF2A23000DB38B /* HiDefGraphicsDevice.h */; };
+		B5DDE8C711FF2A23000DB38B /* HiDefGraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C511FF2A23000DB38B /* HiDefGraphicsDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE8C811FF2A23000DB38B /* HiDefGraphicsDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE8C611FF2A23000DB38B /* HiDefGraphicsDevice.m */; };
-		B5DDE8CA11FF2AD6000DB38B /* Enums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C911FF2AD6000DB38B /* Enums.h */; };
-		B5DDE90911FF352E000DB38B /* Color.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE90711FF352E000DB38B /* Color.h */; };
+		B5DDE8CA11FF2AD6000DB38B /* Enums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C911FF2AD6000DB38B /* Enums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DDE90911FF352E000DB38B /* Color.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE90711FF352E000DB38B /* Color.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE90A11FF352E000DB38B /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE90811FF352E000DB38B /* Color.m */; };
-		B5DDE99111FF546B000DB38B /* GraphicsDeviceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE98F11FF546B000DB38B /* GraphicsDeviceManager.h */; };
+		B5DDE99111FF546B000DB38B /* GraphicsDeviceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE98F11FF546B000DB38B /* GraphicsDeviceManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE99211FF546B000DB38B /* GraphicsDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE99011FF546B000DB38B /* GraphicsDeviceManager.m */; };
-		B5DE189811F8884A00BF3275 /* Delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189211F8884A00BF3275 /* Delegate.h */; };
+		B5DDEA2811FF62FD000DB38B /* System.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189E11F8886D00BF3275 /* System.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DE189811F8884A00BF3275 /* Delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189211F8884A00BF3275 /* Delegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DE189911F8884A00BF3275 /* Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE189311F8884A00BF3275 /* Delegate.m */; };
-		B5DE189A11F8884A00BF3275 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189411F8884A00BF3275 /* Event.h */; };
+		B5DE189A11F8884A00BF3275 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189411F8884A00BF3275 /* Event.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DE189B11F8884A00BF3275 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE189511F8884A00BF3275 /* Event.m */; };
-		B5DE189C11F8884A00BF3275 /* EventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189611F8884A00BF3275 /* EventArgs.h */; };
+		B5DE189C11F8884A00BF3275 /* EventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189611F8884A00BF3275 /* EventArgs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DE189D11F8884A00BF3275 /* EventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE189711F8884A00BF3275 /* EventArgs.m */; };
-		B5DE18A111F8888B00BF3275 /* Retronator.Xni.Framework.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189F11F8888B00BF3275 /* Retronator.Xni.Framework.classes.h */; };
-		B5DE18A211F8888B00BF3275 /* Retronator.Xni.Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18A011F8888B00BF3275 /* Retronator.Xni.Framework.h */; };
-		B5DE18A411F888BC00BF3275 /* System.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18A311F888BC00BF3275 /* System.h */; };
-		B5DE18FE11F88AD900BF3275 /* GameHost.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18FA11F88AD900BF3275 /* GameHost.h */; };
+		B5DE18A111F8888B00BF3275 /* Retronator.Xni.Framework.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189F11F8888B00BF3275 /* Retronator.Xni.Framework.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DE18A211F8888B00BF3275 /* Retronator.Xni.Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18A011F8888B00BF3275 /* Retronator.Xni.Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DE18A411F888BC00BF3275 /* System.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18A311F888BC00BF3275 /* System.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DE18FE11F88AD900BF3275 /* GameHost.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18FA11F88AD900BF3275 /* GameHost.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DE18FF11F88AD900BF3275 /* GameHost.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE18FB11F88AD900BF3275 /* GameHost.m */; };
-		B5DE190011F88AD900BF3275 /* GameWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18FC11F88AD900BF3275 /* GameWindow.h */; };
+		B5DE190011F88AD900BF3275 /* GameWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18FC11F88AD900BF3275 /* GameWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DE190111F88AD900BF3275 /* GameWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE18FD11F88AD900BF3275 /* GameWindow.m */; };
-		B5DE190411F88AF500BF3275 /* Rectangle.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE190211F88AF500BF3275 /* Rectangle.h */; };
+		B5DE190411F88AF500BF3275 /* Rectangle.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE190211F88AF500BF3275 /* Rectangle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DE190511F88AF500BF3275 /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE190311F88AF500BF3275 /* Rectangle.m */; };
-		B5DE190711F88B5D00BF3275 /* RectangleStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE190611F88B5D00BF3275 /* RectangleStruct.h */; };
-		B5DE193111F898AE00BF3275 /* DisplayOrientation.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE193011F898AE00BF3275 /* DisplayOrientation.h */; };
-		B5DE194A11F89C0900BF3275 /* GameViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE194811F89C0900BF3275 /* GameViewController.h */; };
+		B5DE190711F88B5D00BF3275 /* RectangleStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE190611F88B5D00BF3275 /* RectangleStruct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DE193111F898AE00BF3275 /* DisplayOrientation.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE193011F898AE00BF3275 /* DisplayOrientation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DE194A11F89C0900BF3275 /* GameViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE194811F89C0900BF3275 /* GameViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DE194B11F89C0900BF3275 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE194911F89C0900BF3275 /* GameViewController.m */; };
-		B5DE194E11F89C1F00BF3275 /* GameView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE194C11F89C1F00BF3275 /* GameView.h */; };
+		B5DE194E11F89C1F00BF3275 /* GameView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE194C11F89C1F00BF3275 /* GameView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DE194F11F89C1F00BF3275 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE194D11F89C1F00BF3275 /* GameView.m */; };
+		B5F4E2A912095FAF00B2FC0F /* XNI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA747D9E0F9514B9006C5449 /* XNI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNI_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5DDE7E911FF04E3000DB38B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		B5DDE7EA11FF04E3000DB38B /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
@@ -117,6 +117,7 @@
 		B5DE194911F89C0900BF3275 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		B5DE194C11F89C1F00BF3275 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
 		B5DE194D11F89C1F00BF3275 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
+		B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNI_Prefix.pch; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libXNI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXNI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -171,7 +172,7 @@
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AA747D9E0F9514B9006C5449 /* XNI_Prefix.pch */,
+				B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -273,13 +274,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA747D9F0F9514B9006C5449 /* XNI_Prefix.pch in Headers */,
+				B5DDEA2811FF62FD000DB38B /* System.classes.h in Headers */,
+				B5DE18A411F888BC00BF3275 /* System.h in Headers */,
 				B5DE189811F8884A00BF3275 /* Delegate.h in Headers */,
 				B5DE189A11F8884A00BF3275 /* Event.h in Headers */,
 				B5DE189C11F8884A00BF3275 /* EventArgs.h in Headers */,
 				B5DE18A111F8888B00BF3275 /* Retronator.Xni.Framework.classes.h in Headers */,
 				B5DE18A211F8888B00BF3275 /* Retronator.Xni.Framework.h in Headers */,
-				B5DE18A411F888BC00BF3275 /* System.h in Headers */,
 				B5DE18FE11F88AD900BF3275 /* GameHost.h in Headers */,
 				B5DE190011F88AD900BF3275 /* GameWindow.h in Headers */,
 				B5DE190411F88AF500BF3275 /* Rectangle.h in Headers */,
@@ -306,6 +307,7 @@
 				B5DDE8CA11FF2AD6000DB38B /* Enums.h in Headers */,
 				B5DDE90911FF352E000DB38B /* Color.h in Headers */,
 				B5DDE99111FF546B000DB38B /* GraphicsDeviceManager.h in Headers */,
+				B5F4E2A912095FAF00B2FC0F /* XNI_Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +408,7 @@
 				DSTROOT = /tmp/XNI.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = XNI_Prefix.pch;
+				GCC_PREFIX_HEADER = "XNOC iOS_Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = XNI;
 			};
@@ -418,6 +420,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";

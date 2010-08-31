@@ -15,6 +15,7 @@
 - (id) initWithGame:(Game*)theGame {
     if (self = [super init]) {
         game = theGame;
+		graphicsProfile = GraphicsProfileReach;
         
         deviceCreated = [[Event alloc] init];
         deviceDisposing = [[Event alloc] init];
@@ -74,7 +75,16 @@
 	}
     if (graphicsDevice == nil) {
         // Create a new device.
-        graphicsDevice = [[GraphicsDevice alloc] initWithGame:game];
+		switch (graphicsProfile) {
+			case GraphicsProfileReach:
+				graphicsDevice = [[ReachGraphicsDevice alloc] initWithGame:game];
+				break;
+			case GraphicsProfileHiDef:
+				graphicsDevice = [[HiDefGraphicsDevice alloc] initWithGame:game];
+				break;
+			default:
+				break;
+		}
         [game.window endScreenDeviceChange];
         [deviceCreated raiseWithSender:self];
     } else {

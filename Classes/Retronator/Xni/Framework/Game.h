@@ -59,11 +59,14 @@
 
 // Virtual methods to be implemented in the game.
 - (void) initialize;
+- (void) loadContent;
 - (void) beginRun;
 - (void) updateWithGameTime:(GameTime*)gameTime;
 - (BOOL) beginDraw;
 - (void) drawWithGameTime:(GameTime*)gameTime;
 - (void) endDraw;
+- (void) unloadContent;
 - (void) endRun;
+
 
 @end
