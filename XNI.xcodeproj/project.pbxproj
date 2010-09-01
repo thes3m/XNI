@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		B50806FF122E4ECF00C330E2 /* Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = B50806FD122E4ECF00C330E2 /* Texture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5080700122E4ECF00C330E2 /* Texture.m in Sources */ = {isa = PBXBuildFile; fileRef = B50806FE122E4ECF00C330E2 /* Texture.m */; };
+		B5080703122E4EE900C330E2 /* Texture2D.h in Headers */ = {isa = PBXBuildFile; fileRef = B5080701122E4EE900C330E2 /* Texture2D.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5080704122E4EE900C330E2 /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = B5080702122E4EE900C330E2 /* Texture2D.m */; };
+		B508070C122E4FBB00C330E2 /* GraphicsResource.h in Headers */ = {isa = PBXBuildFile; fileRef = B508070A122E4FBB00C330E2 /* GraphicsResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B508070D122E4FBB00C330E2 /* GraphicsResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B508070B122E4FBB00C330E2 /* GraphicsResource.m */; };
 		B5DDE7EB11FF04E3000DB38B /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7E911FF04E3000DB38B /* Game.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE7EC11FF04E3000DB38B /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE7EA11FF04E3000DB38B /* Game.m */; };
 		B5DDE7EF11FF06BB000DB38B /* GameServiceContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7ED11FF06BB000DB38B /* GameServiceContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -65,6 +71,12 @@
 
 /* Begin PBXFileReference section */
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B50806FD122E4ECF00C330E2 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		B50806FE122E4ECF00C330E2 /* Texture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture.m; sourceTree = "<group>"; };
+		B5080701122E4EE900C330E2 /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
+		B5080702122E4EE900C330E2 /* Texture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2D.m; sourceTree = "<group>"; };
+		B508070A122E4FBB00C330E2 /* GraphicsResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsResource.h; sourceTree = "<group>"; };
+		B508070B122E4FBB00C330E2 /* GraphicsResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsResource.m; sourceTree = "<group>"; };
 		B5DDE7E911FF04E3000DB38B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		B5DDE7EA11FF04E3000DB38B /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		B5DDE7ED11FF06BB000DB38B /* GameServiceContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameServiceContainer.h; sourceTree = "<group>"; };
@@ -190,6 +202,12 @@
 				B5DDE8C211FF29E8000DB38B /* ReachGraphicsDevice.m */,
 				B5DDE8C511FF2A23000DB38B /* HiDefGraphicsDevice.h */,
 				B5DDE8C611FF2A23000DB38B /* HiDefGraphicsDevice.m */,
+				B508070A122E4FBB00C330E2 /* GraphicsResource.h */,
+				B508070B122E4FBB00C330E2 /* GraphicsResource.m */,
+				B50806FD122E4ECF00C330E2 /* Texture.h */,
+				B50806FE122E4ECF00C330E2 /* Texture.m */,
+				B5080701122E4EE900C330E2 /* Texture2D.h */,
+				B5080702122E4EE900C330E2 /* Texture2D.m */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -308,6 +326,9 @@
 				B5DDE90911FF352E000DB38B /* Color.h in Headers */,
 				B5DDE99111FF546B000DB38B /* GraphicsDeviceManager.h in Headers */,
 				B5F4E2A912095FAF00B2FC0F /* XNI_Prefix.pch in Headers */,
+				B50806FF122E4ECF00C330E2 /* Texture.h in Headers */,
+				B5080703122E4EE900C330E2 /* Texture2D.h in Headers */,
+				B508070C122E4FBB00C330E2 /* GraphicsResource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +397,9 @@
 				B5DDE8C811FF2A23000DB38B /* HiDefGraphicsDevice.m in Sources */,
 				B5DDE90A11FF352E000DB38B /* Color.m in Sources */,
 				B5DDE99211FF546B000DB38B /* GraphicsDeviceManager.m in Sources */,
+				B5080700122E4ECF00C330E2 /* Texture.m in Sources */,
+				B5080704122E4EE900C330E2 /* Texture2D.m in Sources */,
+				B508070D122E4FBB00C330E2 /* GraphicsResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

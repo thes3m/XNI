@@ -73,25 +73,25 @@ typedef enum {
 
 typedef enum {
     SurfaceFormatColor,
-    SurfaceFormatBgr565,
-    SurfaceFormatBgra5551,
-    SurfaceFormatBgra4444,
-    SurfaceFormatDxt1,
-    SurfaceFormatDxt3,
-    SurfaceFormatDxt5,
-    SurfaceFormatNormalizedByte2,
-    SurfaceFormatNormalizedByte4,
-    SurfaceFormatRgba1010102,
-    SurfaceFormatRg32,
-    SurfaceFormatRgba64,
+    SurfaceFormatRgb565,
+    SurfaceFormatRgba5551,
+    SurfaceFormatRgba4444,
+    //SurfaceFormatDxt1,
+    //SurfaceFormatDxt3,
+    //SurfaceFormatDxt5,
+    //SurfaceFormatNormalizedByte2,
+    //SurfaceFormatNormalizedByte4,
+    //SurfaceFormatRgba1010102,
+    //SurfaceFormatRg32,
+    //SurfaceFormatRgba64,
     SurfaceFormatAlpha8,
-    SurfaceFormatSingle,
-    SurfaceFormatVector2,
-    SurfaceFormatVector4,
-    SurfaceFormatHalfSingle,
-    SurfaceFormatHalfVector2,
-    SurfaceFormatHalfVector4,
-    SurfaceFormatHdrBlendable	
+    //SurfaceFormatSingle,
+    //SurfaceFormatVector2,
+    //SurfaceFormatVector4,
+    //SurfaceFormatHalfSingle,
+    //SurfaceFormatHalfVector2,
+    //SurfaceFormatHalfVector4,
+    //SurfaceFormatHdrBlendable	
 } SurfaceFormat;
 
 typedef enum {

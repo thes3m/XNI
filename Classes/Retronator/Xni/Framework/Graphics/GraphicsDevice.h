@@ -38,6 +38,12 @@
 - (void) clearWithColor:(Color*)color;
 - (void) clearWithOptions:(ClearOptions)options color:(Color*)color depth:(float)depth stencil:(int)stencil;
 
+// Low level methods
+- (uint) createTexture;
+//- (void) getData:(void*)data fromTexture2D:(Texture2D*)texture level:(int)level;
+- (void) setData:(void*)data toTexture2D:(Texture2D*)texture level:(int)level;
+
+// Profile specific
 - (EAGLContext*) createContext;
 
 @end
