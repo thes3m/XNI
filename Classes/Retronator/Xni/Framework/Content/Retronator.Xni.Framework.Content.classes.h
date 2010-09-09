@@ -1,1 +1,1 @@
-@class ContentManager
+@class ContentManager;

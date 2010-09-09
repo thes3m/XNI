@@ -8,6 +8,7 @@
 
 #import "ContentManager.h"
 
+#import "Retronator.Xni.Framework.Content.Pipeline.h"
 
 @implementation ContentManager
 

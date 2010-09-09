@@ -25,3 +25,10 @@
 //#import "DrawableGameComponent.h"
 #import "GameComponentCollection.h"
 #import "GameComponentCollectionEventArgs.h"
+
+// Linear algebra
+#import "Vector2.h"
+#import "Vector3.h"
+#import "Vector4.h"
+#import "Quaternion.h"
+#import "Matrix.h"

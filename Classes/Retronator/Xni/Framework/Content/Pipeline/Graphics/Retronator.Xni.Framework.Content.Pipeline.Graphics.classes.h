@@ -1,0 +1,4 @@
+
+@class PixelBitmapContent;
+
+@class VectorConverter;
