@@ -105,6 +105,18 @@
 		B5DE194B11F89C0900BF3275 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE194911F89C0900BF3275 /* GameViewController.m */; };
 		B5DE194E11F89C1F00BF3275 /* GameView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE194C11F89C1F00BF3275 /* GameView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DE194F11F89C1F00BF3275 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE194D11F89C1F00BF3275 /* GameView.m */; };
+		B5E78B4A1242925600DDD99A /* SpriteBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B481242925600DDD99A /* SpriteBatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5E78B4B1242925600DDD99A /* SpriteBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B491242925600DDD99A /* SpriteBatch.m */; };
+		B5E78B6212429AEC00DDD99A /* BlendState.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B6012429AEC00DDD99A /* BlendState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5E78B6312429AEC00DDD99A /* BlendState.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B6112429AEC00DDD99A /* BlendState.m */; };
+		B5E78B6612429AF900DDD99A /* DepthStencilState.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B6412429AF900DDD99A /* DepthStencilState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5E78B6712429AF900DDD99A /* DepthStencilState.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B6512429AF900DDD99A /* DepthStencilState.m */; };
+		B5E78B6A12429B0E00DDD99A /* RasterizerState.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B6812429B0E00DDD99A /* RasterizerState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5E78B6B12429B0E00DDD99A /* RasterizerState.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B6912429B0E00DDD99A /* RasterizerState.m */; };
+		B5E78B6E12429B1A00DDD99A /* SamplerState.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B6C12429B1A00DDD99A /* SamplerState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5E78B6F12429B1A00DDD99A /* SamplerState.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B6D12429B1A00DDD99A /* SamplerState.m */; };
+		B5E78B7A12429BBD00DDD99A /* Effect.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B7812429BBD00DDD99A /* Effect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5E78B7B12429BBD00DDD99A /* Effect.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B7912429BBD00DDD99A /* Effect.m */; };
 		B5F4E2A912095FAF00B2FC0F /* XNI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */; };
 		B5F8536E1239206700E6FD71 /* PackedVectorStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F85387123929F800E6FD71 /* VectorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F85385123929F800E6FD71 /* VectorConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -226,6 +238,18 @@
 		B5DE194911F89C0900BF3275 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		B5DE194C11F89C1F00BF3275 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
 		B5DE194D11F89C1F00BF3275 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
+		B5E78B481242925600DDD99A /* SpriteBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteBatch.h; sourceTree = "<group>"; };
+		B5E78B491242925600DDD99A /* SpriteBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteBatch.m; sourceTree = "<group>"; };
+		B5E78B6012429AEC00DDD99A /* BlendState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlendState.h; sourceTree = "<group>"; };
+		B5E78B6112429AEC00DDD99A /* BlendState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlendState.m; sourceTree = "<group>"; };
+		B5E78B6412429AF900DDD99A /* DepthStencilState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthStencilState.h; sourceTree = "<group>"; };
+		B5E78B6512429AF900DDD99A /* DepthStencilState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepthStencilState.m; sourceTree = "<group>"; };
+		B5E78B6812429B0E00DDD99A /* RasterizerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RasterizerState.h; sourceTree = "<group>"; };
+		B5E78B6912429B0E00DDD99A /* RasterizerState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RasterizerState.m; sourceTree = "<group>"; };
+		B5E78B6C12429B1A00DDD99A /* SamplerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplerState.h; sourceTree = "<group>"; };
+		B5E78B6D12429B1A00DDD99A /* SamplerState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplerState.m; sourceTree = "<group>"; };
+		B5E78B7812429BBD00DDD99A /* Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Effect.h; sourceTree = "<group>"; };
+		B5E78B7912429BBD00DDD99A /* Effect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Effect.m; sourceTree = "<group>"; };
 		B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNI_Prefix.pch; sourceTree = "<group>"; };
 		B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackedVectorStructs.h; sourceTree = "<group>"; };
 		B5F85385123929F800E6FD71 /* VectorConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorConverter.h; sourceTree = "<group>"; };
@@ -385,6 +409,22 @@
 				B5DDE82E11FF1213000DB38B /* Retronator.Xni.Framework.Graphics.classes.h */,
 				B5DDE83011FF1222000DB38B /* Retronator.Xni.Framework.Graphics.h */,
 				B5DDE8C911FF2AD6000DB38B /* Enums.h */,
+				B508070A122E4FBB00C330E2 /* GraphicsResource.h */,
+				B508070B122E4FBB00C330E2 /* GraphicsResource.m */,
+				B50806FD122E4ECF00C330E2 /* Texture.h */,
+				B50806FE122E4ECF00C330E2 /* Texture.m */,
+				B5080701122E4EE900C330E2 /* Texture2D.h */,
+				B5080702122E4EE900C330E2 /* Texture2D.m */,
+				B5E78B7812429BBD00DDD99A /* Effect.h */,
+				B5E78B7912429BBD00DDD99A /* Effect.m */,
+				B5E78B6012429AEC00DDD99A /* BlendState.h */,
+				B5E78B6112429AEC00DDD99A /* BlendState.m */,
+				B5E78B6412429AF900DDD99A /* DepthStencilState.h */,
+				B5E78B6512429AF900DDD99A /* DepthStencilState.m */,
+				B5E78B6812429B0E00DDD99A /* RasterizerState.h */,
+				B5E78B6912429B0E00DDD99A /* RasterizerState.m */,
+				B5E78B6C12429B1A00DDD99A /* SamplerState.h */,
+				B5E78B6D12429B1A00DDD99A /* SamplerState.m */,
 				B5DDE82A11FF10EF000DB38B /* IGraphicsDeviceService.h */,
 				B5DDE85A11FF1326000DB38B /* GraphicsDevice.h */,
 				B5DDE85B11FF1326000DB38B /* GraphicsDevice.m */,
@@ -392,12 +432,8 @@
 				B5DDE8C211FF29E8000DB38B /* ReachGraphicsDevice.m */,
 				B5DDE8C511FF2A23000DB38B /* HiDefGraphicsDevice.h */,
 				B5DDE8C611FF2A23000DB38B /* HiDefGraphicsDevice.m */,
-				B508070A122E4FBB00C330E2 /* GraphicsResource.h */,
-				B508070B122E4FBB00C330E2 /* GraphicsResource.m */,
-				B50806FD122E4ECF00C330E2 /* Texture.h */,
-				B50806FE122E4ECF00C330E2 /* Texture.m */,
-				B5080701122E4EE900C330E2 /* Texture2D.h */,
-				B5080702122E4EE900C330E2 /* Texture2D.m */,
+				B5E78B481242925600DDD99A /* SpriteBatch.h */,
+				B5E78B491242925600DDD99A /* SpriteBatch.m */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -571,6 +607,12 @@
 				B56CC5C3123A927500B72347 /* ContentTypeReader.h in Headers */,
 				B56CC5C7123A928A00B72347 /* ContentTypeReaderManager.h in Headers */,
 				B56CC5CB123A92BB00B72347 /* Texture2DContentTypeReader.h in Headers */,
+				B5E78B4A1242925600DDD99A /* SpriteBatch.h in Headers */,
+				B5E78B6212429AEC00DDD99A /* BlendState.h in Headers */,
+				B5E78B6612429AF900DDD99A /* DepthStencilState.h in Headers */,
+				B5E78B6A12429B0E00DDD99A /* RasterizerState.h in Headers */,
+				B5E78B6E12429B1A00DDD99A /* SamplerState.h in Headers */,
+				B5E78B7A12429BBD00DDD99A /* Effect.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +706,12 @@
 				B56CC5C4123A927500B72347 /* ContentTypeReader.m in Sources */,
 				B56CC5C8123A928A00B72347 /* ContentTypeReaderManager.m in Sources */,
 				B56CC5CC123A92BB00B72347 /* Texture2DContentTypeReader.m in Sources */,
+				B5E78B4B1242925600DDD99A /* SpriteBatch.m in Sources */,
+				B5E78B6312429AEC00DDD99A /* BlendState.m in Sources */,
+				B5E78B6712429AF900DDD99A /* DepthStencilState.m in Sources */,
+				B5E78B6B12429B0E00DDD99A /* RasterizerState.m in Sources */,
+				B5E78B6F12429B1A00DDD99A /* SamplerState.m in Sources */,
+				B5E78B7B12429BBD00DDD99A /* Effect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
