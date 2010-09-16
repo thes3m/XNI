@@ -31,8 +31,9 @@
 	pixelData = sourceData;
 }
 
-- (SurfaceFormat) tryGetFormat { 
-	return format;
+- (BOOL) tryGetFormat:(SurfaceFormat*)theFormat {
+	*theFormat = format;
+	return YES;
 }
 
 - (Byte *) getPixelAtX:(int)x Y:(int)y {

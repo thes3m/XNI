@@ -10,6 +10,7 @@
 
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Graphics.h"
+#import "Retronator.Xni.Framework.Content.h"
 
 @implementation Game
 
@@ -18,13 +19,15 @@
     if (self = [super init]) {
         // Allocation and early initialization that doesn't depend on the graphics device.
         gameTime = [[GameTime alloc] init];
-        
+		
         components = [[GameComponentCollection alloc] init];
         [components.componentAdded subscribeDelegate:
 		 [Delegate delegateWithTarget:self Method:@selector(componentAddedTo:eventArgs:)]];
         
         services = [[GameServiceContainer alloc] init];
-        
+    
+		content = [[ContentManager alloc] initWithServiceProvider:services];
+		
         isFixedTimeStep = YES;
         targetElapsedTime = 1.0 / 60.0;
         inactiveSleepTime = 1.0 / 5.0;
@@ -53,6 +56,7 @@
 @synthesize targetElapsedTime;
 @synthesize inactiveSleepTime;
 
+@synthesize content;
 @synthesize components;
 @synthesize services;
 

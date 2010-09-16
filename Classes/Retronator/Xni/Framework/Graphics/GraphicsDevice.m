@@ -11,6 +11,12 @@
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Graphics.h"
 
+@interface GraphicsDevice()
+
++ (void) getFormat:(GLenum*)format AndType:(GLenum*)type ForSurfaceFormat:(SurfaceFormat)surfaceFormat;
+
+@end
+
 @implementation GraphicsDevice
 
 - (id) initWithGame:(Game*)theGame
@@ -98,43 +104,59 @@
     return textureId;    
 }
 
-- (void) setData:(void*)data toTexture2D:(Texture2D*)texture level:(int)level {
+- (void) setData:(void*)data toTexture2D:(Texture2D*)texture SourceRectangle:(Rectangle*)rect level:(int)level {
 	GLenum format, type;
-	switch (texture.format) {
-		case SurfaceFormatColor:
-			format = GL_RGBA;
-			type = GL_UNSIGNED_BYTE;
-			break;
-		case SurfaceFormatAlpha8:
-			format = GL_ALPHA;
-			type = GL_UNSIGNED_BYTE;
-			break;
-		case SurfaceFormatRgb565:
-			format = GL_RGB;
-			type = GL_UNSIGNED_SHORT_5_6_5;
-			break;
-		case SurfaceFormatRgba4444:
-			format = GL_RGBA;
-			type = GL_UNSIGNED_SHORT_4_4_4_4;
-			break;
-		case SurfaceFormatRgba5551:
-			format = GL_RGBA;
-			type = GL_UNSIGNED_SHORT_5_5_5_1;
-			break;
-		default:
-			break;
-	}
+	[GraphicsDevice getFormat:&format AndType:&type ForSurfaceFormat:texture.format];
+	
     glBindTexture(GL_TEXTURE_2D, texture.textureId);	
-    glTexImage2D(GL_TEXTURE_2D, level, format, texture.width, texture.height, 0, format, type, data);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,GL_LINEAR); 
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+    
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR); 
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glBindTexture(GL_TEXTURE_2D, 0);
+	
+	if (rect) {
+		glTexSubImage2D(GL_TEXTURE_2D, level, rect.x, rect.y, rect.width, rect.height, format, type, data);
+	} else {
+		glTexImage2D(GL_TEXTURE_2D, level, format, texture.width, texture.height, 0, format, type, data);
+    }
+	
+	glBindTexture(GL_TEXTURE_2D, 0);
 }
+
 
 // Profile specific
 
 - (EAGLContext*) createContext { return nil; }
+
+// Private methods
+
++ (void) getFormat:(GLenum*)format AndType:(GLenum*)type ForSurfaceFormat:(SurfaceFormat)surfaceFormat {
+	switch (surfaceFormat) {
+		case SurfaceFormatColor:
+			*format = GL_RGBA;
+			*type = GL_UNSIGNED_BYTE;
+			break;
+		case SurfaceFormatAlpha8:
+			*format = GL_ALPHA;
+			*type = GL_UNSIGNED_BYTE;
+			break;
+		case SurfaceFormatRgb565:
+			*format = GL_RGB;
+			*type = GL_UNSIGNED_SHORT_5_6_5;
+			break;
+		case SurfaceFormatRgba4444:
+			*format = GL_RGBA;
+			*type = GL_UNSIGNED_SHORT_4_4_4_4;
+			break;
+		case SurfaceFormatRgba5551:
+			*format = GL_RGBA;
+			*type = GL_UNSIGNED_SHORT_5_5_5_1;
+			break;
+		default:
+			break;
+	}
+}
+
 
 @end

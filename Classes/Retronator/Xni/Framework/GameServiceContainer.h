@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import "System.h"
 
-@interface GameServiceContainer : NSObject {
+@interface GameServiceContainer : NSObject <IServiceProvider> {
     CFMutableDictionaryRef services;
 }
 
 - (void)addService:(id)provider ofType:(id)type;
-- (id)getServiceOfType:(id)type;
 - (void)removeServiceOfType:(id)type;
 
 @end

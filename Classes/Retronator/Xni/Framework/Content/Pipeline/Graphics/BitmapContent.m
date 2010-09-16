@@ -24,6 +24,8 @@
 
 - (void*) getPixelData { return nil; }
 - (void) setPixelData:(void*)sourceData { }
-- (SurfaceFormat) tryGetFormat { return SurfaceFormatColor; }
+- (BOOL) tryGetFormat:(SurfaceFormat*)theFormat {
+	return NO;
+}
 
 @end

@@ -24,6 +24,6 @@
 
 - (void*) getPixelData;
 - (void) setPixelData:(void*)sourceData;
-- (SurfaceFormat) tryGetFormat;
+- (BOOL) tryGetFormat:(SurfaceFormat*)theFormat;
 
 @end

@@ -16,7 +16,7 @@
 }
 
 - (id) initWithGraphicsDevice:(GraphicsDevice*)theGraphicsDevice Width:(int)theWidth Height:(int)theHeight;
-// - (id) initWithGraphicsDevice:(GraphicsDevice*)theGraphicsDevice Width:(int)theWidth Height:(int)theHeight MipMaps:(BOOL)generateMipMaps Format:(SurfaceFormat)theFormat;
+- (id) initWithGraphicsDevice:(GraphicsDevice*)theGraphicsDevice Width:(int)theWidth Height:(int)theHeight MipMaps:(BOOL)generateMipMaps Format:(SurfaceFormat)theFormat;
 
 @property (nonatomic, readonly) Rectangle *bounds;
 @property (nonatomic, readonly) int height;
@@ -29,9 +29,8 @@
 // - (void) getDataTo:(void *)data StartIndex:(int)startIndex ElementCount:(int)elementCount;
 // - (void) getDataFromLevel:(int)level SourceRectangle:(Rectangle*)rect To:(void *)data StartIndex:(int)startIndex ElementCount:(int)elementCount;
 
-- (void) setDataFrom:(void *)data;
-// - (void) setDataFrom:(void *)data StartIndex:(int)startIndex ElementCount:(int)elementCount;
-// - (void) setDataToLevel:(int)level SourceRectangle:(Rectangle*)rect From:(void *)data StartIndex:(int)startIndex ElementCount:(int)elementCount;
+- (void) setDataFrom:(void*)data;
+- (void) setDataToLevel:(int)level SourceRectangle:(Rectangle*)rect From:(void *)data;
 
 // - (void) saveAsJpeg:(NSData*)textureData Width:(int)width Height:(int)height;
 // - (void) saveAsPng:(NSData*)textureData Width:(int)width Height:(int)height;

@@ -11,16 +11,33 @@
 
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Graphics.h"
+#import "Retronator.Xni.Framework.Content.Pipeline.Graphics.h"
 
 @implementation Texture2D
 
 - (id) initWithGraphicsDevice:(GraphicsDevice*)theGraphicsDevice Width:(int)theWidth Height:(int)theHeight {
-	if (self = [super initWithGraphicsDevice:theGraphicsDevice SurfaceFormat:SurfaceFormatColor LevelCount:1]) {
+	return [self initWithGraphicsDevice:theGraphicsDevice Width:theWidth Height:theHeight MipMaps:NO Format:SurfaceFormatColor];
+}
+
+- (id) initWithGraphicsDevice:(GraphicsDevice *)theGraphicsDevice 
+						Width:(int)theWidth 
+					   Height:(int)theHeight 
+					  MipMaps:(BOOL)generateMipMaps 
+					   Format:(SurfaceFormat)theFormat {
+	int theLevelCount = 1;
+	if (generateMipMaps) {
+		int side = MIN(theWidth, theHeight);
+		while (side > 1) {
+			side /= 2;
+			theLevelCount++;
+		}
+	}
+	if (self = [super initWithGraphicsDevice:theGraphicsDevice SurfaceFormat:theFormat LevelCount:theLevelCount]) {
 		width = theWidth;
 		height = theHeight;
 		textureId = [graphicsDevice createTexture];
 	}
-	return self;
+	return self;	
 }
 
 - (Rectangle*) bounds {
@@ -64,8 +81,14 @@
     return texture;	
 }
 
-- (void) setDataFrom:(void *)data {
-	[graphicsDevice setData:data toTexture2D:self level:0];
+- (void) setDataFrom:(void*)data {
+	[graphicsDevice setData:data toTexture2D:self SourceRectangle:nil level:0];
 }
+
+
+- (void) setDataToLevel:(int)level SourceRectangle:(Rectangle*)rect From:(void *)data {
+	[graphicsDevice setData:data toTexture2D:self SourceRectangle:rect level:level];
+}
+
 
 @end

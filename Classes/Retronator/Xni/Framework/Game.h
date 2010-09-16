@@ -11,6 +11,7 @@
 
 #import "Retronator.Xni.Framework.classes.h"
 #import "Retronator.Xni.Framework.Graphics.classes.h"
+#import "Retronator.Xni.Framework.Content.classes.h"
 
 @interface Game : NSObject <UIApplicationDelegate> {
 @private
@@ -34,6 +35,9 @@
     GameTime *gameTime;
     NSDate *currentFrameTime;
     NSDate *lastFrameTime;
+	
+	// Content manager
+	ContentManager *content;
     
     // Game components
     GameComponentCollection *components;
@@ -51,6 +55,7 @@
 @property (nonatomic) NSTimeInterval targetElapsedTime;
 @property (nonatomic) NSTimeInterval inactiveSleepTime;
 
+@property (nonatomic, retain) ContentManager *content;
 @property (nonatomic, readonly) GameComponentCollection *components;
 @property (nonatomic, readonly) GameServiceContainer *services;
 

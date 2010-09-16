@@ -9,7 +9,87 @@
 #import "ContentManager.h"
 
 #import "Retronator.Xni.Framework.Content.Pipeline.h"
+#import "Retronator.Xni.Framework.Content.h"
 
 @implementation ContentManager
+
+- (id) initWithServiceProvider:(id <IServiceProvider>)theServiceProvider {
+	return [self initWithServiceProvider:theServiceProvider andRootDirectory:@""];
+}
+
+- (id) initWithServiceProvider:(id <IServiceProvider>)theServiceProvider andRootDirectory:(NSString *)theRootDirectory {
+	if (self = [super init]) {
+		rootDirectory = theRootDirectory;
+		serviceProvider = theServiceProvider;
+		
+		loadedAssets = [[NSMutableDictionary alloc] init];
+		readerManager = [[ContentTypeReaderManager alloc] init];
+	}
+	return self;
+}
+
+
+@synthesize rootDirectory;
+@synthesize serviceProvider;
+
+- (id) load:(NSString *)assetName{
+	
+	// Check if we have already loaded this asset.
+	id existing = [loadedAssets objectForKey:assetName];
+	if (existing) {
+		return existing;
+	}
+	
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSString *rootPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString:rootDirectory];
+	NSError *error;
+	NSArray *files = [fileManager contentsOfDirectoryAtPath:rootPath error:&error];
+	int count = [files count];
+	
+	for (int i = 0; i < count; i++) {
+		NSString *file = [files objectAtIndex:i];
+		if ([file hasPrefix:assetName]) {
+			return [self load:assetName fromFile:file];
+		}
+	}
+	
+	[NSException raise:@"FileNotFoundException" format:@"The provided asset name does not match any files in the root directory"];
+	return nil;
+}
+
+- (id) load:(NSString *)assetName fromFile:(NSString *)filePath {
+	// Check if we have already loaded this asset.
+	id existing = [loadedAssets objectForKey:assetName];
+	if (existing) {
+		return existing;
+	}
+	
+	// Find extension and absolute path.
+	NSString *fileName = [filePath stringByDeletingPathExtension];
+	NSString *extension = [[filePath pathExtension] lowercaseString];
+	NSString *absolutePath = [[NSBundle mainBundle] pathForResource:fileName ofType:extension inDirectory:rootDirectory];
+	
+	ContentReader *input;
+	
+	if ([extension isEqual:@"png"]) {
+		// We have texture content
+		TextureImporter *textureImporter = [[[TextureImporter alloc] init] autorelease];
+		TextureContent *textureContent = [textureImporter importFile:absolutePath];
+		input = [[ContentReader alloc] initWithContentManager:self Content:textureContent];
+	} else {
+		[NSException raise:@"InvalidArgumentException" format:@"Files with extension %@ are not supported", extension];
+	}
+
+	ContentTypeReader *reader = [readerManager getTypeReaderFor:[input.content class]];
+	id result = [reader readFromInput:input into:nil];
+	return result;
+}
+
+- (void) dealloc
+{
+	[loadedAssets release];
+	[readerManager release];
+	[super dealloc];
+}
 
 @end
