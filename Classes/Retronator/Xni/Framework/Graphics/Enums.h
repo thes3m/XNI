@@ -2,10 +2,48 @@
 #import <OpenGLES/ES2/gl.h>
 
 typedef enum {
+	BlendZero,
+	BlendOne,
+	BlendSourceColor,
+	BlendInverseSourceColor,
+	BlendSourceAlpha,
+	BlendInverseSourceAlpha,
+	BlendDestinationAlpha,
+	BlendInverseDestinationAlpha,
+	BlendDestinationColor,
+	BlendInverseDestinationColor,
+	BlendSourceAlphaSaturation,
+	BlendBlendFactor,
+	BlendInverseBlendFactor
+} Blend;
+
+typedef enum {
+	BlendFunctionAdd,
+	BlendFunctionMax,
+	BlendFunctionMin,
+	BlendFunctionReverseSubstract,
+	BlendFunctionSubtract
+} BlendFunction;
+
+typedef enum {
+	BufferUsageNone,
+	BufferUsageWriteOnly
+} BufferUsage;
+
+typedef enum {
     ClearOptionsDepthBuffer = GL_DEPTH_BUFFER_BIT,
     ClearOptionsStencil = GL_STENCIL_BUFFER_BIT,
     ClearOptionsTarget = GL_COLOR_BUFFER_BIT
 } ClearOptions;
+
+typedef enum {
+	ColorWriteChannelsAll,
+	ColorWriteChannelsAlpha,
+	ColorWriteChannelsBlue,
+	ColorWriteChannelsGreen,
+	ColorWriteChannelsNone,
+	ColorWriteChannelsRed
+} ColorWriteChannels;
 
 typedef enum {
     CompareFunctionAlways = GL_ALWAYS,
@@ -17,6 +55,21 @@ typedef enum {
     CompareFunctionNever = GL_NEVER,
     CompareFunctionNotEqual = GL_NOTEQUAL
 } CompareFunction;
+
+typedef enum {
+	CubeMapFaceNegativeX,
+	CubeMapFaceNegativeY,
+	CubeMapFaceNegativeZ,
+	CubeMapFacePositiveX,
+	CubeMapFacePositiveY,
+	CubeMapFacePositiveZ
+} CubeMapFace;
+
+typedef enum {
+	CullModeCullClockwiseFace,
+	CullModeCullCounterClockwiseFace,
+	CullModeNone
+} CullMode;
 
 typedef enum {
     DataTypeUnsignedByte = GL_UNSIGNED_BYTE,
@@ -35,11 +88,15 @@ typedef enum {
 } DepthFormat;
 
 typedef enum {
-    FogModeNone = 0,
-    FogModeLinear = GL_LINEAR,
-    FogModeExponent = GL_EXP,
-    FogModeExponentSquared = GL_EXP2
-} FogMode;
+	FillModeSolid,
+	FillModeWireFrame
+} FillMode;
+
+typedef enum {
+	GraphicsDeviceStatusLost,
+	GraphicsDeviceStatusNormal,
+	GraphicsDeviceStatusNotReset
+} GraphicsDeviceStatus;
 
 typedef enum {
 	GraphicsProfileReach,
@@ -47,18 +104,29 @@ typedef enum {
 } GraphicsProfile;
 
 typedef enum {
-    IndexElementSizeEightBits = 1,
     IndexElementSizeSixteenBits = 2,
+	IndexElementSizeThrityTwoBits = 4,
 } IndexElementSize;
 
 typedef enum {
-    PrimitiveTypePointList = GL_POINTS,
+	PresentIntervalDefault,
+	PresentIntervalOne,
+	PresentIntervalTwo,
+	PresentIntervalImmediate
+} PresentInterval;
+
+typedef enum {
     PrimitiveTypeLineList = GL_LINES,
     PrimitiveTypeLineStrip = GL_LINE_STRIP,
     PrimitiveTypeTriangleList = GL_TRIANGLES,
     PrimitiveTypeTriangleStrip = GL_TRIANGLE_STRIP,
-    PrimitiveTypeTriangleFan = GL_TRIANGLE_FAN
 } PrimitiveType;
+
+typedef enum {
+	RenderTargetUsageDiscardContents,
+	RenderTargetUsagePlatformContents,
+	RenderTargetUsagePreserveContents
+} RenderTargetUsage;
 
 typedef enum {
     ResourceUsageStatic = GL_STATIC_DRAW,
@@ -70,6 +138,37 @@ typedef enum {
     ResourceTypeIndexBuffer = GL_ELEMENT_ARRAY_BUFFER,
     ResourceTypeVertexBuffer = GL_ARRAY_BUFFER
 } ResourceType;
+
+typedef enum {
+	SetDataOptionsDiscard,
+	SetDataOptionsNone,
+	SetDataOptionsNoOverwrite
+} SetDataOptions;
+
+typedef enum {
+	SpriteEffectsFlipHorizontally = 2,
+	SpriteEffectsFlipVertically = 1,
+	None = 0
+} SpriteEffects;
+
+typedef enum {
+	SpriteSortModeBackToFront,
+	SpriteSortModeDeffered,
+	SpriteSortModeFrontToBack,
+	SpriteSortModeImmediate,
+	SpriteSortModeTexture
+} SpriteSortMode;
+
+typedef enum {
+	StencilOperationDecrement,
+	StencilOperationDecrementSaturation,
+	StencilOperationIncrement,
+	StencilOperationIncrementSaturation,
+	StencilOperationInvert,
+	StencilOperationKeep,
+	StencilOperationReplace,
+	StencilOperationZero
+} StencilOperation;
 
 typedef enum {
     SurfaceFormatColor,
@@ -95,24 +194,36 @@ typedef enum {
 } SurfaceFormat;
 
 typedef enum {
+	TextureAddressModeClamp,
+	TextureAddressModeMirror,
+	TextureAddressModeWrap
+} TextureAddressMode;
+
+typedef enum {
+	TextureFilterLinear,
+	TextureFilterPoint,
+	TextureFilterAnisotropic,
+	TextureFilterLinearMipPoint,
+	TextureFilterPointMipLinear,
+	TextureFilterMinLinearMagPointMipLinear,
+	TextureFilterMinLinearMagPointMipPoint,
+	TextureFilterMinPointMagLinearMipLinear,
+	TextureFilterMinPointMagLinearMipPoint
+} TextureFilter;
+
+typedef enum {
     VertexElementFormatSingle,
     VertexElementFormatVector2,
     VertexElementFormatVector3,
     VertexElementFormatVector4,
     VertexElementFormatHalfVector2,
     VertexElementFormatHalfVector4,
-    VertexElementFormatRgba64,
     VertexElementFormatColor,
-    VertexElementFormatRgba32,
-    VertexElementFormatRg32,
     VertexElementFormatNormalizedShort2,
     VertexElementFormatNormalizedShort4,
-    VertexElementFormatNormalized101010,
     VertexElementFormatShort2,
     VertexElementFormatShort4,
-    VertexElementFormatByte4,
-    VertexElementFormatUInt101010,
-    VertexElementFormatUnused
+    VertexElementFormatByte4
 } VertexElementFormat;
 
 typedef enum {
@@ -120,5 +231,13 @@ typedef enum {
     VertexElementUsageNormal = GL_NORMAL_ARRAY,
     VertexElementUsageColor = GL_COLOR_ARRAY,
     VertexElementUsageTextureCoordinate = GL_TEXTURE_COORD_ARRAY,
-    VertexElementUsagePointSize = GL_POINT_SIZE_ARRAY_OES
+    VertexElementUsagePointSize = GL_POINT_SIZE_ARRAY_OES,
+	//VertexElementUsageBinormal,
+	//VertexElementUsageBlendIndices,
+	//VertexElementUsageBlendWeight,
+	//VertexElementUsageDepth,
+	//VertexElementUsageFog,
+	//VertexElementUsageSample,
+	//VertexElementUsageTangent,
+	//VertexElementUsageTessellateFactor
 } VertexElementUsage;
