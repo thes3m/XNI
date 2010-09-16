@@ -14,26 +14,41 @@
 		B5080704122E4EE900C330E2 /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = B5080702122E4EE900C330E2 /* Texture2D.m */; };
 		B508070C122E4FBB00C330E2 /* GraphicsResource.h in Headers */ = {isa = PBXBuildFile; fileRef = B508070A122E4FBB00C330E2 /* GraphicsResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B508070D122E4FBB00C330E2 /* GraphicsResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B508070B122E4FBB00C330E2 /* GraphicsResource.m */; };
+		B56CC50D123A6F3600B72347 /* MipmapChain.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC50B123A6F3600B72347 /* MipmapChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B56CC50E123A6F3600B72347 /* MipmapChain.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC50C123A6F3600B72347 /* MipmapChain.m */; };
+		B56CC511123A739100B72347 /* MipmapChainCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC50F123A739100B72347 /* MipmapChainCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B56CC512123A739100B72347 /* MipmapChainCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC510123A739100B72347 /* MipmapChainCollection.m */; };
+		B56CC527123A79E800B72347 /* Texture2DContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC525123A79E800B72347 /* Texture2DContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B56CC528123A79E800B72347 /* Texture2DContent.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC526123A79E800B72347 /* Texture2DContent.m */; };
+		B56CC55B123A846C00B72347 /* IServiceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC559123A846C00B72347 /* IServiceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B56CC5BD123A915700B72347 /* ContentReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC5BB123A915700B72347 /* ContentReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B56CC5BE123A915700B72347 /* ContentReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC5BC123A915700B72347 /* ContentReader.m */; };
+		B56CC5C3123A927500B72347 /* ContentTypeReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC5C1123A927500B72347 /* ContentTypeReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B56CC5C4123A927500B72347 /* ContentTypeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC5C2123A927500B72347 /* ContentTypeReader.m */; };
+		B56CC5C7123A928A00B72347 /* ContentTypeReaderManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC5C5123A928A00B72347 /* ContentTypeReaderManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B56CC5C8123A928A00B72347 /* ContentTypeReaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC5C6123A928A00B72347 /* ContentTypeReaderManager.m */; };
+		B56CC5CB123A92BB00B72347 /* Texture2DContentTypeReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC5C9123A92BB00B72347 /* Texture2DContentTypeReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B56CC5CC123A92BB00B72347 /* Texture2DContentTypeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC5CA123A92BB00B72347 /* Texture2DContentTypeReader.m */; };
 		B59AD7F01236E07300F99511 /* ContentImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD7EE1236E07300F99511 /* ContentImporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59AD7F11236E07300F99511 /* ContentImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD7EF1236E07300F99511 /* ContentImporter.m */; };
 		B59AD80C1236E21900F99511 /* Retronator.Xni.Framework.Content.Pipeline.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD80B1236E21900F99511 /* Retronator.Xni.Framework.Content.Pipeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59AD80E1236E22B00F99511 /* Retronator.Xni.Framework.Content.Pipeline.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD80D1236E22B00F99511 /* Retronator.Xni.Framework.Content.Pipeline.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59AD8111236E25700F99511 /* TextureImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD80F1236E25700F99511 /* TextureImporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59AD8121236E25700F99511 /* TextureImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD8101236E25700F99511 /* TextureImporter.m */; };
-		B59AD81A1236E55E00F99511 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8191236E55E00F99511 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.classes.h */; };
-		B59AD81C1236E56800F99511 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD81B1236E56800F99511 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.h */; };
-		B59AD81F1236E59A00F99511 /* ContentItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD81D1236E59A00F99511 /* ContentItem.h */; };
+		B59AD81A1236E55E00F99511 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8191236E55E00F99511 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B59AD81C1236E56800F99511 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD81B1236E56800F99511 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B59AD81F1236E59A00F99511 /* ContentItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD81D1236E59A00F99511 /* ContentItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59AD8201236E59A00F99511 /* ContentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD81E1236E59A00F99511 /* ContentItem.m */; };
-		B59AD8231236E76E00F99511 /* ContentIdentity.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8211236E76E00F99511 /* ContentIdentity.h */; };
+		B59AD8231236E76E00F99511 /* ContentIdentity.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8211236E76E00F99511 /* ContentIdentity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59AD8241236E76E00F99511 /* ContentIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD8221236E76E00F99511 /* ContentIdentity.m */; };
-		B59AD8681236EC2300F99511 /* TextureContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8661236EC2300F99511 /* TextureContent.h */; };
+		B59AD8681236EC2300F99511 /* TextureContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8661236EC2300F99511 /* TextureContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59AD8691236EC2300F99511 /* TextureContent.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD8671236EC2300F99511 /* TextureContent.m */; };
-		B59AD86E1236ED3900F99511 /* BitmapContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD86C1236ED3900F99511 /* BitmapContent.h */; };
+		B59AD86E1236ED3900F99511 /* BitmapContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD86C1236ED3900F99511 /* BitmapContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59AD86F1236ED3900F99511 /* BitmapContent.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD86D1236ED3900F99511 /* BitmapContent.m */; };
-		B59AD8821236EFF200F99511 /* PixelBitmapContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8801236EFF200F99511 /* PixelBitmapContent.h */; };
+		B59AD8821236EFF200F99511 /* PixelBitmapContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8801236EFF200F99511 /* PixelBitmapContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59AD8831236EFF200F99511 /* PixelBitmapContent.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD8811236EFF200F99511 /* PixelBitmapContent.m */; };
-		B59AD8A01236F1FF00F99511 /* Retronator.Xni.Framework.Graphics.PackedVector.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD89F1236F1FF00F99511 /* Retronator.Xni.Framework.Graphics.PackedVector.classes.h */; };
-		B59AD8A21236F20B00F99511 /* Retronator.Xni.Framework.Graphics.PackedVector.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8A11236F20B00F99511 /* Retronator.Xni.Framework.Graphics.PackedVector.h */; };
+		B59AD8A01236F1FF00F99511 /* Retronator.Xni.Framework.Graphics.PackedVector.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD89F1236F1FF00F99511 /* Retronator.Xni.Framework.Graphics.PackedVector.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B59AD8A21236F20B00F99511 /* Retronator.Xni.Framework.Graphics.PackedVector.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8A11236F20B00F99511 /* Retronator.Xni.Framework.Graphics.PackedVector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5A1C82F12353F8700DB60CB /* Retronator.Xni.Framework.Content.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A1C82E12353F8700DB60CB /* Retronator.Xni.Framework.Content.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5A1C83112353F9B00DB60CB /* Retronator.Xni.Framework.Content.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A1C83012353F9B00DB60CB /* Retronator.Xni.Framework.Content.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5A1C83412353FBB00DB60CB /* ContentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A1C83212353FBB00DB60CB /* ContentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -91,24 +106,24 @@
 		B5DE194E11F89C1F00BF3275 /* GameView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE194C11F89C1F00BF3275 /* GameView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DE194F11F89C1F00BF3275 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE194D11F89C1F00BF3275 /* GameView.m */; };
 		B5F4E2A912095FAF00B2FC0F /* XNI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */; };
-		B5F8536E1239206700E6FD71 /* PackedVectorStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */; };
-		B5F85387123929F800E6FD71 /* VectorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F85385123929F800E6FD71 /* VectorConverter.h */; };
+		B5F8536E1239206700E6FD71 /* PackedVectorStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5F85387123929F800E6FD71 /* VectorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F85385123929F800E6FD71 /* VectorConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F85388123929F800E6FD71 /* VectorConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F85386123929F800E6FD71 /* VectorConverter.m */; };
-		B5F8539D12392E2000E6FD71 /* Vector4.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8539B12392E2000E6FD71 /* Vector4.h */; };
+		B5F8539D12392E2000E6FD71 /* Vector4.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8539B12392E2000E6FD71 /* Vector4.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F8539E12392E2000E6FD71 /* Vector4.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F8539C12392E2000E6FD71 /* Vector4.m */; };
-		B5F853A012392E4500E6FD71 /* Vector4Struct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8539F12392E4500E6FD71 /* Vector4Struct.h */; };
-		B5F853A4123931F100E6FD71 /* MatrixStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853A3123931F100E6FD71 /* MatrixStruct.h */; };
-		B5F853A7123931F900E6FD71 /* Matrix.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853A5123931F900E6FD71 /* Matrix.h */; };
+		B5F853A012392E4500E6FD71 /* Vector4Struct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8539F12392E4500E6FD71 /* Vector4Struct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5F853A4123931F100E6FD71 /* MatrixStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853A3123931F100E6FD71 /* MatrixStruct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5F853A7123931F900E6FD71 /* Matrix.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853A5123931F900E6FD71 /* Matrix.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F853A8123931F900E6FD71 /* Matrix.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F853A6123931F900E6FD71 /* Matrix.m */; };
-		B5F853B11239331C00E6FD71 /* Vector3.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853AF1239331C00E6FD71 /* Vector3.h */; };
+		B5F853B11239331C00E6FD71 /* Vector3.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853AF1239331C00E6FD71 /* Vector3.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F853B21239331C00E6FD71 /* Vector3.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F853B01239331C00E6FD71 /* Vector3.m */; };
-		B5F853B51239334300E6FD71 /* Vector2.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853B31239334300E6FD71 /* Vector2.h */; };
+		B5F853B51239334300E6FD71 /* Vector2.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853B31239334300E6FD71 /* Vector2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F853B61239334300E6FD71 /* Vector2.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F853B41239334300E6FD71 /* Vector2.m */; };
-		B5F853B81239335900E6FD71 /* Vector2Struct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853B71239335900E6FD71 /* Vector2Struct.h */; };
-		B5F853BC1239336C00E6FD71 /* Vector3Struct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853BB1239336C00E6FD71 /* Vector3Struct.h */; };
-		B5F853CD1239357400E6FD71 /* Quaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853CB1239357400E6FD71 /* Quaternion.h */; };
+		B5F853B81239335900E6FD71 /* Vector2Struct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853B71239335900E6FD71 /* Vector2Struct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5F853BC1239336C00E6FD71 /* Vector3Struct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853BB1239336C00E6FD71 /* Vector3Struct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5F853CD1239357400E6FD71 /* Quaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853CB1239357400E6FD71 /* Quaternion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F853CE1239357400E6FD71 /* Quaternion.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F853CC1239357400E6FD71 /* Quaternion.m */; };
-		B5F8546D1239484700E6FD71 /* ColorPixelBitmapContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8546B1239484700E6FD71 /* ColorPixelBitmapContent.h */; };
+		B5F8546D1239484700E6FD71 /* ColorPixelBitmapContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8546B1239484700E6FD71 /* ColorPixelBitmapContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F8546E1239484700E6FD71 /* ColorPixelBitmapContent.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F8546C1239484700E6FD71 /* ColorPixelBitmapContent.m */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +135,21 @@
 		B5080702122E4EE900C330E2 /* Texture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2D.m; sourceTree = "<group>"; };
 		B508070A122E4FBB00C330E2 /* GraphicsResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsResource.h; sourceTree = "<group>"; };
 		B508070B122E4FBB00C330E2 /* GraphicsResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsResource.m; sourceTree = "<group>"; };
+		B56CC50B123A6F3600B72347 /* MipmapChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MipmapChain.h; sourceTree = "<group>"; };
+		B56CC50C123A6F3600B72347 /* MipmapChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MipmapChain.m; sourceTree = "<group>"; };
+		B56CC50F123A739100B72347 /* MipmapChainCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MipmapChainCollection.h; sourceTree = "<group>"; };
+		B56CC510123A739100B72347 /* MipmapChainCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MipmapChainCollection.m; sourceTree = "<group>"; };
+		B56CC525123A79E800B72347 /* Texture2DContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2DContent.h; sourceTree = "<group>"; };
+		B56CC526123A79E800B72347 /* Texture2DContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2DContent.m; sourceTree = "<group>"; };
+		B56CC559123A846C00B72347 /* IServiceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IServiceProvider.h; sourceTree = "<group>"; };
+		B56CC5BB123A915700B72347 /* ContentReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentReader.h; sourceTree = "<group>"; };
+		B56CC5BC123A915700B72347 /* ContentReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentReader.m; sourceTree = "<group>"; };
+		B56CC5C1123A927500B72347 /* ContentTypeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTypeReader.h; sourceTree = "<group>"; };
+		B56CC5C2123A927500B72347 /* ContentTypeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTypeReader.m; sourceTree = "<group>"; };
+		B56CC5C5123A928A00B72347 /* ContentTypeReaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTypeReaderManager.h; sourceTree = "<group>"; };
+		B56CC5C6123A928A00B72347 /* ContentTypeReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTypeReaderManager.m; sourceTree = "<group>"; };
+		B56CC5C9123A92BB00B72347 /* Texture2DContentTypeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2DContentTypeReader.h; sourceTree = "<group>"; };
+		B56CC5CA123A92BB00B72347 /* Texture2DContentTypeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2DContentTypeReader.m; sourceTree = "<group>"; };
 		B59AD7EE1236E07300F99511 /* ContentImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentImporter.h; sourceTree = "<group>"; };
 		B59AD7EF1236E07300F99511 /* ContentImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentImporter.m; sourceTree = "<group>"; };
 		B59AD80B1236E21900F99511 /* Retronator.Xni.Framework.Content.Pipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.Content.Pipeline.h; sourceTree = "<group>"; };
@@ -304,8 +334,14 @@
 				B59AD8811236EFF200F99511 /* PixelBitmapContent.m */,
 				B5F8546B1239484700E6FD71 /* ColorPixelBitmapContent.h */,
 				B5F8546C1239484700E6FD71 /* ColorPixelBitmapContent.m */,
+				B56CC50B123A6F3600B72347 /* MipmapChain.h */,
+				B56CC50C123A6F3600B72347 /* MipmapChain.m */,
+				B56CC50F123A739100B72347 /* MipmapChainCollection.h */,
+				B56CC510123A739100B72347 /* MipmapChainCollection.m */,
 				B59AD8661236EC2300F99511 /* TextureContent.h */,
 				B59AD8671236EC2300F99511 /* TextureContent.m */,
+				B56CC525123A79E800B72347 /* Texture2DContent.h */,
+				B56CC526123A79E800B72347 /* Texture2DContent.m */,
 				B5F85385123929F800E6FD71 /* VectorConverter.h */,
 				B5F85386123929F800E6FD71 /* VectorConverter.m */,
 			);
@@ -330,6 +366,14 @@
 				B5A1C82E12353F8700DB60CB /* Retronator.Xni.Framework.Content.h */,
 				B5A1C83212353FBB00DB60CB /* ContentManager.h */,
 				B5A1C83312353FBB00DB60CB /* ContentManager.m */,
+				B56CC5BB123A915700B72347 /* ContentReader.h */,
+				B56CC5BC123A915700B72347 /* ContentReader.m */,
+				B56CC5C5123A928A00B72347 /* ContentTypeReaderManager.h */,
+				B56CC5C6123A928A00B72347 /* ContentTypeReaderManager.m */,
+				B56CC5C1123A927500B72347 /* ContentTypeReader.h */,
+				B56CC5C2123A927500B72347 /* ContentTypeReader.m */,
+				B56CC5C9123A92BB00B72347 /* Texture2DContentTypeReader.h */,
+				B56CC5CA123A92BB00B72347 /* Texture2DContentTypeReader.m */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -442,6 +486,7 @@
 				B5DE189511F8884A00BF3275 /* Event.m */,
 				B5DE189611F8884A00BF3275 /* EventArgs.h */,
 				B5DE189711F8884A00BF3275 /* EventArgs.m */,
+				B56CC559123A846C00B72347 /* IServiceProvider.h */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -518,6 +563,14 @@
 				B5F853BC1239336C00E6FD71 /* Vector3Struct.h in Headers */,
 				B5F853CD1239357400E6FD71 /* Quaternion.h in Headers */,
 				B5F8546D1239484700E6FD71 /* ColorPixelBitmapContent.h in Headers */,
+				B56CC50D123A6F3600B72347 /* MipmapChain.h in Headers */,
+				B56CC511123A739100B72347 /* MipmapChainCollection.h in Headers */,
+				B56CC527123A79E800B72347 /* Texture2DContent.h in Headers */,
+				B56CC55B123A846C00B72347 /* IServiceProvider.h in Headers */,
+				B56CC5BD123A915700B72347 /* ContentReader.h in Headers */,
+				B56CC5C3123A927500B72347 /* ContentTypeReader.h in Headers */,
+				B56CC5C7123A928A00B72347 /* ContentTypeReaderManager.h in Headers */,
+				B56CC5CB123A92BB00B72347 /* Texture2DContentTypeReader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +657,13 @@
 				B5F853B61239334300E6FD71 /* Vector2.m in Sources */,
 				B5F853CE1239357400E6FD71 /* Quaternion.m in Sources */,
 				B5F8546E1239484700E6FD71 /* ColorPixelBitmapContent.m in Sources */,
+				B56CC50E123A6F3600B72347 /* MipmapChain.m in Sources */,
+				B56CC512123A739100B72347 /* MipmapChainCollection.m in Sources */,
+				B56CC528123A79E800B72347 /* Texture2DContent.m in Sources */,
+				B56CC5BE123A915700B72347 /* ContentReader.m in Sources */,
+				B56CC5C4123A927500B72347 /* ContentTypeReader.m in Sources */,
+				B56CC5C8123A928A00B72347 /* ContentTypeReaderManager.m in Sources */,
+				B56CC5CC123A92BB00B72347 /* Texture2DContentTypeReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
