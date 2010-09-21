@@ -53,6 +53,20 @@
 		B5A1C83112353F9B00DB60CB /* Retronator.Xni.Framework.Content.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A1C83012353F9B00DB60CB /* Retronator.Xni.Framework.Content.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5A1C83412353FBB00DB60CB /* ContentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A1C83212353FBB00DB60CB /* ContentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5A1C83512353FBB00DB60CB /* ContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A1C83312353FBB00DB60CB /* ContentManager.m */; };
+		B5BBC1CF1248D4CB0066F5ED /* IndexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC1CD1248D4CB0066F5ED /* IndexBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5BBC1D01248D4CB0066F5ED /* IndexBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC1CE1248D4CB0066F5ED /* IndexBuffer.m */; };
+		B5BBC1E01248D5640066F5ED /* SamplerStateCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC1DE1248D5640066F5ED /* SamplerStateCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5BBC1E11248D5640066F5ED /* SamplerStateCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC1DF1248D5640066F5ED /* SamplerStateCollection.m */; };
+		B5BBC1F11248D60A0066F5ED /* TextureCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC1EF1248D6090066F5ED /* TextureCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5BBC1F21248D60A0066F5ED /* TextureCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC1F01248D6090066F5ED /* TextureCollection.m */; };
+		B5BBC2AE1248F0C40066F5ED /* VertexDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC2AC1248F0C40066F5ED /* VertexDeclaration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5BBC2AF1248F0C40066F5ED /* VertexDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC2AD1248F0C40066F5ED /* VertexDeclaration.m */; };
+		B5BBC2BC1248F2990066F5ED /* VertexElement.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC2BA1248F2990066F5ED /* VertexElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5BBC2BD1248F2990066F5ED /* VertexElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC2BB1248F2990066F5ED /* VertexElement.m */; };
+		B5BBC2D21248F98D0066F5ED /* VertexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC2D01248F98D0066F5ED /* VertexBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5BBC2D31248F98D0066F5ED /* VertexBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC2D11248F98D0066F5ED /* VertexBuffer.m */; };
+		B5BBC2EC1248FC7A0066F5ED /* VertexBufferBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC2EA1248FC7A0066F5ED /* VertexBufferBinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5BBC2ED1248FC7A0066F5ED /* VertexBufferBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC2EB1248FC7A0066F5ED /* VertexBufferBinding.m */; };
 		B5DDE7EB11FF04E3000DB38B /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7E911FF04E3000DB38B /* Game.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE7EC11FF04E3000DB38B /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE7EA11FF04E3000DB38B /* Game.m */; };
 		B5DDE7EF11FF06BB000DB38B /* GameServiceContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7ED11FF06BB000DB38B /* GameServiceContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -117,6 +131,27 @@
 		B5E78B6F12429B1A00DDD99A /* SamplerState.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B6D12429B1A00DDD99A /* SamplerState.m */; };
 		B5E78B7A12429BBD00DDD99A /* Effect.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B7812429BBD00DDD99A /* Effect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5E78B7B12429BBD00DDD99A /* Effect.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B7912429BBD00DDD99A /* Effect.m */; };
+		B5EA634F12491709001245A4 /* VertexStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA634E12491709001245A4 /* VertexStructs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EA636F124917E2001245A4 /* VertexPositionColor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA636D124917E2001245A4 /* VertexPositionColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EA6370124917E2001245A4 /* VertexPositionColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA636E124917E2001245A4 /* VertexPositionColor.m */; };
+		B5EA637E124921D0001245A4 /* AdaptiveArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA637C124921D0001245A4 /* AdaptiveArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EA637F124921D0001245A4 /* AdaptiveArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA637D124921D0001245A4 /* AdaptiveArray.m */; };
+		B5EA638F1249229D001245A4 /* VertexArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA638D1249229D001245A4 /* VertexArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EA63901249229D001245A4 /* VertexArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA638E1249229D001245A4 /* VertexArray.m */; };
+		B5EA65531249482D001245A4 /* VertexPositionTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA65511249482D001245A4 /* VertexPositionTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EA65541249482D001245A4 /* VertexPositionTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA65521249482D001245A4 /* VertexPositionTexture.m */; };
+		B5EA65601249495C001245A4 /* VertexPositionColorArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA655E1249495C001245A4 /* VertexPositionColorArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EA65611249495C001245A4 /* VertexPositionColorArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA655F1249495C001245A4 /* VertexPositionColorArray.m */; };
+		B5EA657812494AC3001245A4 /* VertexPositionTextureArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA657612494AC3001245A4 /* VertexPositionTextureArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EA657912494AC3001245A4 /* VertexPositionTextureArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA657712494AC3001245A4 /* VertexPositionTextureArray.m */; };
+		B5EA65CF12495297001245A4 /* EffectPass.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA65CD12495297001245A4 /* EffectPass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EA65D012495297001245A4 /* EffectPass.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA65CE12495297001245A4 /* EffectPass.m */; };
+		B5EA65D7124952C9001245A4 /* EffectTechnique.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA65D5124952C9001245A4 /* EffectTechnique.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EA65D8124952C9001245A4 /* EffectTechnique.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA65D6124952C9001245A4 /* EffectTechnique.m */; };
+		B5EA660212495618001245A4 /* BasicEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA660012495618001245A4 /* BasicEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EA660312495618001245A4 /* BasicEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA660112495618001245A4 /* BasicEffect.m */; };
+		B5EA660D124956CE001245A4 /* DirectionalLight.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA660B124956CE001245A4 /* DirectionalLight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EA660E124956CE001245A4 /* DirectionalLight.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA660C124956CE001245A4 /* DirectionalLight.m */; };
 		B5F4E2A912095FAF00B2FC0F /* XNI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */; };
 		B5F8536E1239206700E6FD71 /* PackedVectorStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F85387123929F800E6FD71 /* VectorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F85385123929F800E6FD71 /* VectorConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -186,6 +221,20 @@
 		B5A1C83012353F9B00DB60CB /* Retronator.Xni.Framework.Content.classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.Content.classes.h; sourceTree = "<group>"; };
 		B5A1C83212353FBB00DB60CB /* ContentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentManager.h; sourceTree = "<group>"; };
 		B5A1C83312353FBB00DB60CB /* ContentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentManager.m; sourceTree = "<group>"; };
+		B5BBC1CD1248D4CB0066F5ED /* IndexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexBuffer.h; sourceTree = "<group>"; };
+		B5BBC1CE1248D4CB0066F5ED /* IndexBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexBuffer.m; sourceTree = "<group>"; };
+		B5BBC1DE1248D5640066F5ED /* SamplerStateCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplerStateCollection.h; sourceTree = "<group>"; };
+		B5BBC1DF1248D5640066F5ED /* SamplerStateCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplerStateCollection.m; sourceTree = "<group>"; };
+		B5BBC1EF1248D6090066F5ED /* TextureCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureCollection.h; sourceTree = "<group>"; };
+		B5BBC1F01248D6090066F5ED /* TextureCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureCollection.m; sourceTree = "<group>"; };
+		B5BBC2AC1248F0C40066F5ED /* VertexDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexDeclaration.h; sourceTree = "<group>"; };
+		B5BBC2AD1248F0C40066F5ED /* VertexDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexDeclaration.m; sourceTree = "<group>"; };
+		B5BBC2BA1248F2990066F5ED /* VertexElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexElement.h; sourceTree = "<group>"; };
+		B5BBC2BB1248F2990066F5ED /* VertexElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexElement.m; sourceTree = "<group>"; };
+		B5BBC2D01248F98D0066F5ED /* VertexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexBuffer.h; sourceTree = "<group>"; };
+		B5BBC2D11248F98D0066F5ED /* VertexBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexBuffer.m; sourceTree = "<group>"; };
+		B5BBC2EA1248FC7A0066F5ED /* VertexBufferBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexBufferBinding.h; sourceTree = "<group>"; };
+		B5BBC2EB1248FC7A0066F5ED /* VertexBufferBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexBufferBinding.m; sourceTree = "<group>"; };
 		B5DDE7E911FF04E3000DB38B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		B5DDE7EA11FF04E3000DB38B /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		B5DDE7ED11FF06BB000DB38B /* GameServiceContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameServiceContainer.h; sourceTree = "<group>"; };
@@ -250,6 +299,27 @@
 		B5E78B6D12429B1A00DDD99A /* SamplerState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplerState.m; sourceTree = "<group>"; };
 		B5E78B7812429BBD00DDD99A /* Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Effect.h; sourceTree = "<group>"; };
 		B5E78B7912429BBD00DDD99A /* Effect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Effect.m; sourceTree = "<group>"; };
+		B5EA634E12491709001245A4 /* VertexStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexStructs.h; sourceTree = "<group>"; };
+		B5EA636D124917E2001245A4 /* VertexPositionColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexPositionColor.h; sourceTree = "<group>"; };
+		B5EA636E124917E2001245A4 /* VertexPositionColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexPositionColor.m; sourceTree = "<group>"; };
+		B5EA637C124921D0001245A4 /* AdaptiveArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdaptiveArray.h; sourceTree = "<group>"; };
+		B5EA637D124921D0001245A4 /* AdaptiveArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdaptiveArray.m; sourceTree = "<group>"; };
+		B5EA638D1249229D001245A4 /* VertexArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexArray.h; sourceTree = "<group>"; };
+		B5EA638E1249229D001245A4 /* VertexArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexArray.m; sourceTree = "<group>"; };
+		B5EA65511249482D001245A4 /* VertexPositionTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexPositionTexture.h; sourceTree = "<group>"; };
+		B5EA65521249482D001245A4 /* VertexPositionTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexPositionTexture.m; sourceTree = "<group>"; };
+		B5EA655E1249495C001245A4 /* VertexPositionColorArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexPositionColorArray.h; sourceTree = "<group>"; };
+		B5EA655F1249495C001245A4 /* VertexPositionColorArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexPositionColorArray.m; sourceTree = "<group>"; };
+		B5EA657612494AC3001245A4 /* VertexPositionTextureArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexPositionTextureArray.h; sourceTree = "<group>"; };
+		B5EA657712494AC3001245A4 /* VertexPositionTextureArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexPositionTextureArray.m; sourceTree = "<group>"; };
+		B5EA65CD12495297001245A4 /* EffectPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectPass.h; sourceTree = "<group>"; };
+		B5EA65CE12495297001245A4 /* EffectPass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffectPass.m; sourceTree = "<group>"; };
+		B5EA65D5124952C9001245A4 /* EffectTechnique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectTechnique.h; sourceTree = "<group>"; };
+		B5EA65D6124952C9001245A4 /* EffectTechnique.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffectTechnique.m; sourceTree = "<group>"; };
+		B5EA660012495618001245A4 /* BasicEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicEffect.h; sourceTree = "<group>"; };
+		B5EA660112495618001245A4 /* BasicEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicEffect.m; sourceTree = "<group>"; };
+		B5EA660B124956CE001245A4 /* DirectionalLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionalLight.h; sourceTree = "<group>"; };
+		B5EA660C124956CE001245A4 /* DirectionalLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionalLight.m; sourceTree = "<group>"; };
 		B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNI_Prefix.pch; sourceTree = "<group>"; };
 		B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackedVectorStructs.h; sourceTree = "<group>"; };
 		B5F85385123929F800E6FD71 /* VectorConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorConverter.h; sourceTree = "<group>"; };
@@ -417,6 +487,35 @@
 				B5080702122E4EE900C330E2 /* Texture2D.m */,
 				B5E78B7812429BBD00DDD99A /* Effect.h */,
 				B5E78B7912429BBD00DDD99A /* Effect.m */,
+				B5EA65D5124952C9001245A4 /* EffectTechnique.h */,
+				B5EA65D6124952C9001245A4 /* EffectTechnique.m */,
+				B5EA65CD12495297001245A4 /* EffectPass.h */,
+				B5EA65CE12495297001245A4 /* EffectPass.m */,
+				B5EA660012495618001245A4 /* BasicEffect.h */,
+				B5EA660112495618001245A4 /* BasicEffect.m */,
+				B5EA660B124956CE001245A4 /* DirectionalLight.h */,
+				B5EA660C124956CE001245A4 /* DirectionalLight.m */,
+				B5EA634E12491709001245A4 /* VertexStructs.h */,
+				B5BBC2BA1248F2990066F5ED /* VertexElement.h */,
+				B5BBC2BB1248F2990066F5ED /* VertexElement.m */,
+				B5EA636D124917E2001245A4 /* VertexPositionColor.h */,
+				B5EA636E124917E2001245A4 /* VertexPositionColor.m */,
+				B5EA65511249482D001245A4 /* VertexPositionTexture.h */,
+				B5EA65521249482D001245A4 /* VertexPositionTexture.m */,
+				B5BBC2AC1248F0C40066F5ED /* VertexDeclaration.h */,
+				B5BBC2AD1248F0C40066F5ED /* VertexDeclaration.m */,
+				B5EA638D1249229D001245A4 /* VertexArray.h */,
+				B5EA638E1249229D001245A4 /* VertexArray.m */,
+				B5EA655E1249495C001245A4 /* VertexPositionColorArray.h */,
+				B5EA655F1249495C001245A4 /* VertexPositionColorArray.m */,
+				B5EA657612494AC3001245A4 /* VertexPositionTextureArray.h */,
+				B5EA657712494AC3001245A4 /* VertexPositionTextureArray.m */,
+				B5BBC2D01248F98D0066F5ED /* VertexBuffer.h */,
+				B5BBC2D11248F98D0066F5ED /* VertexBuffer.m */,
+				B5BBC2EA1248FC7A0066F5ED /* VertexBufferBinding.h */,
+				B5BBC2EB1248FC7A0066F5ED /* VertexBufferBinding.m */,
+				B5BBC1CD1248D4CB0066F5ED /* IndexBuffer.h */,
+				B5BBC1CE1248D4CB0066F5ED /* IndexBuffer.m */,
 				B5E78B6012429AEC00DDD99A /* BlendState.h */,
 				B5E78B6112429AEC00DDD99A /* BlendState.m */,
 				B5E78B6412429AF900DDD99A /* DepthStencilState.h */,
@@ -425,6 +524,10 @@
 				B5E78B6912429B0E00DDD99A /* RasterizerState.m */,
 				B5E78B6C12429B1A00DDD99A /* SamplerState.h */,
 				B5E78B6D12429B1A00DDD99A /* SamplerState.m */,
+				B5BBC1DE1248D5640066F5ED /* SamplerStateCollection.h */,
+				B5BBC1DF1248D5640066F5ED /* SamplerStateCollection.m */,
+				B5BBC1EF1248D6090066F5ED /* TextureCollection.h */,
+				B5BBC1F01248D6090066F5ED /* TextureCollection.m */,
 				B5DDE82A11FF10EF000DB38B /* IGraphicsDeviceService.h */,
 				B5DDE85A11FF1326000DB38B /* GraphicsDevice.h */,
 				B5DDE85B11FF1326000DB38B /* GraphicsDevice.m */,
@@ -523,6 +626,8 @@
 				B5DE189611F8884A00BF3275 /* EventArgs.h */,
 				B5DE189711F8884A00BF3275 /* EventArgs.m */,
 				B56CC559123A846C00B72347 /* IServiceProvider.h */,
+				B5EA637C124921D0001245A4 /* AdaptiveArray.h */,
+				B5EA637D124921D0001245A4 /* AdaptiveArray.m */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -613,6 +718,24 @@
 				B5E78B6A12429B0E00DDD99A /* RasterizerState.h in Headers */,
 				B5E78B6E12429B1A00DDD99A /* SamplerState.h in Headers */,
 				B5E78B7A12429BBD00DDD99A /* Effect.h in Headers */,
+				B5BBC1CF1248D4CB0066F5ED /* IndexBuffer.h in Headers */,
+				B5BBC1E01248D5640066F5ED /* SamplerStateCollection.h in Headers */,
+				B5BBC1F11248D60A0066F5ED /* TextureCollection.h in Headers */,
+				B5BBC2AE1248F0C40066F5ED /* VertexDeclaration.h in Headers */,
+				B5BBC2BC1248F2990066F5ED /* VertexElement.h in Headers */,
+				B5BBC2D21248F98D0066F5ED /* VertexBuffer.h in Headers */,
+				B5BBC2EC1248FC7A0066F5ED /* VertexBufferBinding.h in Headers */,
+				B5EA634F12491709001245A4 /* VertexStructs.h in Headers */,
+				B5EA636F124917E2001245A4 /* VertexPositionColor.h in Headers */,
+				B5EA637E124921D0001245A4 /* AdaptiveArray.h in Headers */,
+				B5EA638F1249229D001245A4 /* VertexArray.h in Headers */,
+				B5EA65531249482D001245A4 /* VertexPositionTexture.h in Headers */,
+				B5EA65601249495C001245A4 /* VertexPositionColorArray.h in Headers */,
+				B5EA657812494AC3001245A4 /* VertexPositionTextureArray.h in Headers */,
+				B5EA65CF12495297001245A4 /* EffectPass.h in Headers */,
+				B5EA65D7124952C9001245A4 /* EffectTechnique.h in Headers */,
+				B5EA660212495618001245A4 /* BasicEffect.h in Headers */,
+				B5EA660D124956CE001245A4 /* DirectionalLight.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +835,23 @@
 				B5E78B6B12429B0E00DDD99A /* RasterizerState.m in Sources */,
 				B5E78B6F12429B1A00DDD99A /* SamplerState.m in Sources */,
 				B5E78B7B12429BBD00DDD99A /* Effect.m in Sources */,
+				B5BBC1D01248D4CB0066F5ED /* IndexBuffer.m in Sources */,
+				B5BBC1E11248D5640066F5ED /* SamplerStateCollection.m in Sources */,
+				B5BBC1F21248D60A0066F5ED /* TextureCollection.m in Sources */,
+				B5BBC2AF1248F0C40066F5ED /* VertexDeclaration.m in Sources */,
+				B5BBC2BD1248F2990066F5ED /* VertexElement.m in Sources */,
+				B5BBC2D31248F98D0066F5ED /* VertexBuffer.m in Sources */,
+				B5BBC2ED1248FC7A0066F5ED /* VertexBufferBinding.m in Sources */,
+				B5EA6370124917E2001245A4 /* VertexPositionColor.m in Sources */,
+				B5EA637F124921D0001245A4 /* AdaptiveArray.m in Sources */,
+				B5EA63901249229D001245A4 /* VertexArray.m in Sources */,
+				B5EA65541249482D001245A4 /* VertexPositionTexture.m in Sources */,
+				B5EA65611249495C001245A4 /* VertexPositionColorArray.m in Sources */,
+				B5EA657912494AC3001245A4 /* VertexPositionTextureArray.m in Sources */,
+				B5EA65D012495297001245A4 /* EffectPass.m in Sources */,
+				B5EA65D8124952C9001245A4 /* EffectTechnique.m in Sources */,
+				B5EA660312495618001245A4 /* BasicEffect.m in Sources */,
+				B5EA660E124956CE001245A4 /* DirectionalLight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
