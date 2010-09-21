@@ -25,14 +25,14 @@
 	[bitmap tryGetFormat:&format];
 	
 	Texture2D *texture = [[Texture2D alloc] initWithGraphicsDevice:graphicsDevice 
-															 Width:bitmap.width 
-															Height:bitmap.height 
-														   MipMaps:generateMipmaps 
-															Format:format];
+															 width:bitmap.width 
+															height:bitmap.height 
+														   mipMaps:generateMipmaps 
+															format:format];
 	
 	for (int i=0;i<[mipmaps count];i++) {
 		bitmap = [mipmaps objectAtIndex:i];
-		[texture setDataToLevel:i SourceRectangle:nil From:[bitmap getPixelData]];
+		[texture setDataToLevel:i sourceRectangle:nil from:[bitmap getPixelData]];
 	}
 	
 	return texture;

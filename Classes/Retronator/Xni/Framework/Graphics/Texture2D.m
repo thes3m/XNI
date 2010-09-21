@@ -15,15 +15,15 @@
 
 @implementation Texture2D
 
-- (id) initWithGraphicsDevice:(GraphicsDevice*)theGraphicsDevice Width:(int)theWidth Height:(int)theHeight {
-	return [self initWithGraphicsDevice:theGraphicsDevice Width:theWidth Height:theHeight MipMaps:NO Format:SurfaceFormatColor];
+- (id) initWithGraphicsDevice:(GraphicsDevice*)theGraphicsDevice width:(int)theWidth height:(int)theHeight {
+	return [self initWithGraphicsDevice:theGraphicsDevice width:theWidth height:theHeight mipMaps:NO format:SurfaceFormatColor];
 }
 
 - (id) initWithGraphicsDevice:(GraphicsDevice *)theGraphicsDevice 
-						Width:(int)theWidth 
-					   Height:(int)theHeight 
-					  MipMaps:(BOOL)generateMipMaps 
-					   Format:(SurfaceFormat)theFormat {
+						width:(int)theWidth 
+					   height:(int)theHeight 
+					  mipMaps:(BOOL)generateMipMaps 
+					   format:(SurfaceFormat)theFormat {
 	int theLevelCount = 1;
 	if (generateMipMaps) {
 		int side = MIN(theWidth, theHeight);
@@ -32,7 +32,7 @@
 			theLevelCount++;
 		}
 	}
-	if (self = [super initWithGraphicsDevice:theGraphicsDevice SurfaceFormat:theFormat LevelCount:theLevelCount]) {
+	if (self = [super initWithGraphicsDevice:theGraphicsDevice surfaceFormat:theFormat levelCount:theLevelCount]) {
 		width = theWidth;
 		height = theHeight;
 		textureId = [graphicsDevice createTexture];
@@ -41,14 +41,14 @@
 }
 
 - (Rectangle*) bounds {
-	return [Rectangle rectangleWithX:0 Y:0 Width:width Height:height];
+	return [Rectangle rectangleWithX:0 y:0 width:width height:height];
 }
 
 @synthesize width;
 @synthesize height;
 
 
-+ (Texture2D*) fromData:(NSData*)textureData GraphicsDevice:(GraphicsDevice*)graphicsDevice {
++ (Texture2D*) fromData:(NSData*)textureData graphicsDevice:(GraphicsDevice*)graphicsDevice {
     if (graphicsDevice == nil) {
         [NSException raise:@"ArgumentNullException" format:@"The graphics device cannot be null."];
     }
@@ -71,7 +71,7 @@
     CGContextTranslateCTM(textureContext, 0, 0);
     CGContextDrawImage(textureContext, CGRectMake(0, 0, width, height), image.CGImage);
     
-    Texture2D *texture = [[Texture2D alloc] initWithGraphicsDevice:graphicsDevice Width:(int)width Height:(int)height];
+    Texture2D *texture = [[Texture2D alloc] initWithGraphicsDevice:graphicsDevice width:(int)width height:(int)height];
     [texture setDataFrom:imageData];
     
     CGContextRelease(textureContext);  
@@ -86,7 +86,7 @@
 }
 
 
-- (void) setDataToLevel:(int)level SourceRectangle:(Rectangle*)rect From:(void *)data {
+- (void) setDataToLevel:(int)level sourceRectangle:(Rectangle*)rect from:(void *)data {
 	[graphicsDevice setData:data toTexture2D:self SourceRectangle:rect level:level];
 }
 

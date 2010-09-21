@@ -12,10 +12,10 @@
 
 @implementation PixelBitmapContent
 
-- (id) initWithWidth:(int)theWidth Height:(int)theHeight Format:(SurfaceFormat)theFormat {
-	if (self = [super initWithWidth:theWidth Height:theHeight]) {
+- (id) initWithWidth:(int)theWidth height:(int)theHeight format:(SurfaceFormat)theFormat {
+	if (self = [super initWithWidth:theWidth height:theHeight]) {
 		format = theFormat;
-		BOOL result = [VectorConverter tryGetSizeInBytesOfSurfaceFormat:format SizeInBytes:&bytesPerPixel];
+		BOOL result = [VectorConverter tryGetSizeInBytesOfSurfaceFormat:format sizeInBytes:&bytesPerPixel];
 		if (!result) {
 			[NSException raise:@"ArgumentException" format:@"The provided format is not supported"];
 		}

@@ -2,17 +2,17 @@
 #import <OpenGLES/ES2/gl.h>
 
 typedef enum {
-	BlendZero,
-	BlendOne,
-	BlendSourceColor,
-	BlendInverseSourceColor,
-	BlendSourceAlpha,
-	BlendInverseSourceAlpha,
-	BlendDestinationAlpha,
-	BlendInverseDestinationAlpha,
-	BlendDestinationColor,
-	BlendInverseDestinationColor,
-	BlendSourceAlphaSaturation,
+	BlendZero = GL_ZERO,
+	BlendOne = GL_ONE,
+	BlendSourceColor = GL_SRC_COLOR,
+	BlendInverseSourceColor = GL_ONE_MINUS_SRC_COLOR,
+	BlendSourceAlpha = GL_SRC_ALPHA,
+	BlendInverseSourceAlpha = GL_ONE_MINUS_SRC_ALPHA,
+	BlendDestinationAlpha = GL_DST_ALPHA,
+	BlendInverseDestinationAlpha = GL_ONE_MINUS_DST_ALPHA,
+	BlendDestinationColor = GL_DST_COLOR,
+	BlendInverseDestinationColor = GL_ONE_MINUS_DST_COLOR,
+	BlendSourceAlphaSaturation = GL_SRC_ALPHA_SATURATE,
 	BlendBlendFactor,
 	BlendInverseBlendFactor
 } Blend;

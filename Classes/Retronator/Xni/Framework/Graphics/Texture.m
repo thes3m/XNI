@@ -11,7 +11,7 @@
 
 @implementation Texture
 
-- (id) initWithGraphicsDevice:(GraphicsDevice *)theGraphicsDevice SurfaceFormat:(SurfaceFormat)theFormat LevelCount:(int)theLevelCount {
+- (id) initWithGraphicsDevice:(GraphicsDevice *)theGraphicsDevice surfaceFormat:(SurfaceFormat)theFormat levelCount:(int)theLevelCount {
 	if (self = [super initWithGraphicsDevice:theGraphicsDevice]) {
 		format = theFormat;
 		

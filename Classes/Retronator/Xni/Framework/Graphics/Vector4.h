@@ -14,11 +14,11 @@
     Vector4Struct data;
 }
 
-- (id) initWithX:(float)x Y:(float)y Z:(float)z W:(float)w;
+- (id) initWithX:(float)x y:(float)y z:(float)z w:(float)w;
 - (id) initWithStruct: (Vector4Struct*)vectorData;
 - (id) initWithVector: (Vector4*)vector;
 
-+ (Vector4*) vectorWithX:(float)x Y:(float)y Z:(float)z W:(float)w;
++ (Vector4*) vectorWithX:(float)x y:(float)y z:(float)z w:(float)w;
 + (Vector4*) vectorWithStruct: (Vector4Struct*)vectorData;
 + (Vector4*) vectorWithVector: (Vector4*)vector;
 

@@ -14,16 +14,16 @@
 	uint packedValue;
 }
 
-- (id) initWithRed:(int)red Green:(int)green Blue:(int)blue Alpha:(int)alpha;
-- (id) initWithRed:(int)red Green:(int)green Blue:(int)blue;
-- (id) initWithPercentageRed:(float)red Green:(float)green Blue:(float)blue Alpha:(float)alpha;
-- (id) initWithPercentageRed:(float)red Green:(float)green Blue:(float)blue;
+- (id) initWithRed:(int)red green:(int)green blue:(int)blue alpha:(int)alpha;
+- (id) initWithRed:(int)red green:(int)green blue:(int)blue;
+- (id) initWithPercentageRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
+- (id) initWithPercentageRed:(float)red green:(float)green blue:(float)blue;
 - (id) initWithColor:(Color*)color;
 
-+ (Color*) colorWithRed:(int)red Green:(int)green Blue:(int)blue Alpha:(int)alpha;
-+ (Color*) colorWithRed:(int)red Green:(int)green Blue:(int)blue;
-+ (Color*) colorWithPercentageRed:(float)red Green:(float)green Blue:(float)blue Alpha:(float)alpha;
-+ (Color*) colorWithPercentageRed:(float)red Green:(float)green Blue:(float)blue;
++ (Color*) colorWithRed:(int)red green:(int)green blue:(int)blue alpha:(int)alpha;
++ (Color*) colorWithRed:(int)red green:(int)green blue:(int)blue;
++ (Color*) colorWithPercentageRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
++ (Color*) colorWithPercentageRed:(float)red green:(float)green blue:(float)blue;
 + (Color*) colorWithColor:(Color*)color;
 
 @property (nonatomic) Byte r;

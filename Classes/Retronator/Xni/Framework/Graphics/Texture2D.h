@@ -15,24 +15,24 @@
 	int width;
 }
 
-- (id) initWithGraphicsDevice:(GraphicsDevice*)theGraphicsDevice Width:(int)theWidth Height:(int)theHeight;
-- (id) initWithGraphicsDevice:(GraphicsDevice*)theGraphicsDevice Width:(int)theWidth Height:(int)theHeight MipMaps:(BOOL)generateMipMaps Format:(SurfaceFormat)theFormat;
+- (id) initWithGraphicsDevice:(GraphicsDevice*)theGraphicsDevice width:(int)theWidth height:(int)theHeight;
+- (id) initWithGraphicsDevice:(GraphicsDevice*)theGraphicsDevice width:(int)theWidth height:(int)theHeight mipMaps:(BOOL)generateMipMaps format:(SurfaceFormat)theFormat;
 
 @property (nonatomic, readonly) Rectangle *bounds;
 @property (nonatomic, readonly) int height;
 @property (nonatomic, readonly) int width;
 
-+ (Texture2D*) fromData:(NSData*)textureData GraphicsDevice:(GraphicsDevice*)graphicsDevice;
-//+ (Texture2D*) fromData:(NSData*)textureData GraphicsDevice:(GraphicsDevice*)graphicsDevice Width:(int)width Height:(int)height Zoom:(BOOL)zoom;
++ (Texture2D*) fromData:(NSData*)textureData graphicsDevice:(GraphicsDevice*)graphicsDevice;
+//+ (Texture2D*) fromData:(NSData*)textureData graphicsDevice:(GraphicsDevice*)graphicsDevice width:(int)width height:(int)height zoom:(BOOL)zoom;
 
 // - (void) getDataTo:(void *)data;
-// - (void) getDataTo:(void *)data StartIndex:(int)startIndex ElementCount:(int)elementCount;
-// - (void) getDataFromLevel:(int)level SourceRectangle:(Rectangle*)rect To:(void *)data StartIndex:(int)startIndex ElementCount:(int)elementCount;
+// - (void) getDataTo:(void *)data startIndex:(int)startIndex elementCount:(int)elementCount;
+// - (void) getDataFromLevel:(int)level sourceRectangle:(Rectangle*)rect to:(void *)data StartIndex:(int)startIndex elementCount:(int)elementCount;
 
 - (void) setDataFrom:(void*)data;
-- (void) setDataToLevel:(int)level SourceRectangle:(Rectangle*)rect From:(void *)data;
+- (void) setDataToLevel:(int)level sourceRectangle:(Rectangle*)rect from:(void *)data;
 
-// - (void) saveAsJpeg:(NSData*)textureData Width:(int)width Height:(int)height;
-// - (void) saveAsPng:(NSData*)textureData Width:(int)width Height:(int)height;
+// - (void) saveAsJpeg:(NSData*)textureData width:(int)width height:(int)height;
+// - (void) saveAsPng:(NSData*)textureData width:(int)width height:(int)height;
 
 @end

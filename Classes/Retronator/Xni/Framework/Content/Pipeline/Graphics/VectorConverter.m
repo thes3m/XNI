@@ -13,7 +13,7 @@
 
 @implementation VectorConverter
 
-+ (BOOL) tryGetSizeInBytesOfSurfaceFormat:(SurfaceFormat)surfaceFormat SizeInBytes:(int*)sizeInBytes {
++ (BOOL) tryGetSizeInBytesOfSurfaceFormat:(SurfaceFormat)surfaceFormat sizeInBytes:(int*)sizeInBytes {
 	switch (surfaceFormat) {
 		case SurfaceFormatColor:
 			*sizeInBytes = sizeof(Byte4);
@@ -37,7 +37,7 @@
 	return NO;	
 }
 
-+ (BOOL) tryGetVectorTypeOfSurfaceFormat:(SurfaceFormat)surfaceFormat VectorType:(Class*)type {
++ (BOOL) tryGetVectorTypeOfSurfaceFormat:(SurfaceFormat)surfaceFormat vectorType:(Class*)type {
 	switch (surfaceFormat) {
 		case SurfaceFormatColor:
 			*type = [Vector4 class];

@@ -15,11 +15,11 @@
 	RectangleStruct data;
 }
 
-- (id) initWithX:(int)x Y:(int)y Width:(int)width Height:(int)height;
+- (id) initWithX:(int)x y:(int)y width:(int)width height:(int)height;
 - (id) initWithStruct:(RectangleStruct*) rectangleStruct;
 - (id) initWithRectangle:(Rectangle*) rectangle;
 
-+ (Rectangle*) rectangleWithX:(int)x Y:(int)y Width:(int)width Height:(int)height;
++ (Rectangle*) rectangleWithX:(int)x y:(int)y width:(int)width height:(int)height;
 + (Rectangle*) rectangleWithStruct:(RectangleStruct*) rectangleStruct;
 + (Rectangle*) rectangleWithRectangle:(Rectangle*) rectangle;
 + (Rectangle*) rectangleWithCGRect:(CGRect) cgRect;

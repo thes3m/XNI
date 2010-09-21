@@ -13,7 +13,7 @@
 
 // CONSTRUCTORS
 
-- (id) initWithX:(int)x Y:(int)y Width:(int)width Height:(int)height {
+- (id) initWithX:(int)x y:(int)y width:(int)width height:(int)height {
 	if (self = [super init]) {
 		data = RectangleMake(x, y, width, height);
 	}
@@ -31,8 +31,8 @@
 	return [self initWithStruct:rectangle.data];
 }
 
-+ (Rectangle*) rectangleWithX:(int)x Y:(int)y Width:(int)width Height:(int)height {
-	return [[[Rectangle alloc] initWithX:x Y:y Width:width Height:height] autorelease];
++ (Rectangle*) rectangleWithX:(int)x y:(int)y width:(int)width height:(int)height {
+	return [[[Rectangle alloc] initWithX:x y:y width:width height:height] autorelease];
 }
 
 + (Rectangle*) rectangleWithStruct:(RectangleStruct*) rectangleStruct {
@@ -44,8 +44,8 @@
 }
 
 + (Rectangle*) rectangleWithCGRect:(CGRect) cgRect {
-	return [Rectangle rectangleWithX:cgRect.origin.x Y:cgRect.origin.y
-							   Width:cgRect.size.width Height:cgRect.size.height];
+	return [Rectangle rectangleWithX:cgRect.origin.x y:cgRect.origin.y
+							   width:cgRect.size.width height:cgRect.size.height];
 }
 
 // PROPERTIES
@@ -84,6 +84,6 @@
 
 // CONSTANTS
 
-+ (Rectangle*) empty {return [Rectangle rectangleWithX:0 Y:0 Width:0 Height:0];}
++ (Rectangle*) empty {return [Rectangle rectangleWithX:0 y:0 width:0 height:0];}
 
 @end

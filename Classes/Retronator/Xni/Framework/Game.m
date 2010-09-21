@@ -32,7 +32,7 @@
         targetElapsedTime = 1.0 / 60.0;
         inactiveSleepTime = 1.0 / 5.0;
 		maximumElapsedTime = 1.0 / 2.0;
-        
+		
         // Get the game host.
         gameHost = (GameHost*)[UIApplication sharedApplication];
     }

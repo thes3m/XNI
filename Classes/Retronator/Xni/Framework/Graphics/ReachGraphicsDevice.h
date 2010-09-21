@@ -12,7 +12,6 @@
 
 
 @interface ReachGraphicsDevice : GraphicsDevice {
-
 }
 
 @end

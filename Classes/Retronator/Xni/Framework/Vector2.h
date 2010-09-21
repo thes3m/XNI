@@ -14,11 +14,11 @@
     Vector2Struct data;
 }
 
-- (id) initWithX:(float)x Y:(float)y;
+- (id) initWithX:(float)x y:(float)y;
 - (id) initWithStruct: (Vector2Struct*)vectorData;
 - (id) initWithVector: (Vector2*)vector;
 
-+ (Vector2*) vectorWithX:(float)x Y:(float)y;
++ (Vector2*) vectorWithX:(float)x y:(float)y;
 + (Vector2*) vectorWithStruct: (Vector2Struct*)vectorData;
 + (Vector2*) vectorWithVector: (Vector2*)vector;
 

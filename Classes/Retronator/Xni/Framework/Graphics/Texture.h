@@ -16,7 +16,7 @@
 	int levelCount;
 }
 
-- (id) initWithGraphicsDevice:(GraphicsDevice *)theGraphicsDevice SurfaceFormat:(SurfaceFormat)theFormat LevelCount:(int)theLevelCount;
+- (id) initWithGraphicsDevice:(GraphicsDevice *)theGraphicsDevice surfaceFormat:(SurfaceFormat)theFormat levelCount:(int)theLevelCount;
 
 @property (nonatomic, readonly) uint textureId;
 @property (nonatomic) SurfaceFormat format;

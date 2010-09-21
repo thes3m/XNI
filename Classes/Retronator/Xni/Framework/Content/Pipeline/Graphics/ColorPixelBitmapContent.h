@@ -18,7 +18,7 @@
 - (Byte4*) getPixelData;
 - (void) setPixelData:(Byte4*)sourceData;
 
-- (Byte4) getPixelAtX:(int)x Y:(int)y;
-- (void) setPixelAtX:(int)x Y:(int)y Value:(Byte4)value;
+- (Byte4) getPixelAtX:(int)x y:(int)y;
+- (void) setPixelAtX:(int)x y:(int)y value:(Byte4)value;
 
 @end

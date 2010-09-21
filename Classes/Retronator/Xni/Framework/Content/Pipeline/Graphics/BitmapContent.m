@@ -11,7 +11,7 @@
 
 @implementation BitmapContent
 
-- (id) initWithWidth:(int)theWidth Height:(int)theHeight {
+- (id) initWithWidth:(int)theWidth height:(int)theHeight {
 	if (self = [super init]) {
 		width = theWidth;
 		height = theHeight;

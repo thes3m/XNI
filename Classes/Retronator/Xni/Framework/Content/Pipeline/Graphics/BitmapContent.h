@@ -17,7 +17,7 @@
 	int height;
 }
 
-- (id) initWithWidth:(int)theWidth Height:(int)theHeight;
+- (id) initWithWidth:(int)theWidth height:(int)theHeight;
 
 @property (nonatomic) int width;
 @property (nonatomic) int height;

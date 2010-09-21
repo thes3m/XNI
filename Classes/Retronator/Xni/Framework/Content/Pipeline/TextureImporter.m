@@ -39,7 +39,7 @@
 	CGContextRelease(textureContext); 
 	
 	// Create pixel bitmap content.
-	PixelBitmapContent *bitmap = [[PixelBitmapContent alloc] initWithWidth:(int)width Height:(int)height Format:SurfaceFormatColor];
+	PixelBitmapContent *bitmap = [[PixelBitmapContent alloc] initWithWidth:(int)width height:(int)height format:SurfaceFormatColor];
 	[bitmap setPixelData:imageData];
 	
 	// This bitmap is the only one in the mipmap chain.

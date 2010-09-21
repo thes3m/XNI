@@ -7,6 +7,7 @@
 //
 
 #import "GraphicsDevice.h"
+#import <OpenGLES/ES1/gl.h>
 
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Graphics.h"
@@ -46,15 +47,82 @@
         glGenRenderbuffersOES(1, &depthRenderbuffer);
         glBindRenderbufferOES(GL_RENDERBUFFER_OES, depthRenderbuffer);
         glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_DEPTH_ATTACHMENT_OES, GL_RENDERBUFFER_OES, depthRenderbuffer);
-        
+		
         // Do the initial reset.
         [self reset];
+		
+		// Initialize defaults.
+		self.blendFactor = [Color white];
+		self.blendState = [BlendState opaque];
+		self.depthStencilState = [DepthStencilState defaultDepth];
+		graphicsDeviceStatus = GraphicsDeviceStatusNormal;
+		self.indices = nil;
+		self.rasterizerState = [RasterizerState cullClockwise];
+		self.referenceStencil = 0;
+		samplerStates = [[SamplerStateCollection alloc] init];
+		textures = [[TextureCollection alloc] init];
+		[samplerStates insertObject:[SamplerState linearClamp] atIndex:0];
 	}
 	
 	return self;
 }
 
+#define FLAG_BLOCK(variable, parameter) if (variable) { glEnable(parameter); } else { glDisable(parameter);}
+
+@synthesize blendFactor;
+@synthesize blendState;
+- (void) setBlendState:(BlendState*)value {
+	if (value != blendState) {
+		[value retain];
+		[blendState release];
+		blendState = value;
+		
+		// Apply the blend state.
+		glBlendFunc(blendState.colorSourceBlend, blendState.colorDestinationBlend);
+	}
+}
+
+@synthesize depthStencilState;
+- (void) depthStencilState:(DepthStencilState*)value {
+	if (value != depthStencilState) {
+		[value retain];
+		[depthStencilState release];
+		depthStencilState = value;
+	}
+}
+
+@synthesize graphicsDeviceStatus;
 @synthesize graphicsProfile;
+@synthesize indices;
+@synthesize rasterizerState;
+- (void) setRasterizerState:(RasterizerState*)value {
+	if (value != rasterizerState) {
+		[value retain];
+		[rasterizerState release];
+		rasterizerState = value;
+	}
+}
+
+@synthesize referenceStencil;
+@synthesize samplerStates;
+@synthesize textures;
+
++ (int) getNumberOfVerticesForPrimitiveType:(PrimitiveType)primitiveType primitiveCount:(int)primitiveCount {
+    switch (primitiveType) {
+        case PrimitiveTypeLineStrip:
+			return primitiveCount + 1;
+        case PrimitiveTypeLineList:
+            return 2 * primitiveCount;
+        case PrimitiveTypeTriangleStrip:
+			return primitiveCount + 2;
+        case PrimitiveTypeTriangleList:
+            return 3 * primitiveCount;
+        default:
+            [NSException raise:@"NotImplementedException" 
+                        format:@"The primitive type %i is not yet implemented.", primitiveType];
+            return 0;
+    }
+}
 
 // Presentation
 - (void) reset {
@@ -97,6 +165,36 @@
     glClear(options);    
 }
 
+// Vertex buffers
+- (NSArray*) getVertexBuffers {
+	return [[NSArray arrayWithArray:vertices] autorelease];
+}
+
+- (void) setVertexBuffer:(VertexBuffer*)vertexBuffer {
+	VertexBufferBinding *binding = [[VertexBufferBinding alloc] initWithVertexBuffer:vertexBuffer];
+	[vertices insertObject:binding atIndex:0];
+	[binding release];
+}
+
+- (void) setVertexBuffer:(VertexBuffer*)vertexBuffer vertexOffset:(int)vertexOffset {
+	VertexBufferBinding *binding = [[VertexBufferBinding alloc] initWithVertexBuffer:vertexBuffer vertexOffset:vertexOffset];
+	[vertices insertObject:binding atIndex:0];
+	[binding release];
+}
+
+- (void) setVertexBuffers:(VertexBufferBinding*)vertexBuffer, ... {
+    if (vertexBuffer != nil) {
+		va_list args;
+		va_start(args, vertexBuffer);
+		VertexBufferBinding *binding = vertexBuffer;
+		for (int i = 0; binding; i++) {
+			[vertices insertObject:binding atIndex:i];
+			binding = va_arg(args, VertexBufferBinding*);
+		}
+		va_end(args);
+    }
+}
+
 // Low level methods
 - (uint) createTexture {
     GLuint textureId;
@@ -129,6 +227,23 @@
 
 - (EAGLContext*) createContext { return nil; }
 
+- (void) drawPrimitivesOfType:(PrimitiveType)primitiveType startingAt:(int)startVertex count:(int)primitiveCount {}
+
+- (void) drawIndexedPrimitivesOfType:(PrimitiveType)primitiveType offsetVerticesBy:(int)baseVertex 
+                          startingAt:(int)startIndex count:(int)primitiveCount {}
+
+- (void) drawUserPrimitivesOfType:(PrimitiveType)primitiveType vertices:(VertexArray*)vertexData
+                       startingAt:(int)vertexOffset count:(int)primitiveCount {}
+
+- (void) drawUserPrimitivesOfType:(PrimitiveType)primitiveType
+						 vertices:(void*)vertexData ofType:(VertexDeclaration*) vertexDeclaration
+                       startingAt:(int)vertexOffset count:(int)primitiveCount {}
+
+- (void) drawUserIndexedPrimitivesOfType:(PrimitiveType)primitiveType 
+								vertices:(void*)vertexData ofType:(VertexDeclaration*) vertexDeclaration 
+                        offsetVerticesBy:(int)vertexOffset indices:(void*)indexData dataType:(DataType)dataType
+                              startingAt:(int)indexOffset count:(int)primitiveCount {}
+
 // Private methods
 
 + (void) getFormat:(GLenum*)format AndType:(GLenum*)type ForSurfaceFormat:(SurfaceFormat)surfaceFormat {
@@ -157,6 +272,17 @@
 			break;
 	}
 }
+
+- (void) dealloc
+{
+	[blendState release];
+	[depthStencilState release];
+	[rasterizerState release];
+	[samplerStates release];
+	[textures release];
+	[super dealloc];
+}
+
 
 
 @end

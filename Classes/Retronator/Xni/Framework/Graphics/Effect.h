@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#import "GraphicsResource.h"
 
-@interface Effect : NSObject {
-
+@interface Effect : GraphicsResource {
+    EffectTechnique *currentTechnique;
+    NSDictionary *techniques;
 }
+
+@property (nonatomic, retain) EffectTechnique *currentTechnique;
+@property (nonatomic, readonly) NSDictionary *techniques;
 
 @end

@@ -16,7 +16,7 @@
 	int bytesPerPixel;
 }
 
-- (id) initWithWidth:(int)theWidth Height:(int)theHeight Format:(SurfaceFormat)theFormat;
+- (id) initWithWidth:(int)theWidth height:(int)theHeight format:(SurfaceFormat)theFormat;
 
 - (Byte*) getPixelAtX:(int)x Y:(int)y;
 - (void) setPixelAtX:(int)x Y:(int)y Value:(Byte*)value;

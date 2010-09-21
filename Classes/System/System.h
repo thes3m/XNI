@@ -6,3 +6,6 @@
 #import "Delegate.h"
 #import "Event.h"
 #import "EventArgs.h"
+
+// Arrays
+#import "AdaptiveArray.h"
