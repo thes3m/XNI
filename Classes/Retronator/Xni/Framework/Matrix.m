@@ -31,21 +31,29 @@
     return [[[Matrix alloc] initWithMatrix:matrix] autorelease];
 }
 
-+ (Matrix*) translation:(Vector3*)position {
++ (Matrix*) createTranslation:(Vector3*)position {
     Matrix *matrix = [Matrix identity];
     matrix.translation = position;
     return matrix;
 }
 
-+ (Matrix*) scale:(Vector3 *)scale {
++ (Matrix*) createScaleUniform:(float)scale {
     Matrix *matrix = [Matrix identity];
-    matrix.data->m11= scale.x;
-    matrix.data->m22= scale.y;
-    matrix.data->m33= scale.z;
+    matrix.data->m11 = scale;
+    matrix.data->m22 = scale;
+    matrix.data->m33 = scale;
     return matrix;    
 }
 
-+ (Matrix*) rotationAround:(Vector3 *)axis for:(float)angle {
++ (Matrix*) createScale:(Vector3 *)scales {
+    Matrix *matrix = [Matrix identity];
+    matrix.data->m11 = scales.x;
+    matrix.data->m22 = scales.y;
+    matrix.data->m33 = scales.z;
+    return matrix;    
+}
+
++ (Matrix*) createFromAxis:(Vector3 *)axis angle:(float)angle {
     Vector3 *normalizedAxis = [[Vector3 vectorWithVector:axis] normalize];
     
     float c = cosf(angle);
@@ -68,7 +76,7 @@
     return matrix;
 }
 
-+ (Matrix*) rotationWithQuaternion:(Quaternion *)quaternion {
++ (Matrix*) createFromQuaternion:(Quaternion *)quaternion {
     Quaternion *normalizedQuaternion = [[Quaternion quaternionWithQuaternion:quaternion] normalize];
     
     float x = normalizedQuaternion.x;
@@ -90,7 +98,7 @@
     return matrix;
 }
 
-+ (Matrix*) lookAt:(Vector3*)target from:(Vector3*)position up:(Vector3*)up {
++ (Matrix*) createLookAtFrom:(Vector3*)position to:(Vector3*)target up:(Vector3*)up {
     Vector3 *z = [[Vector3 subtract:position by:target] normalize];
     Vector3 *x = [[Vector3 crossProductOf:up with:z] normalize];
     Vector3 *y = [Vector3 crossProductOf:z with:x];
@@ -115,7 +123,7 @@
     return matrix;
 }
 
-+ (Matrix*) perspectiveWithWidth:(float)width height:(float)height nearPlane:(float)nearPlane farPlane:(float)farPlane {
++ (Matrix*) createPerspectiveWithWidth:(float)width height:(float)height nearPlane:(float)nearPlane farPlane:(float)farPlane {
     Matrix *matrix = [Matrix zero];
     matrix.data->m11 = (2 * nearPlane) / width;
     matrix.data->m22 = (2 * nearPlane) / height;
@@ -125,13 +133,13 @@
     return matrix;    
 }
 
-+ (Matrix*) perspectiveWithFieldOfView:(float)fieldOfView aspectRatio:(float)aspectRatio nearPlane:(float)nearPlane farPlane:(float)farPlane{
++ (Matrix*) createPerspectiveFieldOfView:(float)fieldOfView aspectRatio:(float)aspectRatio nearPlane:(float)nearPlane farPlane:(float)farPlane{
     float width = 2 * nearPlane * tanf(fieldOfView * 0.5f);
     float height = width / aspectRatio;
-    return [Matrix perspectiveWithWidth:width height:height nearPlane:nearPlane farPlane:farPlane];
+    return [Matrix createPerspectiveWithWidth:width height:height nearPlane:nearPlane farPlane:farPlane];
 }
 
-+ (Matrix*) worldAt:(Vector3 *)position forward:(Vector3 *)forward up:(Vector3 *)up {
++ (Matrix*) createWorldAtPosition:(Vector3 *)position forward:(Vector3 *)forward up:(Vector3 *)up {
     Vector3 *z = [[Vector3 negate:forward] normalize];
     Vector3 *x = [[Vector3 crossProductOf:up with:z] normalize];
     Vector3 *y = [Vector3 crossProductOf:z with:x];
@@ -174,32 +182,108 @@
 
 // METHODS
 
-- (Matrix*) transpose {
-    MatrixTranspose(self.data);
++ (Matrix*) negate:(Matrix*)value {
+	Matrix *result = [Matrix matrixWithMatrix:value];
+	[result negate];
+	return result;
+}
+
++ (Matrix*) transpose:(Matrix*)value {
+	MatrixStruct resultData = *value.data;
+	MatrixTranspose(&resultData);
+    return [Matrix matrixWithStruct:&resultData];
+}
+
++ (Matrix*) invert:(Matrix*)value {
+	MatrixStruct resultData = *value.data;
+	MatrixInvert(&resultData);
+    return [Matrix matrixWithStruct:&resultData];
+}
+
++ (Matrix*) add:(Matrix*)value1 to:(Matrix*)value2 {
+    MatrixStruct resultData;
+    MatrixAdd(value1.data, value2.data, &resultData);
+    return [Matrix matrixWithStruct:&resultData];
+}
+
++ (Matrix*) subtract:(Matrix*)value1 by:(Matrix*)value2{
+    MatrixStruct resultData;
+    MatrixSubtract(value1.data, value2.data, &resultData);
+    return [Matrix matrixWithStruct:&resultData];
+}
+
++ (Matrix*) multiply:(Matrix*)value1 byScalar:(float)scaleFactor{
+    MatrixStruct resultData;
+    MatrixMultiplyScalar(value1.data, scaleFactor, &resultData);
+    return [Matrix matrixWithStruct:&resultData];
+}
+
++ (Matrix*) multiply:(Matrix*)value1 by:(Matrix*)value2{
+    MatrixStruct resultData;
+    MatrixMultiply(value1.data, value2.data, &resultData);
+    return [Matrix matrixWithStruct:&resultData];
+}
+
++ (Matrix*) divide:(Matrix*)value1 byScalar:(float)divider{
+    MatrixStruct resultData;
+    MatrixDivideScalar(value1.data, divider, &resultData);
+    return [Matrix matrixWithStruct:&resultData];
+}
+
++ (Matrix*) divide:(Matrix*)value1 by:(Matrix*)value2{
+    MatrixStruct resultData;
+    MatrixDivide(value1.data, value2.data, &resultData);
+    return [Matrix matrixWithStruct:&resultData];
+}
+
+- (float) determinant {
+	return MatrixDeterminant(self.data);
+}
+
+- (Matrix*) negate {
+	MatrixNegate(self.data);
     return self;
 }
 
-- (Matrix*) inverse {
-    MatrixInverse(self.data);
+- (Matrix*) add:(Matrix*)value {
+	MatrixAdd(self.data, value.data, self.data);
     return self;
 }
 
-- (Matrix*) multiplyWith:(Matrix*)value {
-    MatrixStruct result;
-    MatrixMultiply(self.data, value.data, &result);
-    data = result;
+- (Matrix*) subtract:(Matrix*)value {
+	MatrixSubtract(self.data, value.data, self.data);
+    return self;
+}
+
+- (Matrix*) multiplyByScalar:(float)scaleFactor {
+	MatrixMultiplyScalar(self.data, scaleFactor, self.data);
+    return self;
+}
+
+- (Matrix*) multiplyBy:(Matrix*)value {
+	MatrixMultiply(self.data, value.data, self.data);
+    return self;
+}
+
+- (Matrix*) divideByScalar:(float)divider {
+	MatrixDivideScalar(self.data, divider, self.data);
+    return self;
+}
+
+- (Matrix*) divideBy:(Matrix*)value {
+	MatrixDivide(self.data, value.data, self.data);
     return self;
 }
 
 // CONSTANTS
 
 + (id) zero {
-    MatrixStruct MatrixStruct = MatrixMake(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-    return [Matrix matrixWithStruct:&MatrixStruct];
+	MatrixStruct MatrixStruct = MatrixMake(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	return [Matrix matrixWithStruct:&MatrixStruct];
 }
 + (id) identity {
-    MatrixStruct MatrixStruct = MatrixMake(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    return [Matrix matrixWithStruct:&MatrixStruct];
+	MatrixStruct MatrixStruct = MatrixMake(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+	return [Matrix matrixWithStruct:&MatrixStruct];
 }
 
 @end

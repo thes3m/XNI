@@ -42,7 +42,7 @@ static inline void Vector2Add(Vector2Struct *value1, Vector2Struct *value2, Vect
     Vector2Set(result, value1->x + value2->x, value1->y + value2->y);
 }
 
-static inline void Vector2Substract(Vector2Struct *value1, Vector2Struct *value2, Vector2Struct *result) {
+static inline void Vector2Subtract(Vector2Struct *value1, Vector2Struct *value2, Vector2Struct *result) {
     Vector2Set(result, value1->x - value2->x, value1->y - value2->y);
 }
 

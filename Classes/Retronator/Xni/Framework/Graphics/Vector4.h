@@ -26,21 +26,17 @@
 @property (nonatomic) float y;
 @property (nonatomic) float z;
 @property (nonatomic) float w;
-
 @property (nonatomic, readonly) Vector4Struct *data;
 
 + (Vector4*) normalize:(Vector4*)value;
 + (Vector4*) negate:(Vector4*)value;
-
 + (Vector4*) add:(Vector4*)value1 to:(Vector4*)value2;
 + (Vector4*) subtract:(Vector4*)value1 by:(Vector4*)value2;
 + (Vector4*) multiply:(Vector4*)value by:(float)scalar;
-
 + (Vector4*) transform:(Vector4*)value with:(Matrix*)matrix;
 
 - (float) length;
 - (float) lengthSquared;
-
 - (Vector4*) normalize;
 - (Vector4*) negate;
 - (Vector4*) add:(Vector4*)value;

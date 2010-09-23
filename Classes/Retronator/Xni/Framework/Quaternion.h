@@ -19,7 +19,7 @@
 - (id) initWithStruct: (Vector4Struct*)quaternionData;
 - (id) initWithQuaternion: (Quaternion*)quaternion;
 
-+ (Quaternion*) quaternionWithX:(float)x Y:(float)y Z:(float)z W:(float)w;
++ (Quaternion*) quaternionWithX:(float)x y:(float)y z:(float)z w:(float)w;
 + (Quaternion*) quaternionWithVectorPart:(Vector3*)vector scalarPart:(float)scalar;
 + (Quaternion*) quaternionWithStruct: (Vector4Struct*)quaternionData;
 + (Quaternion*) quaternionWithQuaternion: (Quaternion*)quaternion;
@@ -39,8 +39,8 @@
 + (Quaternion*) inverse:(Quaternion*)value;
 + (Quaternion*) add:(Quaternion*)value1 to:(Quaternion*)value2;
 + (Quaternion*) subtract:(Quaternion*)value1 by:(Quaternion*)value2;
-+ (Quaternion*) multiply:(Quaternion*)value by:(float)scalar;
-+ (Quaternion*) multiply:(Quaternion*)value1 with:(Quaternion*)value2;
++ (Quaternion*) multiply:(Quaternion*)value1 byScalar:(float)scaleFactor;
++ (Quaternion*) multiply:(Quaternion*)value1 by:(Quaternion*)value2;
 
 - (float) length;
 - (float) lengthSquared;
@@ -50,8 +50,8 @@
 - (Quaternion*) inverse;
 - (Quaternion*) add:(Quaternion*)value;
 - (Quaternion*) subtract:(Quaternion*)value;
-- (Quaternion*) scaleBy:(float)scalar;
-- (Quaternion*) multiplyWith:(Quaternion*)value;
+- (Quaternion*) multiplyByScalar:(float)scaleFactor;
+- (Quaternion*) multiplyBy:(Quaternion*)value;
 
 // Constants
 + (Quaternion*) identity;

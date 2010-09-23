@@ -20,14 +20,15 @@
 + (Matrix*) matrixWithStruct: (MatrixStruct*)matrixData;
 + (Matrix*) matrixWithMatrix: (Matrix*)matrix;
 
-+ (Matrix*) translation:(Vector3*)position;
-+ (Matrix*) scale:(Vector3*)scale;
-+ (Matrix*) rotationAround:(Vector3*)axis for:(float)angle;
-+ (Matrix*) rotationWithQuaternion:(Quaternion*)quaternion;
-+ (Matrix*) lookAt:(Vector3*)target from:(Vector3*)position up:(Vector3*)up;
-+ (Matrix*) perspectiveWithWidth:(float)width height:(float)height nearPlane:(float)nearPlane farPlane:(float)farPlane;
-+ (Matrix*) perspectiveWithFieldOfView:(float)fieldOfView aspectRatio:(float)aspectRatio nearPlane:(float)nearPlane farPlane:(float)farPlane;
-+ (Matrix*) worldAt:(Vector3*)position forward:(Vector3*)forward up:(Vector3*)up;
++ (Matrix*) createTranslation:(Vector3*)position;
++ (Matrix*) createScaleUniform:(float)scale;
++ (Matrix*) createScale:(Vector3*)scales;
++ (Matrix*) createFromAxis:(Vector3*)axis angle:(float)angle;
++ (Matrix*) createFromQuaternion:(Quaternion*)quaternion;
++ (Matrix*) createLookAtFrom:(Vector3*)position to:(Vector3*)target up:(Vector3*)up;
++ (Matrix*) createPerspectiveWithWidth:(float)width height:(float)height nearPlane:(float)nearPlane farPlane:(float)farPlane;
++ (Matrix*) createPerspectiveFieldOfView:(float)fieldOfView aspectRatio:(float)aspectRatio nearPlane:(float)nearPlane farPlane:(float)farPlane;
++ (Matrix*) createWorldAtPosition:(Vector3*)position forward:(Vector3*)forward up:(Vector3*)up;
 
 @property (nonatomic, readonly) MatrixStruct *data;
 @property (nonatomic, assign) Vector3 *left;
@@ -38,9 +39,25 @@
 @property (nonatomic, assign) Vector3 *backward;
 @property (nonatomic, assign) Vector3 *translation;
 
-- (Matrix*) transpose;
-- (Matrix*) inverse;
-- (Matrix*) multiplyWith:(Matrix*)value;
++ (Matrix*) negate:(Matrix*)value;
++ (Matrix*) transpose:(Matrix*)value;
++ (Matrix*) invert:(Matrix*)value;
+
++ (Matrix*) add:(Matrix*)value1 to:(Matrix*)value2;
++ (Matrix*) subtract:(Matrix*)value1 by:(Matrix*)value2;
++ (Matrix*) multiply:(Matrix*)value1 byScalar:(float)scaleFactor;
++ (Matrix*) multiply:(Matrix*)value1 by:(Matrix*)value2;
++ (Matrix*) divide:(Matrix*)value1 byScalar:(float)divider;
++ (Matrix*) divide:(Matrix*)value1 by:(Matrix*)value2;
+
+- (float) determinant;
+- (Matrix*) negate;
+- (Matrix*) add:(Matrix*)value;
+- (Matrix*) subtract:(Matrix*)value;
+- (Matrix*) multiplyByScalar:(float)scaleFactor;
+- (Matrix*) multiplyBy:(Matrix*)value;
+- (Matrix*) divideByScalar:(float)divider;
+- (Matrix*) divideBy:(Matrix*)value;
 
 // Constants
 + (id) zero;
