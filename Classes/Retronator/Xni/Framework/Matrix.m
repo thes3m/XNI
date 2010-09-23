@@ -123,20 +123,72 @@
     return matrix;
 }
 
-+ (Matrix*) createPerspectiveWithWidth:(float)width height:(float)height nearPlane:(float)nearPlane farPlane:(float)farPlane {
++ (Matrix*) createOrthographicWithWidth:(float)width height:(float)height 
+							 zNearPlane:(float)zNearPlane zFarPlane:(float)zFarPlane {
+	
     Matrix *matrix = [Matrix zero];
-    matrix.data->m11 = (2 * nearPlane) / width;
-    matrix.data->m22 = (2 * nearPlane) / height;
-    matrix.data->m33 = farPlane / (nearPlane - farPlane);
-    matrix.data->m34 = -1;
-    matrix.data->m43 = nearPlane * farPlane / (nearPlane - farPlane);
-    return matrix;    
+    matrix.data->m11 = 2 / width;
+    matrix.data->m22 = 2 / height;
+    matrix.data->m33 = 1 / (zNearPlane - zFarPlane);
+    matrix.data->m43 = zNearPlane / (zNearPlane - zFarPlane);
+    matrix.data->m44 = 1;
+	return matrix; 
 }
 
-+ (Matrix*) createPerspectiveFieldOfView:(float)fieldOfView aspectRatio:(float)aspectRatio nearPlane:(float)nearPlane farPlane:(float)farPlane{
-    float width = 2 * nearPlane * tanf(fieldOfView * 0.5f);
-    float height = width / aspectRatio;
-    return [Matrix createPerspectiveWithWidth:width height:height nearPlane:nearPlane farPlane:farPlane];
++ (Matrix*) createOrthographicOffCenterWithLeft:(float)left right:(float)right
+										 bottom:(float)bottom top:(float)top 
+									 zNearPlane:(float)zNearPlane zFarPlane:(float)zFarPlane {
+	
+    Matrix *matrix = [Matrix zero];
+    matrix.data->m11 = 2 / (right - left);
+    matrix.data->m22 = 2 / (top - bottom);
+    matrix.data->m33 = 1 / (zNearPlane - zFarPlane);
+    matrix.data->m41 = (left + right) / (left - right);
+    matrix.data->m42 = (top + bottom) / (bottom - top);
+    matrix.data->m43 = zNearPlane / (zNearPlane - zFarPlane);
+    matrix.data->m44 = 1;
+	return matrix; 
+}
+
++ (Matrix*) createPerspectiveWithWidth:(float)width height:(float)height
+					 nearPlaneDistance:(float)nearPlaneDistance farPlaneDistance:(float)farPlaneDistance {
+	
+    Matrix *matrix = [Matrix zero];
+    matrix.data->m11 = (2 * nearPlaneDistance) / width;
+    matrix.data->m22 = (2 * nearPlaneDistance) / height;
+    matrix.data->m33 = farPlaneDistance / (nearPlaneDistance - farPlaneDistance);
+    matrix.data->m34 = -1;
+    matrix.data->m43 = nearPlaneDistance * farPlaneDistance / (nearPlaneDistance - farPlaneDistance);
+    return matrix; 
+}
+
++ (Matrix*) createPerspectiveFieldOfView:(float)fieldOfView aspectRatio:(float)aspectRatio 
+					   nearPlaneDistance:(float)nearPlaneDistance farPlaneDistance:(float)farPlaneDistance {
+	
+	float yScale = 1.0f / tanf(fieldOfView / 2.0f);
+	float xScale = yScale / aspectRatio;
+    Matrix *matrix = [Matrix zero];
+    matrix.data->m11 = xScale;
+    matrix.data->m22 = yScale;
+    matrix.data->m33 = farPlaneDistance / (nearPlaneDistance - farPlaneDistance);
+    matrix.data->m34 = -1;
+    matrix.data->m43 = nearPlaneDistance * farPlaneDistance / (nearPlaneDistance - farPlaneDistance);
+    return matrix; 
+}
+
++ (Matrix*) createPerspectiveOffCenterWithLeft:(float)left right:(float)right 
+										bottom:(float)bottom top:(float)top 
+							 nearPlaneDistance:(float)nearPlaneDistance farPlaneDistance:(float)farPlaneDistance {
+	
+	Matrix *matrix = [Matrix zero];
+    matrix.data->m11 = (2 * nearPlaneDistance) / (right - left);
+    matrix.data->m22 = (2 * nearPlaneDistance) / (top - bottom);
+    matrix.data->m31 = (2 * nearPlaneDistance) / (left + right) / (right - left);
+	matrix.data->m31 = (2 * nearPlaneDistance) / (top + bottom) / (top - bottom);
+	matrix.data->m33 = farPlaneDistance / (nearPlaneDistance - farPlaneDistance);
+    matrix.data->m34 = -1;
+    matrix.data->m43 = nearPlaneDistance * farPlaneDistance / (nearPlaneDistance - farPlaneDistance);
+    return matrix; 
 }
 
 + (Matrix*) createWorldAtPosition:(Vector3 *)position forward:(Vector3 *)forward up:(Vector3 *)up {

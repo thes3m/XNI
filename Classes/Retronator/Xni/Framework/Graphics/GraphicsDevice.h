@@ -35,6 +35,7 @@
 	int referenceStencil;
 	SamplerStateCollection *samplerStates;
 	TextureCollection *textures;
+	Viewport *viewport;
 	
 	NSMutableArray *vertices;
 }
@@ -51,6 +52,7 @@
 @property (nonatomic) int referenceStencil;
 @property (nonatomic, readonly) SamplerStateCollection *samplerStates;
 @property (nonatomic, readonly) TextureCollection *textures;
+@property (nonatomic, retain) Viewport *viewport;
 
 + (int) getNumberOfVerticesForPrimitiveType:(PrimitiveType)primitiveType primitiveCount:(int)primitiveCount;
 

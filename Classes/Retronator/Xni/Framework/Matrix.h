@@ -26,8 +26,18 @@
 + (Matrix*) createFromAxis:(Vector3*)axis angle:(float)angle;
 + (Matrix*) createFromQuaternion:(Quaternion*)quaternion;
 + (Matrix*) createLookAtFrom:(Vector3*)position to:(Vector3*)target up:(Vector3*)up;
-+ (Matrix*) createPerspectiveWithWidth:(float)width height:(float)height nearPlane:(float)nearPlane farPlane:(float)farPlane;
-+ (Matrix*) createPerspectiveFieldOfView:(float)fieldOfView aspectRatio:(float)aspectRatio nearPlane:(float)nearPlane farPlane:(float)farPlane;
++ (Matrix*) createOrthographicWithWidth:(float)width height:(float)height 
+							 zNearPlane:(float)zNearPlane zFarPlane:(float)zFarPlane;
++ (Matrix*) createOrthographicOffCenterWithLeft:(float)left right:(float)right 
+										 bottom:(float)bottom top:(float)top 
+									 zNearPlane:(float)zNearPlane zFarPlane:(float)zFarPlane;
++ (Matrix*) createPerspectiveWithWidth:(float)width height:(float)height 
+					 nearPlaneDistance:(float)nearPlaneDistance farPlaneDistance:(float)farPlaneDistance;
++ (Matrix*) createPerspectiveFieldOfView:(float)fieldOfView aspectRatio:(float)aspectRatio
+					   nearPlaneDistance:(float)nearPlaneDistance farPlaneDistance:(float)farPlaneDistance;
++ (Matrix*) createPerspectiveOffCenterWithLeft:(float)left right:(float)right
+										bottom:(float)bottom top:(float)top  
+							 nearPlaneDistance:(float)nearPlaneDistance farPlaneDistance:(float)farPlaneDistance;
 + (Matrix*) createWorldAtPosition:(Vector3*)position forward:(Vector3*)forward up:(Vector3*)up;
 
 @property (nonatomic, readonly) MatrixStruct *data;

@@ -49,6 +49,7 @@
         glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_DEPTH_ATTACHMENT_OES, GL_RENDERBUFFER_OES, depthRenderbuffer);
 		
         // Do the initial reset.
+		viewport = [[Viewport alloc] init];
         [self reset];
 		
 		// Initialize defaults.
@@ -106,6 +107,7 @@
 @synthesize referenceStencil;
 @synthesize samplerStates;
 @synthesize textures;
+@synthesize viewport;
 
 + (int) getNumberOfVerticesForPrimitiveType:(PrimitiveType)primitiveType primitiveCount:(int)primitiveCount {
     switch (primitiveType) {
@@ -134,6 +136,11 @@
 	glGetRenderbufferParameterivOES(GL_RENDERBUFFER_OES, GL_RENDERBUFFER_WIDTH_OES, &backingWidth);
     glGetRenderbufferParameterivOES(GL_RENDERBUFFER_OES, GL_RENDERBUFFER_HEIGHT_OES, &backingHeight);
     glViewport(0, 0, backingWidth, backingHeight);
+	
+	self.viewport.x = 0;
+	self.viewport.y = 0;
+	self.viewport.width = backingWidth;
+	self.viewport.height = backingHeight;
 	
     glBindRenderbufferOES(GL_RENDERBUFFER_OES, depthRenderbuffer);
     glRenderbufferStorageOES(GL_RENDERBUFFER_OES, GL_DEPTH_COMPONENT16_OES, backingWidth, backingHeight);
@@ -280,6 +287,7 @@
 	[rasterizerState release];
 	[samplerStates release];
 	[textures release];
+	[viewport release];
 	[super dealloc];
 }
 

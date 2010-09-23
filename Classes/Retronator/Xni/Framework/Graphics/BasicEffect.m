@@ -91,9 +91,19 @@
 
 - (void) dealloc
 {
+	[ambientColor release];
+	[diffuseColor release];
+	[emissiveColor release];
+	[specularColor release];
+	[texture release];
+	[ambientLightColor release];
     [directionalLight0 release];
     [directionalLight1 release];
     [directionalLight2 release];
+	[fogColor release];
+	[world release];
+	[view release];
+	[projection release];
     [super dealloc];
 }
 

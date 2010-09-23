@@ -29,6 +29,12 @@
 		B56CC5C8123A928A00B72347 /* ContentTypeReaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC5C6123A928A00B72347 /* ContentTypeReaderManager.m */; };
 		B56CC5CB123A92BB00B72347 /* Texture2DContentTypeReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC5C9123A92BB00B72347 /* Texture2DContentTypeReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B56CC5CC123A92BB00B72347 /* Texture2DContentTypeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC5CA123A92BB00B72347 /* Texture2DContentTypeReader.m */; };
+		B57E3665124BC23E00DDAA42 /* Viewport.h in Headers */ = {isa = PBXBuildFile; fileRef = B57E3663124BC23E00DDAA42 /* Viewport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B57E3666124BC23E00DDAA42 /* Viewport.m in Sources */ = {isa = PBXBuildFile; fileRef = B57E3664124BC23E00DDAA42 /* Viewport.m */; };
+		B57E36BE124BE2DD00DDAA42 /* VertexPositionColorTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = B57E36BC124BE2DD00DDAA42 /* VertexPositionColorTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B57E36BF124BE2DD00DDAA42 /* VertexPositionColorTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = B57E36BD124BE2DD00DDAA42 /* VertexPositionColorTexture.m */; };
+		B57E36CC124BE36E00DDAA42 /* VertexPositionColorTextureArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B57E36CA124BE36E00DDAA42 /* VertexPositionColorTextureArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B57E36CD124BE36E00DDAA42 /* VertexPositionColorTextureArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B57E36CB124BE36E00DDAA42 /* VertexPositionColorTextureArray.m */; };
 		B59AD7F01236E07300F99511 /* ContentImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD7EE1236E07300F99511 /* ContentImporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59AD7F11236E07300F99511 /* ContentImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD7EF1236E07300F99511 /* ContentImporter.m */; };
 		B59AD80C1236E21900F99511 /* Retronator.Xni.Framework.Content.Pipeline.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD80B1236E21900F99511 /* Retronator.Xni.Framework.Content.Pipeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -197,6 +203,12 @@
 		B56CC5C6123A928A00B72347 /* ContentTypeReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTypeReaderManager.m; sourceTree = "<group>"; };
 		B56CC5C9123A92BB00B72347 /* Texture2DContentTypeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2DContentTypeReader.h; sourceTree = "<group>"; };
 		B56CC5CA123A92BB00B72347 /* Texture2DContentTypeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2DContentTypeReader.m; sourceTree = "<group>"; };
+		B57E3663124BC23E00DDAA42 /* Viewport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Viewport.h; sourceTree = "<group>"; };
+		B57E3664124BC23E00DDAA42 /* Viewport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Viewport.m; sourceTree = "<group>"; };
+		B57E36BC124BE2DD00DDAA42 /* VertexPositionColorTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexPositionColorTexture.h; sourceTree = "<group>"; };
+		B57E36BD124BE2DD00DDAA42 /* VertexPositionColorTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexPositionColorTexture.m; sourceTree = "<group>"; };
+		B57E36CA124BE36E00DDAA42 /* VertexPositionColorTextureArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexPositionColorTextureArray.h; sourceTree = "<group>"; };
+		B57E36CB124BE36E00DDAA42 /* VertexPositionColorTextureArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexPositionColorTextureArray.m; sourceTree = "<group>"; };
 		B59AD7EE1236E07300F99511 /* ContentImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentImporter.h; sourceTree = "<group>"; };
 		B59AD7EF1236E07300F99511 /* ContentImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentImporter.m; sourceTree = "<group>"; };
 		B59AD80B1236E21900F99511 /* Retronator.Xni.Framework.Content.Pipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.Content.Pipeline.h; sourceTree = "<group>"; };
@@ -502,6 +514,8 @@
 				B5EA636E124917E2001245A4 /* VertexPositionColor.m */,
 				B5EA65511249482D001245A4 /* VertexPositionTexture.h */,
 				B5EA65521249482D001245A4 /* VertexPositionTexture.m */,
+				B57E36BC124BE2DD00DDAA42 /* VertexPositionColorTexture.h */,
+				B57E36BD124BE2DD00DDAA42 /* VertexPositionColorTexture.m */,
 				B5BBC2AC1248F0C40066F5ED /* VertexDeclaration.h */,
 				B5BBC2AD1248F0C40066F5ED /* VertexDeclaration.m */,
 				B5EA638D1249229D001245A4 /* VertexArray.h */,
@@ -510,6 +524,8 @@
 				B5EA655F1249495C001245A4 /* VertexPositionColorArray.m */,
 				B5EA657612494AC3001245A4 /* VertexPositionTextureArray.h */,
 				B5EA657712494AC3001245A4 /* VertexPositionTextureArray.m */,
+				B57E36CA124BE36E00DDAA42 /* VertexPositionColorTextureArray.h */,
+				B57E36CB124BE36E00DDAA42 /* VertexPositionColorTextureArray.m */,
 				B5BBC2D01248F98D0066F5ED /* VertexBuffer.h */,
 				B5BBC2D11248F98D0066F5ED /* VertexBuffer.m */,
 				B5BBC2EA1248FC7A0066F5ED /* VertexBufferBinding.h */,
@@ -528,6 +544,8 @@
 				B5BBC1DF1248D5640066F5ED /* SamplerStateCollection.m */,
 				B5BBC1EF1248D6090066F5ED /* TextureCollection.h */,
 				B5BBC1F01248D6090066F5ED /* TextureCollection.m */,
+				B57E3663124BC23E00DDAA42 /* Viewport.h */,
+				B57E3664124BC23E00DDAA42 /* Viewport.m */,
 				B5DDE82A11FF10EF000DB38B /* IGraphicsDeviceService.h */,
 				B5DDE85A11FF1326000DB38B /* GraphicsDevice.h */,
 				B5DDE85B11FF1326000DB38B /* GraphicsDevice.m */,
@@ -736,6 +754,9 @@
 				B5EA65D7124952C9001245A4 /* EffectTechnique.h in Headers */,
 				B5EA660212495618001245A4 /* BasicEffect.h in Headers */,
 				B5EA660D124956CE001245A4 /* DirectionalLight.h in Headers */,
+				B57E3665124BC23E00DDAA42 /* Viewport.h in Headers */,
+				B57E36BE124BE2DD00DDAA42 /* VertexPositionColorTexture.h in Headers */,
+				B57E36CC124BE36E00DDAA42 /* VertexPositionColorTextureArray.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,6 +873,9 @@
 				B5EA65D8124952C9001245A4 /* EffectTechnique.m in Sources */,
 				B5EA660312495618001245A4 /* BasicEffect.m in Sources */,
 				B5EA660E124956CE001245A4 /* DirectionalLight.m in Sources */,
+				B57E3666124BC23E00DDAA42 /* Viewport.m in Sources */,
+				B57E36BF124BE2DD00DDAA42 /* VertexPositionColorTexture.m in Sources */,
+				B57E36CD124BE36E00DDAA42 /* VertexPositionColorTextureArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
