@@ -158,6 +158,17 @@
 		B5EA660312495618001245A4 /* BasicEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA660112495618001245A4 /* BasicEffect.m */; };
 		B5EA660D124956CE001245A4 /* DirectionalLight.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA660B124956CE001245A4 /* DirectionalLight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5EA660E124956CE001245A4 /* DirectionalLight.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA660C124956CE001245A4 /* DirectionalLight.m */; };
+		B5EC59F91252B917001E7DFC /* TouchPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC59F71252B917001E7DFC /* TouchPanel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EC59FA1252B917001E7DFC /* TouchPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC59F81252B917001E7DFC /* TouchPanel.m */; };
+		B5EC59FC1252BE32001E7DFC /* Retronator.Xni.Framework.Input.Touch.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC59FB1252BE32001E7DFC /* Retronator.Xni.Framework.Input.Touch.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EC59FE1252BE3B001E7DFC /* Retronator.Xni.Framework.Input.Touch.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC59FD1252BE3B001E7DFC /* Retronator.Xni.Framework.Input.Touch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EC5A071252BE9E001E7DFC /* TouchCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A051252BE9E001E7DFC /* TouchCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EC5A081252BE9E001E7DFC /* TouchCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC5A061252BE9E001E7DFC /* TouchCollection.m */; };
+		B5EC5A101252BEDF001E7DFC /* TouchLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A0E1252BEDF001E7DFC /* TouchLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EC5A111252BEDF001E7DFC /* TouchLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC5A0F1252BEDF001E7DFC /* TouchLocation.m */; };
+		B5EC5A191252BF63001E7DFC /* Enums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A181252BF63001E7DFC /* Enums.h */; };
+		B5EC5A4F1252C2DF001E7DFC /* GestureSample.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A4D1252C2DF001E7DFC /* GestureSample.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5EC5A501252C2DF001E7DFC /* GestureSample.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC5A4E1252C2DF001E7DFC /* GestureSample.m */; };
 		B5F4E2A912095FAF00B2FC0F /* XNI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */; };
 		B5F8536E1239206700E6FD71 /* PackedVectorStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F85387123929F800E6FD71 /* VectorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F85385123929F800E6FD71 /* VectorConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -332,6 +343,17 @@
 		B5EA660112495618001245A4 /* BasicEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicEffect.m; sourceTree = "<group>"; };
 		B5EA660B124956CE001245A4 /* DirectionalLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionalLight.h; sourceTree = "<group>"; };
 		B5EA660C124956CE001245A4 /* DirectionalLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionalLight.m; sourceTree = "<group>"; };
+		B5EC59F71252B917001E7DFC /* TouchPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchPanel.h; sourceTree = "<group>"; };
+		B5EC59F81252B917001E7DFC /* TouchPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchPanel.m; sourceTree = "<group>"; };
+		B5EC59FB1252BE32001E7DFC /* Retronator.Xni.Framework.Input.Touch.classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.Input.Touch.classes.h; sourceTree = "<group>"; };
+		B5EC59FD1252BE3B001E7DFC /* Retronator.Xni.Framework.Input.Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.Input.Touch.h; sourceTree = "<group>"; };
+		B5EC5A051252BE9E001E7DFC /* TouchCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchCollection.h; sourceTree = "<group>"; };
+		B5EC5A061252BE9E001E7DFC /* TouchCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchCollection.m; sourceTree = "<group>"; };
+		B5EC5A0E1252BEDF001E7DFC /* TouchLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchLocation.h; sourceTree = "<group>"; };
+		B5EC5A0F1252BEDF001E7DFC /* TouchLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchLocation.m; sourceTree = "<group>"; };
+		B5EC5A181252BF63001E7DFC /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
+		B5EC5A4D1252C2DF001E7DFC /* GestureSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureSample.h; sourceTree = "<group>"; };
+		B5EC5A4E1252C2DF001E7DFC /* GestureSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureSample.m; sourceTree = "<group>"; };
 		B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNI_Prefix.pch; sourceTree = "<group>"; };
 		B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackedVectorStructs.h; sourceTree = "<group>"; };
 		B5F85385123929F800E6FD71 /* VectorConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorConverter.h; sourceTree = "<group>"; };
@@ -578,6 +600,7 @@
 		B5DE188E11F887A000BF3275 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				B5EC59F41252B8B6001E7DFC /* Input */,
 				B5A1C82B12353EFB00DB60CB /* Content */,
 				B5DDE82911FF10D0000DB38B /* Graphics */,
 				B5DE189F11F8888B00BF3275 /* Retronator.Xni.Framework.classes.h */,
@@ -648,6 +671,32 @@
 				B5EA637D124921D0001245A4 /* AdaptiveArray.m */,
 			);
 			path = System;
+			sourceTree = "<group>";
+		};
+		B5EC59F41252B8B6001E7DFC /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				B5EC59F51252B8D0001E7DFC /* Touch */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		B5EC59F51252B8D0001E7DFC /* Touch */ = {
+			isa = PBXGroup;
+			children = (
+				B5EC59FB1252BE32001E7DFC /* Retronator.Xni.Framework.Input.Touch.classes.h */,
+				B5EC59FD1252BE3B001E7DFC /* Retronator.Xni.Framework.Input.Touch.h */,
+				B5EC5A181252BF63001E7DFC /* Enums.h */,
+				B5EC59F71252B917001E7DFC /* TouchPanel.h */,
+				B5EC59F81252B917001E7DFC /* TouchPanel.m */,
+				B5EC5A051252BE9E001E7DFC /* TouchCollection.h */,
+				B5EC5A061252BE9E001E7DFC /* TouchCollection.m */,
+				B5EC5A0E1252BEDF001E7DFC /* TouchLocation.h */,
+				B5EC5A0F1252BEDF001E7DFC /* TouchLocation.m */,
+				B5EC5A4D1252C2DF001E7DFC /* GestureSample.h */,
+				B5EC5A4E1252C2DF001E7DFC /* GestureSample.m */,
+			);
+			path = Touch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -757,6 +806,13 @@
 				B57E3665124BC23E00DDAA42 /* Viewport.h in Headers */,
 				B57E36BE124BE2DD00DDAA42 /* VertexPositionColorTexture.h in Headers */,
 				B57E36CC124BE36E00DDAA42 /* VertexPositionColorTextureArray.h in Headers */,
+				B5EC59F91252B917001E7DFC /* TouchPanel.h in Headers */,
+				B5EC59FC1252BE32001E7DFC /* Retronator.Xni.Framework.Input.Touch.classes.h in Headers */,
+				B5EC59FE1252BE3B001E7DFC /* Retronator.Xni.Framework.Input.Touch.h in Headers */,
+				B5EC5A071252BE9E001E7DFC /* TouchCollection.h in Headers */,
+				B5EC5A101252BEDF001E7DFC /* TouchLocation.h in Headers */,
+				B5EC5A191252BF63001E7DFC /* Enums.h in Headers */,
+				B5EC5A4F1252C2DF001E7DFC /* GestureSample.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,6 +932,10 @@
 				B57E3666124BC23E00DDAA42 /* Viewport.m in Sources */,
 				B57E36BF124BE2DD00DDAA42 /* VertexPositionColorTexture.m in Sources */,
 				B57E36CD124BE36E00DDAA42 /* VertexPositionColorTextureArray.m in Sources */,
+				B5EC59FA1252B917001E7DFC /* TouchPanel.m in Sources */,
+				B5EC5A081252BE9E001E7DFC /* TouchCollection.m in Sources */,
+				B5EC5A111252BEDF001E7DFC /* TouchLocation.m in Sources */,
+				B5EC5A501252C2DF001E7DFC /* GestureSample.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
