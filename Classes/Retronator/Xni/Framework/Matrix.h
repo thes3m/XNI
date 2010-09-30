@@ -20,6 +20,7 @@
 + (Matrix*) matrixWithStruct: (MatrixStruct*)matrixData;
 + (Matrix*) matrixWithMatrix: (Matrix*)matrix;
 
++ (Matrix*) createTranslationX:(float)xPosition y:(float)yPosition z:(float)zPosition;
 + (Matrix*) createTranslation:(Vector3*)position;
 + (Matrix*) createScaleUniform:(float)scale;
 + (Matrix*) createScale:(Vector3*)scales;

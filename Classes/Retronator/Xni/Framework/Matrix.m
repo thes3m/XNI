@@ -31,6 +31,14 @@
     return [[[Matrix alloc] initWithMatrix:matrix] autorelease];
 }
 
++ (Matrix*) createTranslationX:(float)xPosition y:(float)yPosition z:(float)zPosition {
+	Matrix *matrix = [Matrix identity];
+	matrix.data->m41 = xPosition;
+	matrix.data->m42 = yPosition;
+	matrix.data->m43 = zPosition;
+	return matrix;
+}
+
 + (Matrix*) createTranslation:(Vector3*)position {
     Matrix *matrix = [Matrix identity];
     matrix.translation = position;
