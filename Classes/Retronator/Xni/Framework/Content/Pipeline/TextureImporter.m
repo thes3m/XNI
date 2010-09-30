@@ -32,6 +32,8 @@
                                                         kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big );
 
 	// Draw the image to our context.
+	CGContextClearRect(textureContext, CGRectMake(0, 0, width, height));
+    CGContextTranslateCTM(textureContext, 0, 0);	
     CGContextDrawImage(textureContext, CGRectMake(0, 0, width, height), image.CGImage);
 	
 	// Clean up.
