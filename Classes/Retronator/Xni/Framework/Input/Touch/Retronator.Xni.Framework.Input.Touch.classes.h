@@ -1,4 +1,4 @@
-#import "Enums.h"
+#import "InputEnums.h"
 
 @class TouchPanel, TouchCollection, TouchLocation;
 

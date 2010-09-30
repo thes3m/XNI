@@ -98,7 +98,7 @@
 		B5DDE8C411FF29E8000DB38B /* ReachGraphicsDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE8C211FF29E8000DB38B /* ReachGraphicsDevice.m */; };
 		B5DDE8C711FF2A23000DB38B /* HiDefGraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C511FF2A23000DB38B /* HiDefGraphicsDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE8C811FF2A23000DB38B /* HiDefGraphicsDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE8C611FF2A23000DB38B /* HiDefGraphicsDevice.m */; };
-		B5DDE8CA11FF2AD6000DB38B /* Enums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C911FF2AD6000DB38B /* Enums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DDE8CA11FF2AD6000DB38B /* GraphicsEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C911FF2AD6000DB38B /* GraphicsEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE90911FF352E000DB38B /* Color.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE90711FF352E000DB38B /* Color.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE90A11FF352E000DB38B /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE90811FF352E000DB38B /* Color.m */; };
 		B5DDE99111FF546B000DB38B /* GraphicsDeviceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE98F11FF546B000DB38B /* GraphicsDeviceManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -166,10 +166,10 @@
 		B5EC5A081252BE9E001E7DFC /* TouchCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC5A061252BE9E001E7DFC /* TouchCollection.m */; };
 		B5EC5A101252BEDF001E7DFC /* TouchLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A0E1252BEDF001E7DFC /* TouchLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5EC5A111252BEDF001E7DFC /* TouchLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC5A0F1252BEDF001E7DFC /* TouchLocation.m */; };
-		B5EC5A191252BF63001E7DFC /* Enums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A181252BF63001E7DFC /* Enums.h */; };
+		B5EC5A191252BF63001E7DFC /* InputEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A181252BF63001E7DFC /* InputEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5EC5A4F1252C2DF001E7DFC /* GestureSample.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A4D1252C2DF001E7DFC /* GestureSample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5EC5A501252C2DF001E7DFC /* GestureSample.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC5A4E1252C2DF001E7DFC /* GestureSample.m */; };
-		B5EC5A931252C710001E7DFC /* Retronator.Xni.Framework.Input.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A921252C710001E7DFC /* Retronator.Xni.Framework.Input.h */; };
+		B5EC5A931252C710001E7DFC /* Retronator.Xni.Framework.Input.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A921252C710001E7DFC /* Retronator.Xni.Framework.Input.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F4E2A912095FAF00B2FC0F /* XNI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */; };
 		B5F8536E1239206700E6FD71 /* PackedVectorStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F85387123929F800E6FD71 /* VectorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F85385123929F800E6FD71 /* VectorConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -284,7 +284,7 @@
 		B5DDE8C211FF29E8000DB38B /* ReachGraphicsDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachGraphicsDevice.m; sourceTree = "<group>"; };
 		B5DDE8C511FF2A23000DB38B /* HiDefGraphicsDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiDefGraphicsDevice.h; sourceTree = "<group>"; };
 		B5DDE8C611FF2A23000DB38B /* HiDefGraphicsDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiDefGraphicsDevice.m; sourceTree = "<group>"; };
-		B5DDE8C911FF2AD6000DB38B /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
+		B5DDE8C911FF2AD6000DB38B /* GraphicsEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsEnums.h; sourceTree = "<group>"; };
 		B5DDE90711FF352E000DB38B /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		B5DDE90811FF352E000DB38B /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
 		B5DDE98F11FF546B000DB38B /* GraphicsDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsDeviceManager.h; sourceTree = "<group>"; };
@@ -352,7 +352,7 @@
 		B5EC5A061252BE9E001E7DFC /* TouchCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchCollection.m; sourceTree = "<group>"; };
 		B5EC5A0E1252BEDF001E7DFC /* TouchLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchLocation.h; sourceTree = "<group>"; };
 		B5EC5A0F1252BEDF001E7DFC /* TouchLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchLocation.m; sourceTree = "<group>"; };
-		B5EC5A181252BF63001E7DFC /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
+		B5EC5A181252BF63001E7DFC /* InputEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputEnums.h; sourceTree = "<group>"; };
 		B5EC5A4D1252C2DF001E7DFC /* GestureSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureSample.h; sourceTree = "<group>"; };
 		B5EC5A4E1252C2DF001E7DFC /* GestureSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureSample.m; sourceTree = "<group>"; };
 		B5EC5A921252C710001E7DFC /* Retronator.Xni.Framework.Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.Input.h; sourceTree = "<group>"; };
@@ -514,7 +514,7 @@
 				B59AD8951236F1A800F99511 /* PackedVector */,
 				B5DDE82E11FF1213000DB38B /* Retronator.Xni.Framework.Graphics.classes.h */,
 				B5DDE83011FF1222000DB38B /* Retronator.Xni.Framework.Graphics.h */,
-				B5DDE8C911FF2AD6000DB38B /* Enums.h */,
+				B5DDE8C911FF2AD6000DB38B /* GraphicsEnums.h */,
 				B508070A122E4FBB00C330E2 /* GraphicsResource.h */,
 				B508070B122E4FBB00C330E2 /* GraphicsResource.m */,
 				B50806FD122E4ECF00C330E2 /* Texture.h */,
@@ -689,7 +689,7 @@
 			children = (
 				B5EC59FB1252BE32001E7DFC /* Retronator.Xni.Framework.Input.Touch.classes.h */,
 				B5EC59FD1252BE3B001E7DFC /* Retronator.Xni.Framework.Input.Touch.h */,
-				B5EC5A181252BF63001E7DFC /* Enums.h */,
+				B5EC5A181252BF63001E7DFC /* InputEnums.h */,
 				B5EC59F71252B917001E7DFC /* TouchPanel.h */,
 				B5EC59F81252B917001E7DFC /* TouchPanel.m */,
 				B5EC5A051252BE9E001E7DFC /* TouchCollection.h */,
@@ -739,7 +739,7 @@
 				B5DDE89611FF16A3000DB38B /* Protocols.h in Headers */,
 				B5DDE8C311FF29E8000DB38B /* ReachGraphicsDevice.h in Headers */,
 				B5DDE8C711FF2A23000DB38B /* HiDefGraphicsDevice.h in Headers */,
-				B5DDE8CA11FF2AD6000DB38B /* Enums.h in Headers */,
+				B5DDE8CA11FF2AD6000DB38B /* GraphicsEnums.h in Headers */,
 				B5DDE90911FF352E000DB38B /* Color.h in Headers */,
 				B5DDE99111FF546B000DB38B /* GraphicsDeviceManager.h in Headers */,
 				B5F4E2A912095FAF00B2FC0F /* XNI_Prefix.pch in Headers */,
@@ -814,7 +814,7 @@
 				B5EC59FE1252BE3B001E7DFC /* Retronator.Xni.Framework.Input.Touch.h in Headers */,
 				B5EC5A071252BE9E001E7DFC /* TouchCollection.h in Headers */,
 				B5EC5A101252BEDF001E7DFC /* TouchLocation.h in Headers */,
-				B5EC5A191252BF63001E7DFC /* Enums.h in Headers */,
+				B5EC5A191252BF63001E7DFC /* InputEnums.h in Headers */,
 				B5EC5A4F1252C2DF001E7DFC /* GestureSample.h in Headers */,
 				B5EC5A931252C710001E7DFC /* Retronator.Xni.Framework.Input.h in Headers */,
 			);

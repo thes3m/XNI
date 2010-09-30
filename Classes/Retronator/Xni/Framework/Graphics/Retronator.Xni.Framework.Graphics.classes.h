@@ -1,4 +1,4 @@
-#import "Enums.h"
+#import "GraphicsEnums.h"
 
 @class GraphicsResource, Texture, Texture2D, Effect, EffectTechnique, EffectPass, BasicEffect, DirectionalLight;
 
