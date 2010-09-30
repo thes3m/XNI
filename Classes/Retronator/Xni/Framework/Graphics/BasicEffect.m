@@ -15,7 +15,7 @@
     BasicEffect *basicEffect;	
 }
 
-- (id) initWithBasicEffect:(BasicEffect*)theBasicEffect;
+- (id) initWithBasicEffect:(BasicEffect*)theBasicEffect graphicsDevice:(GraphicsDevice*)theGraphicsDevice;
 
 @end
 
@@ -24,7 +24,7 @@
 -(id) initWithGraphicsDevice:(GraphicsDevice *)theGraphicsDevice {
     if (self = [super initWithGraphicsDevice:theGraphicsDevice]) {
         // Create the main pass.
-        BasicEffectPass *mainPass = [[BasicEffectPass alloc] initWithBasicEffect:self];
+        BasicEffectPass *mainPass = [[BasicEffectPass alloc] initWithBasicEffect:self graphicsDevice:graphicsDevice];
         NSArray *passes = [NSArray arrayWithObject:mainPass];
         
         // Create the basic technique.
@@ -118,8 +118,8 @@
 
 @implementation BasicEffectPass
 
-- (id) initWithBasicEffect:(BasicEffect *)theBasicEffect {
-    if (self = [super initWithName:@"BasicEffectPass"]) {
+- (id) initWithBasicEffect:(BasicEffect *)theBasicEffect graphicsDevice:(GraphicsDevice*)theGraphicsDevice {
+    if (self = [super initWithName:@"BasicEffectPass" graphicsDevice:theGraphicsDevice]) {
         basicEffect = theBasicEffect;
     }
     return self;
@@ -151,6 +151,9 @@
     if (basicEffect.textureEnabled) {
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, basicEffect.texture.textureId);
+		SamplerState *samplerState = [graphicsDevice.samplerStates objectAtIndex:0];
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, samplerState.addressU);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, samplerState.addressV);
     } else {
         glDisable(GL_TEXTURE_2D);
     }

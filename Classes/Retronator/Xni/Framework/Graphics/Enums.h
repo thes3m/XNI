@@ -148,7 +148,7 @@ typedef enum {
 typedef enum {
 	SpriteEffectsFlipHorizontally = 2,
 	SpriteEffectsFlipVertically = 1,
-	None = 0
+	SpriteEffectsNone = 0
 } SpriteEffects;
 
 typedef enum {
@@ -194,9 +194,9 @@ typedef enum {
 } SurfaceFormat;
 
 typedef enum {
-	TextureAddressModeClamp,
-	TextureAddressModeMirror,
-	TextureAddressModeWrap
+	TextureAddressModeClamp = GL_CLAMP_TO_EDGE,
+	TextureAddressModeMirror = GL_MIRRORED_REPEAT,
+	TextureAddressModeWrap = GL_REPEAT
 } TextureAddressMode;
 
 typedef enum {

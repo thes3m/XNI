@@ -80,6 +80,7 @@
 		
 		// Apply the blend state.
 		glBlendFunc(blendState.colorSourceBlend, blendState.colorDestinationBlend);
+		
 	}
 }
 
@@ -150,6 +151,9 @@
     } else {
         NSLog(@"Created a device with dimensions: %ix%i.", backingWidth, backingHeight);
     }
+	
+	// Set state defaults.
+	glEnable(GL_BLEND);
 }
 
 - (void) present {

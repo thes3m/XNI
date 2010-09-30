@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#import "Retronator.Xni.Framework.Graphics.classes.h"
 
 @interface EffectPass : NSObject {
     NSString *name;
+	GraphicsDevice *graphicsDevice;
 }
 
-- (id) initWithName:(NSString*)theName;
+- (id) initWithName:(NSString*)theName graphicsDevice:(GraphicsDevice*)theGraphicsDevice;
 
 @property (nonatomic, readonly) NSString *name;
 

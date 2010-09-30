@@ -8,12 +8,14 @@
 
 #import "EffectPass.h"
 
+#import "Retronator.Xni.Framework.Graphics.h"
 
 @implementation EffectPass
 
--(id) initWithName:(NSString *)theName {
+-(id) initWithName:(NSString *)theName graphicsDevice:(GraphicsDevice*)theGraphicsDevice {
     if (self = [super init]) {
         name = [theName retain];
+		graphicsDevice = [theGraphicsDevice retain];
     }
     return self;
 }
@@ -25,6 +27,7 @@
 - (void) dealloc
 {
     [name release];
+	[graphicsDevice release];
     [super dealloc];
 }
 

@@ -11,6 +11,13 @@
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Graphics.h"
 
+typedef struct {
+	float x;
+	float y;
+	float width;
+	float height;
+} RectangleFStruct;
+
 @interface Sprite : NSObject
 {
 @public
@@ -18,12 +25,9 @@
 	Vector2Struct position;
 	Vector2Struct width;
 	Vector2Struct height;
-	RectangleStruct source;
-	uint color;
-	float rotation;
-	Vector2Struct origin;
-	SpriteEffects effects;
 	float layerDepth;
+	RectangleFStruct source;
+	uint color;
 }
 
 @property (nonatomic, readonly) Texture2D *texture;
@@ -44,43 +48,62 @@ NSArray *textureSort;
 NSArray *frontToBackSort;
 NSArray *backToFrontSort;
 
-static inline void SpriteSetSource(Sprite *sprite, Rectangle *source, Texture2D *texture) {
+static inline void SpriteSetSource(Sprite *sprite, Rectangle *source, Texture2D *texture, SpriteEffects effects) {
 	if (source) {
-		sprite->source.x = source.data->x / texture.width;
-		sprite->source.y = source.data->y / texture.height;
-		sprite->source.width = source.data->width / texture.width;
-		sprite->source.height = source.data->height / texture.height;
+		sprite->source.x = (float)source.x / texture.width;
+		sprite->source.y = (float)source.y / texture.height;
+		sprite->source.width = (float)source.width / texture.width;
+		sprite->source.height = (float)source.height / texture.height;
 	} else {
 		sprite->source.width = 1;
 		sprite->source.height = 1;
 	}
+	
+	if (effects & SpriteEffectsFlipHorizontally) {
+		sprite->source.x = sprite->source.x + sprite->source.width;
+		sprite->source.width = -sprite->source.width;
+	}
+	
+	if (effects & SpriteEffectsFlipVertically) {
+		sprite->source.y = sprite->source.y + sprite->source.height;
+		sprite->source.height = -sprite->source.height;
+	}	
 }
 
-static inline void SpriteSetDestination(Sprite *sprite, Rectangle *destination) {
+static inline void SpriteSetVertices(Sprite *sprite, float positionX, float positionY, float originX, float originY, float scaleX, float scaleY, float rotation, float width, float height) {
+	float x = originX * scaleX;
+	float y = -originY * scaleY;
+	float c = cos(-rotation);
+	float s = sin(-rotation);
+	sprite->position.x = positionX - x * c - y * s;
+	sprite->position.y = positionY - x * s + y * c;
+	sprite->width.x = width * scaleX * c;
+	sprite->width.y = width * scaleX * s;
+	sprite->height.x = -height * scaleY * s;
+	sprite->height.y = height * scaleY * c;
+}
+
+static inline void SpriteSetDestinationFast(Sprite *sprite, Rectangle *destination) {
 	sprite->position.x = destination.x;
 	sprite->position.y = destination.y;
 	sprite->width.x = destination.width;
 	sprite->height.y = destination.height;
 }
 
-static inline void SpriteSetPositionFast(Sprite *sprite, Vector2 *position, Texture2D *texture) {
-	sprite->position.x = position.x;
-	sprite->position.y = position.y;
-	sprite->width.x = texture.width;
-	sprite->height.y = texture.height;
+static inline void SpriteSetDestination(Sprite *sprite, Rectangle *destination, float originX, float originY, float rotation) {
+	
+	SpriteSetVertices(sprite, destination.x + originX, destination.y + originY, originX, originY, 1, 1, rotation, destination.width, destination.height);
 }
 
-static inline void SpriteSetPosition(Sprite *sprite, Vector2 *position, float originX, float originY, float scaleX, float scaleY, float rotation, Texture2D *texture) {
-	float x = originX * scaleX;
-	float y = originY * scaleY;
-	float c = cos(rotation);
-	float s = sin(rotation);
-	sprite->position.x = position.x - x * c - y * s;
-	sprite->position.y = position.y - x * s + y * c;
-	sprite->width.x = texture.width * scaleX * c;
-	sprite->width.y = texture.width * scaleX * s;
-	sprite->height.x = -texture.height * scaleY * s;
-	sprite->height.y = texture.height * scaleY * c;
+static inline void SpriteSetPositionFast(Sprite *sprite, Vector2 *position, float width, float height) {
+	sprite->position.x = position.x;
+	sprite->position.y = position.y;
+	sprite->width.x = width;
+	sprite->height.y = height;
+}
+
+static inline void SpriteSetPosition(Sprite *sprite, Vector2 *position, float originX, float originY, float scaleX, float scaleY, float rotation, float width, float height) {
+	SpriteSetVertices(sprite, position.x, position.y, originX, originY, scaleX, scaleY, rotation, width, height);
 }
 
 @interface SpriteBatch()
@@ -102,16 +125,12 @@ static VertexPositionColorTextureStruct vertices[4];
 	self = [super initWithGraphicsDevice:theGraphicsDevice];
 	if (self != nil) {
 		basicEffect = [[BasicEffect alloc] initWithGraphicsDevice:theGraphicsDevice];
-		Matrix *projection = [Matrix createOrthographicOffCenterWithLeft:0 
-																   right:theGraphicsDevice.viewport.width 
-																  bottom:theGraphicsDevice.viewport.height 
-																	 top:0
-															  zNearPlane:0 
-															   zFarPlane:1];
-		Matrix *halfPixelOffset = [Matrix createTranslation:[Vector3 vectorWithX:-0.5f y:-0.5f z:0]];
-		
-		
-		basicEffect.projection = [Matrix multiply:halfPixelOffset by:projection];
+		basicEffect.projection = [Matrix createOrthographicOffCenterWithLeft:0 
+																	   right:theGraphicsDevice.viewport.width 
+																	  bottom:theGraphicsDevice.viewport.height 
+																		 top:0
+																  zNearPlane:0 
+																   zFarPlane:1];
 		basicEffect.textureEnabled = YES;
 		basicEffect.vertexColorEnabled = YES;	
 		
@@ -194,8 +213,8 @@ static VertexPositionColorTextureStruct vertices[4];
 - (void) draw:(Texture2D*)texture toRectangle:(Rectangle*)destinationRectangle tintWithColor:(Color*)color {
 	Sprite *sprite = [[[Sprite alloc] init] autorelease];
 	sprite->texture = texture;
-	SpriteSetDestination(sprite, destinationRectangle);
-	SpriteSetSource(sprite, nil, texture);
+	SpriteSetDestinationFast(sprite, destinationRectangle);
+	SpriteSetSource(sprite, nil, texture, SpriteEffectsNone);
 	sprite->color = color.packedValue;
 	[self draw:sprite];
 }
@@ -203,8 +222,8 @@ static VertexPositionColorTextureStruct vertices[4];
 - (void) draw:(Texture2D*)texture toRectangle:(Rectangle*)destinationRectangle fromRectangle:(Rectangle*)sourceRectangle tintWithColor:(Color*)color {
 	Sprite *sprite = [[[Sprite alloc] init] autorelease];
 	sprite->texture = texture;
-	SpriteSetDestination(sprite, destinationRectangle);
-	SpriteSetSource(sprite, sourceRectangle, texture);
+	SpriteSetDestinationFast(sprite, destinationRectangle);
+	SpriteSetSource(sprite, sourceRectangle, texture, SpriteEffectsNone);
 	sprite->color = color.packedValue;
 	[self draw:sprite];	
 }
@@ -213,12 +232,9 @@ static VertexPositionColorTextureStruct vertices[4];
 	 rotation:(float)rotation origin:(Vector2*)origin effects:(SpriteEffects)effects layerDepth:(float)layerDepth {
 	Sprite *sprite = [[[Sprite alloc] init] autorelease];
 	sprite->texture = texture;
-	SpriteSetDestination(sprite, destinationRectangle);
-	SpriteSetSource(sprite, sourceRectangle, texture);
+	SpriteSetDestination(sprite, destinationRectangle, origin.x, origin.y, rotation);
+	SpriteSetSource(sprite, sourceRectangle, texture, effects);
 	sprite->color = color.packedValue;
-	sprite->rotation = rotation;
-	sprite->origin = *origin.data;
-	sprite->effects = effects;
 	sprite->layerDepth = layerDepth;
 	[self draw:sprite];		
 }
@@ -226,8 +242,8 @@ static VertexPositionColorTextureStruct vertices[4];
 - (void) draw:(Texture2D*)texture to:(Vector2*)position tintWithColor:(Color*)color {
 	Sprite *sprite = [[[Sprite alloc] init] autorelease];
 	sprite->texture = texture;
-	SpriteSetPositionFast(sprite, position, texture);
-	SpriteSetSource(sprite, nil, texture);
+	SpriteSetPositionFast(sprite, position, texture.width, texture.height);
+	SpriteSetSource(sprite, nil, texture, SpriteEffectsNone);
 	sprite->color = color.packedValue;
 	[self draw:sprite];	
 }
@@ -235,8 +251,8 @@ static VertexPositionColorTextureStruct vertices[4];
 - (void) draw:(Texture2D*)texture to:(Vector2*)position fromRectangle:(Rectangle*)sourceRectangle tintWithColor:(Color*)color {
 	Sprite *sprite = [[[Sprite alloc] init] autorelease];
 	sprite->texture = texture;
-	SpriteSetPositionFast(sprite, position, texture);
-	SpriteSetSource(sprite, sourceRectangle, texture);
+	SpriteSetPositionFast(sprite, position, sourceRectangle ? sourceRectangle.width : texture.width, sourceRectangle ? sourceRectangle.height : texture.height);
+	SpriteSetSource(sprite, sourceRectangle, texture, SpriteEffectsNone);
 	sprite->color = color.packedValue;
 	[self draw:sprite];	
 }
@@ -245,13 +261,9 @@ static VertexPositionColorTextureStruct vertices[4];
 	 rotation:(float)rotation origin:(Vector2*)origin scaleUniform:(float)scale effects:(SpriteEffects)effects layerDepth:(float)layerDepth {
 	Sprite *sprite = [[[Sprite alloc] init] autorelease];
 	sprite->texture = texture;
-	SpriteSetPosition(sprite, position, origin.x, origin.y, scale, scale, rotation, texture);
-	sprite->source = *sourceRectangle.data;
+	SpriteSetPosition(sprite, position, origin.x, origin.y, scale, scale, rotation, sourceRectangle ? sourceRectangle.width : texture.width, sourceRectangle ? sourceRectangle.height : texture.height);
+	SpriteSetSource(sprite, sourceRectangle, texture, effects);
 	sprite->color = color.packedValue;
-	sprite->rotation = rotation;
-	sprite->origin = *origin.data;
-	sprite->effects = effects;
-	sprite->layerDepth = layerDepth;
 	[self draw:sprite];			
 }
 
@@ -259,12 +271,9 @@ static VertexPositionColorTextureStruct vertices[4];
 	 rotation:(float)rotation origin:(Vector2*)origin scale:(Vector2*)scale effects:(SpriteEffects)effects layerDepth:(float)layerDepth {
 	Sprite *sprite = [[[Sprite alloc] init] autorelease];
 	sprite->texture = texture;
-	SpriteSetPosition(sprite, position, origin.x, origin.y, scale.x, scale.y, rotation, texture);
-	SpriteSetSource(sprite, sourceRectangle, texture);
+	SpriteSetPosition(sprite, position, origin.x, origin.y, scale.x, scale.y, rotation, sourceRectangle ? sourceRectangle.width : texture.width, sourceRectangle ? sourceRectangle.height : texture.height);
+	SpriteSetSource(sprite, sourceRectangle, texture, effects);
 	sprite->color = color.packedValue;
-	sprite->rotation = rotation;
-	sprite->origin = *origin.data;
-	sprite->effects = effects;
 	sprite->layerDepth = layerDepth;
 	[self draw:sprite];		
 }
@@ -367,30 +376,16 @@ static VertexPositionColorTextureStruct vertices[4];
 		vertices[3].position.x = vertices[0].position.x + sprite->height.x + sprite->width.x;
 		vertices[3].position.y = vertices[0].position.y + sprite->height.y + sprite->width.y;
 		vertices[3].position.z = sprite->layerDepth;
+	
+		vertices[0].texture.x = sprite->source.x;
+		vertices[1].texture.x = sprite->source.x;
+		vertices[2].texture.x = sprite->source.x + sprite->source.width;
+		vertices[3].texture.x = sprite->source.x + sprite->source.width;		
 		
-		if (sprite->effects & SpriteEffectsFlipHorizontally) {
-			vertices[0].texture.x = sprite->source.x + sprite->source.width;
-			vertices[1].texture.x = sprite->source.x + sprite->source.width;
-			vertices[2].texture.x = sprite->source.x;
-			vertices[3].texture.x = sprite->source.x;
-		} else {
-			vertices[0].texture.x = sprite->source.x;
-			vertices[1].texture.x = sprite->source.x;
-			vertices[2].texture.x = sprite->source.x + sprite->source.width;
-			vertices[3].texture.x = sprite->source.x + sprite->source.width;		
-		}
-		
-		if (sprite->effects & SpriteEffectsFlipVertically) {
-			vertices[0].texture.y = sprite->source.y + sprite->source.height;
-			vertices[1].texture.y = sprite->source.y + sprite->source.height;
-			vertices[2].texture.y = sprite->source.y;
-			vertices[3].texture.y = sprite->source.y;
-		} else {
-			vertices[0].texture.y = sprite->source.y;
-			vertices[1].texture.y = sprite->source.y + sprite->source.height;
-			vertices[2].texture.y = sprite->source.y;
-			vertices[3].texture.y = sprite->source.y + sprite->source.height;		
-		}		
+		vertices[0].texture.y = sprite->source.y;
+		vertices[1].texture.y = sprite->source.y + sprite->source.height;
+		vertices[2].texture.y = sprite->source.y;
+		vertices[3].texture.y = sprite->source.y + sprite->source.height;			
 		
 		vertices[0].color = sprite->color;
 		vertices[1].color = sprite->color;

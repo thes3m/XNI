@@ -1,3 +1,4 @@
+#import "Enums.h"
 
 #import "GraphicsResource.h"
 #import "Texture.h"
