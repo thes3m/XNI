@@ -169,6 +169,7 @@
 		B5EC5A191252BF63001E7DFC /* Enums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A181252BF63001E7DFC /* Enums.h */; };
 		B5EC5A4F1252C2DF001E7DFC /* GestureSample.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A4D1252C2DF001E7DFC /* GestureSample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5EC5A501252C2DF001E7DFC /* GestureSample.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC5A4E1252C2DF001E7DFC /* GestureSample.m */; };
+		B5EC5A931252C710001E7DFC /* Retronator.Xni.Framework.Input.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A921252C710001E7DFC /* Retronator.Xni.Framework.Input.h */; };
 		B5F4E2A912095FAF00B2FC0F /* XNI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */; };
 		B5F8536E1239206700E6FD71 /* PackedVectorStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F85387123929F800E6FD71 /* VectorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F85385123929F800E6FD71 /* VectorConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -354,6 +355,7 @@
 		B5EC5A181252BF63001E7DFC /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
 		B5EC5A4D1252C2DF001E7DFC /* GestureSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureSample.h; sourceTree = "<group>"; };
 		B5EC5A4E1252C2DF001E7DFC /* GestureSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureSample.m; sourceTree = "<group>"; };
+		B5EC5A921252C710001E7DFC /* Retronator.Xni.Framework.Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.Input.h; sourceTree = "<group>"; };
 		B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNI_Prefix.pch; sourceTree = "<group>"; };
 		B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackedVectorStructs.h; sourceTree = "<group>"; };
 		B5F85385123929F800E6FD71 /* VectorConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorConverter.h; sourceTree = "<group>"; };
@@ -677,6 +679,7 @@
 			isa = PBXGroup;
 			children = (
 				B5EC59F51252B8D0001E7DFC /* Touch */,
+				B5EC5A921252C710001E7DFC /* Retronator.Xni.Framework.Input.h */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				B5EC5A101252BEDF001E7DFC /* TouchLocation.h in Headers */,
 				B5EC5A191252BF63001E7DFC /* Enums.h in Headers */,
 				B5EC5A4F1252C2DF001E7DFC /* GestureSample.h in Headers */,
+				B5EC5A931252C710001E7DFC /* Retronator.Xni.Framework.Input.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
