@@ -73,8 +73,8 @@ static inline void SpriteSetSource(Sprite *sprite, Rectangle *source, Texture2D 
 static inline void SpriteSetVertices(Sprite *sprite, float positionX, float positionY, float originX, float originY, float scaleX, float scaleY, float rotation, float width, float height) {
 	float x = originX * scaleX;
 	float y = -originY * scaleY;
-	float c = cos(-rotation);
-	float s = sin(-rotation);
+	float c = cos(rotation);
+	float s = sin(rotation);
 	sprite->position.x = positionX - x * c - y * s;
 	sprite->position.y = positionY - x * s + y * c;
 	sprite->width.x = width * scaleX * c;

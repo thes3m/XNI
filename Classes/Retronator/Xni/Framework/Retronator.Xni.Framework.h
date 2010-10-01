@@ -1,3 +1,4 @@
+#import "FrameworkEnums.h"
 #import "Protocols.h"
 
 // Data structures

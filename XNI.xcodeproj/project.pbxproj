@@ -14,6 +14,8 @@
 		B5080704122E4EE900C330E2 /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = B5080702122E4EE900C330E2 /* Texture2D.m */; };
 		B508070C122E4FBB00C330E2 /* GraphicsResource.h in Headers */ = {isa = PBXBuildFile; fileRef = B508070A122E4FBB00C330E2 /* GraphicsResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B508070D122E4FBB00C330E2 /* GraphicsResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B508070B122E4FBB00C330E2 /* GraphicsResource.m */; };
+		B52BACFB125527E200B308F6 /* TouchPanel+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B52BACF9125527E200B308F6 /* TouchPanel+Internal.h */; };
+		B52BADAD1255426600B308F6 /* FrameworkEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B52BADAC1255426600B308F6 /* FrameworkEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B56CC50D123A6F3600B72347 /* MipmapChain.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC50B123A6F3600B72347 /* MipmapChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B56CC50E123A6F3600B72347 /* MipmapChain.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC50C123A6F3600B72347 /* MipmapChain.m */; };
 		B56CC511123A739100B72347 /* MipmapChainCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC50F123A739100B72347 /* MipmapChainCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -120,10 +122,9 @@
 		B5DE190411F88AF500BF3275 /* Rectangle.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE190211F88AF500BF3275 /* Rectangle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DE190511F88AF500BF3275 /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE190311F88AF500BF3275 /* Rectangle.m */; };
 		B5DE190711F88B5D00BF3275 /* RectangleStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE190611F88B5D00BF3275 /* RectangleStruct.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B5DE193111F898AE00BF3275 /* DisplayOrientation.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE193011F898AE00BF3275 /* DisplayOrientation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B5DE194A11F89C0900BF3275 /* GameViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE194811F89C0900BF3275 /* GameViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DE194A11F89C0900BF3275 /* GameViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE194811F89C0900BF3275 /* GameViewController.h */; settings = {ATTRIBUTES = (); }; };
 		B5DE194B11F89C0900BF3275 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE194911F89C0900BF3275 /* GameViewController.m */; };
-		B5DE194E11F89C1F00BF3275 /* GameView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE194C11F89C1F00BF3275 /* GameView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5DE194E11F89C1F00BF3275 /* GameView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE194C11F89C1F00BF3275 /* GameView.h */; settings = {ATTRIBUTES = (); }; };
 		B5DE194F11F89C1F00BF3275 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE194D11F89C1F00BF3275 /* GameView.m */; };
 		B5E78B4A1242925600DDD99A /* SpriteBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B481242925600DDD99A /* SpriteBatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5E78B4B1242925600DDD99A /* SpriteBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B491242925600DDD99A /* SpriteBatch.m */; };
@@ -200,6 +201,8 @@
 		B5080702122E4EE900C330E2 /* Texture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2D.m; sourceTree = "<group>"; };
 		B508070A122E4FBB00C330E2 /* GraphicsResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsResource.h; sourceTree = "<group>"; };
 		B508070B122E4FBB00C330E2 /* GraphicsResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsResource.m; sourceTree = "<group>"; };
+		B52BACF9125527E200B308F6 /* TouchPanel+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TouchPanel+Internal.h"; sourceTree = "<group>"; };
+		B52BADAC1255426600B308F6 /* FrameworkEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameworkEnums.h; sourceTree = "<group>"; };
 		B56CC50B123A6F3600B72347 /* MipmapChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MipmapChain.h; sourceTree = "<group>"; };
 		B56CC50C123A6F3600B72347 /* MipmapChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MipmapChain.m; sourceTree = "<group>"; };
 		B56CC50F123A739100B72347 /* MipmapChainCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MipmapChainCollection.h; sourceTree = "<group>"; };
@@ -306,7 +309,6 @@
 		B5DE190211F88AF500BF3275 /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
 		B5DE190311F88AF500BF3275 /* Rectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rectangle.m; sourceTree = "<group>"; };
 		B5DE190611F88B5D00BF3275 /* RectangleStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectangleStruct.h; sourceTree = "<group>"; };
-		B5DE193011F898AE00BF3275 /* DisplayOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayOrientation.h; sourceTree = "<group>"; };
 		B5DE194811F89C0900BF3275 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		B5DE194911F89C0900BF3275 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		B5DE194C11F89C1F00BF3275 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
@@ -607,6 +609,7 @@
 				B5DDE82911FF10D0000DB38B /* Graphics */,
 				B5DE189F11F8888B00BF3275 /* Retronator.Xni.Framework.classes.h */,
 				B5DE18A011F8888B00BF3275 /* Retronator.Xni.Framework.h */,
+				B52BADAC1255426600B308F6 /* FrameworkEnums.h */,
 				B5DDE89411FF16A3000DB38B /* Protocols.h */,
 				B5DDE89511FF16A3000DB38B /* Protocols.m */,
 				B5DE190611F88B5D00BF3275 /* RectangleStruct.h */,
@@ -618,7 +621,6 @@
 				B5DE18FB11F88AD900BF3275 /* GameHost.m */,
 				B5DDE7E911FF04E3000DB38B /* Game.h */,
 				B5DDE7EA11FF04E3000DB38B /* Game.m */,
-				B5DE193011F898AE00BF3275 /* DisplayOrientation.h */,
 				B5DE18FC11F88AD900BF3275 /* GameWindow.h */,
 				B5DE18FD11F88AD900BF3275 /* GameWindow.m */,
 				B5DE194811F89C0900BF3275 /* GameViewController.h */,
@@ -691,6 +693,7 @@
 				B5EC59FD1252BE3B001E7DFC /* Retronator.Xni.Framework.Input.Touch.h */,
 				B5EC5A181252BF63001E7DFC /* InputEnums.h */,
 				B5EC59F71252B917001E7DFC /* TouchPanel.h */,
+				B52BACF9125527E200B308F6 /* TouchPanel+Internal.h */,
 				B5EC59F81252B917001E7DFC /* TouchPanel.m */,
 				B5EC5A051252BE9E001E7DFC /* TouchCollection.h */,
 				B5EC5A061252BE9E001E7DFC /* TouchCollection.m */,
@@ -720,7 +723,6 @@
 				B5DE190011F88AD900BF3275 /* GameWindow.h in Headers */,
 				B5DE190411F88AF500BF3275 /* Rectangle.h in Headers */,
 				B5DE190711F88B5D00BF3275 /* RectangleStruct.h in Headers */,
-				B5DE193111F898AE00BF3275 /* DisplayOrientation.h in Headers */,
 				B5DE194A11F89C0900BF3275 /* GameViewController.h in Headers */,
 				B5DE194E11F89C1F00BF3275 /* GameView.h in Headers */,
 				B5DDE7EB11FF04E3000DB38B /* Game.h in Headers */,
@@ -817,6 +819,8 @@
 				B5EC5A191252BF63001E7DFC /* InputEnums.h in Headers */,
 				B5EC5A4F1252C2DF001E7DFC /* GestureSample.h in Headers */,
 				B5EC5A931252C710001E7DFC /* Retronator.Xni.Framework.Input.h in Headers */,
+				B52BACFB125527E200B308F6 /* TouchPanel+Internal.h in Headers */,
+				B52BADAD1255426600B308F6 /* FrameworkEnums.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

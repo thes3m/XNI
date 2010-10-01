@@ -15,4 +15,6 @@
 
 - initWithGameWindow: (GameWindow*)theGameWindow;
 
++ (DisplayOrientation) getDisplayOrientationForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+
 @end

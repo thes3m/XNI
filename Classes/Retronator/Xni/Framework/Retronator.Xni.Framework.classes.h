@@ -1,3 +1,4 @@
+#import "FrameworkEnums.h"
 @class Protocols;
 
 // Data structures
@@ -5,7 +6,6 @@
 @class Rectangle, Color;
 
 // Game
-#import "DisplayOrientation.h"
 @protocol IGraphicsDeviceManager;
 @class Game, GameTime, GameServiceContainer, GraphicsDeviceManager;
 

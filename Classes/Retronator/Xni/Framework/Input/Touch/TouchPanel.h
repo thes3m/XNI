@@ -12,23 +12,27 @@
 #import "Retronator.Xni.Framework.Input.Touch.classes.h"
 
 @interface TouchPanel : NSObject {
-
+	int displayWidth;
+	int displayHeight;
+	DisplayOrientation displayOrientation;
+	GestureType enabledGestures;
+	
+	NSMutableSet *addTouches;
+	NSMutableSet *removeTouches;
+	NSMutableSet *releaseTouches;
+	NSMutableSet *lateReleaseTouches;
+	NSMutableDictionary *touchLocations;
 }
 
-+ (int) getDisplayWidth;
-+ (void) setDisplayWidth:(int)value;
++ (TouchPanel*) instance;
 
-+ (int) getDisplayHeight;
-+ (void) setDisplayHeight:(int)value;
+@property (nonatomic) int displayWidth;
+@property (nonatomic) int displayHeight;
+@property (nonatomic) DisplayOrientation displayOrientation;
+@property (nonatomic) GestureType enabledGestures;
+@property (nonatomic, readonly) BOOL isGestureAvailable;
 
-+ (DisplayOrientation) getDisplayOrientation;
-+ (void) setDisplayOrientation:(DisplayOrientation)value;
-
-+ (GestureType) getEnabledGestures;
-+ (void) setEnabledGestures:(GestureType)value;
-
-+ (BOOL) isGestureAvailable;
-+ (TouchCollection*) getState;
-+ (GestureSample*) readGesture;
+- (TouchCollection*) getState;
+- (GestureSample*) readGesture;
 
 @end

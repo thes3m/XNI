@@ -10,9 +10,11 @@
 
 #import "Retronator.Xni.Framework.Input.Touch.classes.h"
 
-@interface TouchCollection : NSObject {
+@interface TouchCollection : NSObject <NSFastEnumeration> {
 	NSMutableArray *collection;
 }
+
+- (id) initWithArray:(NSArray*)array;
 
 - (int) count;
 - (TouchLocation*)objectAtIndex:(NSUInteger)index;

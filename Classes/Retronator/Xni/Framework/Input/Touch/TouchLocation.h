@@ -12,13 +12,19 @@
 #import "Retronator.Xni.Framework.Input.Touch.classes.h"
 
 @interface TouchLocation : NSObject {
-	int id;
+	int identifier;
 	Vector2 *position;
+	Vector2 *previousPosition;
 	TouchLocationState state;
 }
 
-@property (nonatomic, readonly) int id;
+- (id) initWithIdentifier:(int)theIdentifier position:(Vector2*)thePosition 
+		 previousPosition:(Vector2*)thePreviousPosition state:(TouchLocationState)theState;
+
+@property (nonatomic, readonly) int identifier;
 @property (nonatomic, readonly) Vector2 *position;
 @property (nonatomic, readonly) TouchLocationState state;
+
+- (BOOL) tryGetPreviousPosition:(Vector2**)previousPosition;
 
 @end

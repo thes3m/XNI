@@ -11,6 +11,7 @@
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Graphics.h"
 #import "Retronator.Xni.Framework.Content.h"
+#import "TouchPanel+Internal.h"
 
 @implementation Game
 
@@ -117,6 +118,9 @@
     gameTime.elapsedGameTime = elapsedGameTime;
     gameTime.totalGameTime += elapsedGameTime;
     gameTime.isRunningSlowly = elapsedRealTime > elapsedGameTime;
+	
+	// Update input.
+	[[TouchPanel instance] update];
     
     // Update the game.
     [self updateWithGameTime:gameTime];
