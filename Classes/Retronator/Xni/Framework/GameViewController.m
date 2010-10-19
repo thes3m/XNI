@@ -10,6 +10,7 @@
 
 #import "Retronator.Xni.Framework.h"
 #import "TouchPanel+Internal.h"
+#import "GameView.h"
 
 
 @implementation GameViewController
@@ -50,7 +51,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     //InterfaceOrientationFlags orientationFlag = 1 << interfaceOrientation;
-    return YES;// gameWindow.allowedOrientations & orientationFlag;
+    return YES; // gameWindow.allowedOrientations & orientationFlag;
 }
 
 

@@ -9,6 +9,8 @@
 #import "GameWindow.h"
 
 #import "Retronator.Xni.Framework.h"
+#import "GameViewController.h"
+#import "GameView.h"
 
 @implementation GameWindow
 
@@ -55,7 +57,7 @@
     gameViewController.wantsFullScreenLayout = willBeFullscreen;
     [[UIApplication sharedApplication] setStatusBarHidden:willBeFullscreen];
     gameViewController.view.frame = [UIScreen mainScreen].applicationFrame;
-    clientBounds = [Rectangle rectangleWithCGRect:gameViewController.view.bounds];
+    clientBounds = [[Rectangle rectangleWithCGRect:gameViewController.view.bounds] retain];
 }
 
 - (void) endScreenDeviceChange {

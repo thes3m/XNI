@@ -28,7 +28,7 @@
     GraphicsDevice *graphicsDevice;
     Event *deviceCreated;
     Event *deviceDisposing;
-    Event *deviceReseting;
+    Event *deviceResetting;
     Event *deviceReset;
 }
 

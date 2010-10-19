@@ -23,6 +23,7 @@
 
 @property (nonatomic) TouchLocationState state;
 
+- (void) moveIfPressed;
 - (void) moveToPosition:(Vector2*)newPosition;
 
 - (TouchLocation*) createTouchLocation;
@@ -46,6 +47,12 @@ static int nextID = 0;
 }
 
 @synthesize state;
+
+- (void) moveIfPressed {
+	if (state == TouchLocationStatePressed) {
+		state = TouchLocationStateMoved;
+	}
+}
 
 - (void) moveToPosition:(Vector2*)newPosition {
 	[previousPosition release];
@@ -110,6 +117,9 @@ static TouchPanel *instance;
 	TouchCollection *collection = [[[TouchCollection alloc] init] autorelease];
 	for (InternalTouchLocation *touch in [touchLocations allValues]) {
 		[collection addObject:[touch createTouchLocation]];
+		
+		// After get state is done, all pressed touches should be moved.
+		[touch moveIfPressed];
 	}
 	return collection;
 }

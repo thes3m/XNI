@@ -32,7 +32,11 @@
 @property (nonatomic) Byte a;
 @property (nonatomic) uint packedValue;
 
-//- (Vector3*) toVector3;
++ (Color*) multiply:(Color*)color withScalar:(float)value;
+
+- (void) multiply:(float)value;
+- (Vector3*) toVector3;
+- (Vector4*) toVector4;
 
 // Constants
 + (Color*) aliceBlue;

@@ -15,6 +15,17 @@
 
 @implementation Game
 
+NSArray *updateOrderSort;
+NSArray *drawOrderSort;
+
++ (void) initialize {
+	NSSortDescriptor *updateOrderSortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"updateOrder" ascending:YES] autorelease];
+	NSSortDescriptor *drawOrderSortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"drawOrder" ascending:YES] autorelease];
+	
+	updateOrderSort = [[NSArray arrayWithObject:updateOrderSortDescriptor] retain];
+	drawOrderSort = [[NSArray arrayWithObject:drawOrderSortDescriptor] retain];
+}
+
 - (id) init
 {
     if (self = [super init]) {
@@ -22,8 +33,14 @@
         gameTime = [[GameTime alloc] init];
 		
         components = [[GameComponentCollection alloc] init];
+		enabledComponents = [[NSMutableArray alloc] init];
+		visibleComponents = [[NSMutableArray alloc] init];
+		
         [components.componentAdded subscribeDelegate:
 		 [Delegate delegateWithTarget:self Method:@selector(componentAddedTo:eventArgs:)]];
+		
+		[components.componentRemoved subscribeDelegate:
+		 [Delegate delegateWithTarget:self Method:@selector(componentRemovedFrom:eventArgs:)]];
         
         services = [[GameServiceContainer alloc] init];
     
@@ -175,14 +192,8 @@
 - (void) beginRun {}
 
 - (void) updateWithGameTime:(GameTime*)theGameTime {
-    for (id component in components) {
-        if (![component conformsToProtocol:@protocol(IUpdatable)]) {
-            continue;
-        }
-        id<IUpdatable> updatable = component;
-        if (updatable.enabled) {
-            [updatable updateWithGameTime:theGameTime];
-        }
+    for (id<IUpdatable> updatable in enabledComponents) {
+		[updatable updateWithGameTime:theGameTime];
     }
 }
 
@@ -191,14 +202,8 @@
 }
 
 - (void) drawWithGameTime:(GameTime*)theGameTime {
-    for (id component in components) {
-        if (![component conformsToProtocol:@protocol(IDrawable)]) {
-            continue;
-        }
-        id<IDrawable> drawable = component;
-        if (drawable.visible) {
-            [drawable drawWithGameTime:theGameTime];
-        }
+    for (id<IDrawable> drawable in visibleComponents) {
+		[drawable drawWithGameTime:theGameTime];
     }
 }
 
@@ -210,19 +215,110 @@
 
 - (void) endRun {}
 
-// Private methods
+
+
+// Private methods for component management.
+
+- (void) addEnabledComponent:(id<IUpdatable>)component {
+	[enabledComponents addObject:component];
+	[enabledComponents sortUsingDescriptors:updateOrderSort];
+}
+
+- (void) addVisibleComponent:(id<IDrawable>)component {
+	[visibleComponents addObject:component];
+	[visibleComponents sortUsingDescriptors:drawOrderSort];
+}
 
 - (void) componentAddedTo:(GameComponentCollection*)sender eventArgs:(GameComponentCollectionEventArgs*)e {
-    if (initializeDone) {
+    // Initialize component if it's being added after main initialize has been called.
+	if (initializeDone) {
         [e.gameComponent initialize];
     }
+	
+	// Process updatable component.
+	if ([e.gameComponent conformsToProtocol:@protocol(IUpdatable)]) {
+		id<IUpdatable> updatable = (id<IUpdatable>)e.gameComponent;
+		if (updatable.enabled) {
+			[self addEnabledComponent:updatable];
+		}
+		[updatable.enabledChanged subscribeDelegate:
+		 [Delegate delegateWithTarget:self Method:@selector(componentEnabledChanged:eventArgs:)]];
+		[updatable.updateOrderChanged subscribeDelegate:
+		 [Delegate delegateWithTarget:self Method:@selector(componentUpdateOrderChanged:eventArgs:)]];
+	}
+	
+	// Process updatable component.
+	if ([e.gameComponent conformsToProtocol:@protocol(IDrawable)]) {
+		id<IDrawable> drawable = (id<IDrawable>)e.gameComponent;
+		if (drawable.visible) {
+			[self addVisibleComponent:drawable];
+		}
+		[drawable.visibleChanged subscribeDelegate:
+		 [Delegate delegateWithTarget:self Method:@selector(componentVisibleChanged:eventArgs:)]];
+		[drawable.drawOrderChanged subscribeDelegate:
+		 [Delegate delegateWithTarget:self Method:@selector(componentDrawOrderChanged:eventArgs:)]];
+	}	
 }
+
+- (void) componentRemovedFrom:(GameComponentCollection*)sender eventArgs:(GameComponentCollectionEventArgs*)e {
+	// Process updatable component.
+	if ([e.gameComponent conformsToProtocol:@protocol(IUpdatable)]) {
+		id<IUpdatable> updatable = (id<IUpdatable>)e.gameComponent;
+		if (updatable.enabled) {
+			[enabledComponents removeObject:updatable];
+		}
+		[updatable.enabledChanged unsubscribeDelegate:
+		 [Delegate delegateWithTarget:self Method:@selector(componentEnabledChanged:eventArgs:)]];
+		[updatable.updateOrderChanged unsubscribeDelegate:
+		 [Delegate delegateWithTarget:self Method:@selector(componentUpdateOrderChanged:eventArgs:)]];
+	}
+	
+	// Process updatable component.
+	if ([e.gameComponent conformsToProtocol:@protocol(IDrawable)]) {
+		id<IDrawable> drawable = (id<IDrawable>)e.gameComponent;
+		if (drawable.visible) {
+			[visibleComponents removeObject:drawable];
+		}
+		[drawable.visibleChanged unsubscribeDelegate:
+		 [Delegate delegateWithTarget:self Method:@selector(componentVisibleChanged:eventArgs:)]];
+		[drawable.drawOrderChanged unsubscribeDelegate:
+		 [Delegate delegateWithTarget:self Method:@selector(componentDrawOrderChanged:eventArgs:)]];
+	}	    
+}
+
+- (void) componentEnabledChanged:(id<IUpdatable>)sender eventArgs:(EventArgs*)e {
+	if (sender.enabled) {
+		[self addEnabledComponent: sender];
+	} else {
+		[enabledComponents removeObject:sender];
+	}
+}
+
+- (void) componentUpdateOrderChanged:(id<IUpdatable>)sender eventArgs:(EventArgs*)e {
+	[enabledComponents sortUsingDescriptors:updateOrderSort];
+}
+
+- (void) componentVisibleChanged:(id<IDrawable>)sender eventArgs:(EventArgs*)e {
+	if (sender.visible) {
+		[self addVisibleComponent:sender];
+	} else {
+		[visibleComponents removeObject:sender];
+	}
+}
+
+- (void) componentDrawOrderChanged:(id<IDrawable>)sender eventArgs:(EventArgs*)e {
+	[visibleComponents sortUsingDescriptors:drawOrderSort];
+}
+
+
 
 - (void) dealloc
 {       
 	[self unloadContent];
     [gameTime release];
     
+	[enabledComponents release];
+	[visibleComponents release];
     [components release];
     [services release];
 	

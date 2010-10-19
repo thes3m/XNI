@@ -19,7 +19,7 @@
         
         deviceCreated = [[Event alloc] init];
         deviceDisposing = [[Event alloc] init];
-        deviceReseting = [[Event alloc] init];
+        deviceResetting = [[Event alloc] init];
         deviceReset = [[Event alloc] init];
         
         [game.services addService:self ofType:[Protocols graphicsDeviceManager]];
@@ -40,7 +40,7 @@
 @synthesize graphicsDevice;
 @synthesize deviceCreated;
 @synthesize deviceDisposing;
-@synthesize deviceReseting;
+@synthesize deviceResetting;
 @synthesize deviceReset;
 
 - (void) toggleFullscreen {
@@ -89,7 +89,7 @@
         [deviceCreated raiseWithSender:self];
     } else {
         // Reset the existing device.
-        [deviceReseting raiseWithSender:self];
+        [deviceResetting raiseWithSender:self];
         [graphicsDevice reset];
         [game.window endScreenDeviceChange];
         [deviceReset raiseWithSender:self];
@@ -101,7 +101,7 @@
     [graphicsDevice release];
     [deviceCreated release];
     [deviceDisposing release];
-    [deviceReseting release];
+    [deviceResetting release];
     [deviceReset release];
     [super dealloc];
 }

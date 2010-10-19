@@ -41,6 +41,8 @@
     
     // Game components
     GameComponentCollection *components;
+	NSMutableArray *enabledComponents;
+	NSMutableArray *visibleComponents;
     
     // Services
     GameServiceContainer *services;
@@ -72,6 +74,5 @@
 - (void) endDraw;
 - (void) unloadContent;
 - (void) endRun;
-
 
 @end

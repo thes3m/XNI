@@ -63,6 +63,10 @@
 		samplerStates = [[SamplerStateCollection alloc] init];
 		textures = [[TextureCollection alloc] init];
 		[samplerStates insertObject:[SamplerState linearClamp] atIndex:0];
+		
+		// Create events.
+        deviceResetting = [[Event alloc] init];
+        deviceReset = [[Event alloc] init];
 	}
 	
 	return self;
@@ -127,8 +131,13 @@
     }
 }
 
+@synthesize deviceReset;
+@synthesize deviceResetting;
+
 // Presentation
 - (void) reset {
+	[deviceResetting raiseWithSender:self];
+	
     CAEAGLLayer *layer = (CAEAGLLayer*)game.window.handle;
     
 	// Allocate color buffer backing based on the current layer size.
@@ -154,6 +163,8 @@
 	
 	// Set state defaults.
 	glEnable(GL_BLEND);
+	
+	[deviceReset raiseWithSender:self];
 }
 
 - (void) present {
@@ -292,6 +303,8 @@
 	[samplerStates release];
 	[textures release];
 	[viewport release];
+    [deviceResetting release];
+    [deviceReset release];	
 	[super dealloc];
 }
 

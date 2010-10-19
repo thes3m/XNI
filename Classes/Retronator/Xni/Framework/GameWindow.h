@@ -11,6 +11,7 @@
 #import "System.h"
 
 #import "Retronator.Xni.Framework.classes.h"
+@class GameViewController;
 
 @interface GameWindow : NSObject {
     Rectangle *clientBounds;

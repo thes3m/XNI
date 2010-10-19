@@ -11,6 +11,7 @@
 #import <OpenGLES/ES1/glext.h>
 #import <OpenGLES/ES2/glext.h>
 
+#import "System.classes.h"
 #import "Retronator.Xni.Framework.classes.h"
 #import "Retronator.Xni.Framework.Graphics.classes.h"
 
@@ -37,6 +38,10 @@
 	TextureCollection *textures;
 	Viewport *viewport;
 	
+	// Events
+	Event *deviceResetting;
+    Event *deviceReset;
+	
 	NSMutableArray *vertices;
 }
 
@@ -53,6 +58,9 @@
 @property (nonatomic, readonly) SamplerStateCollection *samplerStates;
 @property (nonatomic, readonly) TextureCollection *textures;
 @property (nonatomic, retain) Viewport *viewport;
+
+@property (nonatomic, readonly) Event *deviceResetting;
+@property (nonatomic, readonly) Event *deviceReset;
 
 + (int) getNumberOfVerticesForPrimitiveType:(PrimitiveType)primitiveType primitiveCount:(int)primitiveCount;
 

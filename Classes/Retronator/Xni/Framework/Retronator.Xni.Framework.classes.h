@@ -10,7 +10,7 @@
 @class Game, GameTime, GameServiceContainer, GraphicsDeviceManager;
 
 // Game host
-@class GameHost, GameWindow, GameViewController, GameView;
+@class GameHost, GameWindow;
 
 // Game components
 @protocol IGameComponent, IUpdatable, IDrawable;

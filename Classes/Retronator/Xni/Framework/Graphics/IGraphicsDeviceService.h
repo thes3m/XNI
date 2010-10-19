@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) Event *deviceCreated;
 @property (nonatomic, readonly) Event *deviceDisposing;
-@property (nonatomic, readonly) Event *deviceReseting;
+@property (nonatomic, readonly) Event *deviceResetting;
 @property (nonatomic, readonly) Event *deviceReset;
 
 @end

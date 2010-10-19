@@ -8,8 +8,9 @@
 
 #import "Color.h"
 
-#define CLAMP_TO_BYTE(X) (X < 0 ? 0 : (X > 255 ? 255 : X))
+#import "Retronator.Xni.Framework.h"
 
+#define CLAMP_TO_BYTE(X) (X < 0 ? 0 : (X > 255 ? 255 : X))
 
 @implementation Color
 
@@ -80,10 +81,24 @@
 
 // METHODS
 
-/*- (Vector3 *) toVector3 {
-    return [Vector3 vectorWithX:data.red Y:data.green Z:data.blue];
-}*/
++ (Color*) multiply:(Color*)color withScalar:(float)value {
+	return [Color colorWithRed:color.r * value green:color.g * value blue:color.b * value alpha:color.a * value];
+}
 
+- (void) multiply:(float)value {
+	self.r *= value;
+	self.g *= value;
+	self.b *= value;
+	self.a *= value;
+}
+
+- (Vector3 *) toVector3 {
+    return [Vector3 vectorWithX:self.r/255.0f y:self.g/255.0f z:self.b/255.0f];
+}
+
+- (Vector4 *) toVector4 {
+    return [Vector4 vectorWithX:self.r/255.0f y:self.g/255.0f z:self.b/255.0f w:self.a/255.0f];
+}
 
 // Constants
 + (Color*) aliceBlue {return [Color colorWithRed:240 green:248 blue:255 alpha:255];}

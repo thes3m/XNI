@@ -15,15 +15,13 @@
 // Game host
 #import "GameHost.h"
 #import "GameWindow.h"
-#import "GameViewController.h"
-#import "GameView.h"
 
 // Game components
 #import "IGameComponent.h"
 #import "IUpdatable.h"
 #import "IDrawable.h"
-//#import "GameComponent.h"
-//#import "DrawableGameComponent.h"
+#import "GameComponent.h"
+#import "DrawableGameComponent.h"
 #import "GameComponentCollection.h"
 #import "GameComponentCollectionEventArgs.h"
 

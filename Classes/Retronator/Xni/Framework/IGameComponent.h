@@ -1,4 +1,4 @@
-@protocol IGameComponent
+@protocol IGameComponent <NSObject>
 
 - (void) initialize;
 
