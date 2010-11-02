@@ -7,6 +7,8 @@
 //
 
 #import "TextureCollection.h"
+#import "TextureCollection+Internal.h"
+#import "XniSamplerEventArgs.h"
 
 #import "Retronator.Xni.Framework.Graphics.h"
 
@@ -16,30 +18,32 @@
 {
 	self = [super init];
 	if (self != nil) {
-		collection = [[NSMutableArray alloc] init];
+		for (int i = 0; i < GL_MAX_TEXTURE_UNITS; i++) {
+			textures[i] = nil;
+		}
+		textureChanged = [[Event alloc] init];
 	}
 	return self;
 }
 
-- (int) count {
-	return [collection count];
+- (Event *) textureChanged {
+	return textureChanged;
 }
 
-- (Texture*)objectAtIndex:(NSUInteger)index {
-	return (Texture*)[collection objectAtIndex:index];
+- (Texture*)itemAtIndex:(NSUInteger)index {
+	return textures[index];
 }
 
-- (void)addObject:(Texture*)anObject {
-	[collection addObject:anObject];
-}
-
-- (void)insertObject:(Texture*)anObject atIndex:(NSUInteger)index {
-	[collection insertObject:anObject atIndex:index];
+- (void)setItem:(Texture*)item atIndex:(NSUInteger)index {
+	if (textures[index] != item) {
+		textures[index] = item;
+		[textureChanged raiseWithSender:self eventArgs:[XniSamplerEventArgs eventArgsWithSamplerIndex:index]];
+	}
 }
 
 - (void) dealloc
 {
-	[collection dealloc];
+	[textureChanged release];
 	[super dealloc];
 }
 

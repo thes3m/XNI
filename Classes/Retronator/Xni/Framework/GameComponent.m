@@ -48,6 +48,7 @@
 @synthesize updateOrderChanged;
 
 - (void) initialize {}
+
 - (void) updateWithGameTime:(GameTime*)gameTime {}
 
 - (void) dealloc

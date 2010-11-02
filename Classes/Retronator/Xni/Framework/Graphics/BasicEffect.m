@@ -149,11 +149,9 @@
     
     // Set texturing.
     if (basicEffect.textureEnabled) {
+		[graphicsDevice.textures setItem:basicEffect.texture atIndex:0];	
+		glActiveTexture(GL_TEXTURE0);
         glEnable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, basicEffect.texture.textureId);
-		SamplerState *samplerState = [graphicsDevice.samplerStates objectAtIndex:0];
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, samplerState.addressU);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, samplerState.addressV);
     } else {
         glDisable(GL_TEXTURE_2D);
     }

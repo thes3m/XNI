@@ -11,6 +11,8 @@
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Graphics.h"
 
+#import "GameViewController.h"
+
 @implementation GraphicsDeviceManager
 - (id) initWithGame:(Game*)theGame {
     if (self = [super init]) {
@@ -24,6 +26,9 @@
         
         [game.services addService:self ofType:[Protocols graphicsDeviceManager]];
         [game.services addService:self ofType:[Protocols graphicsDeviceService]];
+		
+		supportedOrientations = [GameViewController getSupportedOrientationsFromPlist];
+		isFullScreen = [GameViewController getIsFullscreenFromPlist];
     }
     return self;
 }
@@ -65,6 +70,7 @@
 }
 
 - (void) applyChanges {
+	[game.window setSupportedOrientations:supportedOrientations];
     [game.window beginScreenDeviceChangeWithFullscreen:isFullScreen];
 	
 	if (graphicsDevice != nil && graphicsDevice.graphicsProfile != graphicsProfile) {

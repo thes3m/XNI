@@ -8,7 +8,6 @@
 
 #import "TouchLocation.h"
 
-
 @implementation TouchLocation
 
 - (id) initWithIdentifier:(int)theIdentifier position:(Vector2*)thePosition 

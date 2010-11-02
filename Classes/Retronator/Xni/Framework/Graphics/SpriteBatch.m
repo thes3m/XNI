@@ -212,8 +212,11 @@ static VertexPositionColorTextureStruct vertices[4];
 	depthStencilState = theDepthStencilState;
 	rasterizerState = theRasterizerState;
 	samplerState = theSamplerState;
+	effect = theEffect;
 	
-	basicEffect.world = theTransformMatrix;
+	if ([effect isKindOfClass:[BasicEffect class]]) {
+		((BasicEffect*)effect).world = theTransformMatrix;
+	}
 	
 	// Immediate mode applies the device state during begin.
 	if (sortMode == SpriteSortModeImmediate) {
@@ -335,21 +338,23 @@ static VertexPositionColorTextureStruct vertices[4];
 	graphicsDevice.blendState = blendState;
 	graphicsDevice.depthStencilState = depthStencilState;
 	graphicsDevice.rasterizerState = rasterizerState;
-	[graphicsDevice.samplerStates insertObject:samplerState atIndex:0];
+	[graphicsDevice.samplerStates setItem:samplerState atIndex:0];
+	[[effect.currentTechnique.passes objectAtIndex:0] apply];	
 }
 
 - (void) draw {
+	// Check how many sprites to draw.
 	int count = [sprites count];
 	if (count == 0) {
 		// No sprites to draw.
 		return;
 	}
 	
+	// Draw until all sprites are drawn.
 	int startIndex = 0;
 	int endIndex = 0;
 	
-	// Continue until all sprites are drawn.
-	while (startIndex < count) {		
+	while (startIndex < count) {
 		// Get the texture for the next batch.
 		Texture2D *currentTexture = ((XniSprite*)[sprites objectAtIndex:startIndex]).texture;
 		
@@ -414,9 +419,7 @@ static VertexPositionColorTextureStruct vertices[4];
 		[vertexArray addVertex:&vertices[3]];
 	}
 	
-	// Apply the effect with the texture.
-	basicEffect.texture = ((XniSprite*)[sprites objectAtIndex:startIndex]).texture;
-	[[basicEffect.currentTechnique.passes objectAtIndex:0] apply];
+	[self.graphicsDevice.textures setItem:((XniSprite*)[sprites objectAtIndex:startIndex]).texture atIndex:0];
 	
 	// Draw the vertex array.
 	int count = (endIndex - startIndex + 1) * 2;

@@ -12,6 +12,7 @@
 #import "Retronator.Xni.Framework.Graphics.h"
 #import "Retronator.Xni.Framework.Content.h"
 #import "TouchPanel+Internal.h"
+#import "GameWindow+Internal.h"
 
 @implementation Game
 
@@ -81,9 +82,9 @@ NSArray *drawOrderSort;
 // METHODS
 
 - (void) run {    
-    // Allow the game host to create the window as desired.
-    [gameHost initialize];
-    
+    // Initialize game window.
+	[self.window initialize];
+	
     // Create the graphics device so we can finish initialization.
     graphicsDeviceManager = [services getServiceOfType:[Protocols graphicsDeviceManager]];
     graphicsDeviceService = [services getServiceOfType:[Protocols graphicsDeviceService]];
@@ -123,7 +124,10 @@ NSArray *drawOrderSort;
         [currentFrameTime release];
         currentFrameTime = [[NSDate alloc] init];
         elapsedRealTime = [currentFrameTime timeIntervalSinceDate:lastFrameTime];
-    }
+		gameTime.isRunningSlowly = NO;
+    } else {
+		gameTime.isRunningSlowly = YES;
+	}
     
     // Store current time for next frame.
     [lastFrameTime release];
@@ -134,7 +138,6 @@ NSArray *drawOrderSort;
     NSTimeInterval elapsedGameTime = MIN(isFixedTimeStep ? targetElapsedTime : elapsedRealTime, maximumElapsedTime);
     gameTime.elapsedGameTime = elapsedGameTime;
     gameTime.totalGameTime += elapsedGameTime;
-    gameTime.isRunningSlowly = elapsedRealTime > elapsedGameTime;
 	
 	// Update input.
 	[[TouchPanel instance] update];

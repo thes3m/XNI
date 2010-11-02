@@ -30,10 +30,10 @@
 @property (nonatomic, readonly) Event *clientSizeChanged;
 @property (nonatomic, readonly) Event *orientationChanged;
 
-
-- (void) initialize;
 - (void) beginScreenDeviceChangeWithFullscreen:(BOOL)willBeFullscreen;
 - (void) endScreenDeviceChange;
+
+- (void) setSupportedOrientations:(DisplayOrientation)orientations;
 
 @end
 

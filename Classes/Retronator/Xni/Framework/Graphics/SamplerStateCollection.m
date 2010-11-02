@@ -7,6 +7,8 @@
 //
 
 #import "SamplerStateCollection.h"
+#import "SamplerStateCollection+Internal.h"
+#import "XniSamplerEventArgs.h"
 
 #import "Retronator.Xni.Framework.Graphics.h"
 
@@ -16,30 +18,32 @@
 {
 	self = [super init];
 	if (self != nil) {
-		collection = [[NSMutableArray alloc] init];
+		for (int i = 0; i < GL_MAX_TEXTURE_UNITS; i++) {
+			samplerStates[i] = nil;
+		}
+		samplerStateChanged = [[Event alloc] init];
 	}
 	return self;
 }
 
-- (int) count {
-	return [collection count];
+- (Event *) samplerStateChanged {
+	return samplerStateChanged;
 }
 
-- (SamplerState*)objectAtIndex:(NSUInteger)index {
-	return (SamplerState*)[collection objectAtIndex:index];
+- (SamplerState*)itemAtIndex:(NSUInteger)index {
+	return samplerStates[index];
 }
 
-- (void)addObject:(SamplerState*)anObject {
-	[collection addObject:anObject];
-}
-
-- (void)insertObject:(SamplerState*)anObject atIndex:(NSUInteger)index {
-	[collection insertObject:anObject atIndex:index];
+- (void)setItem:(SamplerState*)item atIndex:(NSUInteger)index {
+	if (samplerStates[index] != item) {
+		samplerStates[index] = item;
+		[samplerStateChanged raiseWithSender:self eventArgs:[XniSamplerEventArgs eventArgsWithSamplerIndex:index]];
+	}
 }
 
 - (void) dealloc
 {
-	[collection dealloc];
+	[samplerStateChanged release];
 	[super dealloc];
 }
 

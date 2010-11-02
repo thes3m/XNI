@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "System.h"
 
 #import "Retronator.Xni.Framework.Graphics.classes.h"
 
 @interface TextureCollection : NSObject {
-	NSMutableArray *collection;
+	Texture *textures[GL_MAX_TEXTURE_UNITS];
+	Event *textureChanged;
 }
 
-- (int) count;
-- (Texture*)objectAtIndex:(NSUInteger)index;
-- (void)addObject:(Texture*)anObject;
-- (void)insertObject:(Texture*)anObject atIndex:(NSUInteger)index;
+- (Texture*)itemAtIndex:(NSUInteger)index;
+- (void)setItem:(Texture*)item atIndex:(NSUInteger)index;
 
 @end

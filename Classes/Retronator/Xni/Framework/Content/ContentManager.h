@@ -31,4 +31,6 @@
 
 - (id) load:(NSString*)assetName fromFile:(NSString*)filePath;
 
+- (void) unload;
+
 @end

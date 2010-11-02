@@ -12,6 +12,10 @@
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Graphics.h"
 
+#import "XniSamplerEventArgs.h"
+#import "TextureCollection+Internal.h"
+#import "SamplerStateCollection+Internal.h"
+
 @interface GraphicsDevice()
 
 + (void) getFormat:(GLenum*)format AndType:(GLenum*)type ForSurfaceFormat:(SurfaceFormat)surfaceFormat;
@@ -48,6 +52,14 @@
         glBindRenderbufferOES(GL_RENDERBUFFER_OES, depthRenderbuffer);
         glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_DEPTH_ATTACHMENT_OES, GL_RENDERBUFFER_OES, depthRenderbuffer);
 		
+		// Create sampler states and texture collections and handle changes.
+		samplerStates = [[SamplerStateCollection alloc] init];
+		textures = [[TextureCollection alloc] init];
+		[samplerStates.samplerStateChanged subscribeDelegate:[Delegate delegateWithTarget:self 
+																				   Method:@selector(applySamplerState:eventArgs:)]];
+		[textures.textureChanged subscribeDelegate:[Delegate delegateWithTarget:self 
+																		 Method:@selector(applySamplerState:eventArgs:)]];
+		
         // Do the initial reset.
 		viewport = [[Viewport alloc] init];
         [self reset];
@@ -60,9 +72,7 @@
 		self.indices = nil;
 		self.rasterizerState = [RasterizerState cullClockwise];
 		self.referenceStencil = 0;
-		samplerStates = [[SamplerStateCollection alloc] init];
-		textures = [[TextureCollection alloc] init];
-		[samplerStates insertObject:[SamplerState linearClamp] atIndex:0];
+		[samplerStates setItem:[SamplerState linearClamp] atIndex:0];
 		
 		// Create events.
         deviceResetting = [[Event alloc] init];
@@ -293,6 +303,68 @@
 		default:
 			break;
 	}
+}
+
+- (void) applySamplerState:(id)sender eventArgs:(XniSamplerEventArgs*)e {
+	glActiveTexture(e.samplerIndex);
+	
+	Texture *texture = [textures itemAtIndex:e.samplerIndex];
+	
+	if (texture) {
+		glBindTexture(GL_TEXTURE_2D, texture.textureId);
+	} else {
+		glBindTexture(GL_TEXTURE_2D, 0);
+	}
+
+	SamplerState *samplerState = [samplerStates itemAtIndex:e.samplerIndex];
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, samplerState.addressU);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, samplerState.addressV);
+	
+	uint minFilter;
+	uint magFilter;
+	switch (samplerState.filter) {
+		case TextureFilterPoint:
+			minFilter = GL_NEAREST;
+			magFilter = GL_NEAREST;
+			break;
+		case TextureFilterLinear:
+		default:
+			minFilter = GL_LINEAR;
+			magFilter = GL_LINEAR;
+			break;
+		case TextureFilterPointMipLinear:
+			minFilter = GL_NEAREST_MIPMAP_LINEAR;
+			magFilter = GL_NEAREST_MIPMAP_LINEAR;
+			break;
+		case TextureFilterLinearMipPoint:
+			minFilter = GL_LINEAR_MIPMAP_NEAREST;
+			magFilter = GL_LINEAR_MIPMAP_NEAREST;
+			break;
+		case TextureFilterMinLinearMagPointMipLinear:
+			minFilter = GL_LINEAR;
+			magFilter = GL_NEAREST_MIPMAP_LINEAR;
+			break;
+		case TextureFilterMinLinearMagPointMipPoint:
+			minFilter = GL_LINEAR_MIPMAP_NEAREST;
+			magFilter = GL_NEAREST;
+			break;
+		case TextureFilterMinPointMagLinearMipLinear:
+			minFilter = GL_NEAREST_MIPMAP_LINEAR;
+			magFilter = GL_LINEAR;
+			break;
+		case TextureFilterMinPointMagLinearMipPoint:
+			minFilter = GL_NEAREST;
+			magFilter = GL_LINEAR_MIPMAP_NEAREST;
+			break;
+		case TextureFilterAnisotropic:
+			// TODO: Have no idea yet how to do anisotropic.
+			minFilter = GL_LINEAR;
+			magFilter = GL_LINEAR;
+			break;
+	}
+	
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, minFilter); 
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, magFilter);
 }
 
 - (void) dealloc

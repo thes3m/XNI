@@ -20,6 +20,8 @@
     Event *drawOrderChanged;
 	
 	id<IGraphicsDeviceService> graphicsDeviceService;
+	
+	BOOL contentLoaded;
 }
 
 @property (nonatomic, readonly) GraphicsDevice* graphicsDevice;

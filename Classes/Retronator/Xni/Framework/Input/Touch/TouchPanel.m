@@ -181,10 +181,11 @@ static TouchPanel *instance;
 	lateReleaseTouches = temp;
 	
 	// Add new touches
+	float scale = [UIScreen mainScreen].scale;
 	for (UITouch *touch in addTouches) {
 		CGPoint position = [touch locationInView:touch.view];
 		InternalTouchLocation *location = [[[InternalTouchLocation alloc] 
-											initWithPosition:[Vector2 vectorWithX:position.x y:position.y]] autorelease];
+											initWithPosition:[Vector2 vectorWithX:position.x * scale y:position.y * scale]] autorelease];
 		CFDictionaryAddValue((CFMutableDictionaryRef)touchLocations, touch, location);
 	}
 	[addTouches removeAllObjects];

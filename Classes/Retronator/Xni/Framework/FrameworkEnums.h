@@ -1,6 +1,6 @@
 typedef enum {
-	DisplayOrientationDefault,
-	DisplayOrientationLandscapeLeft,
-	DisplayOrientationLandscapeRight,
-	DisplayOrientationPortrait
+	DisplayOrientationDefault = 2,
+	DisplayOrientationLandscapeLeft = 1,
+	DisplayOrientationLandscapeRight = 2,
+	DisplayOrientationPortrait = 4
 } DisplayOrientation;

@@ -48,7 +48,7 @@
 	
 	for (int i = 0; i < count; i++) {
 		NSString *file = [files objectAtIndex:i];
-		if ([file hasPrefix:assetName]) {
+		if ([[file stringByDeletingPathExtension] isEqual:assetName]) {
 			return [self load:assetName fromFile:file];
 		}
 	}
@@ -71,7 +71,9 @@
 	
 	ContentReader *input;
 	
-	if ([extension isEqual:@"png"]) {
+	if ([extension isEqual:@"png"] || [extension isEqual:@"jpg"] || [extension isEqual:@"jpeg"] ||
+		[extension isEqual:@"gif"] || [extension isEqual:@"tif"] || [extension isEqual:@"tiff"] ||
+		[extension isEqual:@"ico"] || [extension isEqual:@"bmp"]) {
 		// We have texture content
 		TextureImporter *textureImporter = [[[TextureImporter alloc] init] autorelease];
 		TextureContent *textureContent = [textureImporter importFile:absolutePath];
@@ -82,7 +84,15 @@
 
 	ContentTypeReader *reader = [readerManager getTypeReaderFor:[input.content class]];
 	id result = [reader readFromInput:input into:nil];
+	
+	// Save the loaded asset for quick retreival.
+	[loadedAssets setObject:result forKey:assetName];
+	
 	return result;
+}
+
+- (void) unload {
+	[loadedAssets removeAllObjects];
 }
 
 - (void) dealloc

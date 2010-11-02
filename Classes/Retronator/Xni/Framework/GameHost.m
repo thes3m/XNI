@@ -14,18 +14,14 @@
 
 - (id) init {
     if (self = [super init]) {
-        window = [[GameWindow alloc] init];  
+        window = [[GameWindow alloc] init]; 		
     }
     return self;
 }
 
 @synthesize window;
 
-- (void) initialize {
-    [window initialize];
-}
-
-- (void) run {    
+- (void) run {    	
     // Hijack the run loop.
     NSLog(@"Starting the game loop.");
     

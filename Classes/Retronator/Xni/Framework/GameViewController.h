@@ -11,10 +11,17 @@
 
 @interface GameViewController : UIViewController {
     GameWindow *gameWindow;
+	DisplayOrientation supportedOrientations;
 }
 
 - initWithGameWindow: (GameWindow*)theGameWindow;
 
-+ (DisplayOrientation) getDisplayOrientationForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+@property (nonatomic) DisplayOrientation supportedOrientations;
 
++ (DisplayOrientation) getDisplayOrientationForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
++ (UIInterfaceOrientation) getUIInterfaceOrientationFromString:(NSString*)interfaceOrientation;
+
++ (DisplayOrientation) getSupportedOrientationsFromPlist;
++ (BOOL) getIsFullscreenFromPlist;
+   
 @end

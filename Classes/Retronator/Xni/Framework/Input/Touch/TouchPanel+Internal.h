@@ -11,7 +11,7 @@
 
 #import "TouchPanel.h"
 
-@interface TouchPanel (internal)
+@interface TouchPanel (Internal)
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;

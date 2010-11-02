@@ -67,6 +67,7 @@
 // METHODS
 
 - (BOOL) equals:(Rectangle*)rectangle {
+	if (!rectangle) return NO;
 	return rectangle.data->x == data.x && rectangle.data->y == data.y &&
 	rectangle.data->width == data.width && rectangle.data->height == data.height;
 }
@@ -80,6 +81,10 @@
 
 - (NSUInteger) hash {
     return data.x ^ data.y ^ data.width ^ data.height;
+}
+
+- (NSString *) description {
+    return [NSString stringWithFormat:@"Rectangle(%i, %i, %i, %i)", data.x, data.y, data.width, data.height];
 }
 
 // CONSTANTS

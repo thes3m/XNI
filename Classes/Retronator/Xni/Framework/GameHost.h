@@ -18,7 +18,6 @@
 
 @property (nonatomic, readonly) GameWindow *window;
 
-- (void) initialize;
 - (void) run;
 - (void) exit;
 

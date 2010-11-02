@@ -50,7 +50,10 @@
 }
 
 - (void) initialize {
-	[self loadContent];
+	if (!contentLoaded) {
+		[self loadContent];
+		contentLoaded = YES;
+	}
 }
 
 - (void) loadContent {}
@@ -59,7 +62,9 @@
 
 - (void) dealloc
 {
-	[self unloadContent];
+	if (contentLoaded) {
+		[self unloadContent];
+	}
 	[drawOrderChanged release];
 	[visibleChanged release];
 	[super dealloc];

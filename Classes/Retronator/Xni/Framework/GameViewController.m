@@ -11,6 +11,7 @@
 #import "Retronator.Xni.Framework.h"
 #import "TouchPanel+Internal.h"
 #import "GameView.h"
+#import "GameWindow+Internal.h"
 
 
 @implementation GameViewController
@@ -18,6 +19,7 @@
 - initWithGameWindow: (GameWindow*)theGameWindow {
     if (self = [super init]) {
         gameWindow = theGameWindow;
+		supportedOrientations = [GameViewController getSupportedOrientationsFromPlist];
     }
     return self;
 }
@@ -34,8 +36,43 @@
 			return DisplayOrientationDefault;
 		}
 	}
-	
 }
+
++ (UIInterfaceOrientation) getUIInterfaceOrientationFromString:(NSString*)interfaceOrientation {
+	if ([interfaceOrientation isEqual:@"UIInterfaceOrientationPortrait"]) return UIInterfaceOrientationPortrait;
+	if ([interfaceOrientation isEqual:@"UIInterfaceOrientationPortraitUpsideDown"]) return UIInterfaceOrientationPortraitUpsideDown;
+	if ([interfaceOrientation isEqual:@"UIInterfaceOrientationLandscapeLeft"]) return UIInterfaceOrientationLandscapeLeft;
+	if ([interfaceOrientation isEqual:@"UIInterfaceOrientationLandscapeRight"]) return UIInterfaceOrientationLandscapeRight;
+	return 0;
+}
+
++ (DisplayOrientation) getSupportedOrientationsFromPlist {
+	NSDictionary *properties = [[NSBundle mainBundle] infoDictionary];
+	NSArray *supportedOrientations = [properties objectForKey:@"UISupportedInterfaceOrientations"];
+	if (supportedOrientations) {
+		DisplayOrientation result = 0;
+		for (id interfaceOrientationString in supportedOrientations) {
+			UIInterfaceOrientation interfaceOrientation = [GameViewController getUIInterfaceOrientationFromString:(NSString*)interfaceOrientationString];
+			DisplayOrientation orientation = [GameViewController getDisplayOrientationForInterfaceOrientation:interfaceOrientation];
+			result = result | orientation;
+		}
+		return result;
+	} else {
+		return DisplayOrientationDefault;
+	}
+}
+
++ (BOOL) getIsFullscreenFromPlist {
+	NSDictionary *properties = [[NSBundle mainBundle] infoDictionary];
+	NSNumber *isStatusBarHidden = [properties objectForKey:@"UIStatusBarHidden"];
+	if (isStatusBarHidden) {
+		return [isStatusBarHidden boolValue];
+	} else {
+		return NO;
+	}
+}
+
+@synthesize supportedOrientations;
 
 - (void)loadView {
     GameView *gameView = [[GameView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
@@ -50,8 +87,9 @@
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    //InterfaceOrientationFlags orientationFlag = 1 << interfaceOrientation;
-    return YES; // gameWindow.allowedOrientations & orientationFlag;
+    DisplayOrientation orientation = [GameViewController getDisplayOrientationForInterfaceOrientation:interfaceOrientation];
+	BOOL supported = supportedOrientations & orientation;
+    return supported;
 }
 
 

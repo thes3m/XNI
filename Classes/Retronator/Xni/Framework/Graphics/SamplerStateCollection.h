@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "System.h"
 
 #import "Retronator.Xni.Framework.Graphics.classes.h"
 
 @interface SamplerStateCollection : NSObject {
-	NSMutableArray *collection;
+	SamplerState *samplerStates[GL_MAX_TEXTURE_UNITS];
+	Event *samplerStateChanged;
 }
  
-- (int) count;
-- (SamplerState*)objectAtIndex:(NSUInteger)index;
-- (void)addObject:(SamplerState*)anObject;
-- (void)insertObject:(SamplerState*)anObject atIndex:(NSUInteger)index;
+- (SamplerState*)itemAtIndex:(NSUInteger)index;
+- (void)setItem:(SamplerState*)item atIndex:(NSUInteger)index;
 
 @end

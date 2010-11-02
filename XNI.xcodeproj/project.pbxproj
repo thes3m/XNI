@@ -20,6 +20,7 @@
 		B508070D122E4FBB00C330E2 /* GraphicsResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B508070B122E4FBB00C330E2 /* GraphicsResource.m */; };
 		B52BACFB125527E200B308F6 /* TouchPanel+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B52BACF9125527E200B308F6 /* TouchPanel+Internal.h */; };
 		B52BADAD1255426600B308F6 /* FrameworkEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B52BADAC1255426600B308F6 /* FrameworkEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B53649F2127DE08100CAE30C /* GameWindow+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B53649F1127DE08100CAE30C /* GameWindow+Internal.h */; };
 		B56CC50D123A6F3600B72347 /* MipmapChain.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC50B123A6F3600B72347 /* MipmapChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B56CC50E123A6F3600B72347 /* MipmapChain.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC50C123A6F3600B72347 /* MipmapChain.m */; };
 		B56CC511123A739100B72347 /* MipmapChainCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC50F123A739100B72347 /* MipmapChainCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -79,194 +80,6 @@
 		B5BBC2D31248F98D0066F5ED /* VertexBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC2D11248F98D0066F5ED /* VertexBuffer.m */; };
 		B5BBC2EC1248FC7A0066F5ED /* VertexBufferBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC2EA1248FC7A0066F5ED /* VertexBufferBinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5BBC2ED1248FC7A0066F5ED /* VertexBufferBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC2EB1248FC7A0066F5ED /* VertexBufferBinding.m */; };
-		B5C6FDD9126DD2AE002ED666 /* XNI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */; };
-		B5C6FDDA126DD2AE002ED666 /* GameView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE194C11F89C1F00BF3275 /* GameView.h */; };
-		B5C6FDDB126DD2AE002ED666 /* TouchPanel+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B52BACF9125527E200B308F6 /* TouchPanel+Internal.h */; };
-		B5C6FDDC126DD2AE002ED666 /* GameViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE194811F89C0900BF3275 /* GameViewController.h */; };
-		B5C6FDDD126DD2AE002ED666 /* VertexBufferBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC2EA1248FC7A0066F5ED /* VertexBufferBinding.h */; };
-		B5C6FDDE126DD2AE002ED666 /* IndexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC1CD1248D4CB0066F5ED /* IndexBuffer.h */; };
-		B5C6FDDF126DD2AE002ED666 /* Vector2.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853B31239334300E6FD71 /* Vector2.h */; };
-		B5C6FDE0126DD2AE002ED666 /* Retronator.Xni.Framework.Content.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A1C83012353F9B00DB60CB /* Retronator.Xni.Framework.Content.classes.h */; };
-		B5C6FDE1126DD2AE002ED666 /* Vector2Struct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853B71239335900E6FD71 /* Vector2Struct.h */; };
-		B5C6FDE2126DD2AE002ED666 /* Effect.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B7812429BBD00DDD99A /* Effect.h */; };
-		B5C6FDE3126DD2AE002ED666 /* AdaptiveArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA637C124921D0001245A4 /* AdaptiveArray.h */; };
-		B5C6FDE4126DD2AE002ED666 /* BlendState.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B6012429AEC00DDD99A /* BlendState.h */; };
-		B5C6FDE5126DD2AE002ED666 /* TouchPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC59F71252B917001E7DFC /* TouchPanel.h */; };
-		B5C6FDE6126DD2AE002ED666 /* Retronator.Xni.Framework.Graphics.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82E11FF1213000DB38B /* Retronator.Xni.Framework.Graphics.classes.h */; };
-		B5C6FDE7126DD2AE002ED666 /* SamplerState.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B6C12429B1A00DDD99A /* SamplerState.h */; };
-		B5C6FDE8126DD2AE002ED666 /* Retronator.Xni.Framework.Graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE83011FF1222000DB38B /* Retronator.Xni.Framework.Graphics.h */; };
-		B5C6FDE9126DD2AE002ED666 /* Matrix.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853A5123931F900E6FD71 /* Matrix.h */; };
-		B5C6FDEA126DD2AE002ED666 /* Retronator.Xni.Framework.Content.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A1C82E12353F8700DB60CB /* Retronator.Xni.Framework.Content.h */; };
-		B5C6FDEB126DD2AE002ED666 /* ContentIdentity.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8211236E76E00F99511 /* ContentIdentity.h */; };
-		B5C6FDEC126DD2AE002ED666 /* Texture2D.h in Headers */ = {isa = PBXBuildFile; fileRef = B5080701122E4EE900C330E2 /* Texture2D.h */; };
-		B5C6FDED126DD2AE002ED666 /* VertexPositionColor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA636D124917E2001245A4 /* VertexPositionColor.h */; };
-		B5C6FDEE126DD2AE002ED666 /* MatrixStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853A3123931F100E6FD71 /* MatrixStruct.h */; };
-		B5C6FDEF126DD2AE002ED666 /* Vector4.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8539B12392E2000E6FD71 /* Vector4.h */; };
-		B5C6FDF0126DD2AE002ED666 /* Retronator.Xni.Framework.Input.Touch.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC59FB1252BE32001E7DFC /* Retronator.Xni.Framework.Input.Touch.classes.h */; };
-		B5C6FDF1126DD2AE002ED666 /* Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = B50806FD122E4ECF00C330E2 /* Texture.h */; };
-		B5C6FDF2126DD2AE002ED666 /* ContentItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD81D1236E59A00F99511 /* ContentItem.h */; };
-		B5C6FDF3126DD2AE002ED666 /* EffectTechnique.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA65D5124952C9001245A4 /* EffectTechnique.h */; };
-		B5C6FDF4126DD2AE002ED666 /* IGraphicsDeviceService.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82A11FF10EF000DB38B /* IGraphicsDeviceService.h */; };
-		B5C6FDF5126DD2AE002ED666 /* SamplerStateCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC1DE1248D5640066F5ED /* SamplerStateCollection.h */; };
-		B5C6FDF6126DD2AE002ED666 /* VertexArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA638D1249229D001245A4 /* VertexArray.h */; };
-		B5C6FDF7126DD2AE002ED666 /* FrameworkEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B52BADAC1255426600B308F6 /* FrameworkEnums.h */; };
-		B5C6FDF8126DD2AE002ED666 /* Color.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE90711FF352E000DB38B /* Color.h */; };
-		B5C6FDF9126DD2AE002ED666 /* MipmapChainCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC50F123A739100B72347 /* MipmapChainCollection.h */; };
-		B5C6FDFA126DD2AE002ED666 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD81B1236E56800F99511 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.h */; };
-		B5C6FDFB126DD2AE002ED666 /* Retronator.Xni.Framework.Input.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A921252C710001E7DFC /* Retronator.Xni.Framework.Input.h */; };
-		B5C6FDFC126DD2AE002ED666 /* VertexPositionTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA65511249482D001245A4 /* VertexPositionTexture.h */; };
-		B5C6FDFD126DD2AE002ED666 /* IServiceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC559123A846C00B72347 /* IServiceProvider.h */; };
-		B5C6FDFE126DD2AE002ED666 /* System.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18A311F888BC00BF3275 /* System.h */; };
-		B5C6FDFF126DD2AE002ED666 /* Retronator.Xni.Framework.Input.Touch.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC59FD1252BE3B001E7DFC /* Retronator.Xni.Framework.Input.Touch.h */; };
-		B5C6FE00126DD2AE002ED666 /* RasterizerState.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B6812429B0E00DDD99A /* RasterizerState.h */; };
-		B5C6FE01126DD2AE002ED666 /* IGameComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80111FF0AE3000DB38B /* IGameComponent.h */; };
-		B5C6FE02126DD2AE002ED666 /* Retronator.Xni.Framework.Content.Pipeline.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD80B1236E21900F99511 /* Retronator.Xni.Framework.Content.Pipeline.h */; };
-		B5C6FE03126DD2AE002ED666 /* Retronator.Xni.Framework.Graphics.PackedVector.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD89F1236F1FF00F99511 /* Retronator.Xni.Framework.Graphics.PackedVector.classes.h */; };
-		B5C6FE04126DD2AE002ED666 /* Retronator.Xni.Framework.Content.Pipeline.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD80D1236E22B00F99511 /* Retronator.Xni.Framework.Content.Pipeline.classes.h */; };
-		B5C6FE05126DD2AE002ED666 /* DepthStencilState.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B6412429AF900DDD99A /* DepthStencilState.h */; };
-		B5C6FE06126DD2AE002ED666 /* PackedVectorStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */; };
-		B5C6FE07126DD2AE002ED666 /* VertexPositionColorArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA655E1249495C001245A4 /* VertexPositionColorArray.h */; };
-		B5C6FE08126DD2AE002ED666 /* GameHost.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18FA11F88AD900BF3275 /* GameHost.h */; };
-		B5C6FE09126DD2AE002ED666 /* ColorPixelBitmapContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8546B1239484700E6FD71 /* ColorPixelBitmapContent.h */; };
-		B5C6FE0A126DD2AE002ED666 /* GestureSample.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A4D1252C2DF001E7DFC /* GestureSample.h */; };
-		B5C6FE0B126DD2AE002ED666 /* GameWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18FC11F88AD900BF3275 /* GameWindow.h */; };
-		B5C6FE0C126DD2AE002ED666 /* Rectangle.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE190211F88AF500BF3275 /* Rectangle.h */; };
-		B5C6FE0D126DD2AE002ED666 /* TouchLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A0E1252BEDF001E7DFC /* TouchLocation.h */; };
-		B5C6FE0E126DD2AE002ED666 /* SpriteBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B481242925600DDD99A /* SpriteBatch.h */; };
-		B5C6FE0F126DD2AE002ED666 /* TextureContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8661236EC2300F99511 /* TextureContent.h */; };
-		B5C6FE10126DD2AE002ED666 /* VertexPositionColorTextureArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B57E36CA124BE36E00DDAA42 /* VertexPositionColorTextureArray.h */; };
-		B5C6FE11126DD2AE002ED666 /* GameTime.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82011FF0D4F000DB38B /* GameTime.h */; };
-		B5C6FE12126DD2AE002ED666 /* BasicEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA660012495618001245A4 /* BasicEffect.h */; };
-		B5C6FE13126DD2AE002ED666 /* Retronator.Xni.Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18A011F8888B00BF3275 /* Retronator.Xni.Framework.h */; };
-		B5C6FE14126DD2AE002ED666 /* Quaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853CB1239357400E6FD71 /* Quaternion.h */; };
-		B5C6FE15126DD2AE002ED666 /* IDrawable.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80611FF0B3C000DB38B /* IDrawable.h */; };
-		B5C6FE16126DD2AE002ED666 /* DrawableGameComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B507691A1264EF0B00E4474F /* DrawableGameComponent.h */; };
-		B5C6FE17126DD2AE002ED666 /* VertexElement.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC2BA1248F2990066F5ED /* VertexElement.h */; };
-		B5C6FE18126DD2AE002ED666 /* TextureImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD80F1236E25700F99511 /* TextureImporter.h */; };
-		B5C6FE19126DD2AE002ED666 /* InputEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A181252BF63001E7DFC /* InputEnums.h */; };
-		B5C6FE1A126DD2AE002ED666 /* GameComponentCollectionEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80811FF0C24000DB38B /* GameComponentCollectionEventArgs.h */; };
-		B5C6FE1B126DD2AE002ED666 /* RectangleStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE190611F88B5D00BF3275 /* RectangleStruct.h */; };
-		B5C6FE1C126DD2AE002ED666 /* IGraphicsDeviceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82C11FF10FD000DB38B /* IGraphicsDeviceManager.h */; };
-		B5C6FE1D126DD2AE002ED666 /* IUpdatable.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80411FF0B2D000DB38B /* IUpdatable.h */; };
-		B5C6FE1E126DD2AE002ED666 /* VertexDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC2AC1248F0C40066F5ED /* VertexDeclaration.h */; };
-		B5C6FE1F126DD2AE002ED666 /* ReachGraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C111FF29E8000DB38B /* ReachGraphicsDevice.h */; };
-		B5C6FE20126DD2AE002ED666 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8191236E55E00F99511 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.classes.h */; };
-		B5C6FE21126DD2AE002ED666 /* Vector4Struct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8539F12392E4500E6FD71 /* Vector4Struct.h */; };
-		B5C6FE22126DD2AE002ED666 /* ContentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A1C83212353FBB00DB60CB /* ContentManager.h */; };
-		B5C6FE23126DD2AE002ED666 /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7E911FF04E3000DB38B /* Game.h */; };
-		B5C6FE24126DD2AE002ED666 /* ContentTypeReaderManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC5C5123A928A00B72347 /* ContentTypeReaderManager.h */; };
-		B5C6FE25126DD2AE002ED666 /* GameComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B50769121264EE9500E4474F /* GameComponent.h */; };
-		B5C6FE26126DD2AE002ED666 /* TextureCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC1EF1248D6090066F5ED /* TextureCollection.h */; };
-		B5C6FE27126DD2AE002ED666 /* Protocols.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE89411FF16A3000DB38B /* Protocols.h */; };
-		B5C6FE28126DD2AE002ED666 /* Viewport.h in Headers */ = {isa = PBXBuildFile; fileRef = B57E3663124BC23E00DDAA42 /* Viewport.h */; };
-		B5C6FE29126DD2AE002ED666 /* ContentTypeReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC5C1123A927500B72347 /* ContentTypeReader.h */; };
-		B5C6FE2A126DD2AE002ED666 /* Texture2DContentTypeReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC5C9123A92BB00B72347 /* Texture2DContentTypeReader.h */; };
-		B5C6FE2B126DD2AE002ED666 /* Texture2DContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC525123A79E800B72347 /* Texture2DContent.h */; };
-		B5C6FE2C126DD2AE002ED666 /* VectorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F85385123929F800E6FD71 /* VectorConverter.h */; };
-		B5C6FE2D126DD2AE002ED666 /* BitmapContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD86C1236ED3900F99511 /* BitmapContent.h */; };
-		B5C6FE2E126DD2AE002ED666 /* GraphicsEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C911FF2AD6000DB38B /* GraphicsEnums.h */; };
-		B5C6FE2F126DD2AE002ED666 /* VertexStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA634E12491709001245A4 /* VertexStructs.h */; };
-		B5C6FE30126DD2AE002ED666 /* GraphicsResource.h in Headers */ = {isa = PBXBuildFile; fileRef = B508070A122E4FBB00C330E2 /* GraphicsResource.h */; };
-		B5C6FE31126DD2AE002ED666 /* Vector3Struct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853BB1239336C00E6FD71 /* Vector3Struct.h */; };
-		B5C6FE32126DD2AE002ED666 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189411F8884A00BF3275 /* Event.h */; };
-		B5C6FE33126DD2AE002ED666 /* VertexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC2D01248F98D0066F5ED /* VertexBuffer.h */; };
-		B5C6FE34126DD2AE002ED666 /* HiDefGraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C511FF2A23000DB38B /* HiDefGraphicsDevice.h */; };
-		B5C6FE35126DD2AE002ED666 /* EventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189611F8884A00BF3275 /* EventArgs.h */; };
-		B5C6FE36126DD2AE002ED666 /* GraphicsDeviceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE98F11FF546B000DB38B /* GraphicsDeviceManager.h */; };
-		B5C6FE37126DD2AE002ED666 /* TouchCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A051252BE9E001E7DFC /* TouchCollection.h */; };
-		B5C6FE38126DD2AE002ED666 /* DirectionalLight.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA660B124956CE001245A4 /* DirectionalLight.h */; };
-		B5C6FE39126DD2AE002ED666 /* EffectPass.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA65CD12495297001245A4 /* EffectPass.h */; };
-		B5C6FE3A126DD2AE002ED666 /* GameComponentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7FD11FF0A0F000DB38B /* GameComponentCollection.h */; };
-		B5C6FE3B126DD2AE002ED666 /* System.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189E11F8886D00BF3275 /* System.classes.h */; };
-		B5C6FE3C126DD2AE002ED666 /* Vector3.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853AF1239331C00E6FD71 /* Vector3.h */; };
-		B5C6FE3D126DD2AE002ED666 /* VertexPositionColorTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = B57E36BC124BE2DD00DDAA42 /* VertexPositionColorTexture.h */; };
-		B5C6FE3E126DD2AE002ED666 /* Delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189211F8884A00BF3275 /* Delegate.h */; };
-		B5C6FE3F126DD2AE002ED666 /* VertexPositionTextureArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA657612494AC3001245A4 /* VertexPositionTextureArray.h */; };
-		B5C6FE40126DD2AE002ED666 /* ContentReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC5BB123A915700B72347 /* ContentReader.h */; };
-		B5C6FE41126DD2AE002ED666 /* PixelBitmapContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8801236EFF200F99511 /* PixelBitmapContent.h */; };
-		B5C6FE42126DD2AE002ED666 /* ContentImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD7EE1236E07300F99511 /* ContentImporter.h */; };
-		B5C6FE43126DD2AE002ED666 /* GraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE85A11FF1326000DB38B /* GraphicsDevice.h */; };
-		B5C6FE44126DD2AE002ED666 /* Retronator.Xni.Framework.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189F11F8888B00BF3275 /* Retronator.Xni.Framework.classes.h */; };
-		B5C6FE45126DD2AE002ED666 /* Retronator.Xni.Framework.Graphics.PackedVector.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8A11236F20B00F99511 /* Retronator.Xni.Framework.Graphics.PackedVector.h */; };
-		B5C6FE46126DD2AE002ED666 /* GameServiceContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7ED11FF06BB000DB38B /* GameServiceContainer.h */; };
-		B5C6FE47126DD2AE002ED666 /* MipmapChain.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC50B123A6F3600B72347 /* MipmapChain.h */; };
-		B5C6FE48126DD2B7002ED666 /* GameHost.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE18FB11F88AD900BF3275 /* GameHost.m */; };
-		B5C6FE49126DD2B7002ED666 /* HiDefGraphicsDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE8C611FF2A23000DB38B /* HiDefGraphicsDevice.m */; };
-		B5C6FE4A126DD2B7002ED666 /* MipmapChainCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC510123A739100B72347 /* MipmapChainCollection.m */; };
-		B5C6FE4B126DD2B7002ED666 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE189511F8884A00BF3275 /* Event.m */; };
-		B5C6FE4C126DD2B7002ED666 /* RasterizerState.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B6912429B0E00DDD99A /* RasterizerState.m */; };
-		B5C6FE4D126DD2B7002ED666 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE7EA11FF04E3000DB38B /* Game.m */; };
-		B5C6FE4E126DD2B7002ED666 /* PixelBitmapContent.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD8811236EFF200F99511 /* PixelBitmapContent.m */; };
-		B5C6FE4F126DD2B7002ED666 /* TextureContent.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD8671236EC2300F99511 /* TextureContent.m */; };
-		B5C6FE50126DD2B7002ED666 /* TouchLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC5A0F1252BEDF001E7DFC /* TouchLocation.m */; };
-		B5C6FE51126DD2B7002ED666 /* GameServiceContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE7EE11FF06BB000DB38B /* GameServiceContainer.m */; };
-		B5C6FE52126DD2B7002ED666 /* GameComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B50769131264EE9500E4474F /* GameComponent.m */; };
-		B5C6FE53126DD2B7002ED666 /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE190311F88AF500BF3275 /* Rectangle.m */; };
-		B5C6FE54126DD2B7002ED666 /* VectorConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F85386123929F800E6FD71 /* VectorConverter.m */; };
-		B5C6FE55126DD2B7002ED666 /* IndexBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC1CE1248D4CB0066F5ED /* IndexBuffer.m */; };
-		B5C6FE56126DD2B7002ED666 /* Effect.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B7912429BBD00DDD99A /* Effect.m */; };
-		B5C6FE57126DD2B7002ED666 /* ContentIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD8221236E76E00F99511 /* ContentIdentity.m */; };
-		B5C6FE58126DD2B7002ED666 /* Texture.m in Sources */ = {isa = PBXBuildFile; fileRef = B50806FE122E4ECF00C330E2 /* Texture.m */; };
-		B5C6FE59126DD2B7002ED666 /* GestureSample.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC5A4E1252C2DF001E7DFC /* GestureSample.m */; };
-		B5C6FE5A126DD2B7002ED666 /* BlendState.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B6112429AEC00DDD99A /* BlendState.m */; };
-		B5C6FE5B126DD2B7002ED666 /* VertexElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC2BB1248F2990066F5ED /* VertexElement.m */; };
-		B5C6FE5C126DD2B7002ED666 /* SamplerStateCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC1DF1248D5640066F5ED /* SamplerStateCollection.m */; };
-		B5C6FE5D126DD2B7002ED666 /* Texture2DContent.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC526123A79E800B72347 /* Texture2DContent.m */; };
-		B5C6FE5E126DD2B7002ED666 /* GameComponentCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE7FE11FF0A0F000DB38B /* GameComponentCollection.m */; };
-		B5C6FE5F126DD2B7002ED666 /* GameTime.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE82111FF0D4F000DB38B /* GameTime.m */; };
-		B5C6FE60126DD2B7002ED666 /* BitmapContent.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD86D1236ED3900F99511 /* BitmapContent.m */; };
-		B5C6FE61126DD2B7002ED666 /* TouchPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC59F81252B917001E7DFC /* TouchPanel.m */; };
-		B5C6FE62126DD2B7002ED666 /* TouchCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC5A061252BE9E001E7DFC /* TouchCollection.m */; };
-		B5C6FE63126DD2B7002ED666 /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = B5080702122E4EE900C330E2 /* Texture2D.m */; };
-		B5C6FE64126DD2B7002ED666 /* EffectTechnique.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA65D6124952C9001245A4 /* EffectTechnique.m */; };
-		B5C6FE65126DD2B7002ED666 /* AdaptiveArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA637D124921D0001245A4 /* AdaptiveArray.m */; };
-		B5C6FE66126DD2B7002ED666 /* Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE189311F8884A00BF3275 /* Delegate.m */; };
-		B5C6FE67126DD2B7002ED666 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE194D11F89C1F00BF3275 /* GameView.m */; };
-		B5C6FE68126DD2B7002ED666 /* VertexPositionColorTextureArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B57E36CB124BE36E00DDAA42 /* VertexPositionColorTextureArray.m */; };
-		B5C6FE69126DD2B7002ED666 /* VertexPositionTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA65521249482D001245A4 /* VertexPositionTexture.m */; };
-		B5C6FE6A126DD2B7002ED666 /* VertexPositionColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA636E124917E2001245A4 /* VertexPositionColor.m */; };
-		B5C6FE6B126DD2B7002ED666 /* ContentImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD7EF1236E07300F99511 /* ContentImporter.m */; };
-		B5C6FE6C126DD2B7002ED666 /* VertexBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC2D11248F98D0066F5ED /* VertexBuffer.m */; };
-		B5C6FE6D126DD2B7002ED666 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE194911F89C0900BF3275 /* GameViewController.m */; };
-		B5C6FE6E126DD2B7002ED666 /* TextureImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD8101236E25700F99511 /* TextureImporter.m */; };
-		B5C6FE6F126DD2B7002ED666 /* GameComponentCollectionEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE80911FF0C24000DB38B /* GameComponentCollectionEventArgs.m */; };
-		B5C6FE70126DD2B7002ED666 /* GameWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE18FD11F88AD900BF3275 /* GameWindow.m */; };
-		B5C6FE71126DD2B7002ED666 /* ColorPixelBitmapContent.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F8546C1239484700E6FD71 /* ColorPixelBitmapContent.m */; };
-		B5C6FE72126DD2B7002ED666 /* DirectionalLight.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA660C124956CE001245A4 /* DirectionalLight.m */; };
-		B5C6FE73126DD2B7002ED666 /* BasicEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA660112495618001245A4 /* BasicEffect.m */; };
-		B5C6FE74126DD2B7002ED666 /* Vector3.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F853B01239331C00E6FD71 /* Vector3.m */; };
-		B5C6FE75126DD2B7002ED666 /* VertexArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA638E1249229D001245A4 /* VertexArray.m */; };
-		B5C6FE76126DD2B7002ED666 /* MipmapChain.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC50C123A6F3600B72347 /* MipmapChain.m */; };
-		B5C6FE77126DD2B7002ED666 /* Texture2DContentTypeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC5CA123A92BB00B72347 /* Texture2DContentTypeReader.m */; };
-		B5C6FE78126DD2B7002ED666 /* SpriteBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B491242925600DDD99A /* SpriteBatch.m */; };
-		B5C6FE79126DD2B7002ED666 /* VertexPositionColorArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA655F1249495C001245A4 /* VertexPositionColorArray.m */; };
-		B5C6FE7A126DD2B7002ED666 /* Vector2.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F853B41239334300E6FD71 /* Vector2.m */; };
-		B5C6FE7B126DD2B7002ED666 /* Vector4.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F8539C12392E2000E6FD71 /* Vector4.m */; };
-		B5C6FE7C126DD2B7002ED666 /* DrawableGameComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B507691B1264EF0B00E4474F /* DrawableGameComponent.m */; };
-		B5C6FE7D126DD2B7002ED666 /* ContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A1C83312353FBB00DB60CB /* ContentManager.m */; };
-		B5C6FE7E126DD2B7002ED666 /* DepthStencilState.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B6512429AF900DDD99A /* DepthStencilState.m */; };
-		B5C6FE7F126DD2B7002ED666 /* Quaternion.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F853CC1239357400E6FD71 /* Quaternion.m */; };
-		B5C6FE80126DD2B7002ED666 /* Matrix.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F853A6123931F900E6FD71 /* Matrix.m */; };
-		B5C6FE81126DD2B7002ED666 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE90811FF352E000DB38B /* Color.m */; };
-		B5C6FE82126DD2B7002ED666 /* Viewport.m in Sources */ = {isa = PBXBuildFile; fileRef = B57E3664124BC23E00DDAA42 /* Viewport.m */; };
-		B5C6FE83126DD2B7002ED666 /* ContentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD81E1236E59A00F99511 /* ContentItem.m */; };
-		B5C6FE84126DD2B7002ED666 /* ContentTypeReaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC5C6123A928A00B72347 /* ContentTypeReaderManager.m */; };
-		B5C6FE85126DD2B7002ED666 /* VertexPositionTextureArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA657712494AC3001245A4 /* VertexPositionTextureArray.m */; };
-		B5C6FE86126DD2B7002ED666 /* VertexPositionColorTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = B57E36BD124BE2DD00DDAA42 /* VertexPositionColorTexture.m */; };
-		B5C6FE87126DD2B7002ED666 /* VertexBufferBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC2EB1248FC7A0066F5ED /* VertexBufferBinding.m */; };
-		B5C6FE88126DD2B7002ED666 /* VertexDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC2AD1248F0C40066F5ED /* VertexDeclaration.m */; };
-		B5C6FE89126DD2B7002ED666 /* GraphicsDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE99011FF546B000DB38B /* GraphicsDeviceManager.m */; };
-		B5C6FE8A126DD2B7002ED666 /* ContentReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC5BC123A915700B72347 /* ContentReader.m */; };
-		B5C6FE8B126DD2B7002ED666 /* EventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DE189711F8884A00BF3275 /* EventArgs.m */; };
-		B5C6FE8C126DD2B7002ED666 /* TextureCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BBC1F01248D6090066F5ED /* TextureCollection.m */; };
-		B5C6FE8D126DD2B7002ED666 /* GraphicsResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B508070B122E4FBB00C330E2 /* GraphicsResource.m */; };
-		B5C6FE8E126DD2B7002ED666 /* EffectPass.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA65CE12495297001245A4 /* EffectPass.m */; };
-		B5C6FE8F126DD2B7002ED666 /* SamplerState.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78B6D12429B1A00DDD99A /* SamplerState.m */; };
-		B5C6FE90126DD2B7002ED666 /* GraphicsDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE85B11FF1326000DB38B /* GraphicsDevice.m */; };
-		B5C6FE91126DD2B7002ED666 /* ContentTypeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CC5C2123A927500B72347 /* ContentTypeReader.m */; };
-		B5C6FE92126DD2B7002ED666 /* ReachGraphicsDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE8C211FF29E8000DB38B /* ReachGraphicsDevice.m */; };
-		B5C6FE93126DD2B7002ED666 /* Protocols.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE89511FF16A3000DB38B /* Protocols.m */; };
-		B5C6FEE9126DD2EA002ED666 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		B5DDE7EB11FF04E3000DB38B /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7E911FF04E3000DB38B /* Game.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DDE7EC11FF04E3000DB38B /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDE7EA11FF04E3000DB38B /* Game.m */; };
 		B5DDE7EF11FF06BB000DB38B /* GameServiceContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7ED11FF06BB000DB38B /* GameServiceContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -363,6 +176,10 @@
 		B5EC5A4F1252C2DF001E7DFC /* GestureSample.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A4D1252C2DF001E7DFC /* GestureSample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5EC5A501252C2DF001E7DFC /* GestureSample.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC5A4E1252C2DF001E7DFC /* GestureSample.m */; };
 		B5EC5A931252C710001E7DFC /* Retronator.Xni.Framework.Input.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A921252C710001E7DFC /* Retronator.Xni.Framework.Input.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5F415B3127780840012BAF1 /* TextureCollection+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F415B1127780840012BAF1 /* TextureCollection+Internal.h */; };
+		B5F415CF127781340012BAF1 /* SamplerStateCollection+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F415CD127781340012BAF1 /* SamplerStateCollection+Internal.h */; };
+		B5F415DE127781D80012BAF1 /* XniSamplerEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F415DC127781D80012BAF1 /* XniSamplerEventArgs.h */; };
+		B5F415DF127781D80012BAF1 /* XniSamplerEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F415DD127781D80012BAF1 /* XniSamplerEventArgs.m */; };
 		B5F4E2A912095FAF00B2FC0F /* XNI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */; };
 		B5F8536E1239206700E6FD71 /* PackedVectorStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F85387123929F800E6FD71 /* VectorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F85385123929F800E6FD71 /* VectorConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -385,6 +202,16 @@
 		B5F8546E1239484700E6FD71 /* ColorPixelBitmapContent.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F8546C1239484700E6FD71 /* ColorPixelBitmapContent.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B54279361277083D0015E810 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = XNI;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B50769121264EE9500E4474F /* GameComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameComponent.h; sourceTree = "<group>"; };
@@ -399,6 +226,7 @@
 		B508070B122E4FBB00C330E2 /* GraphicsResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsResource.m; sourceTree = "<group>"; };
 		B52BACF9125527E200B308F6 /* TouchPanel+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TouchPanel+Internal.h"; sourceTree = "<group>"; };
 		B52BADAC1255426600B308F6 /* FrameworkEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameworkEnums.h; sourceTree = "<group>"; };
+		B53649F1127DE08100CAE30C /* GameWindow+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GameWindow+Internal.h"; sourceTree = "<group>"; };
 		B56CC50B123A6F3600B72347 /* MipmapChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MipmapChain.h; sourceTree = "<group>"; };
 		B56CC50C123A6F3600B72347 /* MipmapChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MipmapChain.m; sourceTree = "<group>"; };
 		B56CC50F123A739100B72347 /* MipmapChainCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MipmapChainCollection.h; sourceTree = "<group>"; };
@@ -458,7 +286,7 @@
 		B5BBC2D11248F98D0066F5ED /* VertexBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexBuffer.m; sourceTree = "<group>"; };
 		B5BBC2EA1248FC7A0066F5ED /* VertexBufferBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexBufferBinding.h; sourceTree = "<group>"; };
 		B5BBC2EB1248FC7A0066F5ED /* VertexBufferBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexBufferBinding.m; sourceTree = "<group>"; };
-		B5C6FDD3126DD292002ED666 /* libXNI Release.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libXNI Release.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5C6FDD3126DD292002ED666 /* libXNI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXNI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DDE7E911FF04E3000DB38B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		B5DDE7EA11FF04E3000DB38B /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		B5DDE7ED11FF06BB000DB38B /* GameServiceContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameServiceContainer.h; sourceTree = "<group>"; };
@@ -555,6 +383,10 @@
 		B5EC5A4D1252C2DF001E7DFC /* GestureSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureSample.h; sourceTree = "<group>"; };
 		B5EC5A4E1252C2DF001E7DFC /* GestureSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureSample.m; sourceTree = "<group>"; };
 		B5EC5A921252C710001E7DFC /* Retronator.Xni.Framework.Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.Input.h; sourceTree = "<group>"; };
+		B5F415B1127780840012BAF1 /* TextureCollection+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TextureCollection+Internal.h"; sourceTree = "<group>"; };
+		B5F415CD127781340012BAF1 /* SamplerStateCollection+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SamplerStateCollection+Internal.h"; sourceTree = "<group>"; };
+		B5F415DC127781D80012BAF1 /* XniSamplerEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XniSamplerEventArgs.h; sourceTree = "<group>"; };
+		B5F415DD127781D80012BAF1 /* XniSamplerEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XniSamplerEventArgs.m; sourceTree = "<group>"; };
 		B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNI_Prefix.pch; sourceTree = "<group>"; };
 		B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackedVectorStructs.h; sourceTree = "<group>"; };
 		B5F85385123929F800E6FD71 /* VectorConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorConverter.h; sourceTree = "<group>"; };
@@ -583,7 +415,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5C6FEE9126DD2EA002ED666 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,7 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				D2AAC07E0554694100DB518D /* libXNI.a */,
-				B5C6FDD3126DD292002ED666 /* libXNI Release.a */,
+				B5C6FDD3126DD292002ED666 /* libXNI.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -772,9 +603,13 @@
 				B5E78B6912429B0E00DDD99A /* RasterizerState.m */,
 				B5E78B6C12429B1A00DDD99A /* SamplerState.h */,
 				B5E78B6D12429B1A00DDD99A /* SamplerState.m */,
+				B5F415DC127781D80012BAF1 /* XniSamplerEventArgs.h */,
+				B5F415DD127781D80012BAF1 /* XniSamplerEventArgs.m */,
 				B5BBC1DE1248D5640066F5ED /* SamplerStateCollection.h */,
+				B5F415CD127781340012BAF1 /* SamplerStateCollection+Internal.h */,
 				B5BBC1DF1248D5640066F5ED /* SamplerStateCollection.m */,
 				B5BBC1EF1248D6090066F5ED /* TextureCollection.h */,
+				B5F415B1127780840012BAF1 /* TextureCollection+Internal.h */,
 				B5BBC1F01248D6090066F5ED /* TextureCollection.m */,
 				B57E3663124BC23E00DDAA42 /* Viewport.h */,
 				B57E3664124BC23E00DDAA42 /* Viewport.m */,
@@ -828,6 +663,7 @@
 				B5DDE7E911FF04E3000DB38B /* Game.h */,
 				B5DDE7EA11FF04E3000DB38B /* Game.m */,
 				B5DE18FC11F88AD900BF3275 /* GameWindow.h */,
+				B53649F1127DE08100CAE30C /* GameWindow+Internal.h */,
 				B5DE18FD11F88AD900BF3275 /* GameWindow.m */,
 				B5DE194811F89C0900BF3275 /* GameViewController.h */,
 				B5DE194911F89C0900BF3275 /* GameViewController.m */,
@@ -922,117 +758,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5C6FDD9126DD2AE002ED666 /* XNI_Prefix.pch in Headers */,
-				B5C6FDDA126DD2AE002ED666 /* GameView.h in Headers */,
-				B5C6FDDB126DD2AE002ED666 /* TouchPanel+Internal.h in Headers */,
-				B5C6FDDC126DD2AE002ED666 /* GameViewController.h in Headers */,
-				B5C6FDDD126DD2AE002ED666 /* VertexBufferBinding.h in Headers */,
-				B5C6FDDE126DD2AE002ED666 /* IndexBuffer.h in Headers */,
-				B5C6FDDF126DD2AE002ED666 /* Vector2.h in Headers */,
-				B5C6FDE0126DD2AE002ED666 /* Retronator.Xni.Framework.Content.classes.h in Headers */,
-				B5C6FDE1126DD2AE002ED666 /* Vector2Struct.h in Headers */,
-				B5C6FDE2126DD2AE002ED666 /* Effect.h in Headers */,
-				B5C6FDE3126DD2AE002ED666 /* AdaptiveArray.h in Headers */,
-				B5C6FDE4126DD2AE002ED666 /* BlendState.h in Headers */,
-				B5C6FDE5126DD2AE002ED666 /* TouchPanel.h in Headers */,
-				B5C6FDE6126DD2AE002ED666 /* Retronator.Xni.Framework.Graphics.classes.h in Headers */,
-				B5C6FDE7126DD2AE002ED666 /* SamplerState.h in Headers */,
-				B5C6FDE8126DD2AE002ED666 /* Retronator.Xni.Framework.Graphics.h in Headers */,
-				B5C6FDE9126DD2AE002ED666 /* Matrix.h in Headers */,
-				B5C6FDEA126DD2AE002ED666 /* Retronator.Xni.Framework.Content.h in Headers */,
-				B5C6FDEB126DD2AE002ED666 /* ContentIdentity.h in Headers */,
-				B5C6FDEC126DD2AE002ED666 /* Texture2D.h in Headers */,
-				B5C6FDED126DD2AE002ED666 /* VertexPositionColor.h in Headers */,
-				B5C6FDEE126DD2AE002ED666 /* MatrixStruct.h in Headers */,
-				B5C6FDEF126DD2AE002ED666 /* Vector4.h in Headers */,
-				B5C6FDF0126DD2AE002ED666 /* Retronator.Xni.Framework.Input.Touch.classes.h in Headers */,
-				B5C6FDF1126DD2AE002ED666 /* Texture.h in Headers */,
-				B5C6FDF2126DD2AE002ED666 /* ContentItem.h in Headers */,
-				B5C6FDF3126DD2AE002ED666 /* EffectTechnique.h in Headers */,
-				B5C6FDF4126DD2AE002ED666 /* IGraphicsDeviceService.h in Headers */,
-				B5C6FDF5126DD2AE002ED666 /* SamplerStateCollection.h in Headers */,
-				B5C6FDF6126DD2AE002ED666 /* VertexArray.h in Headers */,
-				B5C6FDF7126DD2AE002ED666 /* FrameworkEnums.h in Headers */,
-				B5C6FDF8126DD2AE002ED666 /* Color.h in Headers */,
-				B5C6FDF9126DD2AE002ED666 /* MipmapChainCollection.h in Headers */,
-				B5C6FDFA126DD2AE002ED666 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.h in Headers */,
-				B5C6FDFB126DD2AE002ED666 /* Retronator.Xni.Framework.Input.h in Headers */,
-				B5C6FDFC126DD2AE002ED666 /* VertexPositionTexture.h in Headers */,
-				B5C6FDFD126DD2AE002ED666 /* IServiceProvider.h in Headers */,
-				B5C6FDFE126DD2AE002ED666 /* System.h in Headers */,
-				B5C6FDFF126DD2AE002ED666 /* Retronator.Xni.Framework.Input.Touch.h in Headers */,
-				B5C6FE00126DD2AE002ED666 /* RasterizerState.h in Headers */,
-				B5C6FE01126DD2AE002ED666 /* IGameComponent.h in Headers */,
-				B5C6FE02126DD2AE002ED666 /* Retronator.Xni.Framework.Content.Pipeline.h in Headers */,
-				B5C6FE03126DD2AE002ED666 /* Retronator.Xni.Framework.Graphics.PackedVector.classes.h in Headers */,
-				B5C6FE04126DD2AE002ED666 /* Retronator.Xni.Framework.Content.Pipeline.classes.h in Headers */,
-				B5C6FE05126DD2AE002ED666 /* DepthStencilState.h in Headers */,
-				B5C6FE06126DD2AE002ED666 /* PackedVectorStructs.h in Headers */,
-				B5C6FE07126DD2AE002ED666 /* VertexPositionColorArray.h in Headers */,
-				B5C6FE08126DD2AE002ED666 /* GameHost.h in Headers */,
-				B5C6FE09126DD2AE002ED666 /* ColorPixelBitmapContent.h in Headers */,
-				B5C6FE0A126DD2AE002ED666 /* GestureSample.h in Headers */,
-				B5C6FE0B126DD2AE002ED666 /* GameWindow.h in Headers */,
-				B5C6FE0C126DD2AE002ED666 /* Rectangle.h in Headers */,
-				B5C6FE0D126DD2AE002ED666 /* TouchLocation.h in Headers */,
-				B5C6FE0E126DD2AE002ED666 /* SpriteBatch.h in Headers */,
-				B5C6FE0F126DD2AE002ED666 /* TextureContent.h in Headers */,
-				B5C6FE10126DD2AE002ED666 /* VertexPositionColorTextureArray.h in Headers */,
-				B5C6FE11126DD2AE002ED666 /* GameTime.h in Headers */,
-				B5C6FE12126DD2AE002ED666 /* BasicEffect.h in Headers */,
-				B5C6FE13126DD2AE002ED666 /* Retronator.Xni.Framework.h in Headers */,
-				B5C6FE14126DD2AE002ED666 /* Quaternion.h in Headers */,
-				B5C6FE15126DD2AE002ED666 /* IDrawable.h in Headers */,
-				B5C6FE16126DD2AE002ED666 /* DrawableGameComponent.h in Headers */,
-				B5C6FE17126DD2AE002ED666 /* VertexElement.h in Headers */,
-				B5C6FE18126DD2AE002ED666 /* TextureImporter.h in Headers */,
-				B5C6FE19126DD2AE002ED666 /* InputEnums.h in Headers */,
-				B5C6FE1A126DD2AE002ED666 /* GameComponentCollectionEventArgs.h in Headers */,
-				B5C6FE1B126DD2AE002ED666 /* RectangleStruct.h in Headers */,
-				B5C6FE1C126DD2AE002ED666 /* IGraphicsDeviceManager.h in Headers */,
-				B5C6FE1D126DD2AE002ED666 /* IUpdatable.h in Headers */,
-				B5C6FE1E126DD2AE002ED666 /* VertexDeclaration.h in Headers */,
-				B5C6FE1F126DD2AE002ED666 /* ReachGraphicsDevice.h in Headers */,
-				B5C6FE20126DD2AE002ED666 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.classes.h in Headers */,
-				B5C6FE21126DD2AE002ED666 /* Vector4Struct.h in Headers */,
-				B5C6FE22126DD2AE002ED666 /* ContentManager.h in Headers */,
-				B5C6FE23126DD2AE002ED666 /* Game.h in Headers */,
-				B5C6FE24126DD2AE002ED666 /* ContentTypeReaderManager.h in Headers */,
-				B5C6FE25126DD2AE002ED666 /* GameComponent.h in Headers */,
-				B5C6FE26126DD2AE002ED666 /* TextureCollection.h in Headers */,
-				B5C6FE27126DD2AE002ED666 /* Protocols.h in Headers */,
-				B5C6FE28126DD2AE002ED666 /* Viewport.h in Headers */,
-				B5C6FE29126DD2AE002ED666 /* ContentTypeReader.h in Headers */,
-				B5C6FE2A126DD2AE002ED666 /* Texture2DContentTypeReader.h in Headers */,
-				B5C6FE2B126DD2AE002ED666 /* Texture2DContent.h in Headers */,
-				B5C6FE2C126DD2AE002ED666 /* VectorConverter.h in Headers */,
-				B5C6FE2D126DD2AE002ED666 /* BitmapContent.h in Headers */,
-				B5C6FE2E126DD2AE002ED666 /* GraphicsEnums.h in Headers */,
-				B5C6FE2F126DD2AE002ED666 /* VertexStructs.h in Headers */,
-				B5C6FE30126DD2AE002ED666 /* GraphicsResource.h in Headers */,
-				B5C6FE31126DD2AE002ED666 /* Vector3Struct.h in Headers */,
-				B5C6FE32126DD2AE002ED666 /* Event.h in Headers */,
-				B5C6FE33126DD2AE002ED666 /* VertexBuffer.h in Headers */,
-				B5C6FE34126DD2AE002ED666 /* HiDefGraphicsDevice.h in Headers */,
-				B5C6FE35126DD2AE002ED666 /* EventArgs.h in Headers */,
-				B5C6FE36126DD2AE002ED666 /* GraphicsDeviceManager.h in Headers */,
-				B5C6FE37126DD2AE002ED666 /* TouchCollection.h in Headers */,
-				B5C6FE38126DD2AE002ED666 /* DirectionalLight.h in Headers */,
-				B5C6FE39126DD2AE002ED666 /* EffectPass.h in Headers */,
-				B5C6FE3A126DD2AE002ED666 /* GameComponentCollection.h in Headers */,
-				B5C6FE3B126DD2AE002ED666 /* System.classes.h in Headers */,
-				B5C6FE3C126DD2AE002ED666 /* Vector3.h in Headers */,
-				B5C6FE3D126DD2AE002ED666 /* VertexPositionColorTexture.h in Headers */,
-				B5C6FE3E126DD2AE002ED666 /* Delegate.h in Headers */,
-				B5C6FE3F126DD2AE002ED666 /* VertexPositionTextureArray.h in Headers */,
-				B5C6FE40126DD2AE002ED666 /* ContentReader.h in Headers */,
-				B5C6FE41126DD2AE002ED666 /* PixelBitmapContent.h in Headers */,
-				B5C6FE42126DD2AE002ED666 /* ContentImporter.h in Headers */,
-				B5C6FE43126DD2AE002ED666 /* GraphicsDevice.h in Headers */,
-				B5C6FE44126DD2AE002ED666 /* Retronator.Xni.Framework.classes.h in Headers */,
-				B5C6FE45126DD2AE002ED666 /* Retronator.Xni.Framework.Graphics.PackedVector.h in Headers */,
-				B5C6FE46126DD2AE002ED666 /* GameServiceContainer.h in Headers */,
-				B5C6FE47126DD2AE002ED666 /* MipmapChain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1151,6 +876,10 @@
 				B52BADAD1255426600B308F6 /* FrameworkEnums.h in Headers */,
 				B50769141264EE9500E4474F /* GameComponent.h in Headers */,
 				B507691C1264EF0B00E4474F /* DrawableGameComponent.h in Headers */,
+				B5F415B3127780840012BAF1 /* TextureCollection+Internal.h in Headers */,
+				B5F415CF127781340012BAF1 /* SamplerStateCollection+Internal.h in Headers */,
+				B5F415DE127781D80012BAF1 /* XniSamplerEventArgs.h in Headers */,
+				B53649F2127DE08100CAE30C /* GameWindow+Internal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1169,10 +898,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				B54279371277083D0015E810 /* PBXTargetDependency */,
 			);
 			name = "XNI Release";
 			productName = "XNI Release";
-			productReference = B5C6FDD3126DD292002ED666 /* libXNI Release.a */;
+			productReference = B5C6FDD3126DD292002ED666 /* libXNI.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		D2AAC07D0554694100DB518D /* XNI */ = {
@@ -1233,7 +963,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Purpose:\n#   Create a static library for iPhone from within XCode\n#   Because Apple staff DELIBERATELY broke Xcode to make this impossible from the GUI (Xcode 3.2.3 specifically states this in the Release notes!)\n#   ...no, I don't understand why they did such a stupid thing either!\n#\n# Author: Adam Martin - http://twitter.com/redglassesapps\n# Based on: original script from Eonil (main changes: Eonil's script WILL NOT WORK in Xcode GUI - it WILL CRASH YOUR COMPUTER)\n#\n# More info: see this Stack Overflow question: http://stackoverflow.com/questions/3520977/build-fat-static-library-device-simulator-using-xcode-and-sdk-4\n\n\n#####################[ part 1 ]##################\n# First, work out the BASESDK version number (NB: Apple ought to report this, but they hide it)\n#    (incidental: searching for substrings in sh is a nightmare! Sob)\n\nSDK_VERSION=$(echo ${SDK_NAME} | grep -o '.\\{3\\}$')\n\n# Next, work out if we're in SIM or DEVICE\n\nif [ ${PLATFORM_NAME} = \"iphonesimulator\" ]\nthen\nOTHER_SDK_TO_BUILD=iphoneos${SDK_VERSION}\nelse\nOTHER_SDK_TO_BUILD=iphonesimulator${SDK_VERSION}\nfi\n\necho \"XCode has selected SDK: ${PLATFORM_NAME} with version: ${SDK_VERSION} (although back-targetting: ${IPHONEOS_DEPLOYMENT_TARGET})\"\necho \"...therefore, OTHER_SDK_TO_BUILD = ${OTHER_SDK_TO_BUILD}\"\n#\n#####################[ end of part 1 ]##################\n\n#####################[ part 2 ]##################\n#\n# IF this is the original invocation, invoke WHATEVER other builds are required\n#\n# Xcode is already building ONE target...\n#\n# ...but this is a LIBRARY, so Apple is wrong to set it to build just one.\n# ...we need to build ALL targets\n# ...we MUST NOT re-build the target that is ALREADY being built: Xcode WILL CRASH YOUR COMPUTER if you try this (infinite recursion!)\n#\n#\n# So: build ONLY the missing platforms/configurations.\n\nif [ \"true\" = ${ALREADYINVOKED} ]\nthen\necho \"RECURSION: I am NOT the root invocation, so I'm NOT going to recurse\"\nelse\n# CRITICAL:\n# Prevent infinite recursion (Xcode sucks)\nexport ALREADYINVOKED=\"true\"\n\necho \"RECURSION: I am the root ... recursing all missing build targets NOW...\"\necho \"RECURSION: ...about to invoke: xcodebuild -configuration \\\"${CONFIGURATION}\\\" -target \\\"${TARGET_NAME}\\\" -sdk \\\"${OTHER_SDK_TO_BUULD}\\\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO\"\nxcodebuild -configuration \"${CONFIGURATION}\" -target \"${TARGET_NAME}\" -sdk \"${OTHER_SDK_TO_BUILD}\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO\nfi\n\nACTION=\"build\"\n\n#Merge all platform binaries as a fat binary for each configurations.\n\nCURRENTCONFIG_DEVICE_DIR=${SYMROOT}/${CONFIGURATION}-iphoneos\nCURRENTCONFIG_SIMULATOR_DIR=${SYMROOT}/${CONFIGURATION}-iphonesimulator\nCURRENTCONFIG_UNIVERSAL_DIR=${SYMROOT}/${CONFIGURATION}-universal\n\n# ... remove the products of previous runs of this script\n#      NB: this directory is ONLY created by this script - it should be safe to delete!\n\nrm -rf \"${CURRENTCONFIG_UNIVERSAL_DIR}\"\nmkdir \"${CURRENTCONFIG_UNIVERSAL_DIR}\"\n\n#\necho \"lipo: for current configuration (${CONFIGURATION}) creating output file: ${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\"\nlipo -create -output \"${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\"";
+			shellScript = "# Purpose:\n#   Create a static library for iPhone from within XCode\n#   Because Apple staff DELIBERATELY broke Xcode to make this impossible from the GUI (Xcode 3.2.3 specifically states this in the Release notes!)\n#   ...no, I don't understand why they did such a stupid thing either!\n#\n# Author: Adam Martin - http://twitter.com/redglassesapps\n# Based on: original script from Eonil (main changes: Eonil's script WILL NOT WORK in Xcode GUI - it WILL CRASH YOUR COMPUTER)\n#\n# More info: see this Stack Overflow question: http://stackoverflow.com/questions/3520977/build-fat-static-library-device-simulator-using-xcode-and-sdk-4\n\n\n#####################[ part 1 ]##################\n# First, work out the BASESDK version number (NB: Apple ought to report this, but they hide it)\n#    (incidental: searching for substrings in sh is a nightmare! Sob)\n\nSDK_VERSION=$(echo ${SDK_NAME} | grep -o '.\\{3\\}$')\n\n# Next, work out if we're in SIM or DEVICE\n\nif [ ${PLATFORM_NAME} = \"iphonesimulator\" ]\nthen\nOTHER_SDK_TO_BUILD=iphoneos${SDK_VERSION}\nelse\nOTHER_SDK_TO_BUILD=iphonesimulator${SDK_VERSION}\nfi\n\necho \"XCode has selected SDK: ${PLATFORM_NAME} with version: ${SDK_VERSION} (although back-targetting: ${IPHONEOS_DEPLOYMENT_TARGET})\"\necho \"...therefore, OTHER_SDK_TO_BUILD = ${OTHER_SDK_TO_BUILD}\"\n#\n#####################[ end of part 1 ]##################\n\n#####################[ part 2 ]##################\n#\n# IF this is the original invocation, invoke WHATEVER other builds are required\n#\n# Xcode is already building ONE target...\n#\n# ...but this is a LIBRARY, so Apple is wrong to set it to build just one.\n# ...we need to build ALL targets\n# ...we MUST NOT re-build the target that is ALREADY being built: Xcode WILL CRASH YOUR COMPUTER if you try this (infinite recursion!)\n#\n#\n# So: build ONLY the missing platforms/configurations.\n\nif [ \"true\" = ${ALREADYINVOKED} ]\nthen\necho \"RECURSION: I am NOT the root invocation, so I'm NOT going to recurse\"\nelse\n# CRITICAL:\n# Prevent infinite recursion (Xcode sucks)\nexport ALREADYINVOKED=\"true\"\n\necho \"RECURSION: I am the root ... recursing all missing build targets NOW...\"\necho \"RECURSION: ...about to invoke: xcodebuild -configuration \\\"${CONFIGURATION}\\\" -target \\\"${TARGET_NAME}\\\" -sdk \\\"${OTHER_SDK_TO_BUULD}\\\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO\"\nxcodebuild -configuration \"${CONFIGURATION}\" -target \"${TARGET_NAME}\" -sdk \"${OTHER_SDK_TO_BUILD}\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO\nfi\n\nACTION=\"build\"\n\n#Merge all platform binaries as a fat binary for each configurations.\n\nCURRENTCONFIG_DEVICE_DIR=${SYMROOT}/${CONFIGURATION}-iphoneos\nCURRENTCONFIG_SIMULATOR_DIR=${SYMROOT}/${CONFIGURATION}-iphonesimulator\nCURRENTCONFIG_UNIVERSAL_DIR=${SYMROOT}/${CONFIGURATION}-universal\n\n# ... remove the products of previous runs of this script\n#      NB: this directory is ONLY created by this script - it should be safe to delete!\n\nrm -rf \"${CURRENTCONFIG_UNIVERSAL_DIR}\"\nmkdir \"${CURRENTCONFIG_UNIVERSAL_DIR}\"\n\n#\necho \"lipo: for current configuration (${CONFIGURATION}) creating output file: ${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\"\nlipo -create -output \"${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\"\n\n# Copy headers\ncp -r \"${SYMROOT}/${CONFIGURATION}-${PLATFORM_NAME}/usr/\" \"${CURRENTCONFIG_UNIVERSAL_DIR}/usr/\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1242,82 +972,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5C6FE48126DD2B7002ED666 /* GameHost.m in Sources */,
-				B5C6FE49126DD2B7002ED666 /* HiDefGraphicsDevice.m in Sources */,
-				B5C6FE4A126DD2B7002ED666 /* MipmapChainCollection.m in Sources */,
-				B5C6FE4B126DD2B7002ED666 /* Event.m in Sources */,
-				B5C6FE4C126DD2B7002ED666 /* RasterizerState.m in Sources */,
-				B5C6FE4D126DD2B7002ED666 /* Game.m in Sources */,
-				B5C6FE4E126DD2B7002ED666 /* PixelBitmapContent.m in Sources */,
-				B5C6FE4F126DD2B7002ED666 /* TextureContent.m in Sources */,
-				B5C6FE50126DD2B7002ED666 /* TouchLocation.m in Sources */,
-				B5C6FE51126DD2B7002ED666 /* GameServiceContainer.m in Sources */,
-				B5C6FE52126DD2B7002ED666 /* GameComponent.m in Sources */,
-				B5C6FE53126DD2B7002ED666 /* Rectangle.m in Sources */,
-				B5C6FE54126DD2B7002ED666 /* VectorConverter.m in Sources */,
-				B5C6FE55126DD2B7002ED666 /* IndexBuffer.m in Sources */,
-				B5C6FE56126DD2B7002ED666 /* Effect.m in Sources */,
-				B5C6FE57126DD2B7002ED666 /* ContentIdentity.m in Sources */,
-				B5C6FE58126DD2B7002ED666 /* Texture.m in Sources */,
-				B5C6FE59126DD2B7002ED666 /* GestureSample.m in Sources */,
-				B5C6FE5A126DD2B7002ED666 /* BlendState.m in Sources */,
-				B5C6FE5B126DD2B7002ED666 /* VertexElement.m in Sources */,
-				B5C6FE5C126DD2B7002ED666 /* SamplerStateCollection.m in Sources */,
-				B5C6FE5D126DD2B7002ED666 /* Texture2DContent.m in Sources */,
-				B5C6FE5E126DD2B7002ED666 /* GameComponentCollection.m in Sources */,
-				B5C6FE5F126DD2B7002ED666 /* GameTime.m in Sources */,
-				B5C6FE60126DD2B7002ED666 /* BitmapContent.m in Sources */,
-				B5C6FE61126DD2B7002ED666 /* TouchPanel.m in Sources */,
-				B5C6FE62126DD2B7002ED666 /* TouchCollection.m in Sources */,
-				B5C6FE63126DD2B7002ED666 /* Texture2D.m in Sources */,
-				B5C6FE64126DD2B7002ED666 /* EffectTechnique.m in Sources */,
-				B5C6FE65126DD2B7002ED666 /* AdaptiveArray.m in Sources */,
-				B5C6FE66126DD2B7002ED666 /* Delegate.m in Sources */,
-				B5C6FE67126DD2B7002ED666 /* GameView.m in Sources */,
-				B5C6FE68126DD2B7002ED666 /* VertexPositionColorTextureArray.m in Sources */,
-				B5C6FE69126DD2B7002ED666 /* VertexPositionTexture.m in Sources */,
-				B5C6FE6A126DD2B7002ED666 /* VertexPositionColor.m in Sources */,
-				B5C6FE6B126DD2B7002ED666 /* ContentImporter.m in Sources */,
-				B5C6FE6C126DD2B7002ED666 /* VertexBuffer.m in Sources */,
-				B5C6FE6D126DD2B7002ED666 /* GameViewController.m in Sources */,
-				B5C6FE6E126DD2B7002ED666 /* TextureImporter.m in Sources */,
-				B5C6FE6F126DD2B7002ED666 /* GameComponentCollectionEventArgs.m in Sources */,
-				B5C6FE70126DD2B7002ED666 /* GameWindow.m in Sources */,
-				B5C6FE71126DD2B7002ED666 /* ColorPixelBitmapContent.m in Sources */,
-				B5C6FE72126DD2B7002ED666 /* DirectionalLight.m in Sources */,
-				B5C6FE73126DD2B7002ED666 /* BasicEffect.m in Sources */,
-				B5C6FE74126DD2B7002ED666 /* Vector3.m in Sources */,
-				B5C6FE75126DD2B7002ED666 /* VertexArray.m in Sources */,
-				B5C6FE76126DD2B7002ED666 /* MipmapChain.m in Sources */,
-				B5C6FE77126DD2B7002ED666 /* Texture2DContentTypeReader.m in Sources */,
-				B5C6FE78126DD2B7002ED666 /* SpriteBatch.m in Sources */,
-				B5C6FE79126DD2B7002ED666 /* VertexPositionColorArray.m in Sources */,
-				B5C6FE7A126DD2B7002ED666 /* Vector2.m in Sources */,
-				B5C6FE7B126DD2B7002ED666 /* Vector4.m in Sources */,
-				B5C6FE7C126DD2B7002ED666 /* DrawableGameComponent.m in Sources */,
-				B5C6FE7D126DD2B7002ED666 /* ContentManager.m in Sources */,
-				B5C6FE7E126DD2B7002ED666 /* DepthStencilState.m in Sources */,
-				B5C6FE7F126DD2B7002ED666 /* Quaternion.m in Sources */,
-				B5C6FE80126DD2B7002ED666 /* Matrix.m in Sources */,
-				B5C6FE81126DD2B7002ED666 /* Color.m in Sources */,
-				B5C6FE82126DD2B7002ED666 /* Viewport.m in Sources */,
-				B5C6FE83126DD2B7002ED666 /* ContentItem.m in Sources */,
-				B5C6FE84126DD2B7002ED666 /* ContentTypeReaderManager.m in Sources */,
-				B5C6FE85126DD2B7002ED666 /* VertexPositionTextureArray.m in Sources */,
-				B5C6FE86126DD2B7002ED666 /* VertexPositionColorTexture.m in Sources */,
-				B5C6FE87126DD2B7002ED666 /* VertexBufferBinding.m in Sources */,
-				B5C6FE88126DD2B7002ED666 /* VertexDeclaration.m in Sources */,
-				B5C6FE89126DD2B7002ED666 /* GraphicsDeviceManager.m in Sources */,
-				B5C6FE8A126DD2B7002ED666 /* ContentReader.m in Sources */,
-				B5C6FE8B126DD2B7002ED666 /* EventArgs.m in Sources */,
-				B5C6FE8C126DD2B7002ED666 /* TextureCollection.m in Sources */,
-				B5C6FE8D126DD2B7002ED666 /* GraphicsResource.m in Sources */,
-				B5C6FE8E126DD2B7002ED666 /* EffectPass.m in Sources */,
-				B5C6FE8F126DD2B7002ED666 /* SamplerState.m in Sources */,
-				B5C6FE90126DD2B7002ED666 /* GraphicsDevice.m in Sources */,
-				B5C6FE91126DD2B7002ED666 /* ContentTypeReader.m in Sources */,
-				B5C6FE92126DD2B7002ED666 /* ReachGraphicsDevice.m in Sources */,
-				B5C6FE93126DD2B7002ED666 /* Protocols.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1401,10 +1055,19 @@
 				B5EC5A501252C2DF001E7DFC /* GestureSample.m in Sources */,
 				B50769151264EE9500E4474F /* GameComponent.m in Sources */,
 				B507691D1264EF0B00E4474F /* DrawableGameComponent.m in Sources */,
+				B5F415DF127781D80012BAF1 /* XniSamplerEventArgs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B54279371277083D0015E810 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* XNI */;
+			targetProxy = B54279361277083D0015E810 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1DEB921F08733DC00010E9CD /* Debug */ = {
@@ -1475,7 +1138,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				PREBINDING = NO;
-				PRODUCT_NAME = "XNI Release";
+				PRODUCT_NAME = XNI;
 			};
 			name = Debug;
 		};
@@ -1487,7 +1150,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PREBINDING = NO;
-				PRODUCT_NAME = "XNI Release";
+				PRODUCT_NAME = XNI;
 				ZERO_LINK = NO;
 			};
 			name = Release;
