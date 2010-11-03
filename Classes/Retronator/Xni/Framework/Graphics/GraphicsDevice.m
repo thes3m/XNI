@@ -99,11 +99,19 @@
 }
 
 @synthesize depthStencilState;
-- (void) depthStencilState:(DepthStencilState*)value {
+- (void) setDepthStencilState:(DepthStencilState*)value {
 	if (value != depthStencilState) {
 		[value retain];
 		[depthStencilState release];
 		depthStencilState = value;
+		
+		// Apply depth state.
+		FLAG_BLOCK(depthStencilState.depthBufferEnable, GL_DEPTH_TEST)
+		glDepthFunc(depthStencilState.depthBufferFunction);
+		glDepthMask(depthStencilState.depthBufferWriteEnable);
+		glDepthRangef(0, 1);
+		
+		// TODO: Apply stencil state.
 	}
 }
 

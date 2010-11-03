@@ -119,6 +119,11 @@
     return self;
 }
 
+- (Vector2*) set:(Vector2 *)value {
+	data = *value.data;
+	return self;
+}
+
 - (Vector2*) add:(Vector2*)value {
     Vector2Add(self.data, value.data, self.data);
     return self;

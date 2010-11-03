@@ -163,7 +163,7 @@ static VertexPositionColorTextureStruct vertices[4];
 																  bottom:self.graphicsDevice.viewport.height 
 																	 top:0
 															  zNearPlane:0 
-															   zFarPlane:1];
+															   zFarPlane:-1];
 }
 
 - (void) begin {
@@ -280,6 +280,7 @@ static VertexPositionColorTextureStruct vertices[4];
 	SpriteSetPosition(sprite, position, origin.x, origin.y, scale, scale, rotation, sourceRectangle ? sourceRectangle.width : texture.width, sourceRectangle ? sourceRectangle.height : texture.height);
 	SpriteSetSource(sprite, sourceRectangle, texture, effects);
 	sprite->color = color.packedValue;
+	sprite->layerDepth = layerDepth;
 	[self draw:sprite];			
 }
 

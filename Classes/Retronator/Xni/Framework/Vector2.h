@@ -44,6 +44,7 @@
 
 - (Vector2*) normalize;
 - (Vector2*) negate;
+- (Vector2*) set:(Vector2*)value;
 - (Vector2*) add:(Vector2*)value;
 - (Vector2*) subtract:(Vector2*)value;
 - (Vector2*) multiplyBy:(float)scaleFactor;
