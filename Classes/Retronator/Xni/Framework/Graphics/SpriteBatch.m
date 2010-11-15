@@ -6,10 +6,9 @@
 //  Copyright 2010 Retronator. All rights reserved.
 //
 
-#import "SpriteBatch.h"
-
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Graphics.h"
+#import "SpriteBatch.h"
 
 typedef struct {
 	float x;
@@ -312,6 +311,7 @@ static VertexPositionColorTextureStruct vertices[4];
 	switch (sortMode) {
 		case SpriteSortModeImmediate:
 			// We've already done all the work.
+			beginCalled = NO;
 			return;
 		case SpriteSortModeTexture:
 			[sprites sortUsingDescriptors:textureSort];

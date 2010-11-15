@@ -78,9 +78,10 @@
     GameView *gameView = [[GameView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
     self.view = gameView;
 	
-	[TouchPanel instance].displayWidth = self.view.bounds.size.width;
-	[TouchPanel instance].displayHeight = self.view.bounds.size.height;
-	[TouchPanel instance].displayOrientation = [GameViewController getDisplayOrientationForInterfaceOrientation:self.interfaceOrientation];
+	TouchPanel *touchPanel = [TouchPanel getInstance];
+	touchPanel.displayWidth = self.view.bounds.size.width;
+	touchPanel.displayHeight = self.view.bounds.size.height;
+	touchPanel.displayOrientation = [GameViewController getDisplayOrientationForInterfaceOrientation:self.interfaceOrientation];
     
     [gameView release];
 }
@@ -110,19 +111,19 @@
 // Touches
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [[TouchPanel instance] touchesBegan:touches withEvent:event];
+    [[TouchPanel getInstance] touchesBegan:touches withEvent:event];
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    [[TouchPanel instance] touchesMoved:touches withEvent:event];
+    [[TouchPanel getInstance] touchesMoved:touches withEvent:event];
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    [[TouchPanel instance] touchesEnded:touches withEvent:event];
+    [[TouchPanel getInstance] touchesEnded:touches withEvent:event];
 }
 
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    [[TouchPanel instance] touchesCancelled:touches withEvent:event];
+    [[TouchPanel getInstance] touchesCancelled:touches withEvent:event];
 }
 
 - (void)dealloc {

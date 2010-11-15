@@ -23,8 +23,6 @@
 	
 	BOOL beginCalled;
 	
-	int drawCalls;
-	
 	NSMutableArray *sprites;
 	VertexPositionColorTextureArray *vertexArray;
 }

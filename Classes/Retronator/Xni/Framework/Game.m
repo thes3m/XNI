@@ -116,17 +116,19 @@ NSArray *drawOrderSort;
     NSTimeInterval elapsedRealTime = [currentFrameTime timeIntervalSinceDate:lastFrameTime];
     
     // Sleep if we're ahead of the target elapsed time.
-    if (isFixedTimeStep && elapsedRealTime < targetElapsedTime) {
-        NSTimeInterval sleepTime = targetElapsedTime - elapsedRealTime;
-        CFRunLoopRunInMode(kCFRunLoopDefaultMode, sleepTime, NO);
-        
-        // Recalculate elapsed times.
-        [currentFrameTime release];
-        currentFrameTime = [[NSDate alloc] init];
-        elapsedRealTime = [currentFrameTime timeIntervalSinceDate:lastFrameTime];
-		gameTime.isRunningSlowly = NO;
-    } else {
-		gameTime.isRunningSlowly = YES;
+	if (isFixedTimeStep) {
+		if (elapsedRealTime < targetElapsedTime) {
+			NSTimeInterval sleepTime = targetElapsedTime - elapsedRealTime;
+			CFRunLoopRunInMode(kCFRunLoopDefaultMode, sleepTime, NO);
+			
+			// Recalculate elapsed times.
+			[currentFrameTime release];
+			currentFrameTime = [[NSDate alloc] init];
+			elapsedRealTime = [currentFrameTime timeIntervalSinceDate:lastFrameTime];
+			gameTime.isRunningSlowly = NO;
+		} else {
+			gameTime.isRunningSlowly = YES;
+		}
 	}
     
     // Store current time for next frame.
@@ -140,7 +142,7 @@ NSArray *drawOrderSort;
     gameTime.totalGameTime += elapsedGameTime;
 	
 	// Update input.
-	[[TouchPanel instance] update];
+	[[TouchPanel getInstance] update];
     
     // Update the game.
     [self updateWithGameTime:gameTime];

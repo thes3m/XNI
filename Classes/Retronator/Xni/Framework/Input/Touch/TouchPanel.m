@@ -95,19 +95,28 @@ static TouchPanel *instance;
 	return self;
 }
 
-
 + (void) initialize {
 	instance = [[TouchPanel alloc] init];
-}
-
-+ (TouchPanel*) instance {
-    return instance;
 }
 
 @synthesize displayWidth;
 @synthesize displayHeight;
 @synthesize displayOrientation;
 @synthesize enabledGestures;
+
++ (TouchCollection*) getState {
+	return [instance getState];
+}
+
++ (GestureSample*) readGesture {
+	return [instance readGesture];
+}
+
+
++ (TouchPanel*) getInstance {
+    return instance;
+}
+
 
 - (BOOL) isGestureAvailable{
 	return NO;

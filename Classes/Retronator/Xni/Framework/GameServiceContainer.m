@@ -13,7 +13,7 @@
 
 - (id) init {
     if (self = [super init]) {
-        services = CFDictionaryCreateMutable(NULL, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+        services = CFDictionaryCreateMutable(NULL, 0, NULL, &kCFTypeDictionaryValueCallBacks);
     }
     return self;
 }

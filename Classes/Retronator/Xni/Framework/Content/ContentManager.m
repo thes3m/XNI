@@ -88,6 +88,8 @@
 	// Save the loaded asset for quick retreival.
 	[loadedAssets setObject:result forKey:assetName];
 	
+	[input release];
+	
 	return result;
 }
 

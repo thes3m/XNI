@@ -24,13 +24,16 @@
 	NSMutableDictionary *touchLocations;
 }
 
-+ (TouchPanel*) instance;
-
 @property (nonatomic) int displayWidth;
 @property (nonatomic) int displayHeight;
 @property (nonatomic) DisplayOrientation displayOrientation;
 @property (nonatomic) GestureType enabledGestures;
 @property (nonatomic, readonly) BOOL isGestureAvailable;
+
++ (TouchCollection*) getState;
++ (GestureSample*) readGesture;
+
++ (TouchPanel*) getInstance;
 
 - (TouchCollection*) getState;
 - (GestureSample*) readGesture;
