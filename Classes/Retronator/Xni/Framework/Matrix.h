@@ -63,6 +63,7 @@
 
 - (float) determinant;
 - (Matrix*) negate;
+- (Matrix*) set:(Matrix*)value;
 - (Matrix*) add:(Matrix*)value;
 - (Matrix*) subtract:(Matrix*)value;
 - (Matrix*) multiplyByScalar:(float)scaleFactor;

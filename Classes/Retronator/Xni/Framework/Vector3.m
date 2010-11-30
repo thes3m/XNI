@@ -123,9 +123,15 @@
     Vector3Normalize(&data);
     return self;
 }
+
 - (Vector3*) negate {
     Vector3Negate(&data);
     return self;
+}
+
+- (Vector3*) set:(Vector3 *)value {
+	data = *value.data;
+	return self;
 }
 
 - (Vector3*) add:(Vector3*)value {

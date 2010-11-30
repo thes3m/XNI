@@ -110,9 +110,15 @@
     Vector4Normalize(&data);
     return self;
 }
+
 - (Vector4*) negate {
     Vector4Negate(&data);
     return self;
+}
+
+- (Vector4*) set:(Vector4 *)value {
+	data = *value.data;
+	return self;
 }
 
 - (Vector4*) add:(Vector4*)value {

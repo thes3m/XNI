@@ -1,14 +1,14 @@
 //
-//  AdaptiveArray.m
+//  XniAdaptiveArray.m
 //  XNI
 //
 //  Created by Matej Jan on 21.9.10.
 //  Copyright 2010 Retronator. All rights reserved.
 //
 
-#import "AdaptiveArray.h"
+#import "XniAdaptiveArray.h"
 
-@implementation AdaptiveArray
+@implementation XniAdaptiveArray
 
 - (id) initWithItemSize:(int)theItemSize initialCapacity:(int)theCapacity {
     if (self = [super init]) {

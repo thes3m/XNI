@@ -60,7 +60,7 @@
 }
 
 + (Quaternion *) rotationMatrix:(Matrix *)matrix {
-    Quaternion *result = [[Quaternion alloc] init];
+    Quaternion *result = [[[Quaternion alloc] init] autorelease];
     
     if ((matrix.data->m11 + matrix.data->m22 + matrix.data->m33) > 0.0F) {
         float M1 = sqrtf(matrix.data->m11 + matrix.data->m22 + matrix.data->m33 + 1);
@@ -182,6 +182,11 @@
 - (Quaternion*) inverse {
     QuaternionInverse(&data);
     return self;
+}
+
+- (Quaternion*) set:(Quaternion *)value {
+	data = *value.data;
+	return self;
 }
 
 - (Quaternion *) add:(Quaternion *)value {

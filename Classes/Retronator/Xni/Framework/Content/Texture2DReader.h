@@ -10,7 +10,7 @@
 
 #import "ContentTypeReader.h"
 
-@interface Texture2DContentTypeReader : ContentTypeReader {
+@interface Texture2DReader : ContentTypeReader {
 
 }
 

@@ -11,7 +11,15 @@
 #import "Retronator.Xni.Framework.Content.classes.h"
 
 @interface ContentTypeReaderManager : NSObject {
-	Texture2DContentTypeReader *texture2DContentTypeReader;
+	Texture2DReader *texture2DReader;
+	ModelReader *modelReader;
+	ModelMeshReader *modelMeshReader;
+	ModelMeshPartReader *modelMeshPartReader;
+	BasicEffectReader *basicEffectReader;
+	IndexBufferReader *indexBufferReader;
+	VertexBufferReader *vertexBufferReader;
+	ModelBoneReader *modelBoneReader;
+	VertexDeclarationReader *vertexDeclarationReader;
 }
 
 - (ContentTypeReader*) getTypeReaderFor:(Class)targetType;

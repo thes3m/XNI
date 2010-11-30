@@ -48,6 +48,7 @@
 - (Quaternion*) normalize;
 - (Quaternion*) negate;
 - (Quaternion*) inverse;
+- (Quaternion*) set:(Quaternion*)value;
 - (Quaternion*) add:(Quaternion*)value;
 - (Quaternion*) subtract:(Quaternion*)value;
 - (Quaternion*) multiplyByScalar:(float)scaleFactor;

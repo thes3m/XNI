@@ -7,6 +7,7 @@
 //
 
 #import "GraphicsDevice.h"
+#import "GraphicsDevice+Internal.h"
 #import <OpenGLES/ES1/gl.h>
 
 #import "Retronator.Xni.Framework.h"
@@ -15,10 +16,13 @@
 #import "XniSamplerEventArgs.h"
 #import "TextureCollection+Internal.h"
 #import "SamplerStateCollection+Internal.h"
+#import "IndexBuffer+Internal.h"
+#import "VertexBuffer+Internal.h"
 
 @interface GraphicsDevice()
 
 + (void) getFormat:(GLenum*)format AndType:(GLenum*)type ForSurfaceFormat:(SurfaceFormat)surfaceFormat;
+- (void) setData:(void*)data size:(int)sizeInBytes toBufferId:(uint)buffer resourceType:(ResourceType)resourceType bufferUsage:(BufferUsage)bufferUsage; 
 
 @end
 
@@ -70,13 +74,15 @@
 		self.depthStencilState = [DepthStencilState defaultDepth];
 		graphicsDeviceStatus = GraphicsDeviceStatusNormal;
 		self.indices = nil;
-		self.rasterizerState = [RasterizerState cullClockwise];
+		self.rasterizerState = [RasterizerState cullCounterClockwise];
 		self.referenceStencil = 0;
 		[samplerStates setItem:[SamplerState linearClamp] atIndex:0];
 		
 		// Create events.
         deviceResetting = [[Event alloc] init];
         deviceReset = [[Event alloc] init];
+		
+		vertices = [[NSMutableArray alloc] init];
 	}
 	
 	return self;
@@ -124,6 +130,16 @@
 		[value retain];
 		[rasterizerState release];
 		rasterizerState = value;
+		
+		// Apply fill mode.
+		
+		// Apply cull mode.
+		if (value.cullMode == CullModeNone) {
+			glDisable(GL_CULL_FACE);
+		} else {
+			glEnable(GL_CULL_FACE);
+			glFrontFace(value.cullMode);
+		}
 	}
 }
 
@@ -207,12 +223,16 @@
 
 // Vertex buffers
 - (NSArray*) getVertexBuffers {
-	return [[NSArray arrayWithArray:vertices] autorelease];
+	return [NSArray arrayWithArray:vertices];
 }
 
 - (void) setVertexBuffer:(VertexBuffer*)vertexBuffer {
 	VertexBufferBinding *binding = [[VertexBufferBinding alloc] initWithVertexBuffer:vertexBuffer];
-	[vertices insertObject:binding atIndex:0];
+	if ([vertices count]>0) {
+		[vertices replaceObjectAtIndex:0 withObject:binding];
+	} else {
+		[vertices addObject:binding];
+	}
 	[binding release];
 }
 
@@ -262,28 +282,76 @@
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
+- (uint) createBuffer {
+	GLuint bufferId;
+    glGenBuffers(1, &bufferId);
+    return bufferId;
+}
+
+- (void) setData:(void*)data toIndexBuffer:(IndexBuffer*)buffer {
+	int sizeInBytes = buffer.indexElementSize * buffer.indexCount;
+	[self setData:data size:sizeInBytes toBufferId:buffer.bufferID resourceType:ResourceTypeIndexBuffer bufferUsage:buffer.bufferUsage];
+}
+
+- (void) setData:(void*)data toVertexBuffer:(VertexBuffer*)buffer {
+	int sizeInBytes = buffer.vertexDeclaration.vertexStride * buffer.vertexCount;
+	[self setData:data size:sizeInBytes toBufferId:buffer.bufferID resourceType:ResourceTypeVertexBuffer bufferUsage:buffer.bufferUsage];
+}
+
+- (void) setData:(void *)data 
+			size:(int)sizeInBytes 
+	  toBufferId:(uint)buffer
+	resourceType:(ResourceType)resourceType 
+   bufferUsage:(BufferUsage)bufferUsage
+{
+    glBindBuffer(resourceType, buffer);
+    glBufferData(resourceType, sizeInBytes, data, bufferUsage);
+    glBindBuffer(resourceType, 0);
+}
+	
 
 // Profile specific
 
 - (EAGLContext*) createContext { return nil; }
 
-- (void) drawPrimitivesOfType:(PrimitiveType)primitiveType startingAt:(int)startVertex count:(int)primitiveCount {}
+- (void) drawPrimitivesOfType:(PrimitiveType)primitiveType 
+				  startVertex:(int)startVertex 
+			   primitiveCount:(int)primitiveCount {}
 
-- (void) drawIndexedPrimitivesOfType:(PrimitiveType)primitiveType offsetVerticesBy:(int)baseVertex 
-                          startingAt:(int)startIndex count:(int)primitiveCount {}
-
-- (void) drawUserPrimitivesOfType:(PrimitiveType)primitiveType vertices:(VertexArray*)vertexData
-                       startingAt:(int)vertexOffset count:(int)primitiveCount {}
+- (void) drawIndexedPrimitivesOfType:(PrimitiveType)primitiveType 
+						  baseVertex:(int)baseVertex 
+					  minVertexIndex:(int)minVertexIndex
+						 numVertices:(int)numVertices
+						  startIndex:(int)startIndex
+					  primitiveCount:(int)primitiveCount {}
 
 - (void) drawUserPrimitivesOfType:(PrimitiveType)primitiveType
-						 vertices:(void*)vertexData ofType:(VertexDeclaration*) vertexDeclaration
-                       startingAt:(int)vertexOffset count:(int)primitiveCount {}
+					   vertexData:(VertexArray*)vertexData
+					 vertexOffset:(int)vertexOffset 
+				   primitiveCount:(int)primitiveCount {}
+
+- (void) drawUserPrimitivesOfType:(PrimitiveType)primitiveType
+					   vertexData:(void*)vertexData 
+					 vertexOffset:(int)vertexOffset 
+				   primitiveCount:(int)primitiveCount
+				vertexDeclaration:(VertexDeclaration*) vertexDeclaration {}
 
 - (void) drawUserIndexedPrimitivesOfType:(PrimitiveType)primitiveType 
-								vertices:(void*)vertexData ofType:(VertexDeclaration*) vertexDeclaration 
-                        offsetVerticesBy:(int)vertexOffset indices:(void*)indexData dataType:(DataType)dataType
-                              startingAt:(int)indexOffset count:(int)primitiveCount {}
+							  vertexData:(VertexArray*)vertexData
+							vertexOffset:(int)vertexOffset
+							 numVertices:(int)numVertices
+							   indexData:(IndexArray*)indexData
+							 indexOffset:(int)indexOffset
+						  primitiveCount:(int)primitiveCount {}
 
+- (void) drawUserIndexedPrimitivesOfType:(PrimitiveType)primitiveType 
+							  vertexData:(void*)vertexData
+							vertexOffset:(int)vertexOffset
+							 numVertices:(int)numVertices
+						  shortIndexData:(void*)indexData
+							 indexOffset:(int)indexOffset
+						  primitiveCount:(int)primitiveCount
+					   vertexDeclaration:(VertexDeclaration*) vertexDeclaration {}
 // Private methods
 
 + (void) getFormat:(GLenum*)format AndType:(GLenum*)type ForSurfaceFormat:(SurfaceFormat)surfaceFormat {
@@ -385,6 +453,7 @@
 	[viewport release];
     [deviceResetting release];
     [deviceReset release];	
+	[vertices release];
 	[super dealloc];
 }
 

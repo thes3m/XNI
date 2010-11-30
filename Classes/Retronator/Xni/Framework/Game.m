@@ -16,8 +16,8 @@
 
 @implementation Game
 
-NSArray *updateOrderSort;
-NSArray *drawOrderSort;
+static NSArray *updateOrderSort;
+static NSArray *drawOrderSort;
 
 + (void) initialize {
 	NSSortDescriptor *updateOrderSortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"updateOrder" ascending:YES] autorelease];

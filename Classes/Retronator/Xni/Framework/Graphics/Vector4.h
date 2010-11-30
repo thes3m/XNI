@@ -39,6 +39,7 @@
 - (float) lengthSquared;
 - (Vector4*) normalize;
 - (Vector4*) negate;
+- (Vector4*) set:(Vector4*)value;
 - (Vector4*) add:(Vector4*)value;
 - (Vector4*) subtract:(Vector4*)value;
 - (Vector4*) multiplyBy:(float)scalar;

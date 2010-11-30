@@ -10,13 +10,14 @@
 #import <UIKit/UIKit.h>
 
 #import "Retronator.Xni.Framework.Graphics.h"
+#import "Retronator.Xni.Framework.Content.Pipeline.h"
 #import "Retronator.Xni.Framework.Content.Pipeline.Graphics.h"
 
 @implementation TextureImporter
 
 - (TextureContent*) importFile:(NSString*)filename { 
-	NSData *textureData = [[NSData alloc] initWithContentsOfFile:filename];
-    UIImage *image = [[UIImage alloc] initWithData:textureData];
+	NSData *textureData = [NSData dataWithContentsOfFile:filename];
+    UIImage *image = [UIImage imageWithData:textureData];
     if (image == nil) {
         [NSException raise:@"InvalidArgumentException" format:@"The provided file is not a supported texture resource."];
     }	
@@ -41,7 +42,7 @@
 	CGContextRelease(textureContext); 
 	
 	// Create pixel bitmap content.
-	PixelBitmapContent *bitmap = [[PixelBitmapContent alloc] initWithWidth:(int)width height:(int)height format:SurfaceFormatColor];
+	PixelBitmapContent *bitmap = [[[PixelBitmapContent alloc] initWithWidth:(int)width height:(int)height format:SurfaceFormatColor] autorelease];
 	[bitmap setPixelData:imageData];
 	
 	// This bitmap is the only one in the mipmap chain.
@@ -49,7 +50,8 @@
 	[mipmaps addObject:bitmap];
 	
 	// Create the texture content.
-	Texture2DContent *content = [[Texture2DContent alloc] init];
+	Texture2DContent *content = [[[Texture2DContent alloc] init] autorelease];
+	content.identity.sourceFilename = filename;
 	content.mipmaps = mipmaps;
 	
 	return content;

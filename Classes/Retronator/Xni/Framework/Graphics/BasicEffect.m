@@ -24,13 +24,13 @@
 -(id) initWithGraphicsDevice:(GraphicsDevice *)theGraphicsDevice {
     if (self = [super initWithGraphicsDevice:theGraphicsDevice]) {
         // Create the main pass.
-        BasicEffectPass *mainPass = [[BasicEffectPass alloc] initWithBasicEffect:self graphicsDevice:graphicsDevice];
+        BasicEffectPass *mainPass = [[[BasicEffectPass alloc] initWithBasicEffect:self graphicsDevice:graphicsDevice] autorelease];
         NSArray *passes = [NSArray arrayWithObject:mainPass];
         
         // Create the basic technique.
-        EffectTechnique *basicTechnique = [[EffectTechnique alloc] initWithName:@"BasicEffect" passes:passes];
+        EffectTechnique *basicTechnique = [[[EffectTechnique alloc] initWithName:@"BasicEffect" passes:passes] autorelease];
         
-        techniques = [NSDictionary dictionaryWithObject:basicTechnique forKey:basicTechnique.name];
+        techniques = [[NSDictionary alloc] initWithObjectsAndKeys:basicTechnique, basicTechnique.name, nil];
         currentTechnique = basicTechnique;
         
         // Set defaults.
@@ -104,6 +104,7 @@
 	[world release];
 	[view release];
 	[projection release];
+	[techniques release];
     [super dealloc];
 }
 

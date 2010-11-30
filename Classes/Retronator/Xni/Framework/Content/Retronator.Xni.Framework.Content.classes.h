@@ -1,3 +1,6 @@
-@class ContentManager, ContentReader, ContentTypeReaderManager;
+@class ContentManager, ContentReader, ContentTypeReaderManager, ContentTypeReader;
 
-@class ContentTypeReader, Texture2DContentTypeReader;
+@class Texture2DReader;
+@class ModelReader, ModelMeshReader, ModelMeshPartReader;
+@class BasicEffectReader, IndexBufferReader, VertexBufferReader;
+@class ModelBoneReader, VertexDeclarationReader;

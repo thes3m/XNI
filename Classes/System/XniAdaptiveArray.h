@@ -1,5 +1,5 @@
 //
-//  AdaptiveArray.h
+//  XniAdaptiveArray.h
 //  XNI
 //
 //  Created by Matej Jan on 21.9.10.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface AdaptiveArray : NSObject {
+@interface XniAdaptiveArray : NSObject {
     int capacity;
     int itemSize;
     void *array;

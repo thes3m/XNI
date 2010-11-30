@@ -305,6 +305,11 @@
     return self;
 }
 
+- (Matrix*) set:(Matrix *)value {
+	data = *value.data;
+	return self;
+}
+
 - (Matrix*) add:(Matrix*)value {
 	MatrixAdd(self.data, value.data, self.data);
     return self;
