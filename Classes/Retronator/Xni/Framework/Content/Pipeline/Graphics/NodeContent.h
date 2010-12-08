@@ -20,7 +20,7 @@
 }
 
 @property (nonatomic, readonly) NodeContentCollection *children;
-@property (nonatomic, retain) NodeContent *parent;
+@property (nonatomic, assign) NodeContent *parent;	// We need to assign the parent, so the children don't retain the parent in existence.
 @property (nonatomic, retain) Matrix *transform;
 @property (nonatomic, readonly) Matrix *absoluteTransform;
 

@@ -36,17 +36,18 @@
 	CGContextClearRect(textureContext, CGRectMake(0, 0, width, height));
     CGContextTranslateCTM(textureContext, 0, 0);	
     CGContextDrawImage(textureContext, CGRectMake(0, 0, width, height), image.CGImage);
+		
+	// Create pixel bitmap content.
+	PixelBitmapContent *bitmap = [[[PixelBitmapContent alloc] initWithWidth:(int)width height:(int)height format:SurfaceFormatColor] autorelease];
+	[bitmap setPixelData:[NSData dataWithBytes:imageData length:width*height*4]];
 	
 	// Clean up.
 	CGColorSpaceRelease(colorSpace);
-	CGContextRelease(textureContext); 
-	
-	// Create pixel bitmap content.
-	PixelBitmapContent *bitmap = [[[PixelBitmapContent alloc] initWithWidth:(int)width height:(int)height format:SurfaceFormatColor] autorelease];
-	[bitmap setPixelData:imageData];
+	CGContextRelease(textureContext); 	
+	free(imageData);
 	
 	// This bitmap is the only one in the mipmap chain.
-	MipmapChain *mipmaps = [[MipmapChain alloc] init];
+	MipmapChain *mipmaps = [[[MipmapChain alloc] init] autorelease];
 	[mipmaps addObject:bitmap];
 	
 	// Create the texture content.

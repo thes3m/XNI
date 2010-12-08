@@ -27,7 +27,6 @@
 - (void) dealloc
 {
 	[material release];
-	[parent release];
 	[indices release];
 	[vertices release];
 	[super dealloc];

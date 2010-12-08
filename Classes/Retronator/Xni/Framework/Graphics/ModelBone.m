@@ -31,14 +31,13 @@
 @synthesize children, index, name, parent, transform;
 
 - (void) setParent:(ModelBone*)theParent {
-	parent = [theParent retain];	
+	parent = theParent;	
 }
 
 - (void) dealloc
 {
 	[children release];
 	[name release];
-	[parent release];
 	[transform release];
 	[super dealloc];
 }

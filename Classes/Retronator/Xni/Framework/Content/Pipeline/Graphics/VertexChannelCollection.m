@@ -85,8 +85,8 @@
 
 - (void) dealloc
 {
-	[channels dealloc];
-	[channelsByNames dealloc];
+	[channels release];
+	[channelsByNames release];
 	[super dealloc];
 }
 

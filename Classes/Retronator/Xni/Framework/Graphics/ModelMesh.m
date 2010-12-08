@@ -24,7 +24,7 @@
 		
 		NSMutableArray *partEffects = [NSMutableArray arrayWithCapacity:meshParts.count];
 		for (ModelMeshPart *part in meshParts) {
-			[partEffects addObject:part.effect];
+			[partEffects addObject:part.effect];			
 		}
 		effects = [[ModelEffectCollection alloc] initWithItems:partEffects];
 	}

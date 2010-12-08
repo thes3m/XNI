@@ -25,6 +25,7 @@
 		serviceProvider = theServiceProvider;
 		
 		loadedAssets = [[NSMutableDictionary alloc] init];
+		loadedFiles = [[NSMutableDictionary alloc] init];
 		readerManager = [[ContentTypeReaderManager alloc] init];
 	}
 	return self;
@@ -58,13 +59,14 @@
 		}
 	}
 	
-	[NSException raise:@"FileNotFoundException" format:@"The provided asset name does not match any files in the root directory"];
+	[NSException raise:@"FileNotFoundException" format:@"The provided asset name %@ does not match any files in the root directory", assetName];
 	return nil;
 }
 
 - (id) load:(NSString *)assetName fromFile:(NSString *)filePath {
-	// Check if we have already loaded this asset.
-	id existing = [loadedAssets objectForKey:assetName];
+	
+	// Check if we have already loaded this file.
+	id existing = [loadedFiles objectForKey:filePath];
 	if (existing) {
 		return existing;
 	}
@@ -73,13 +75,17 @@
 	NSString *fileName = [filePath stringByDeletingPathExtension];
 	NSString *extension = [filePath pathExtension];
 	NSString *absolutePath = [[NSBundle mainBundle] pathForResource:fileName ofType:extension inDirectory:rootDirectory];
+	[absolutePath autorelease];
 	
 	if (!absolutePath) {
 		[NSException raise:@"InvalidArgumentException" format:@"Could not locate file '%@' in directory '%@'", filePath, rootDirectory];
 	}
-	
+		
 	ContentReader *input;
-	
+
+	// We pool autoreleased objects during the import process.
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
 	// Compare lowercase extension.
 	extension = [extension lowercaseString];
 	
@@ -101,6 +107,11 @@
 	} else {
 		[NSException raise:@"InvalidArgumentException" format:@"Files with extension %@ are not supported", extension];
 	}
+	
+	[pool release];
+
+	// And another pool for the conversion process.
+	pool = [[NSAutoreleasePool alloc] init];
 
 	ContentTypeReader *reader = [readerManager getTypeReaderFor:[input.content class]];
 	id result = [reader readFromInput:input into:nil];
@@ -110,7 +121,11 @@
 		[loadedAssets setObject:result forKey:assetName];
 	}
 	
+	[loadedFiles setObject:result forKey:filePath];
+	
 	[input release];
+	
+	[pool release];
 	
 	// We are returning a retained object since the loaded asset is always used for a longer time.
 	return [result retain];

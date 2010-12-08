@@ -67,7 +67,7 @@
 	
     int count = [GraphicsDevice getNumberOfVerticesForPrimitiveType:primitiveType primitiveCount:primitiveCount]; 
 	
-	GLenum type;
+	GLenum type = 0;
 	switch (indices.indexElementSize) {
 		case IndexElementSizeSixteenBits:
 			type = DataTypeUnsignedShort;
@@ -162,7 +162,7 @@
     
     int count = [GraphicsDevice getNumberOfVerticesForPrimitiveType:primitiveType primitiveCount:primitiveCount]; 
 
-	GLenum type;
+	GLenum type = 0;
 	switch (indexElementSize) {
 		case IndexElementSizeSixteenBits:
 			type = DataTypeUnsignedShort;

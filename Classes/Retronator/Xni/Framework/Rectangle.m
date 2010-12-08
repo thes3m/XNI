@@ -66,6 +66,15 @@
 
 // METHODS
 
+- (Rectangle*) set:(Rectangle*)value {
+	data = *value.data;
+	return self;
+}
+
+- (id) copyWithZone:(NSZone *)zone {
+	return [[Rectangle allocWithZone:zone] initWithStruct:&data];
+}
+
 - (BOOL) equals:(Rectangle*)rectangle {
 	if (!rectangle) return NO;
 	return rectangle.data->x == data.x && rectangle.data->y == data.y &&

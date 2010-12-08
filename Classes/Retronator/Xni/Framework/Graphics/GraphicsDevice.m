@@ -209,16 +209,18 @@
 // Render buffers
 
 - (void) clearWithColor:(Color *)color {
-    glClearColor(color.r / 255.0, color.g / 255.0, color.b / 255.0, color.a / 255.0);
-    glClearDepthf(1);
-    glClear(ClearOptionsTarget | ClearOptionsDepthBuffer);
+    [self clearWithOptions:ClearOptionsTarget | ClearOptionsDepthBuffer color:color depth:1 stencil:0];
 }
 
 - (void) clearWithOptions:(ClearOptions)options color:(Color *)color depth:(float)depth stencil:(int)stencil {
-    glClearColor(color.r / 255.0, color.g / 255.0, color.b / 255.0, color.a / 255.0);
-    glClearDepthf(depth);
+	glDepthMask(GL_TRUE);	
+	if (color) {
+		glClearColor(color.r / 255.0, color.g / 255.0, color.b / 255.0, color.a / 255.0);
+    }
+	glClearDepthf(depth);
     glClearStencil(stencil);
-    glClear(options);    
+	glClear(options);  
+	glDepthMask(depthStencilState.depthBufferWriteEnable);
 }
 
 // Vertex buffers
@@ -302,13 +304,13 @@
 			size:(int)sizeInBytes 
 	  toBufferId:(uint)buffer
 	resourceType:(ResourceType)resourceType 
-   bufferUsage:(BufferUsage)bufferUsage
+	 bufferUsage:(BufferUsage)bufferUsage
 {
     glBindBuffer(resourceType, buffer);
     glBufferData(resourceType, sizeInBytes, data, bufferUsage);
     glBindBuffer(resourceType, 0);
 }
-	
+
 
 // Profile specific
 
@@ -391,7 +393,7 @@
 	} else {
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
-
+	
 	SamplerState *samplerState = [samplerStates itemAtIndex:e.samplerIndex];
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, samplerState.addressU);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, samplerState.addressV);

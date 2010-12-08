@@ -44,6 +44,8 @@
 	NSMutableArray *enabledComponents;
 	NSMutableArray *visibleComponents;
     
+	NSMutableSet *enabledChangedComponents;
+	
     // Services
     GameServiceContainer *services;
 }

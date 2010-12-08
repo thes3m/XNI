@@ -10,7 +10,7 @@
 
 #import "Retronator.Xni.Framework.classes.h"
 
-@interface Matrix : NSObject {
+@interface Matrix : NSObject <NSCopying> {
     MatrixStruct data;
 }
 
@@ -22,11 +22,18 @@
 
 + (Matrix*) createTranslationX:(float)xPosition y:(float)yPosition z:(float)zPosition;
 + (Matrix*) createTranslation:(Vector3*)position;
+
 + (Matrix*) createScaleUniform:(float)scale;
 + (Matrix*) createScale:(Vector3*)scales;
+
++ (Matrix*) createRotationX:(float)radians;
++ (Matrix*) createRotationY:(float)radians;
++ (Matrix*) createRotationZ:(float)radians;
 + (Matrix*) createFromAxis:(Vector3*)axis angle:(float)angle;
 + (Matrix*) createFromQuaternion:(Quaternion*)quaternion;
+
 + (Matrix*) createLookAtFrom:(Vector3*)position to:(Vector3*)target up:(Vector3*)up;
+
 + (Matrix*) createOrthographicWithWidth:(float)width height:(float)height 
 							 zNearPlane:(float)zNearPlane zFarPlane:(float)zFarPlane;
 + (Matrix*) createOrthographicOffCenterWithLeft:(float)left right:(float)right 
@@ -39,6 +46,7 @@
 + (Matrix*) createPerspectiveOffCenterWithLeft:(float)left right:(float)right
 										bottom:(float)bottom top:(float)top  
 							 nearPlaneDistance:(float)nearPlaneDistance farPlaneDistance:(float)farPlaneDistance;
+
 + (Matrix*) createWorldAtPosition:(Vector3*)position forward:(Vector3*)forward up:(Vector3*)up;
 
 @property (nonatomic, readonly) MatrixStruct *data;
@@ -70,6 +78,8 @@
 - (Matrix*) multiplyBy:(Matrix*)value;
 - (Matrix*) divideByScalar:(float)divider;
 - (Matrix*) divideBy:(Matrix*)value;
+
+- (BOOL) equals:(Matrix*)matrix;
 
 // Constants
 + (id) zero;

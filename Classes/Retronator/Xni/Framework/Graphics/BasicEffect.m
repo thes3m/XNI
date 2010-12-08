@@ -176,6 +176,7 @@
     }
     Vector4Set(&data, basicEffect.ambientLightColor.x, basicEffect.ambientLightColor.y, basicEffect.ambientLightColor.z, 1);
     glLightModelfv(GL_LIGHT_MODEL_AMBIENT, (float*)&data);
+
     [self activateLight:basicEffect.directionalLight0 name:GL_LIGHT0];
     [self activateLight:basicEffect.directionalLight1 name:GL_LIGHT1];
     [self activateLight:basicEffect.directionalLight2 name:GL_LIGHT2];
@@ -193,13 +194,12 @@
     }
     
     Vector4Struct data;
-    Vector4Set(&data, light.ambientColor.x, light.ambientColor.y, light.ambientColor.z, 1);    
-    glLightfv(lightName, GL_AMBIENT, (float*)&data);
     Vector4Set(&data, light.diffuseColor.x, light.diffuseColor.y, light.diffuseColor.z, 1);    
     glLightfv(lightName, GL_DIFFUSE, (float*)&data);
     Vector4Set(&data, light.specularColor.x, light.specularColor.y, light.specularColor.z, 1);
     glLightfv(lightName, GL_SPECULAR, (float*)&data);    
-    Vector4Set(&data, light.direction.x, light.direction.y, light.direction.z, 0);
+    
+	Vector4Set(&data, -light.direction.x, -light.direction.y, -light.direction.z, 0);
     glLightfv(lightName, GL_POSITION, (float*)&data);    
 }
 

@@ -10,7 +10,7 @@
 
 #import "Retronator.Xni.Framework.classes.h"
 
-@interface Quaternion : NSObject {
+@interface Quaternion : NSObject <NSCopying> {
     Vector4Struct data;
 }
 
@@ -53,6 +53,8 @@
 - (Quaternion*) subtract:(Quaternion*)value;
 - (Quaternion*) multiplyByScalar:(float)scaleFactor;
 - (Quaternion*) multiplyBy:(Quaternion*)value;
+
+- (BOOL) equals:(Quaternion*)quaternion;
 
 // Constants
 + (Quaternion*) identity;

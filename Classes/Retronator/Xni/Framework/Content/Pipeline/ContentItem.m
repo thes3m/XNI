@@ -26,7 +26,8 @@
 
 - (void) dealloc
 {
-	[ContentIdentity release];
+	[name release];
+	[identity release];
 	[opaqueData release];
 	[super dealloc];
 }

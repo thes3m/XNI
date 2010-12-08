@@ -32,7 +32,7 @@
 	
 	for (int i=0;i<[mipmaps count];i++) {
 		bitmap = [mipmaps objectAtIndex:i];
-		[texture setDataToLevel:i sourceRectangle:nil from:[bitmap getPixelData]];
+		[texture setDataToLevel:i sourceRectangle:nil from:(void*)[[bitmap getPixelData] bytes]];
 	}
 	
 	return texture;

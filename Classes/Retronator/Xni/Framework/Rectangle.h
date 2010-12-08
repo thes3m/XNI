@@ -11,7 +11,7 @@
 
 #import "Retronator.Xni.Framework.classes.h"
 
-@interface Rectangle : NSObject {
+@interface Rectangle : NSObject <NSCopying> {
 	RectangleStruct data;
 }
 
@@ -28,8 +28,9 @@
 @property (nonatomic) int y;
 @property (nonatomic) int width;
 @property (nonatomic) int height;
-
 @property (nonatomic, readonly) RectangleStruct *data;
+
+- (Rectangle*) set:(Rectangle*)value;
 
 - (BOOL) equals:(Rectangle*)rectangle;
 

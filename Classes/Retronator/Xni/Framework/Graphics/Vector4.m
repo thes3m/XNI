@@ -141,6 +141,23 @@
     return self;
 }
 
+- (id) copyWithZone:(NSZone *)zone {
+	return [[Vector4 allocWithZone:zone] initWithStruct:&data];
+}
+
+- (BOOL) equals:(Vector4*)vector {
+	if (!vector) return NO;
+	return vector.data->x == data.x && vector.data->y == data.y &&
+	vector.data->z == data.z && vector.data->w == data.w;
+}
+
+- (BOOL) isEqual:(id)object {
+    if ([object isKindOfClass:[Vector4 class]]) {
+        return [self equals:object];
+    }
+    return NO;
+}
+
 - (NSString *) description {
     return [NSString stringWithFormat:@"Vector(%f, %f, %f, %f)", data.x, data.y, data.z, data.w];
 }

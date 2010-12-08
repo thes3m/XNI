@@ -76,6 +76,7 @@
 
 - (void) dealloc
 {
+	CFRelease(sharedResources);
 	[contentStack release];
 	[super dealloc];
 }

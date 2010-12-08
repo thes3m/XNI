@@ -47,6 +47,7 @@
 		NSLog(@"%@", [error localizedDescription]);
 		[NSException raise:@"InvalidArgumentException" format:@"Could not load file %@", filename];
 	}
+	
 	XImporterReader *reader = [[[XImporterReader alloc] initWithInput:input] autorelease];
 	reader.root.identity.sourceFilename = filename;
 	
@@ -54,7 +55,8 @@
 	[reader skipWhitespace];
 	[self readTemplatesWithReader:reader];
 	
-	return reader.root;
+	NodeContent *result = [reader.root retain];
+	return [result autorelease];
 }
 
 - (void) readHeaderWithReader:(XImporterReader *)reader {
@@ -316,7 +318,7 @@
  }
  */
 - (MaterialContent *) readMaterialTemplateWithReader:(XImporterReader *)reader {
-	BasicMaterialContent *material = [[BasicMaterialContent alloc] init];
+	BasicMaterialContent *material = [[[BasicMaterialContent alloc] init] autorelease];
 		
 	[reader pushContent:material];
 	

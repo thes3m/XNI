@@ -12,7 +12,7 @@
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Input.Touch.h"
 
-@interface InternalTouchLocation : NSObject {
+@interface XniTouchLocation : NSObject {
 	int identifier;
 	Vector2 *position;
 	Vector2 *previousPosition;
@@ -30,7 +30,7 @@
 
 @end
 
-@implementation InternalTouchLocation
+@implementation XniTouchLocation
 
 static int nextID = 0;
 
@@ -124,7 +124,7 @@ static TouchPanel *instance;
 
 - (TouchCollection*) getState{
 	TouchCollection *collection = [[[TouchCollection alloc] init] autorelease];
-	for (InternalTouchLocation *touch in [touchLocations allValues]) {
+	for (XniTouchLocation *touch in [touchLocations allValues]) {
 		[collection addObject:[touch createTouchLocation]];
 		
 		// After get state is done, all pressed touches should be moved.
@@ -145,7 +145,7 @@ static TouchPanel *instance;
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
 	for (UITouch *touch in touches) {
-		InternalTouchLocation *location = [touchLocations objectForKey:touch];	
+		XniTouchLocation *location = [touchLocations objectForKey:touch];	
 		if (location) {
 			CGPoint position = [touch locationInView:touch.view];
 			[location moveToPosition:[Vector2 vectorWithX:position.x y:position.y]];
@@ -179,7 +179,7 @@ static TouchPanel *instance;
 	
 	// Set released touches.
 	for (UITouch *touch in releaseTouches) {
-		InternalTouchLocation *location = [touchLocations objectForKey:touch];
+		XniTouchLocation *location = [touchLocations objectForKey:touch];
 		location.state = TouchLocationStateReleased;
 	}
 	
@@ -193,7 +193,7 @@ static TouchPanel *instance;
 	float scale = [UIScreen mainScreen].scale;
 	for (UITouch *touch in addTouches) {
 		CGPoint position = [touch locationInView:touch.view];
-		InternalTouchLocation *location = [[[InternalTouchLocation alloc] 
+		XniTouchLocation *location = [[[XniTouchLocation alloc] 
 											initWithPosition:[Vector2 vectorWithX:position.x * scale y:position.y * scale]] autorelease];
 		CFDictionaryAddValue((CFMutableDictionaryRef)touchLocations, touch, location);
 	}

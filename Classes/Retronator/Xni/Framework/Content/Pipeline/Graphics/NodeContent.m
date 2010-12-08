@@ -39,7 +39,6 @@
 {
 	[transform release];
 	[children release];
-	[parent release];
 	[super dealloc];
 }
 

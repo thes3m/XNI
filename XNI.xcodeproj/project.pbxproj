@@ -18,6 +18,11 @@
 		B5080704122E4EE900C330E2 /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = B5080702122E4EE900C330E2 /* Texture2D.m */; };
 		B508070C122E4FBB00C330E2 /* GraphicsResource.h in Headers */ = {isa = PBXBuildFile; fileRef = B508070A122E4FBB00C330E2 /* GraphicsResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B508070D122E4FBB00C330E2 /* GraphicsResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B508070B122E4FBB00C330E2 /* GraphicsResource.m */; };
+		B52B2B4812ADAEEC00E8A377 /* Retronator.Xni.Framework.GamerServices.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B52B2B4712ADAEEC00E8A377 /* Retronator.Xni.Framework.GamerServices.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B52B2B4A12ADAEF800E8A377 /* Retronator.Xni.Framework.GamerServices.h in Headers */ = {isa = PBXBuildFile; fileRef = B52B2B4912ADAEF800E8A377 /* Retronator.Xni.Framework.GamerServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B52B2B4D12ADAF1000E8A377 /* Guide.h in Headers */ = {isa = PBXBuildFile; fileRef = B52B2B4B12ADAF1000E8A377 /* Guide.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B52B2B4E12ADAF1000E8A377 /* Guide.m in Sources */ = {isa = PBXBuildFile; fileRef = B52B2B4C12ADAF1000E8A377 /* Guide.m */; };
+		B52B2B5012ADB20000E8A377 /* Guide+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B52B2B4F12ADB20000E8A377 /* Guide+Internal.h */; };
 		B52BACFB125527E200B308F6 /* TouchPanel+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B52BACF9125527E200B308F6 /* TouchPanel+Internal.h */; };
 		B52BADAD1255426600B308F6 /* FrameworkEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B52BADAC1255426600B308F6 /* FrameworkEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B53649F2127DE08100CAE30C /* GameWindow+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B53649F1127DE08100CAE30C /* GameWindow+Internal.h */; };
@@ -97,6 +102,9 @@
 		B57E36BF124BE2DD00DDAA42 /* VertexPositionColorTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = B57E36BD124BE2DD00DDAA42 /* VertexPositionColorTexture.m */; };
 		B57E36CC124BE36E00DDAA42 /* VertexPositionColorTextureArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B57E36CA124BE36E00DDAA42 /* VertexPositionColorTextureArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B57E36CD124BE36E00DDAA42 /* VertexPositionColorTextureArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B57E36CB124BE36E00DDAA42 /* VertexPositionColorTextureArray.m */; };
+		B594878212AEF3DA00EE601F /* PointStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = B594878112AEF3DA00EE601F /* PointStruct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B594878512AEF44900EE601F /* XniPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = B594878312AEF44900EE601F /* XniPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B594878612AEF44900EE601F /* XniPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = B594878412AEF44900EE601F /* XniPoint.m */; };
 		B59AD7F01236E07300F99511 /* ContentImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD7EE1236E07300F99511 /* ContentImporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59AD7F11236E07300F99511 /* ContentImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD7EF1236E07300F99511 /* ContentImporter.m */; };
 		B59AD80C1236E21900F99511 /* Retronator.Xni.Framework.Content.Pipeline.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD80B1236E21900F99511 /* Retronator.Xni.Framework.Content.Pipeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -352,6 +360,12 @@
 		B5080702122E4EE900C330E2 /* Texture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2D.m; sourceTree = "<group>"; };
 		B508070A122E4FBB00C330E2 /* GraphicsResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsResource.h; sourceTree = "<group>"; };
 		B508070B122E4FBB00C330E2 /* GraphicsResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsResource.m; sourceTree = "<group>"; };
+		B528F52E12AE5788006FBBC1 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		B52B2B4712ADAEEC00E8A377 /* Retronator.Xni.Framework.GamerServices.classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.GamerServices.classes.h; sourceTree = "<group>"; };
+		B52B2B4912ADAEF800E8A377 /* Retronator.Xni.Framework.GamerServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.GamerServices.h; sourceTree = "<group>"; };
+		B52B2B4B12ADAF1000E8A377 /* Guide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guide.h; sourceTree = "<group>"; };
+		B52B2B4C12ADAF1000E8A377 /* Guide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guide.m; sourceTree = "<group>"; };
+		B52B2B4F12ADB20000E8A377 /* Guide+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Guide+Internal.h"; sourceTree = "<group>"; };
 		B52BACF9125527E200B308F6 /* TouchPanel+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TouchPanel+Internal.h"; sourceTree = "<group>"; };
 		B52BADAC1255426600B308F6 /* FrameworkEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameworkEnums.h; sourceTree = "<group>"; };
 		B53649F1127DE08100CAE30C /* GameWindow+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GameWindow+Internal.h"; sourceTree = "<group>"; };
@@ -431,6 +445,9 @@
 		B57E36BD124BE2DD00DDAA42 /* VertexPositionColorTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexPositionColorTexture.m; sourceTree = "<group>"; };
 		B57E36CA124BE36E00DDAA42 /* VertexPositionColorTextureArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexPositionColorTextureArray.h; sourceTree = "<group>"; };
 		B57E36CB124BE36E00DDAA42 /* VertexPositionColorTextureArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexPositionColorTextureArray.m; sourceTree = "<group>"; };
+		B594878112AEF3DA00EE601F /* PointStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointStruct.h; sourceTree = "<group>"; };
+		B594878312AEF44900EE601F /* XniPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XniPoint.h; sourceTree = "<group>"; };
+		B594878412AEF44900EE601F /* XniPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XniPoint.m; sourceTree = "<group>"; };
 		B59AD7EE1236E07300F99511 /* ContentImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentImporter.h; sourceTree = "<group>"; };
 		B59AD7EF1236E07300F99511 /* ContentImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentImporter.m; sourceTree = "<group>"; };
 		B59AD80B1236E21900F99511 /* Retronator.Xni.Framework.Content.Pipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.Content.Pipeline.h; sourceTree = "<group>"; };
@@ -709,6 +726,7 @@
 			isa = PBXGroup;
 			children = (
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+				B528F52E12AE5788006FBBC1 /* GameKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -728,6 +746,18 @@
 				B5F4E2A812095FAF00B2FC0F /* XNI_Prefix.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		B52B2B4612ADAEB600E8A377 /* GamerServices */ = {
+			isa = PBXGroup;
+			children = (
+				B52B2B4712ADAEEC00E8A377 /* Retronator.Xni.Framework.GamerServices.classes.h */,
+				B52B2B4912ADAEF800E8A377 /* Retronator.Xni.Framework.GamerServices.h */,
+				B52B2B4B12ADAF1000E8A377 /* Guide.h */,
+				B52B2B4F12ADB20000E8A377 /* Guide+Internal.h */,
+				B52B2B4C12ADAF1000E8A377 /* Guide.m */,
+			);
+			path = GamerServices;
 			sourceTree = "<group>";
 		};
 		B59AD7E81236E02500F99511 /* Pipeline */ = {
@@ -996,6 +1026,7 @@
 		B5DE188E11F887A000BF3275 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				B52B2B4612ADAEB600E8A377 /* GamerServices */,
 				B5EC59F41252B8B6001E7DFC /* Input */,
 				B5A1C82B12353EFB00DB60CB /* Content */,
 				B5DDE82911FF10D0000DB38B /* Graphics */,
@@ -1004,6 +1035,9 @@
 				B52BADAC1255426600B308F6 /* FrameworkEnums.h */,
 				B5DDE89411FF16A3000DB38B /* Protocols.h */,
 				B5DDE89511FF16A3000DB38B /* Protocols.m */,
+				B594878112AEF3DA00EE601F /* PointStruct.h */,
+				B594878312AEF44900EE601F /* XniPoint.h */,
+				B594878412AEF44900EE601F /* XniPoint.m */,
 				B5DE190611F88B5D00BF3275 /* RectangleStruct.h */,
 				B5DE190211F88AF500BF3275 /* Rectangle.h */,
 				B5DE190311F88AF500BF3275 /* Rectangle.m */,
@@ -1347,6 +1381,12 @@
 				B554FC9E12A45B3300F20A0D /* VertexPositionNormalTexture.h in Headers */,
 				B5FB745712A4ED6E00DB9234 /* IndexArray.h in Headers */,
 				B5FB745B12A4F01400DB9234 /* ShortIndexArray.h in Headers */,
+				B52B2B4812ADAEEC00E8A377 /* Retronator.Xni.Framework.GamerServices.classes.h in Headers */,
+				B52B2B4A12ADAEF800E8A377 /* Retronator.Xni.Framework.GamerServices.h in Headers */,
+				B52B2B4D12ADAF1000E8A377 /* Guide.h in Headers */,
+				B52B2B5012ADB20000E8A377 /* Guide+Internal.h in Headers */,
+				B594878212AEF3DA00EE601F /* PointStruct.h in Headers */,
+				B594878512AEF44900EE601F /* XniPoint.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1576,6 +1616,8 @@
 				B554FC9F12A45B3300F20A0D /* VertexPositionNormalTexture.m in Sources */,
 				B5FB745812A4ED6E00DB9234 /* IndexArray.m in Sources */,
 				B5FB745C12A4F01400DB9234 /* ShortIndexArray.m in Sources */,
+				B52B2B4E12ADAF1000E8A377 /* Guide.m in Sources */,
+				B594878612AEF44900EE601F /* XniPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

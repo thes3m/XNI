@@ -161,6 +161,7 @@ static NSCharacterSet *numberCharacterSet;
 
 - (void) dealloc
 {
+	[root release];
 	[input release];
 	[contentStack release];
 	[namedData release];

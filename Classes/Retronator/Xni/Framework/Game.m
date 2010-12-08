@@ -13,6 +13,15 @@
 #import "Retronator.Xni.Framework.Content.h"
 #import "TouchPanel+Internal.h"
 #import "GameWindow+Internal.h"
+#import "Guide+Internal.h"
+
+@interface Game ()
+
+- (void) addEnabledComponent:(id <IUpdatable>)component;
+- (void) addVisibleComponent:(id <IDrawable>)component;
+
+@end
+
 
 @implementation Game
 
@@ -20,11 +29,15 @@ static NSArray *updateOrderSort;
 static NSArray *drawOrderSort;
 
 + (void) initialize {
-	NSSortDescriptor *updateOrderSortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"updateOrder" ascending:YES] autorelease];
-	NSSortDescriptor *drawOrderSortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"drawOrder" ascending:YES] autorelease];
+	if (!updateOrderSort) {
+		NSSortDescriptor *updateOrderSortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"updateOrder" ascending:YES] autorelease];	
+		updateOrderSort = [[NSArray arrayWithObject:updateOrderSortDescriptor] retain];
+	}
 	
-	updateOrderSort = [[NSArray arrayWithObject:updateOrderSortDescriptor] retain];
-	drawOrderSort = [[NSArray arrayWithObject:drawOrderSortDescriptor] retain];
+	if (!drawOrderSort) {
+		NSSortDescriptor *drawOrderSortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"drawOrder" ascending:YES] autorelease];
+		drawOrderSort = [[NSArray arrayWithObject:drawOrderSortDescriptor] retain];
+	}
 }
 
 - (id) init
@@ -37,6 +50,8 @@ static NSArray *drawOrderSort;
 		enabledComponents = [[NSMutableArray alloc] init];
 		visibleComponents = [[NSMutableArray alloc] init];
 		
+		enabledChangedComponents = [[NSMutableSet alloc] init];
+		
         [components.componentAdded subscribeDelegate:
 		 [Delegate delegateWithTarget:self Method:@selector(componentAddedTo:eventArgs:)]];
 		
@@ -44,13 +59,16 @@ static NSArray *drawOrderSort;
 		 [Delegate delegateWithTarget:self Method:@selector(componentRemovedFrom:eventArgs:)]];
         
         services = [[GameServiceContainer alloc] init];
-    
+		
 		content = [[ContentManager alloc] initWithServiceProvider:services];
 		
         isFixedTimeStep = YES;
         targetElapsedTime = 1.0 / 60.0;
         inactiveSleepTime = 1.0 / 5.0;
 		maximumElapsedTime = 1.0 / 2.0;
+		
+		// Gamer services
+		[Guide initializeWithGame:self];
 		
         // Get the game host.
         gameHost = (GameHost*)[UIApplication sharedApplication];
@@ -109,6 +127,7 @@ static NSArray *drawOrderSort;
     // Sleep if inactive.
     if (!isActive) {
         CFRunLoopRunInMode(kCFRunLoopDefaultMode, inactiveSleepTime, NO);
+		return;
     }
     
     // Calculate elapsed times.
@@ -146,6 +165,16 @@ static NSArray *drawOrderSort;
     
     // Update the game.
     [self updateWithGameTime:gameTime];
+	
+	// Update enabled components.
+	for (id<IUpdatable> updatable in enabledChangedComponents) {
+		if (updatable.enabled) {
+			[self addEnabledComponent: updatable];
+		} else {
+			[enabledComponents removeObject:updatable];
+		}		
+	}
+	[enabledChangedComponents removeAllObjects];
     
     // Draw to display.
     if ([self beginDraw]) {
@@ -292,11 +321,7 @@ static NSArray *drawOrderSort;
 }
 
 - (void) componentEnabledChanged:(id<IUpdatable>)sender eventArgs:(EventArgs*)e {
-	if (sender.enabled) {
-		[self addEnabledComponent: sender];
-	} else {
-		[enabledComponents removeObject:sender];
-	}
+	[enabledChangedComponents addObject:sender];
 }
 
 - (void) componentUpdateOrderChanged:(id<IUpdatable>)sender eventArgs:(EventArgs*)e {
@@ -322,6 +347,7 @@ static NSArray *drawOrderSort;
 	[self unloadContent];
     [gameTime release];
     
+	[enabledChangedComponents release];
 	[enabledComponents release];
 	[visibleComponents release];
     [components release];

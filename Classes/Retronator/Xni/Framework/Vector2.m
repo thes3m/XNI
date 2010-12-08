@@ -149,6 +149,22 @@
     return self;
 }
 
+- (id) copyWithZone:(NSZone *)zone {
+	return [[Vector2 allocWithZone:zone] initWithStruct:&data];
+}
+
+- (BOOL) equals:(Vector2*)vector {
+	if (!vector) return NO;
+	return vector.data->x == data.x && vector.data->y == data.y;
+}
+
+- (BOOL) isEqual:(id)object {
+    if ([object isKindOfClass:[Vector2 class]]) {
+        return [self equals:object];
+    }
+    return NO;
+}
+
 - (NSString *) description {
     return [NSString stringWithFormat:@"Vector(%f, %f)", data.x, data.y];
 }

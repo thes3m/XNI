@@ -209,6 +209,23 @@
     return self;    
 }
 
+- (id) copyWithZone:(NSZone *)zone {
+	return [[Quaternion allocWithZone:zone] initWithStruct:&data];
+}
+
+- (BOOL) equals:(Quaternion*)quaternion {
+	if (!quaternion) return NO;
+	return quaternion.data->x == data.x && quaternion.data->y == data.y &&
+	quaternion.data->z == data.z && quaternion.data->w == data.w;
+}
+
+- (BOOL) isEqual:(id)object {
+    if ([object isKindOfClass:[Vector4 class]]) {
+        return [self equals:object];
+    }
+    return NO;
+}
+
 - (NSString *) description {
     return [NSString stringWithFormat:@"Quaternion(%f, %f, %f, %f)", data.x, data.y, data.z, data.w];
 }

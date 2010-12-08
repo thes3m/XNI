@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "GameWindow.h"
 
 @interface GameWindow (Internal)
 
 - (void) initialize;
+
+@property (nonatomic, readonly) GameViewController *gameViewController;
 
 @end

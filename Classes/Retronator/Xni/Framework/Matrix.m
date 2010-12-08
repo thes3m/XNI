@@ -61,6 +61,33 @@
     return matrix;    
 }
 
++ (Matrix*) createRotationX:(float)radians {
+	Matrix *matrix = [Matrix identity];
+	matrix.data->m22 = cosf(radians);
+	matrix.data->m23 = sinf(radians);
+	matrix.data->m32 = - matrix.data->m23;
+	matrix.data->m33 = matrix.data->m22;
+	return matrix;
+}
+
++ (Matrix*) createRotationY:(float)radians {
+	Matrix *matrix = [Matrix identity];
+	matrix.data->m11 = cosf(radians);
+	matrix.data->m13 = sinf(radians);
+	matrix.data->m31 = - matrix.data->m13;
+	matrix.data->m33 = matrix.data->m11;
+	return matrix;
+}
+
++ (Matrix*) createRotationZ:(float)radians {
+	Matrix *matrix = [Matrix identity];
+	matrix.data->m11 = cosf(radians);
+	matrix.data->m12 = sinf(radians);
+	matrix.data->m21 = - matrix.data->m12;
+	matrix.data->m22 = matrix.data->m11;
+	return matrix;
+}
+
 + (Matrix*) createFromAxis:(Vector3 *)axis angle:(float)angle {
     Vector3 *normalizedAxis = [[Vector3 vectorWithVector:axis] normalize];
     
@@ -338,6 +365,25 @@
 - (Matrix*) divideBy:(Matrix*)value {
 	MatrixDivide(self.data, value.data, self.data);
     return self;
+}
+
+- (id) copyWithZone:(NSZone *)zone {
+	return [[Matrix allocWithZone:zone] initWithStruct:&data];
+}
+
+- (BOOL) equals:(Matrix*)matrix {
+	if (!matrix) return NO;
+	return matrix.data->m11 == data.m11 && matrix.data->m12 == data.m12 && matrix.data->m13 == data.m13 && matrix.data->m14 == data.m14 &&
+	matrix.data->m21 == data.m21 && matrix.data->m22 == data.m22 && matrix.data->m23 == data.m23 && matrix.data->m24 == data.m24 &&
+	matrix.data->m31 == data.m31 && matrix.data->m32 == data.m32 && matrix.data->m33 == data.m33 && matrix.data->m34 == data.m34 &&
+	matrix.data->m41 == data.m41 && matrix.data->m42 == data.m42 && matrix.data->m43 == data.m43 && matrix.data->m44 == data.m44;
+}
+
+- (BOOL) isEqual:(id)object {
+    if ([object isKindOfClass:[Matrix class]]) {
+        return [self equals:object];
+    }
+    return NO;
 }
 
 // CONSTANTS

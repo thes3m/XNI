@@ -22,7 +22,7 @@
 
 @property (nonatomic, readonly) IndexCollection *indices;
 @property (nonatomic, retain) MaterialContent *material;
-@property (nonatomic, retain) MeshContent *parent;
+@property (nonatomic, assign) MeshContent *parent;	// Parent is assigned so the children don't hold parent's in existence.
 @property (nonatomic, readonly) VertexContent *vertices;
 
 @end

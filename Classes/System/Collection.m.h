@@ -62,7 +62,7 @@
 
 - (void) dealloc
 {
-	[collection dealloc];
+	[collection release];
 	[super dealloc];
 }
 

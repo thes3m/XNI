@@ -10,7 +10,7 @@
 
 #import "Retronator.Xni.Framework.classes.h"
 
-@interface Vector4 : NSObject {
+@interface Vector4 : NSObject <NSCopying> {
     Vector4Struct data;
 }
 
@@ -44,6 +44,8 @@
 - (Vector4*) subtract:(Vector4*)value;
 - (Vector4*) multiplyBy:(float)scalar;
 - (Vector4*) transformWith:(Matrix*)matrix;
+
+- (BOOL) equals:(Vector4*)vector;
 
 // Constants
 + (Vector4*) zero;
