@@ -14,7 +14,7 @@
     MatrixStruct data;
 }
 
-- (id) initWithStruct: (MatrixStruct*)matrixData;
+- (id) initWithMatrixStruct: (MatrixStruct*)matrixData;
 - (id) initWithMatrix: (Matrix*)matrix;
 
 + (Matrix*) matrixWithStruct: (MatrixStruct*)matrixData;

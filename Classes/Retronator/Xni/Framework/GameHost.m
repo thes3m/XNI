@@ -7,6 +7,7 @@
 //
 
 #import "GameHost.h"
+#import <QuartzCore/QuartzCore.h>
 
 #import "Retronator.Xni.Framework.h"
 
@@ -27,6 +28,7 @@
     
     game = [self delegate];
     
+	
     SInt32 runResult;
     
     while (!isExiting)
@@ -37,13 +39,20 @@
         // Handle all the waiting event sources.
         do {
             runResult = CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, YES);
+			NSLog(@"Handling default mode");
         } while (runResult == kCFRunLoopRunHandledSource);
-        
+		
         [game tick];
         
         // We release memory every frame.
         [pool release];
     }
+	
+	/*
+	CADisplayLink *aDisplayLink = [CADisplayLink displayLinkWithTarget:game selector:@selector(tick)];
+	[aDisplayLink setFrameInterval:1];
+	[aDisplayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+	 */
 }
 
 - (void) exit {

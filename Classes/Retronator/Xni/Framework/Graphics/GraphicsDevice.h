@@ -19,11 +19,15 @@
     Game *game;
 	EAGLContext *context;
 	
+	// Presentation parameters
+	BOOL multisampling;
+	
 	// The pixel dimensions of the CAEAGLLayer
 	GLint backingWidth;
 	GLint backingHeight;
 	
 	// The OpenGL names for the buffers used to render to this view
+	GLuint resolveFramebuffer, resolveRenderbuffer;
 	GLuint defaultFramebuffer, colorRenderbuffer, depthRenderbuffer;
 	
 	// Device state

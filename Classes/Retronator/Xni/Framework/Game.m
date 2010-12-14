@@ -62,6 +62,11 @@ static NSArray *drawOrderSort;
 		
 		content = [[ContentManager alloc] initWithServiceProvider:services];
 		
+		activated = [[Event alloc] init];
+		deactivated = [[Event alloc] init];
+		disposed = [[Event alloc] init];
+		exiting = [[Event alloc] init];
+		
         isFixedTimeStep = YES;
         targetElapsedTime = 1.0 / 60.0;
         inactiveSleepTime = 1.0 / 5.0;
@@ -97,6 +102,8 @@ static NSArray *drawOrderSort;
 @synthesize components;
 @synthesize services;
 
+@synthesize activated, deactivated, disposed, exiting;
+
 // METHODS
 
 - (void) run {    
@@ -126,7 +133,7 @@ static NSArray *drawOrderSort;
 - (void) tick {
     // Sleep if inactive.
     if (!isActive) {
-        CFRunLoopRunInMode(kCFRunLoopDefaultMode, inactiveSleepTime, NO);
+        //CFRunLoopRunInMode(kCFRunLoopDefaultMode, inactiveSleepTime, NO);
 		return;
     }
     
@@ -135,7 +142,7 @@ static NSArray *drawOrderSort;
     NSTimeInterval elapsedRealTime = [currentFrameTime timeIntervalSinceDate:lastFrameTime];
     
     // Sleep if we're ahead of the target elapsed time.
-	if (isFixedTimeStep) {
+	/*if (isFixedTimeStep) {
 		if (elapsedRealTime < targetElapsedTime) {
 			NSTimeInterval sleepTime = targetElapsedTime - elapsedRealTime;
 			CFRunLoopRunInMode(kCFRunLoopDefaultMode, sleepTime, NO);
@@ -148,7 +155,7 @@ static NSArray *drawOrderSort;
 		} else {
 			gameTime.isRunningSlowly = YES;
 		}
-	}
+	}*/
     
     // Store current time for next frame.
     [lastFrameTime release];
@@ -194,19 +201,30 @@ static NSArray *drawOrderSort;
 {
     NSLog(@"Application was deactivated.");
     isActive = NO;
+	[deactivated raiseWithSender:self];
 }
 
 - (void) applicationDidBecomeActive:(UIApplication *)application
 {
     NSLog(@"Application was activated.");
     isActive = YES;
+	[activated raiseWithSender:self];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     NSLog(@"Application will terminate.");
+	[exiting raiseWithSender:self];
     [gameHost exit];
     [self endRun];
+}
+
+- (void) applicationDidEnterBackground:(UIApplication *)application {
+	NSLog(@"Application entered background.");
+}
+
+- (void) applicationWillEnterForeground:(UIApplication *)application {
+	NSLog(@"Application will enter foreground.");
 }
 
 // Virtual methods to be mainly implemented in the game. 
@@ -343,7 +361,14 @@ static NSArray *drawOrderSort;
 
 
 - (void) dealloc
-{       
+{   
+    [disposed raiseWithSender:self];
+	
+	[activated release];
+	[deactivated release];
+	[disposed release];
+	[exiting release];
+	
 	[self unloadContent];
     [gameTime release];
     

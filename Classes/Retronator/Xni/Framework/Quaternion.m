@@ -26,7 +26,7 @@
     return self;
 }
 
-- (id) initWithStruct: (Vector4Struct*)quaternionData {
+- (id) initWithVector4Struct: (Vector4Struct*)quaternionData {
     if (self = [super init]) {
         data = *quaternionData;
     }
@@ -34,7 +34,7 @@
 }
 
 - (id) initWithQuaternion: (Quaternion*)quaternion {
-    return [self initWithStruct:quaternion.data];  
+    return [self initWithVector4Struct:quaternion.data];  
 }
 
 + (Quaternion*) quaternionWithX:(float)x y:(float)y z:(float)z w:(float)w {
@@ -46,7 +46,7 @@
 }
 
 + (Quaternion*) quaternionWithStruct: (Vector4Struct*)quaternionData {
-    return [[[Quaternion alloc] initWithData:(id)quaternionData] autorelease];
+    return [[[Quaternion alloc] initWithVector4Struct:quaternionData] autorelease];
 }
 
 + (Quaternion*) quaternionWithQuaternion: (Quaternion*)quaternion {
@@ -210,7 +210,7 @@
 }
 
 - (id) copyWithZone:(NSZone *)zone {
-	return [[Quaternion allocWithZone:zone] initWithStruct:&data];
+	return [[Quaternion allocWithZone:zone] initWithVector4Struct:&data];
 }
 
 - (BOOL) equals:(Quaternion*)quaternion {

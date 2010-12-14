@@ -117,6 +117,9 @@ static TouchPanel *instance;
     return instance;
 }
 
+- (void) setView:(UIView *)theView {
+	view = theView;
+}
 
 - (BOOL) isGestureAvailable{
 	return NO;
@@ -144,11 +147,12 @@ static TouchPanel *instance;
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+	float scale = [UIScreen mainScreen].scale;
 	for (UITouch *touch in touches) {
 		XniTouchLocation *location = [touchLocations objectForKey:touch];	
-		if (location) {
-			CGPoint position = [touch locationInView:touch.view];
-			[location moveToPosition:[Vector2 vectorWithX:position.x y:position.y]];
+		if (location) {			
+			CGPoint position = [touch locationInView:view];
+			[location moveToPosition:[Vector2 vectorWithX:position.x * scale y:position.y * scale]];
 		}
 	}
 }
@@ -192,9 +196,13 @@ static TouchPanel *instance;
 	// Add new touches
 	float scale = [UIScreen mainScreen].scale;
 	for (UITouch *touch in addTouches) {
-		CGPoint position = [touch locationInView:touch.view];
+		CGPoint position = [touch locationInView:view];
 		XniTouchLocation *location = [[[XniTouchLocation alloc] 
 											initWithPosition:[Vector2 vectorWithX:position.x * scale y:position.y * scale]] autorelease];
+		if (position.x == 0 && position.y == 0) {
+			NSLog(@"BOOMSDFS");
+		}
+		
 		CFDictionaryAddValue((CFMutableDictionaryRef)touchLocations, touch, location);
 	}
 	[addTouches removeAllObjects];

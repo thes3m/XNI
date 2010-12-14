@@ -12,7 +12,7 @@
 
 @implementation Matrix
 
-- (id) initWithStruct: (MatrixStruct*)matrixStruct {
+- (id) initWithMatrixStruct: (MatrixStruct*)matrixStruct {
     if (self = [super init]) {
         data = *matrixStruct;
     }
@@ -20,11 +20,11 @@
 }
 
 - (id) initWithMatrix: (Matrix*)matrix {
-    return [self initWithStruct:matrix.data];  
+    return [self initWithMatrixStruct:matrix.data];  
 }
 
 + (Matrix*) matrixWithStruct: (MatrixStruct*)matrixStruct {
-    return [[[Matrix alloc] initWithStruct:matrixStruct] autorelease];
+    return [[[Matrix alloc] initWithMatrixStruct:matrixStruct] autorelease];
 }
 
 + (Matrix*) matrixWithMatrix: (Matrix*)matrix {
@@ -368,7 +368,7 @@
 }
 
 - (id) copyWithZone:(NSZone *)zone {
-	return [[Matrix allocWithZone:zone] initWithStruct:&data];
+	return [[Matrix allocWithZone:zone] initWithMatrixStruct:&data];
 }
 
 - (BOOL) equals:(Matrix*)matrix {

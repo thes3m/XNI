@@ -33,7 +33,8 @@
 	if (self = [super init])
 	{
         game = theGame;
-        
+        multisampling = NO;
+		
         // Create an OpenGL ES context
 		context = [self createContext];
         
@@ -41,20 +42,31 @@
             [self release];
             return nil;
         }
-        
+		
+		if (multisampling) {
+			// Create resolve framebuffer object.
+			glGenFramebuffers(1, &resolveFramebuffer);
+			glBindFramebuffer(GL_FRAMEBUFFER, resolveFramebuffer);
+			
+			// Create resolve color buffer.
+			glGenRenderbuffers(1, &resolveRenderbuffer);
+			glBindRenderbuffer(GL_RENDERBUFFER, resolveRenderbuffer);
+			glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, resolveRenderbuffer);
+		}
+		
 		// Create default framebuffer object.
-		glGenFramebuffersOES(1, &defaultFramebuffer);
-		glBindFramebufferOES(GL_FRAMEBUFFER_OES, defaultFramebuffer);
-        
-        // Create the color buffer.
-       	glGenRenderbuffersOES(1, &colorRenderbuffer);
-		glBindRenderbufferOES(GL_RENDERBUFFER_OES, colorRenderbuffer);
-		glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_RENDERBUFFER_OES, colorRenderbuffer);
-        
-        // Create the depth buffer.
-        glGenRenderbuffersOES(1, &depthRenderbuffer);
-        glBindRenderbufferOES(GL_RENDERBUFFER_OES, depthRenderbuffer);
-        glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_DEPTH_ATTACHMENT_OES, GL_RENDERBUFFER_OES, depthRenderbuffer);
+		glGenFramebuffers(1, &defaultFramebuffer);
+		glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebuffer);
+		
+		// Create the color buffer.
+		glGenRenderbuffers(1, &colorRenderbuffer);
+		glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer);
+		glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, colorRenderbuffer);
+		
+		// Create the depth buffer.
+		glGenRenderbuffers(1, &depthRenderbuffer);
+		glBindRenderbuffer(GL_RENDERBUFFER, depthRenderbuffer);
+		glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthRenderbuffer);
 		
 		// Create sampler states and texture collections and handle changes.
 		samplerStates = [[SamplerStateCollection alloc] init];
@@ -174,26 +186,61 @@
 	
     CAEAGLLayer *layer = (CAEAGLLayer*)game.window.handle;
     
-	// Allocate color buffer backing based on the current layer size.
-    glBindRenderbufferOES(GL_RENDERBUFFER_OES, colorRenderbuffer);
-    [context renderbufferStorage:GL_RENDERBUFFER_OES fromDrawable:layer];
-	glGetRenderbufferParameterivOES(GL_RENDERBUFFER_OES, GL_RENDERBUFFER_WIDTH_OES, &backingWidth);
-    glGetRenderbufferParameterivOES(GL_RENDERBUFFER_OES, GL_RENDERBUFFER_HEIGHT_OES, &backingHeight);
-    glViewport(0, 0, backingWidth, backingHeight);
+	if (multisampling) {
+		// Allocate resolve buffer backing based on the current layer size.
+		glBindFramebuffer(GL_FRAMEBUFFER, resolveFramebuffer);
+		glBindRenderbuffer(GL_RENDERBUFFER, resolveRenderbuffer);
+		[context renderbufferStorage:GL_RENDERBUFFER fromDrawable:layer];
+		glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &backingWidth);
+		glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &backingHeight);
+		
+		if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE){
+			NSLog(@"Failed to make complete framebuffer object %x.", glCheckFramebufferStatus(GL_FRAMEBUFFER));
+		} else {
+			NSLog(@"Created a resolve buffer with dimensions: %ix%i.", backingWidth, backingHeight);
+		}
+		
+		// Allocate multisampling buffers based on resolve buffer.
+		
+		// Create default framebuffer object.
+		glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebuffer);
+		
+		// Create the color buffer.
+		glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer);
+		glRenderbufferStorageMultisampleAPPLE(GL_RENDERBUFFER, 4, GL_RGBA8_OES, backingWidth, backingHeight);	
+		
+		// Create the depth buffer.
+		glBindRenderbuffer(GL_RENDERBUFFER, depthRenderbuffer);
+		glRenderbufferStorageMultisampleAPPLE(GL_RENDERBUFFER, 4, GL_DEPTH_COMPONENT16, backingWidth, backingHeight);
+		
+		if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE){
+			NSLog(@"Failed to make complete framebuffer object %x.", glCheckFramebufferStatus(GL_FRAMEBUFFER));
+		} else {
+			NSLog(@"Created a multisample render target with dimensions: %ix%i.", backingWidth, backingHeight);
+		}
+	} else {
+		// Allocate render buffer backing based on the current layer size.
+		glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer);
+		[context renderbufferStorage:GL_RENDERBUFFER fromDrawable:layer];
+		glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &backingWidth);
+		glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &backingHeight);
+		
+		glBindRenderbuffer(GL_RENDERBUFFER, depthRenderbuffer);
+		glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, backingWidth, backingHeight);
+
+		if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE){
+			NSLog(@"Failed to make complete framebuffer object %x.", glCheckFramebufferStatus(GL_FRAMEBUFFER));
+		} else {
+			NSLog(@"Created a device with dimensions: %ix%i.", backingWidth, backingHeight);
+		}		
+	}
 	
+	// Set viewport.
+	glViewport(0, 0, backingWidth, backingHeight);
 	self.viewport.x = 0;
 	self.viewport.y = 0;
 	self.viewport.width = backingWidth;
 	self.viewport.height = backingHeight;
-	
-    glBindRenderbufferOES(GL_RENDERBUFFER_OES, depthRenderbuffer);
-    glRenderbufferStorageOES(GL_RENDERBUFFER_OES, GL_DEPTH_COMPONENT16_OES, backingWidth, backingHeight);
-    
-    if (glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES) != GL_FRAMEBUFFER_COMPLETE_OES){
-		NSLog(@"Failed to make complete framebuffer object %x.", glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES));
-    } else {
-        NSLog(@"Created a device with dimensions: %ix%i.", backingWidth, backingHeight);
-    }
 	
 	// Set state defaults.
 	glEnable(GL_BLEND);
@@ -202,8 +249,23 @@
 }
 
 - (void) present {
-    glBindRenderbufferOES(GL_RENDERBUFFER_OES, colorRenderbuffer);
-    [context presentRenderbuffer:GL_RENDERBUFFER_OES];
+	if (multisampling) {
+		// Resolve the rendering into the resolve buffer.
+		glBindFramebuffer(GL_DRAW_FRAMEBUFFER_APPLE, resolveFramebuffer);
+		glBindFramebuffer(GL_READ_FRAMEBUFFER_APPLE, defaultFramebuffer);
+		glResolveMultisampleFramebufferAPPLE();
+		
+		const GLenum discards[]  = {GL_COLOR_ATTACHMENT0,GL_DEPTH_ATTACHMENT};
+		glDiscardFramebufferEXT(GL_READ_FRAMEBUFFER_APPLE,2,discards);
+
+	    glBindRenderbuffer(GL_RENDERBUFFER, resolveRenderbuffer);
+		[context presentRenderbuffer:GL_RENDERBUFFER];		
+
+		glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebuffer);
+	} else {
+	    glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer);
+		[context presentRenderbuffer:GL_RENDERBUFFER];			
+	}
 }
 
 // Render buffers

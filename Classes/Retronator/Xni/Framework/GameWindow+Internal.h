@@ -15,5 +15,6 @@
 - (void) initialize;
 
 @property (nonatomic, readonly) GameViewController *gameViewController;
+@property (nonatomic, readonly) UIWindow *window;
 
 @end

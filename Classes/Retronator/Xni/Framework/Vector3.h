@@ -15,8 +15,8 @@
 }
 
 - (id) initWithX:(float)x y:(float)y z:(float)z;
-- (id) initWithStruct: (Vector3Struct*)vectorData;
-- (id) initWithVector: (Vector3*)vector;
+- (id) initWithVector3Struct: (Vector3Struct*)vectorData;
+- (id) initWithVector3: (Vector3*)vector;
 
 + (Vector3*) vectorWithX:(float)x y:(float)y z:(float)z;
 + (Vector3*) vectorWithStruct: (Vector3Struct*)vectorData;

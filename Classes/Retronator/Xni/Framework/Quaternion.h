@@ -16,7 +16,7 @@
 
 - (id) initWithX:(float)x y:(float)y z:(float)z w:(float)w;
 - (id) initWithVectorPart:(Vector3*)vector scalarPart:(float)scalar;
-- (id) initWithStruct: (Vector4Struct*)quaternionData;
+- (id) initWithVector4Struct: (Vector4Struct*)quaternionData;
 - (id) initWithQuaternion: (Quaternion*)quaternion;
 
 + (Quaternion*) quaternionWithX:(float)x y:(float)y z:(float)z w:(float)w;

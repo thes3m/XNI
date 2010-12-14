@@ -21,15 +21,15 @@
     return self;
 }
 
-- (id) initWithStruct: (Vector4Struct*)vectorData {
+- (id) initWithVector4Struct: (Vector4Struct*)vectorData {
     if (self = [super init]) {
         data = *vectorData;
     }
     return self;
 }
 
-- (id) initWithVector: (Vector4*)vector {
-    return [self initWithStruct:vector.data];  
+- (id) initWithVector4: (Vector4*)vector {
+    return [self initWithVector4Struct:vector.data];  
 }
 
 + (Vector4*) vectorWithX:(float)x y:(float)y z:(float)z w:(float)w {
@@ -37,11 +37,11 @@
 }
 
 + (Vector4*) vectorWithStruct: (Vector4Struct*)vectorData {
-    return [[[Vector4 alloc] initWithStruct:vectorData] autorelease];
+    return [[[Vector4 alloc] initWithVector4Struct:vectorData] autorelease];
 }
 
 + (Vector4*) vectorWithVector: (Vector4*)vector {
-    return [[[Vector4 alloc] initWithVector:vector] autorelease];
+    return [[[Vector4 alloc] initWithVector4:vector] autorelease];
 }
 
 // PROPERTIES
@@ -142,7 +142,7 @@
 }
 
 - (id) copyWithZone:(NSZone *)zone {
-	return [[Vector4 allocWithZone:zone] initWithStruct:&data];
+	return [[Vector4 allocWithZone:zone] initWithVector4Struct:&data];
 }
 
 - (BOOL) equals:(Vector4*)vector {

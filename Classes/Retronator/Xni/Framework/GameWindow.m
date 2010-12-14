@@ -12,6 +12,7 @@
 #import "Retronator.Xni.Framework.h"
 #import "GameViewController.h"
 #import "GameView.h"
+#import "TouchPanel+Internal.h"
 
 @interface GameWindow()
 
@@ -40,6 +41,10 @@
 
 @synthesize clientSizeChanged;
 @synthesize orientationChanged;
+
+- (UIWindow*) window {
+	return window;
+}
 
 - (GameViewController *) gameViewController {
 	return gameViewController;
@@ -74,6 +79,9 @@
 	
 	// Add the game view to the window.
 	[window addSubview: gameViewController.view];
+	
+	// Report view to TouchPanel.
+	[[TouchPanel getInstance] setView:gameViewController.view];
 	
 	// Present the window.
 	[window makeKeyAndVisible];	

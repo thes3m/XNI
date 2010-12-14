@@ -16,7 +16,7 @@
 }
 
 - (id) initWithX:(int)x y:(int)y width:(int)width height:(int)height;
-- (id) initWithStruct:(RectangleStruct*) rectangleStruct;
+- (id) initWithRectangleStruct:(RectangleStruct*) rectangleStruct;
 - (id) initWithRectangle:(Rectangle*) rectangle;
 
 + (Rectangle*) rectangleWithX:(int)x y:(int)y width:(int)width height:(int)height;

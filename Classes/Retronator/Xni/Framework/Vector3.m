@@ -21,15 +21,15 @@
     return self;
 }
 
-- (id) initWithStruct: (Vector3Struct*)vectorData {
+- (id) initWithVector3Struct: (Vector3Struct*)vectorData {
     if (self = [super init]) {
         data = *vectorData;
     }
     return self;
 }
 
-- (id) initWithVector: (Vector3*)vector {
-    return [self initWithStruct:vector.data];  
+- (id) initWithVector3: (Vector3*)vector {
+    return [self initWithVector3Struct:vector.data];  
 }
 
 + (Vector3*) vectorWithX:(float)x y:(float)y z:(float)z {
@@ -37,11 +37,11 @@
 }
 
 + (Vector3*) vectorWithStruct: (Vector3Struct*)vectorData {
-    return [[[Vector3 alloc] initWithStruct:vectorData] autorelease];
+    return [[[Vector3 alloc] initWithVector3Struct:vectorData] autorelease];
 }
 
 + (Vector3*) vectorWithVector: (Vector3*)vector {
-    return [[[Vector3 alloc] initWithVector:vector] autorelease];
+    return [[[Vector3 alloc] initWithVector3:vector] autorelease];
 }
 
 // PROPERTIES
@@ -160,7 +160,7 @@
 }
 
 - (id) copyWithZone:(NSZone *)zone {
-	return [[Vector3 allocWithZone:zone] initWithStruct:&data];
+	return [[Vector3 allocWithZone:zone] initWithVector3Struct:&data];
 }
 
 - (BOOL) equals:(Vector3*)vector {

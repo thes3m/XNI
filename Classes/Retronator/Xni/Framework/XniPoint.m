@@ -13,14 +13,14 @@
 
 // CONSTRUCTORS
 
-- (id) initWithX:(int)x y:(int)y {
+- (id) initWithIntX:(int)x y:(int)y {
 	if (self = [super init]) {
 		data = PointMake(x, y);
 	}
 	return self;
 }
 
-- (id) initWithStruct:(PointStruct*) pointStruct {
+- (id) initWithPointStruct:(PointStruct*) pointStruct {
 	if (self = [super init]) {
 		data = *pointStruct;
 	}
@@ -28,15 +28,15 @@
 }
 
 - (id) initWithPoint:(XniPoint*) point {
-	return [self initWithStruct:point.data];
+	return [self initWithPointStruct:point.data];
 }
 
 + (XniPoint*) pointWithX:(int)x y:(int)y {
-	return [[[XniPoint alloc] initWithX:x y:y] autorelease];
+	return [[[XniPoint alloc] initWithIntX:x y:y] autorelease];
 }
 
 + (XniPoint*) pointWithStruct:(PointStruct*) pointStruct {
-	return [[[XniPoint alloc] initWithStruct:pointStruct] autorelease];
+	return [[[XniPoint alloc] initWithPointStruct:pointStruct] autorelease];
 }
 
 + (XniPoint*) pointWithPoint:(XniPoint*) point {
@@ -65,7 +65,7 @@
 }
 
 - (id) copyWithZone:(NSZone *)zone {
-	return [[XniPoint allocWithZone:zone] initWithStruct:&data];
+	return [[XniPoint allocWithZone:zone] initWithPointStruct:&data];
 }
 
 - (BOOL) equals:(XniPoint*)point {

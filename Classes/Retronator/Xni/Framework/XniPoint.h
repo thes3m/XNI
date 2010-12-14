@@ -15,8 +15,8 @@
 	PointStruct data;
 }
 
-- (id) initWithX:(int)x y:(int)y;
-- (id) initWithStruct:(PointStruct*) pointStruct;
+- (id) initWithIntX:(int)x y:(int)y;
+- (id) initWithPointStruct:(PointStruct*) pointStruct;
 - (id) initWithPoint:(XniPoint*) point;
 
 + (XniPoint*) pointWithX:(int)x y:(int)y;
