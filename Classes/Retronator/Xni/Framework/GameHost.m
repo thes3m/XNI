@@ -39,7 +39,6 @@
         // Handle all the waiting event sources.
         do {
             runResult = CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, YES);
-			NSLog(@"Handling default mode");
         } while (runResult == kCFRunLoopRunHandledSource);
 		
         [game tick];

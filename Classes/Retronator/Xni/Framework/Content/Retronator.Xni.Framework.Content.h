@@ -15,3 +15,5 @@
 
 #import "ModelBoneReader.h"
 #import "VertexDeclarationReader.h"
+
+#import "SoundEffectReader.h"

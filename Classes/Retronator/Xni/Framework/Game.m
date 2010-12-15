@@ -14,6 +14,7 @@
 #import "TouchPanel+Internal.h"
 #import "GameWindow+Internal.h"
 #import "Guide+Internal.h"
+#import "SoundEffect+Internal.h"
 
 @interface Game ()
 
@@ -133,7 +134,7 @@ static NSArray *drawOrderSort;
 - (void) tick {
     // Sleep if inactive.
     if (!isActive) {
-        //CFRunLoopRunInMode(kCFRunLoopDefaultMode, inactiveSleepTime, NO);
+        CFRunLoopRunInMode(kCFRunLoopDefaultMode, inactiveSleepTime, NO);
 		return;
     }
     
@@ -142,7 +143,7 @@ static NSArray *drawOrderSort;
     NSTimeInterval elapsedRealTime = [currentFrameTime timeIntervalSinceDate:lastFrameTime];
     
     // Sleep if we're ahead of the target elapsed time.
-	/*if (isFixedTimeStep) {
+	if (isFixedTimeStep) {
 		if (elapsedRealTime < targetElapsedTime) {
 			NSTimeInterval sleepTime = targetElapsedTime - elapsedRealTime;
 			CFRunLoopRunInMode(kCFRunLoopDefaultMode, sleepTime, NO);
@@ -155,7 +156,7 @@ static NSArray *drawOrderSort;
 		} else {
 			gameTime.isRunningSlowly = YES;
 		}
-	}*/
+	}
     
     // Store current time for next frame.
     [lastFrameTime release];
@@ -169,7 +170,7 @@ static NSArray *drawOrderSort;
 	
 	// Update input.
 	[[TouchPanel getInstance] update];
-    
+	    
     // Update the game.
     [self updateWithGameTime:gameTime];
 	
@@ -183,6 +184,9 @@ static NSArray *drawOrderSort;
 	}
 	[enabledChangedComponents removeAllObjects];
     
+	// Update audio.
+	[SoundEffect update];
+
     // Draw to display.
     if ([self beginDraw]) {
         [self drawWithGameTime:gameTime];

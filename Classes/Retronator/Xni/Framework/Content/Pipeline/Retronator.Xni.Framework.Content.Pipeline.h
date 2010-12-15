@@ -11,6 +11,8 @@
 #import "ContentImporter.h"
 #import "TextureImporter.h"
 #import "XImporter.h"
+#import "WavImporter.h"
+#import "Mp3Importer.h"
 
 #import "IContentProcessor.h"
 #import "ContentProcessor.h"

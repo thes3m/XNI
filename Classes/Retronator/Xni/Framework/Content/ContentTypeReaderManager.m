@@ -27,6 +27,7 @@
 		vertexBufferReader = [[VertexBufferReader alloc] init];
 		modelBoneReader = [[ModelBoneReader alloc] init];
 		vertexDeclarationReader = [[VertexDeclarationReader alloc] init];
+		soundEffectReader = [[SoundEffectReader alloc] init];
 	}
 	return self;
 }
@@ -51,6 +52,8 @@
 		return modelBoneReader;
 	} else if (targetType == [VertexDeclarationContent class]) {
 		return vertexDeclarationReader;
+	} else if (targetType == [SoundEffectContent class]) {
+		return soundEffectReader;
 	} else {
 		return nil;
 	}

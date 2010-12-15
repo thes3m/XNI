@@ -20,6 +20,7 @@
 	VertexBufferReader *vertexBufferReader;
 	ModelBoneReader *modelBoneReader;
 	VertexDeclarationReader *vertexDeclarationReader;
+	SoundEffectReader *soundEffectReader;
 }
 
 - (ContentTypeReader*) getTypeReaderFor:(Class)targetType;
