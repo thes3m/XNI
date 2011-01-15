@@ -5,3 +5,4 @@
 @class BasicEffectReader, IndexBufferReader, VertexBufferReader;
 @class ModelBoneReader, VertexDeclarationReader;
 @class SoundEffectReader;
+@class SpriteFontReader;

@@ -40,7 +40,14 @@
 }
 
 - (id) load:(NSString *)assetName{
-	
+	return [self load:assetName importer:nil processor:nil];
+}
+
+- (id) load:(NSString *)assetName processor:(ContentProcessor *)processor {
+	return [self load:assetName importer:nil processor:processor];
+}
+
+- (id) load:(NSString *)assetName importer:(ContentImporter *)importer processor:(ContentProcessor *)processor {
 	// Check if we have already loaded this asset.
 	id existing = [loadedAssets objectForKey:assetName];
 	if (existing) {
@@ -56,7 +63,7 @@
 	for (int i = 0; i < count; i++) {
 		NSString *file = [files objectAtIndex:i];
 		if ([[file stringByDeletingPathExtension] isEqual:assetName]) {
-			return [self load:assetName fromFile:file];
+			return [self load:assetName fromFile:file importer:importer processor:processor];
 		}
 	}
 	
@@ -65,7 +72,14 @@
 }
 
 - (id) load:(NSString *)assetName fromFile:(NSString *)filePath {
-	
+	return [self load:assetName fromFile:filePath importer:nil processor:nil];
+}
+
+- (id) load:(NSString *)assetName fromFile:(NSString *)filePath processor:(ContentProcessor *)processor {
+	return [self load:assetName fromFile:filePath importer:nil processor:processor];
+}
+
+- (id) load:(NSString *)assetName fromFile:(NSString *)filePath importer:(ContentImporter *)importer processor:(ContentProcessor *)processor {
 	// Check if we have already loaded this file.
 	id existing = [loadedFiles objectForKey:filePath];
 	if (existing) {
@@ -76,6 +90,8 @@
 	NSString *fileName = [filePath stringByDeletingPathExtension];
 	NSString *extension = [filePath pathExtension];
 	NSString *absolutePath = [[NSBundle mainBundle] pathForResource:fileName ofType:extension inDirectory:rootDirectory];
+	
+	// Bug in NSBundle - we are returned an object that doesn't have an object count 0, so we release it ourselves to avoid a leak.
 	[absolutePath autorelease];
 	
 	if (!absolutePath) {
@@ -94,38 +110,54 @@
 		[extension isEqualToString:@"gif"] || [extension isEqualToString:@"tif"] || [extension isEqualToString:@"tiff"] ||
 		[extension isEqualToString:@"ico"] || [extension isEqualToString:@"bmp"]) {
 		// Texture content
-		TextureImporter *textureImporter = [[[TextureImporter alloc] init] autorelease];
-		TextureContent *textureContent = [textureImporter importFile:absolutePath];
-		input = [[ContentReader alloc] initWithContentManager:self Content:textureContent];
-		
+		if (!importer) {
+			importer = [[[TextureImporter alloc] init] autorelease];
+		}
 	} else if ([extension isEqualToString:@"x"]) { 
 		// Direct x model content
-		XImporter *xImporter = [[[XImporter alloc] init] autorelease];
-		NodeContent *root = [xImporter importFile:absolutePath];
-		ModelProcessor *modelProcessor = [[[ModelProcessor alloc] init] autorelease];
-		ModelContent *modelContent = [modelProcessor process:root];
-		input = [[ContentReader alloc] initWithContentManager:self Content:modelContent];
+		if (!importer) {
+			importer = [[[XImporter alloc] init] autorelease];
+		}
+		if (!processor) {
+			processor = [[[ModelProcessor alloc] init] autorelease];
+		}
 	} else if ([extension isEqualToString:@"wav"]) {
 		// Wave audio content
-		WavImporter *wavImporter = [[[WavImporter alloc] init] autorelease];
-		AudioContent *audioContent = [wavImporter importFile:absolutePath];
-		SoundEffectProcessor *soundEffectProcessor = [[[SoundEffectProcessor alloc] init] autorelease];
-		SoundEffectContent *soundEffectContent = [soundEffectProcessor process:audioContent];
-		input = [[ContentReader alloc] initWithContentManager:self Content:soundEffectContent];
+		if (!importer) {
+			importer = [[[WavImporter alloc] init] autorelease];
+		}
+		if (!processor) {
+			processor = [[[SoundEffectProcessor alloc] init] autorelease];
+		}
 	} else if ([extension isEqualToString:@"mp3"]) {
-		// Wave audio content
-		WavImporter *wavImporter = [[[WavImporter alloc] init] autorelease];
-		AudioContent *audioContent = [wavImporter importFile:absolutePath];
-		SongProcessor *songProcessor = [[[SongProcessor alloc] init] autorelease];
-		SongContent *songContent = [songProcessor process:audioContent];
-		input = [[ContentReader alloc] initWithContentManager:self Content:songContent];
-	} else {
+		// Mp3 audio content
+		if (!importer) {
+			importer = [[[WavImporter alloc] init] autorelease];
+		}
+		if (!processor) {
+			processor = [[[SongProcessor alloc] init] autorelease];
+		}
+	}	
+	
+	// Make sure we have a valid importer.
+	if (!importer) {
 		[NSException raise:@"InvalidArgumentException" format:@"Files with extension %@ are not supported", extension];
 	}
 	
+	// Import content.
+	id content = [importer importFile:absolutePath];
+	
+	// Process content if we have a processor.
+	if (processor) {
+		content = [processor process:content];
+	}
+	
+	// Create a reader for converting into realtime data.
+	input = [[ContentReader alloc] initWithContentManager:self Content:content];	
+	
 	[pool release];
 
-	// And another pool for the conversion process.
+	// Create another pool for the conversion process.
 	pool = [[NSAutoreleasePool alloc] init];
 
 	ContentTypeReader *reader = [readerManager getTypeReaderFor:[input.content class]];
@@ -153,6 +185,7 @@
 - (void) dealloc
 {
 	[loadedAssets release];
+	[loadedFiles release];
 	[readerManager release];
 	[super dealloc];
 }

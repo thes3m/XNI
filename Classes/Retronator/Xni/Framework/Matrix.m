@@ -389,12 +389,12 @@
 // CONSTANTS
 
 + (id) zero {
-	MatrixStruct MatrixStruct = MatrixMake(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-	return [Matrix matrixWithStruct:&MatrixStruct];
+	MatrixStruct matrixStruct = MatrixMake(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	return [Matrix matrixWithStruct:&matrixStruct];
 }
 + (id) identity {
-	MatrixStruct MatrixStruct = MatrixMake(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-	return [Matrix matrixWithStruct:&MatrixStruct];
+	MatrixStruct matrixStruct = MatrixMake(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+	return [Matrix matrixWithStruct:&matrixStruct];
 }
 
 @end

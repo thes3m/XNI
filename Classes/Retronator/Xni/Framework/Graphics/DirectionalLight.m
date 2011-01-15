@@ -27,5 +27,14 @@
 @synthesize enabled;
 @synthesize specularColor;
 
+- (void) dealloc
+{
+	[diffuseColor release];
+	[specularColor release];
+	[direction release];
+	[super dealloc];
+}
+
+
 @end
 

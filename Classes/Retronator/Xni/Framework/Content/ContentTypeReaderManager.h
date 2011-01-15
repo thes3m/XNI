@@ -21,6 +21,7 @@
 	ModelBoneReader *modelBoneReader;
 	VertexDeclarationReader *vertexDeclarationReader;
 	SoundEffectReader *soundEffectReader;
+	SpriteFontReader *spriteFontReader;
 }
 
 - (ContentTypeReader*) getTypeReaderFor:(Class)targetType;

@@ -11,6 +11,7 @@
 
 #import "Retronator.Xni.Framework.classes.h"
 #import "Retronator.Xni.Framework.Content.classes.h"
+#import "Retronator.Xni.Framework.Content.Pipeline.classes.h"
 
 @interface ContentManager : NSObject {
 	NSString *rootDirectory;
@@ -29,8 +30,12 @@
 @property (nonatomic, readonly) id<IServiceProvider> serviceProvider;
 
 - (id) load:(NSString*)assetName;
+- (id) load:(NSString *)assetName processor:(ContentProcessor*)processor;
+- (id) load:(NSString *)assetName importer:(ContentImporter*)importer processor:(ContentProcessor*)processor;
 
 - (id) load:(NSString*)assetName fromFile:(NSString*)filePath;
+- (id) load:(NSString *)assetName fromFile:(NSString*)filePath processor:(ContentProcessor*)processor;
+- (id) load:(NSString *)assetName fromFile:(NSString*)filePath importer:(ContentImporter*)importer processor:(ContentProcessor*)processor;
 
 - (void) unload;
 

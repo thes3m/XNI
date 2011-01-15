@@ -54,3 +54,5 @@
 #import "HiDefGraphicsDevice.h"
 
 #import "SpriteBatch.h"
+
+#import "SpriteFont.h"

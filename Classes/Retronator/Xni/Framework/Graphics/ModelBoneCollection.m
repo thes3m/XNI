@@ -13,6 +13,7 @@
 #define ReadOnlyCollection ModelBoneCollection
 #define T ModelBone*
 #define Initialization bones = [[NSMutableDictionary alloc] init]; for (ModelBone* bone in collection) {if (bone.name) [bones setObject:bone forKey:bone.name];}
+#define Disposing [bones release];
 
 #include "ReadOnlyCollection.m.h"
 

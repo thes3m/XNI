@@ -71,6 +71,7 @@
 		// Create sampler states and texture collections and handle changes.
 		samplerStates = [[SamplerStateCollection alloc] init];
 		textures = [[TextureCollection alloc] init];
+		
 		[samplerStates.samplerStateChanged subscribeDelegate:[Delegate delegateWithTarget:self 
 																				   Method:@selector(applySamplerState:eventArgs:)]];
 		[textures.textureChanged subscribeDelegate:[Delegate delegateWithTarget:self 

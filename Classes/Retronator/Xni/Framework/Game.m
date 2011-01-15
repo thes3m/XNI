@@ -51,7 +51,12 @@ static NSArray *drawOrderSort;
 		enabledComponents = [[NSMutableArray alloc] init];
 		visibleComponents = [[NSMutableArray alloc] init];
 		
-		enabledChangedComponents = [[NSMutableSet alloc] init];
+		// A temporary array for operations on components.
+		// First it is used for constructing a list of components, that need to be initialized.
+		// In run it is used to make a copy of enabled/visible components for enumerating over them.
+		componentsList = [[NSMutableArray alloc] init];
+		
+		initializedComponents = [[NSMutableSet alloc] init];
 		
         [components.componentAdded subscribeDelegate:
 		 [Delegate delegateWithTarget:self Method:@selector(componentAddedTo:eventArgs:)]];
@@ -170,23 +175,13 @@ static NSArray *drawOrderSort;
 	
 	// Update input.
 	[[TouchPanel getInstance] update];
-	    
+	
     // Update the game.
     [self updateWithGameTime:gameTime];
 	
-	// Update enabled components.
-	for (id<IUpdatable> updatable in enabledChangedComponents) {
-		if (updatable.enabled) {
-			[self addEnabledComponent: updatable];
-		} else {
-			[enabledComponents removeObject:updatable];
-		}		
-	}
-	[enabledChangedComponents removeAllObjects];
-    
 	// Update audio.
 	[SoundEffect update];
-
+	
     // Draw to display.
     if ([self beginDraw]) {
         [self drawWithGameTime:gameTime];
@@ -235,9 +230,12 @@ static NSArray *drawOrderSort;
 // Here we only handle the components.
 
 - (void) initialize {
-    for (id<IGameComponent> component in components) {
+	while ([componentsList count] > 0) {
+		id<IGameComponent> component = [componentsList objectAtIndex:0];
         [component initialize];
-    }
+		[initializedComponents addObject:component];
+		[componentsList removeObjectAtIndex:0];
+	}
     initializeDone = YES;
 	
 	[self loadContent];
@@ -248,9 +246,11 @@ static NSArray *drawOrderSort;
 - (void) beginRun {}
 
 - (void) updateWithGameTime:(GameTime*)theGameTime {
-    for (id<IUpdatable> updatable in enabledComponents) {
+	[componentsList addObjectsFromArray:enabledComponents];
+    for (id<IUpdatable> updatable in componentsList) {
 		[updatable updateWithGameTime:theGameTime];
     }
+	[componentsList removeAllObjects];
 }
 
 - (BOOL) beginDraw {
@@ -258,9 +258,11 @@ static NSArray *drawOrderSort;
 }
 
 - (void) drawWithGameTime:(GameTime*)theGameTime {
-    for (id<IDrawable> drawable in visibleComponents) {
+ 	[componentsList addObjectsFromArray:visibleComponents];
+	for (id<IDrawable> drawable in componentsList) {
 		[drawable drawWithGameTime:theGameTime];
     }
+	[componentsList removeAllObjects];
 }
 
 - (void) endDraw {
@@ -288,8 +290,13 @@ static NSArray *drawOrderSort;
 - (void) componentAddedTo:(GameComponentCollection*)sender eventArgs:(GameComponentCollectionEventArgs*)e {
     // Initialize component if it's being added after main initialize has been called.
 	if (initializeDone) {
-        [e.gameComponent initialize];
-    }
+		if (![initializedComponents containsObject:e.gameComponent]) {
+			[e.gameComponent initialize];
+			[initializedComponents addObject:e.gameComponent];
+		}
+    } else {
+		[componentsList addObject:e.gameComponent];
+	}
 	
 	// Process updatable component.
 	if ([e.gameComponent conformsToProtocol:@protocol(IUpdatable)]) {
@@ -303,7 +310,7 @@ static NSArray *drawOrderSort;
 		 [Delegate delegateWithTarget:self Method:@selector(componentUpdateOrderChanged:eventArgs:)]];
 	}
 	
-	// Process updatable component.
+	// Process drawable component.
 	if ([e.gameComponent conformsToProtocol:@protocol(IDrawable)]) {
 		id<IDrawable> drawable = (id<IDrawable>)e.gameComponent;
 		if (drawable.visible) {
@@ -317,6 +324,10 @@ static NSArray *drawOrderSort;
 }
 
 - (void) componentRemovedFrom:(GameComponentCollection*)sender eventArgs:(GameComponentCollectionEventArgs*)e {
+	if (!initializeDone) {
+		[componentsList removeObject:e.gameComponent];
+	}
+	
 	// Process updatable component.
 	if ([e.gameComponent conformsToProtocol:@protocol(IUpdatable)]) {
 		id<IUpdatable> updatable = (id<IUpdatable>)e.gameComponent;
@@ -329,7 +340,7 @@ static NSArray *drawOrderSort;
 		 [Delegate delegateWithTarget:self Method:@selector(componentUpdateOrderChanged:eventArgs:)]];
 	}
 	
-	// Process updatable component.
+	// Process drawable component.
 	if ([e.gameComponent conformsToProtocol:@protocol(IDrawable)]) {
 		id<IDrawable> drawable = (id<IDrawable>)e.gameComponent;
 		if (drawable.visible) {
@@ -343,7 +354,11 @@ static NSArray *drawOrderSort;
 }
 
 - (void) componentEnabledChanged:(id<IUpdatable>)sender eventArgs:(EventArgs*)e {
-	[enabledChangedComponents addObject:sender];
+	if (sender.enabled) {
+		[self addEnabledComponent: sender];
+	} else {
+		[enabledComponents removeObject:sender];
+	}
 }
 
 - (void) componentUpdateOrderChanged:(id<IUpdatable>)sender eventArgs:(EventArgs*)e {
@@ -355,7 +370,7 @@ static NSArray *drawOrderSort;
 		[self addVisibleComponent:sender];
 	} else {
 		[visibleComponents removeObject:sender];
-	}
+	}	
 }
 
 - (void) componentDrawOrderChanged:(id<IDrawable>)sender eventArgs:(EventArgs*)e {
@@ -376,7 +391,8 @@ static NSArray *drawOrderSort;
 	[self unloadContent];
     [gameTime release];
     
-	[enabledChangedComponents release];
+	[initializedComponents release];
+	[componentsList release];	
 	[enabledComponents release];
 	[visibleComponents release];
     [components release];

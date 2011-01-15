@@ -13,6 +13,7 @@
 #define ReadOnlyCollection ModelMeshCollection
 #define T ModelMesh*
 #define Initialization meshes = [[NSMutableDictionary alloc] init]; for (ModelMesh* mesh in collection) {[meshes setObject:mesh forKey:mesh.name];}
+#define Disposing [meshes release];
 
 #include "ReadOnlyCollection.m.h"
 

@@ -32,6 +32,9 @@
 
 - (Rectangle*) set:(Rectangle*)value;
 
+- (BOOL) containsX:(int)x y:(int)y;
+- (BOOL) containsPoint:(XniPoint*)point;
+
 - (BOOL) equals:(Rectangle*)rectangle;
 
 + (Rectangle*) empty;

@@ -42,7 +42,7 @@
 		ExternalReference *externalReference = (ExternalReference*)source;
 				
 		// We should load the item with content manager.
-		result = [contentManager load:externalReference.name fromFile:externalReference.filename];
+		result = [[contentManager load:externalReference.name fromFile:externalReference.filename] autorelease];	// TODO: Be sure to remove this release when content manager is coded correctly.
 	} else {
 		// Get the correct reader for item.
 		ContentTypeReader *typeReader = [contentManager.readerManager getTypeReaderFor:[source class]];

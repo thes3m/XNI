@@ -8,6 +8,7 @@
 
 #import "Rectangle.h"
 
+#import "Retronator.Xni.Framework.h"
 
 @implementation Rectangle
 
@@ -70,6 +71,15 @@
 	data = *value.data;
 	return self;
 }
+
+- (BOOL) containsX:(int)x y:(int)y {
+	return x >= data.x && x <= data.x + data.width && y >= data.y && y <= data.y + data.height;
+}
+
+- (BOOL) containsPoint:(XniPoint*)point {
+	return [self containsX:point.x y:point.y];
+}
+
 
 - (id) copyWithZone:(NSZone *)zone {
 	return [[Rectangle allocWithZone:zone] initWithRectangleStruct:&data];

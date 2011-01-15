@@ -112,6 +112,7 @@
 - (void) dealloc
 {
 	//if (extRef) ExtAudioFileDispose(extRef);	
+	[format release];
 	[fileUrl release];
 	[super dealloc];
 }

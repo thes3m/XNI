@@ -17,3 +17,5 @@
 @class GraphicsDevice, ReachGraphicsDevice, HiDefGraphicsDevice;
 
 @class SpriteBatch;
+
+@class SpriteFont;

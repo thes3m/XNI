@@ -312,6 +312,16 @@
 		B5EC5A4F1252C2DF001E7DFC /* GestureSample.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A4D1252C2DF001E7DFC /* GestureSample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5EC5A501252C2DF001E7DFC /* GestureSample.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EC5A4E1252C2DF001E7DFC /* GestureSample.m */; };
 		B5EC5A931252C710001E7DFC /* Retronator.Xni.Framework.Input.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A921252C710001E7DFC /* Retronator.Xni.Framework.Input.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5ED4C9D12BF82FE00A58E29 /* SpriteFont.h in Headers */ = {isa = PBXBuildFile; fileRef = B5ED4C9B12BF82FE00A58E29 /* SpriteFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5ED4C9E12BF82FE00A58E29 /* SpriteFont.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ED4C9C12BF82FE00A58E29 /* SpriteFont.m */; };
+		B5ED4CC012BF895B00A58E29 /* FontTextureProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5ED4CBE12BF895B00A58E29 /* FontTextureProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5ED4CC112BF895B00A58E29 /* FontTextureProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ED4CBF12BF895B00A58E29 /* FontTextureProcessor.m */; };
+		B5ED4CC912BF898900A58E29 /* SpriteFontContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5ED4CC712BF898900A58E29 /* SpriteFontContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5ED4CCA12BF898900A58E29 /* SpriteFontContent.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ED4CC812BF898900A58E29 /* SpriteFontContent.m */; };
+		B5ED4CD012BF8A1600A58E29 /* SpriteFontContent+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B5ED4CCF12BF8A1600A58E29 /* SpriteFontContent+Internal.h */; };
+		B5ED4CEF12BF8D9100A58E29 /* SpriteFontReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B5ED4CED12BF8D9100A58E29 /* SpriteFontReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5ED4CF012BF8D9100A58E29 /* SpriteFontReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ED4CEE12BF8D9100A58E29 /* SpriteFontReader.m */; };
+		B5ED4D2512BF92A100A58E29 /* SpriteFont+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B5ED4D2412BF92A100A58E29 /* SpriteFont+Internal.h */; };
 		B5EFD744129B2A7800FDC150 /* ModelMeshContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EFD742129B2A7800FDC150 /* ModelMeshContentCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5EFD745129B2A7800FDC150 /* ModelMeshContentCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EFD743129B2A7800FDC150 /* ModelMeshContentCollection.m */; };
 		B5EFD748129B2A8900FDC150 /* ModelMeshPartContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EFD746129B2A8900FDC150 /* ModelMeshPartContentCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -687,6 +697,16 @@
 		B5EC5A4D1252C2DF001E7DFC /* GestureSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureSample.h; sourceTree = "<group>"; };
 		B5EC5A4E1252C2DF001E7DFC /* GestureSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureSample.m; sourceTree = "<group>"; };
 		B5EC5A921252C710001E7DFC /* Retronator.Xni.Framework.Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.Input.h; sourceTree = "<group>"; };
+		B5ED4C9B12BF82FE00A58E29 /* SpriteFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteFont.h; sourceTree = "<group>"; };
+		B5ED4C9C12BF82FE00A58E29 /* SpriteFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteFont.m; sourceTree = "<group>"; };
+		B5ED4CBE12BF895B00A58E29 /* FontTextureProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTextureProcessor.h; sourceTree = "<group>"; };
+		B5ED4CBF12BF895B00A58E29 /* FontTextureProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontTextureProcessor.m; sourceTree = "<group>"; };
+		B5ED4CC712BF898900A58E29 /* SpriteFontContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteFontContent.h; sourceTree = "<group>"; };
+		B5ED4CC812BF898900A58E29 /* SpriteFontContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteFontContent.m; sourceTree = "<group>"; };
+		B5ED4CCF12BF8A1600A58E29 /* SpriteFontContent+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpriteFontContent+Internal.h"; sourceTree = "<group>"; };
+		B5ED4CED12BF8D9100A58E29 /* SpriteFontReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteFontReader.h; sourceTree = "<group>"; };
+		B5ED4CEE12BF8D9100A58E29 /* SpriteFontReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteFontReader.m; sourceTree = "<group>"; };
+		B5ED4D2412BF92A100A58E29 /* SpriteFont+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpriteFont+Internal.h"; sourceTree = "<group>"; };
 		B5EFD742129B2A7800FDC150 /* ModelMeshContentCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMeshContentCollection.h; sourceTree = "<group>"; };
 		B5EFD743129B2A7800FDC150 /* ModelMeshContentCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelMeshContentCollection.m; sourceTree = "<group>"; };
 		B5EFD746129B2A8900FDC150 /* ModelMeshPartContentCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMeshPartContentCollection.h; sourceTree = "<group>"; };
@@ -992,6 +1012,8 @@
 				B554FA0C12A4362B00F20A0D /* VertexDeclarationReader.m */,
 				B50FE48612B885BC003D4F1A /* SoundEffectReader.h */,
 				B50FE48712B885BC003D4F1A /* SoundEffectReader.m */,
+				B5ED4CED12BF8D9100A58E29 /* SpriteFontReader.h */,
+				B5ED4CEE12BF8D9100A58E29 /* SpriteFontReader.m */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -1102,6 +1124,9 @@
 				B5DDE8C611FF2A23000DB38B /* HiDefGraphicsDevice.m */,
 				B5E78B481242925600DDD99A /* SpriteBatch.h */,
 				B5E78B491242925600DDD99A /* SpriteBatch.m */,
+				B5ED4C9B12BF82FE00A58E29 /* SpriteFont.h */,
+				B5ED4D2412BF92A100A58E29 /* SpriteFont+Internal.h */,
+				B5ED4C9C12BF82FE00A58E29 /* SpriteFont.m */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -1219,6 +1244,8 @@
 				B5E7ECBC129AE6560015B663 /* Retronator.Xni.Framework.Content.Pipeline.Processors.h */,
 				B5E7ECAC129AE5B40015B663 /* TextureProcessor.h */,
 				B5E7ECAD129AE5B40015B663 /* TextureProcessor.m */,
+				B5ED4CBE12BF895B00A58E29 /* FontTextureProcessor.h */,
+				B5ED4CBF12BF895B00A58E29 /* FontTextureProcessor.m */,
 				B5E7ECB0129AE5C50015B663 /* ModelProcessor.h */,
 				B5E7ECB1129AE5C50015B663 /* ModelProcessor.m */,
 				B5E7ECB4129AE5D40015B663 /* MaterialProcessor.h */,
@@ -1254,6 +1281,9 @@
 				B51ADC8212B83F62004E2DB0 /* SoundEffectContent.m */,
 				B51ADC7912B83EE9004E2DB0 /* SongContent.h */,
 				B51ADC7A12B83EE9004E2DB0 /* SongContent.m */,
+				B5ED4CC712BF898900A58E29 /* SpriteFontContent.h */,
+				B5ED4CCF12BF8A1600A58E29 /* SpriteFontContent+Internal.h */,
+				B5ED4CC812BF898900A58E29 /* SpriteFontContent.m */,
 			);
 			path = Processors;
 			sourceTree = "<group>";
@@ -1516,6 +1546,12 @@
 				B50FE48812B885BC003D4F1A /* SoundEffectReader.h in Headers */,
 				B50FE50712B88F64003D4F1A /* SoundEffectInstance+Internal.h in Headers */,
 				B50FE76212B8B11C003D4F1A /* SoundEffect+Internal.h in Headers */,
+				B5ED4C9D12BF82FE00A58E29 /* SpriteFont.h in Headers */,
+				B5ED4CC012BF895B00A58E29 /* FontTextureProcessor.h in Headers */,
+				B5ED4CC912BF898900A58E29 /* SpriteFontContent.h in Headers */,
+				B5ED4CD012BF8A1600A58E29 /* SpriteFontContent+Internal.h in Headers */,
+				B5ED4CEF12BF8D9100A58E29 /* SpriteFontReader.h in Headers */,
+				B5ED4D2512BF92A100A58E29 /* SpriteFont+Internal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1758,6 +1794,10 @@
 				B51ADCD012B84FD8004E2DB0 /* WavImporter.m in Sources */,
 				B51ADCD412B84FE1004E2DB0 /* Mp3Importer.m in Sources */,
 				B50FE48912B885BC003D4F1A /* SoundEffectReader.m in Sources */,
+				B5ED4C9E12BF82FE00A58E29 /* SpriteFont.m in Sources */,
+				B5ED4CC112BF895B00A58E29 /* FontTextureProcessor.m in Sources */,
+				B5ED4CCA12BF898900A58E29 /* SpriteFontContent.m in Sources */,
+				B5ED4CF012BF8D9100A58E29 /* SpriteFontReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

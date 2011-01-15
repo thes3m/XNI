@@ -24,6 +24,14 @@
 @synthesize componentAdded;
 @synthesize componentRemoved;
 
+- (int) count {
+	return [components count];
+}
+
+- (id<IGameComponent>)itemAt:(int)index {
+	return [components objectAtIndex:index];
+}
+
 - (void) addComponent:(id<IGameComponent>)component {
     [components addObject:component];
     [componentAdded raiseWithSender:self

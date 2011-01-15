@@ -80,6 +80,7 @@
 
 - (void) dealloc
 {
+	[absoluteBones release];
 	[bones release];
 	[meshes release];
 	[root release];

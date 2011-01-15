@@ -65,6 +65,12 @@
 - (void) draw:(Texture2D*)texture to:(Vector2*)position fromRectangle:(Rectangle*)sourceRectangle tintWithColor:(Color*)color
 	 rotation:(float)rotation origin:(Vector2*)origin scale:(Vector2*)scale effects:(SpriteEffects)effects layerDepth:(float)layerDepth;
 
+- (void) drawStringWithSpriteFont:(SpriteFont*)spriteFont text:(NSString*)text to:(Vector2*)position tintWithColor:(Color*)color;
+- (void) drawStringWithSpriteFont:(SpriteFont*)spriteFont text:(NSString*)text to:(Vector2*)position tintWithColor:(Color*)color
+						 rotation:(float)rotation origin:(Vector2*)origin scaleUniform:(float)scale effects:(SpriteEffects)effects layerDepth:(float)layerDepth;
+- (void) drawStringWithSpriteFont:(SpriteFont*)spriteFont text:(NSString*)text to:(Vector2*)position tintWithColor:(Color*)color
+						 rotation:(float)rotation origin:(Vector2*)origin scale:(Vector2*)scale effects:(SpriteEffects)effects layerDepth:(float)layerDepth;
+
 - (void) end;
 
 @end

@@ -10,6 +10,8 @@
 #import "Retronator.Xni.Framework.Graphics.h"
 #import "SpriteBatch.h"
 
+#import "SpriteFont+Internal.h"
+
 typedef struct {
 	float x;
 	float y;
@@ -44,8 +46,6 @@ typedef struct {
 }
 
 @end
-
-static Matrix *identity;
 
 static NSArray *textureSort;
 static NSArray *frontToBackSort;
@@ -144,7 +144,6 @@ static VertexPositionColorTextureStruct vertices[4];
 }
 
 + (void) initialize {
-	identity = [[Matrix identity] retain];
 	NSSortDescriptor *textureSortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"textureId" ascending:YES] autorelease];
 	NSSortDescriptor *depthAscendingSortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"layerDepth" ascending:YES] autorelease];
 	NSSortDescriptor *depthDescendingSortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"layerDepth" ascending:NO] autorelease];
@@ -292,6 +291,41 @@ static VertexPositionColorTextureStruct vertices[4];
 	[self draw:sprite];		
 }
 
+- (void) drawStringWithSpriteFont:(SpriteFont*)spriteFont text:(NSString*)text to:(Vector2*)position tintWithColor:(Color*)color {
+	[self drawStringWithSpriteFont:spriteFont text:text to:position tintWithColor:color rotation:0 origin:[Vector2 zero] scale:[Vector2 one] effects:SpriteEffectsNone layerDepth:0];
+}
+
+- (void) drawStringWithSpriteFont:(SpriteFont*)spriteFont text:(NSString*)text to:(Vector2*)position tintWithColor:(Color*)color
+						 rotation:(float)rotation origin:(Vector2*)origin scaleUniform:(float)scale effects:(SpriteEffects)effects layerDepth:(float)layerDepth {
+	[self drawStringWithSpriteFont:spriteFont text:text to:position tintWithColor:color rotation:rotation origin:origin scale:[Vector2 vectorWithX:scale y:scale] effects:effects layerDepth:layerDepth];	
+}
+
+- (void) drawStringWithSpriteFont:(SpriteFont*)spriteFont text:(NSString*)text to:(Vector2*)position tintWithColor:(Color*)color
+						 rotation:(float)rotation origin:(Vector2*)origin scale:(Vector2*)scale effects:(SpriteEffects)effects layerDepth:(float)layerDepth {
+	
+	Vector2 *currentOrigin = [Vector2 vectorWithX:origin.x y:origin.y-spriteFont.lineSpacing];
+	Vector2 *characterOrigin = [Vector2 zero];
+	
+	for (int i = 0; i < [text length]; i++) {
+		unichar character = [text characterAtIndex:i];
+		if ([[NSCharacterSet newlineCharacterSet] characterIsMember:character]) {
+			// This is a control character for a new line.
+			currentOrigin.x = origin.x;
+			currentOrigin.y -= spriteFont.lineSpacing;
+		} else {
+			// Draw this character
+			Rectangle *sourceRectangle = [spriteFont sourceRectangleForCharacter:character];
+			characterOrigin.x = currentOrigin.x;
+			characterOrigin.y = currentOrigin.y + sourceRectangle.height;
+			
+			[self draw:spriteFont.texture to:position fromRectangle:sourceRectangle tintWithColor:color
+			  rotation:rotation origin:characterOrigin scale:scale effects:effects layerDepth:layerDepth];
+			
+			currentOrigin.x -= sourceRectangle.width + spriteFont.spacing;
+		}
+	}
+}
+
 - (void) draw:(XniSprite *)sprite {
 	[sprites addObject:sprite];
 	
@@ -430,6 +464,8 @@ static VertexPositionColorTextureStruct vertices[4];
 
 - (void) dealloc
 {
+	[self.graphicsDevice.deviceReset unsubscribeDelegate:[Delegate delegateWithTarget:self Method:@selector(setProjection)]];
+	[basicEffect release];
 	[sprites release];
 	[vertexArray release];
 	[super dealloc];

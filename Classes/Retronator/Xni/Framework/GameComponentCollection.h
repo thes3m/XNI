@@ -19,6 +19,9 @@
 
 @property (nonatomic, readonly) Event *componentAdded;
 @property (nonatomic, readonly) Event *componentRemoved;
+@property (nonatomic, readonly) int count;
+
+- (id<IGameComponent>)itemAt:(int)index;
 
 - (void) addComponent:(id<IGameComponent>)component;
 - (void) removeComponent:(id<IGameComponent>)component;
