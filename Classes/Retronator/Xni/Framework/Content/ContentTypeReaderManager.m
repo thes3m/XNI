@@ -28,6 +28,7 @@
 		modelBoneReader = [[ModelBoneReader alloc] init];
 		vertexDeclarationReader = [[VertexDeclarationReader alloc] init];
 		soundEffectReader = [[SoundEffectReader alloc] init];
+		songReader = [[SongReader alloc] init];
 		spriteFontReader = [[SpriteFontReader alloc] init];
 	}
 	return self;
@@ -55,6 +56,8 @@
 		return vertexDeclarationReader;
 	} else if (targetType == [SoundEffectContent class]) {
 		return soundEffectReader;
+	} else if (targetType == [SongContent class]) {
+		return songReader;
 	} else if (targetType == [SpriteFontContent class]) {
 		return spriteFontReader;
 	} else {
@@ -74,6 +77,7 @@
 	[modelBoneReader release];
 	[vertexDeclarationReader release];
 	[soundEffectReader release];
+	[songReader release];
 	[spriteFontReader release];
 	[super dealloc];
 }

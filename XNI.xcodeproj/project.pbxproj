@@ -12,6 +12,20 @@
 		B50769151264EE9500E4474F /* GameComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B50769131264EE9500E4474F /* GameComponent.m */; };
 		B507691C1264EF0B00E4474F /* DrawableGameComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B507691A1264EF0B00E4474F /* DrawableGameComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B507691D1264EF0B00E4474F /* DrawableGameComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B507691B1264EF0B00E4474F /* DrawableGameComponent.m */; };
+		B507F84012E5751700A7302B /* MediaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F83E12E5751700A7302B /* MediaPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B507F84112E5751700A7302B /* MediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B507F83F12E5751700A7302B /* MediaPlayer.m */; };
+		B507F84312E5752C00A7302B /* Retronator.Xni.Framework.Media.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F84212E5752C00A7302B /* Retronator.Xni.Framework.Media.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B507F84512E5753500A7302B /* Retronator.Xni.Framework.Media.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F84412E5753500A7302B /* Retronator.Xni.Framework.Media.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B507F85112E5756400A7302B /* Song.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F84F12E5756400A7302B /* Song.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B507F85212E5756400A7302B /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = B507F85012E5756400A7302B /* Song.m */; };
+		B507F85E12E5766C00A7302B /* Song+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F85D12E5766C00A7302B /* Song+Internal.h */; };
+		B507F86012E5888C00A7302B /* SongContent+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F85F12E5888C00A7302B /* SongContent+Internal.h */; };
+		B507F87512E58AC300A7302B /* SongReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F87312E58AC300A7302B /* SongReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B507F87612E58AC300A7302B /* SongReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B507F87412E58AC300A7302B /* SongReader.m */; };
+		B507F8BC12E58E7000A7302B /* MediaQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F8BA12E58E7000A7302B /* MediaQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B507F8BD12E58E7000A7302B /* MediaQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B507F8BB12E58E7000A7302B /* MediaQueue.m */; };
+		B507F8C512E58EB100A7302B /* MediaQueue+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F8C412E58EB100A7302B /* MediaQueue+Internal.h */; };
+		B507F8DC12E5925500A7302B /* MediaEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F8DB12E5925500A7302B /* MediaEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B50806FF122E4ECF00C330E2 /* Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = B50806FD122E4ECF00C330E2 /* Texture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5080700122E4ECF00C330E2 /* Texture.m in Sources */ = {isa = PBXBuildFile; fileRef = B50806FE122E4ECF00C330E2 /* Texture.m */; };
 		B5080703122E4EE900C330E2 /* Texture2D.h in Headers */ = {isa = PBXBuildFile; fileRef = B5080701122E4EE900C330E2 /* Texture2D.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -395,6 +409,20 @@
 		B50769131264EE9500E4474F /* GameComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameComponent.m; sourceTree = "<group>"; };
 		B507691A1264EF0B00E4474F /* DrawableGameComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawableGameComponent.h; sourceTree = "<group>"; };
 		B507691B1264EF0B00E4474F /* DrawableGameComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawableGameComponent.m; sourceTree = "<group>"; };
+		B507F83E12E5751700A7302B /* MediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPlayer.h; sourceTree = "<group>"; };
+		B507F83F12E5751700A7302B /* MediaPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPlayer.m; sourceTree = "<group>"; };
+		B507F84212E5752C00A7302B /* Retronator.Xni.Framework.Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.Media.h; sourceTree = "<group>"; };
+		B507F84412E5753500A7302B /* Retronator.Xni.Framework.Media.classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.Media.classes.h; sourceTree = "<group>"; };
+		B507F84F12E5756400A7302B /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		B507F85012E5756400A7302B /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
+		B507F85D12E5766C00A7302B /* Song+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+Internal.h"; sourceTree = "<group>"; };
+		B507F85F12E5888C00A7302B /* SongContent+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SongContent+Internal.h"; sourceTree = "<group>"; };
+		B507F87312E58AC300A7302B /* SongReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongReader.h; sourceTree = "<group>"; };
+		B507F87412E58AC300A7302B /* SongReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongReader.m; sourceTree = "<group>"; };
+		B507F8BA12E58E7000A7302B /* MediaQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaQueue.h; sourceTree = "<group>"; };
+		B507F8BB12E58E7000A7302B /* MediaQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaQueue.m; sourceTree = "<group>"; };
+		B507F8C412E58EB100A7302B /* MediaQueue+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MediaQueue+Internal.h"; sourceTree = "<group>"; };
+		B507F8DB12E5925500A7302B /* MediaEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaEnums.h; sourceTree = "<group>"; };
 		B50806FD122E4ECF00C330E2 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
 		B50806FE122E4ECF00C330E2 /* Texture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture.m; sourceTree = "<group>"; };
 		B5080701122E4EE900C330E2 /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
@@ -830,6 +858,24 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		B507F83D12E574E400A7302B /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				B507F84412E5753500A7302B /* Retronator.Xni.Framework.Media.classes.h */,
+				B507F84212E5752C00A7302B /* Retronator.Xni.Framework.Media.h */,
+				B507F8DB12E5925500A7302B /* MediaEnums.h */,
+				B507F84F12E5756400A7302B /* Song.h */,
+				B507F85D12E5766C00A7302B /* Song+Internal.h */,
+				B507F85012E5756400A7302B /* Song.m */,
+				B507F83E12E5751700A7302B /* MediaPlayer.h */,
+				B507F83F12E5751700A7302B /* MediaPlayer.m */,
+				B507F8BA12E58E7000A7302B /* MediaQueue.h */,
+				B507F8C412E58EB100A7302B /* MediaQueue+Internal.h */,
+				B507F8BB12E58E7000A7302B /* MediaQueue.m */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
 		B51ADC4A12B83549004E2DB0 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -1012,6 +1058,8 @@
 				B554FA0C12A4362B00F20A0D /* VertexDeclarationReader.m */,
 				B50FE48612B885BC003D4F1A /* SoundEffectReader.h */,
 				B50FE48712B885BC003D4F1A /* SoundEffectReader.m */,
+				B507F87312E58AC300A7302B /* SongReader.h */,
+				B507F87412E58AC300A7302B /* SongReader.m */,
 				B5ED4CED12BF8D9100A58E29 /* SpriteFontReader.h */,
 				B5ED4CEE12BF8D9100A58E29 /* SpriteFontReader.m */,
 			);
@@ -1151,10 +1199,11 @@
 			isa = PBXGroup;
 			children = (
 				B51ADC4A12B83549004E2DB0 /* Audio */,
-				B52B2B4612ADAEB600E8A377 /* GamerServices */,
-				B5EC59F41252B8B6001E7DFC /* Input */,
 				B5A1C82B12353EFB00DB60CB /* Content */,
+				B52B2B4612ADAEB600E8A377 /* GamerServices */,
 				B5DDE82911FF10D0000DB38B /* Graphics */,
+				B5EC59F41252B8B6001E7DFC /* Input */,
+				B507F83D12E574E400A7302B /* Media */,
 				B5DE189F11F8888B00BF3275 /* Retronator.Xni.Framework.classes.h */,
 				B5DE18A011F8888B00BF3275 /* Retronator.Xni.Framework.h */,
 				B52BADAC1255426600B308F6 /* FrameworkEnums.h */,
@@ -1280,6 +1329,7 @@
 				B50FE47B12B88433003D4F1A /* SoundEffectContent+Internal.h */,
 				B51ADC8212B83F62004E2DB0 /* SoundEffectContent.m */,
 				B51ADC7912B83EE9004E2DB0 /* SongContent.h */,
+				B507F85F12E5888C00A7302B /* SongContent+Internal.h */,
 				B51ADC7A12B83EE9004E2DB0 /* SongContent.m */,
 				B5ED4CC712BF898900A58E29 /* SpriteFontContent.h */,
 				B5ED4CCF12BF8A1600A58E29 /* SpriteFontContent+Internal.h */,
@@ -1552,6 +1602,16 @@
 				B5ED4CD012BF8A1600A58E29 /* SpriteFontContent+Internal.h in Headers */,
 				B5ED4CEF12BF8D9100A58E29 /* SpriteFontReader.h in Headers */,
 				B5ED4D2512BF92A100A58E29 /* SpriteFont+Internal.h in Headers */,
+				B507F84012E5751700A7302B /* MediaPlayer.h in Headers */,
+				B507F84312E5752C00A7302B /* Retronator.Xni.Framework.Media.h in Headers */,
+				B507F84512E5753500A7302B /* Retronator.Xni.Framework.Media.classes.h in Headers */,
+				B507F85112E5756400A7302B /* Song.h in Headers */,
+				B507F85E12E5766C00A7302B /* Song+Internal.h in Headers */,
+				B507F86012E5888C00A7302B /* SongContent+Internal.h in Headers */,
+				B507F87512E58AC300A7302B /* SongReader.h in Headers */,
+				B507F8BC12E58E7000A7302B /* MediaQueue.h in Headers */,
+				B507F8C512E58EB100A7302B /* MediaQueue+Internal.h in Headers */,
+				B507F8DC12E5925500A7302B /* MediaEnums.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1798,6 +1858,10 @@
 				B5ED4CC112BF895B00A58E29 /* FontTextureProcessor.m in Sources */,
 				B5ED4CCA12BF898900A58E29 /* SpriteFontContent.m in Sources */,
 				B5ED4CF012BF8D9100A58E29 /* SpriteFontReader.m in Sources */,
+				B507F84112E5751700A7302B /* MediaPlayer.m in Sources */,
+				B507F85212E5756400A7302B /* Song.m in Sources */,
+				B507F87612E58AC300A7302B /* SongReader.m in Sources */,
+				B507F8BD12E58E7000A7302B /* MediaQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

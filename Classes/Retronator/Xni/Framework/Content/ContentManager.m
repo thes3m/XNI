@@ -132,7 +132,7 @@
 	} else if ([extension isEqualToString:@"mp3"]) {
 		// Mp3 audio content
 		if (!importer) {
-			importer = [[[WavImporter alloc] init] autorelease];
+			importer = [[[Mp3Importer alloc] init] autorelease];
 		}
 		if (!processor) {
 			processor = [[[SongProcessor alloc] init] autorelease];
