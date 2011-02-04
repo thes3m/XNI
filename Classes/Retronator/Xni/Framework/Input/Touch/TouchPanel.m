@@ -147,7 +147,7 @@ static TouchPanel *instance;
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-	float scale = [UIScreen mainScreen].scale;
+	float scale = view.contentScaleFactor;
 	for (UITouch *touch in touches) {
 		XniTouchLocation *location = [touchLocations objectForKey:touch];	
 		if (location) {			
@@ -194,7 +194,7 @@ static TouchPanel *instance;
 	lateReleaseTouches = temp;
 	
 	// Add new touches
-	float scale = [UIScreen mainScreen].scale;
+	float scale = view.contentScaleFactor;
 	for (UITouch *touch in addTouches) {
 		CGPoint position = [touch locationInView:view];
 		XniTouchLocation *location = [[[XniTouchLocation alloc] 

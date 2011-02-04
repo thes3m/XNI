@@ -83,7 +83,7 @@
 	// Check if we have already loaded this file.
 	id existing = [loadedFiles objectForKey:filePath];
 	if (existing) {
-		return existing;
+		return [existing retain]; // TODO: Expecting a retained object crap! Remove when proper.
 	}
 	
 	// Find extension and absolute path.

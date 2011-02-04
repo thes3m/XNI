@@ -11,15 +11,15 @@
 
 @implementation GameView
 
-- (id) initWithFrame:(CGRect)frame {
+- (id) initWithFrame:(CGRect)frame {	
     if (self = [super initWithFrame:frame]) {
         
         viewSizeChanged = [[Event alloc] init];
 		
         CAEAGLLayer *eaglLayer = (CAEAGLLayer*)self.layer;
-        
-		eaglLayer.contentsScale = [UIScreen mainScreen].scale;
-        eaglLayer.opaque = TRUE;
+        		
+		//eaglLayer.contentsScale = [UIScreen mainScreen].scale;
+        eaglLayer.opaque = YES;
 		eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
                                         [NSNumber numberWithBool:NO], kEAGLDrawablePropertyRetainedBacking,
                                         kEAGLColorFormatRGBA8, kEAGLDrawablePropertyColorFormat, nil];

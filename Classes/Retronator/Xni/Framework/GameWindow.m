@@ -59,13 +59,50 @@
 - (void) beginScreenDeviceChangeWithFullscreen:(BOOL)willBeFullscreen {
     gameViewController.wantsFullScreenLayout = willBeFullscreen;
     [[UIApplication sharedApplication] setStatusBarHidden:willBeFullscreen];
-    gameViewController.view.frame = [UIScreen mainScreen].applicationFrame;
-	[clientBounds release];
-    clientBounds = [[self calculateClientBounds] retain];
 }
 
-- (void) endScreenDeviceChange {
-    
+- (void) endScreenDeviceChangeWithClientWidth:(int)clientWidth clientHeight:(int)clientHeight {
+	CGRect realFrame = [UIScreen mainScreen].applicationFrame;
+	float realAspectRatio = realFrame.size.width / realFrame.size.height;
+	
+	if (clientWidth == 0) {
+		clientWidth = realFrame.size.width;
+	}
+	
+	if (clientHeight == 0) {
+		clientHeight = realFrame.size.height;
+	}
+	
+	float targetAspectRatio = (float)clientWidth/(float)clientHeight;
+	CGRect targetFrame;
+	
+	if (targetAspectRatio >= realAspectRatio) {
+		// Add black borders on top and bottom.
+		targetFrame.size.width = realFrame.size.width;
+		targetFrame.size.height = targetFrame.size.width / targetAspectRatio;
+	} else {
+		// Add black borders on left and right.
+		targetFrame.size.height = realFrame.size.height;
+		targetFrame.size.width = targetFrame.size.height * targetAspectRatio;
+	}
+
+	// Center the window.
+	targetFrame.origin.x = realFrame.origin.x + (realFrame.size.width - targetFrame.size.width) / 2;
+	targetFrame.origin.y = realFrame.origin.y + (realFrame.size.height - targetFrame.size.height) / 2;
+	
+	// Resize the target view.
+	gameViewController.view.frame = targetFrame;
+
+	// Recalculate client bounds.
+	[clientBounds release];
+	clientBounds = [[self calculateClientBounds] retain];
+	
+	// Set scale factor.
+	if (targetAspectRatio >= realAspectRatio) {
+		gameViewController.view.contentScaleFactor = clientWidth / realFrame.size.width;
+	} else {
+		gameViewController.view.contentScaleFactor = clientHeight / realFrame.size.height;
+	}
 }
 
 - (void) initialize {
@@ -74,6 +111,7 @@
 	
 	// Create game view controller.
 	gameViewController = [[GameViewController alloc] initWithGameWindow:self];
+	
 	[((GameView*)gameViewController.view).viewSizeChanged
 	 subscribeDelegate:[Delegate delegateWithTarget:self Method:@selector(gameViewSizeChanged)]];
 	
@@ -102,7 +140,7 @@
 
 - (Rectangle*) calculateClientBounds {
 	Rectangle *bounds = [Rectangle rectangleWithCGRect:gameViewController.view.bounds];
-	float scale = [UIScreen mainScreen].scale;
+	float scale = gameViewController.view.contentScaleFactor;
 	bounds.width *= scale;
 	bounds.height *= scale;
 	return bounds;

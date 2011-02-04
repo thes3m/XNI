@@ -31,7 +31,7 @@
 @property (nonatomic, readonly) Event *orientationChanged;
 
 - (void) beginScreenDeviceChangeWithFullscreen:(BOOL)willBeFullscreen;
-- (void) endScreenDeviceChange;
+- (void) endScreenDeviceChangeWithClientWidth:(int)clientWidth clientHeight:(int)clientHeight;
 
 - (void) setSupportedOrientations:(DisplayOrientation)orientations;
 

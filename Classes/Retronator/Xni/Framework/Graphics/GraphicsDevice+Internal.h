@@ -13,6 +13,8 @@
 @interface GraphicsDevice (Internal)
 
 - (uint) createTexture;
+- (void) releaseTexture:(uint)textureId;
+
 //- (void) getData:(void*)data fromTexture2D:(Texture2D*)texture level:(int)level;
 - (void) setData:(void*)data toTexture2D:(Texture2D*)texture SourceRectangle:(Rectangle*)rect level:(int)level;
 

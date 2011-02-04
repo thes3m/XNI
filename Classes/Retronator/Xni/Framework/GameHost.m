@@ -10,11 +10,13 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "Retronator.Xni.Framework.h"
+#import "Retronator.Xni.Framework.Media.h"
 
 @implementation GameHost
 
 - (id) init {
     if (self = [super init]) {
+		[MediaPlayer load];
         window = [[GameWindow alloc] init]; 		
     }
     return self;

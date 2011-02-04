@@ -92,5 +92,12 @@
 	[graphicsDevice setData:data toTexture2D:self SourceRectangle:rect level:level];
 }
 
+- (void) dealloc
+{
+	[graphicsDevice releaseTexture:textureId];
+	[super dealloc];
+}
+
+
 
 @end

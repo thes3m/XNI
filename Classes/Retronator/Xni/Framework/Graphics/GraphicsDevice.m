@@ -327,6 +327,10 @@
     return textureId;    
 }
 
+- (void) releaseTexture:(uint)textureId {
+	glDeleteTextures(1, &textureId);
+}
+
 - (void) setData:(void*)data toTexture2D:(Texture2D*)texture SourceRectangle:(Rectangle*)rect level:(int)level {
 	GLenum format, type;
 	[GraphicsDevice getFormat:&format AndType:&type ForSurfaceFormat:texture.format];

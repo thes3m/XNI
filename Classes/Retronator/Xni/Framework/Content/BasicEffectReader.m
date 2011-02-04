@@ -25,6 +25,7 @@
 	effect.specularColor = content.specularColor;
 	effect.emissiveColor = content.emissiveColor;
 	effect.texture = [input readSharedResourceFrom:content.texture];
+	NSLog(@"loaded: %i", [effect.texture retainCount]);
 	effect.textureEnabled = effect.texture != nil;
 	
 	return effect;

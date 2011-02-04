@@ -72,6 +72,7 @@
 - (void) applyChanges {
 	[game.window setSupportedOrientations:supportedOrientations];
     [game.window beginScreenDeviceChangeWithFullscreen:isFullScreen];
+	[game.window endScreenDeviceChangeWithClientWidth:self.preferedBackBufferWidth clientHeight:self.preferedBackBufferHeight];
 	
 	if (graphicsDevice != nil && graphicsDevice.graphicsProfile != graphicsProfile) {
 		// Different graphics profile requested.
@@ -91,13 +92,11 @@
 			default:
 				break;
 		}
-        [game.window endScreenDeviceChange];
         [deviceCreated raiseWithSender:self];
     } else {
         // Reset the existing device.
         [deviceResetting raiseWithSender:self];
         [graphicsDevice reset];
-        [game.window endScreenDeviceChange];
         [deviceReset raiseWithSender:self];
     }
 }

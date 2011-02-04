@@ -102,7 +102,7 @@
 	[self dismissModalViewControllerAnimated:YES];	
 }
 
-- (void)loadView {
+- (void)loadView {	
     GameView *gameView = [[GameView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
     self.view = gameView;
 	
