@@ -18,6 +18,7 @@
 
 - (BOOL) checkAvailability;
 - (void) setMediaState:(MediaState)value;
+- (void) fillSongIndices;
 
 @end
 
@@ -44,6 +45,8 @@ static MediaPlayer *instance;
 		queue = [[MediaQueue alloc] init];
 		isMuted = NO;
 		volume = 1;
+		
+		remainingSongIndices = [[NSMutableArray alloc] init];
 		
 		[queue.activeSongChanged subscribeDelegate:[Delegate delegateWithTarget:self Method:@selector(queueActiveSongChanged)]];
 		
@@ -118,11 +121,18 @@ static MediaPlayer *instance;
 		return;
 	}
 	
-	if (isShuffled) {
-		queue.activeSongIndex = random() % queue.count;
-	} else {
-		queue.activeSongIndex = (queue.activeSongIndex + 1) % queue.count;
+	if ([remainingSongIndices count] == 0) {
+		[self fillSongIndices];
 	}
+	
+	int nextIndex = 0;
+	if (isShuffled) {
+		nextIndex = random() % remainingSongIndices.count;
+	}
+	
+	queue.activeSongIndex = [((NSNumber*)[remainingSongIndices objectAtIndex:nextIndex]) intValue];
+	
+	[remainingSongIndices removeObjectAtIndex:nextIndex];
 }
 
 - (void) movePrevious {
@@ -153,12 +163,13 @@ static MediaPlayer *instance;
 	
 	song.audioPlayer.delegate = self;
 	[queue setSong:song];
-	[queue.activeSong.audioPlayer play];
-	[self setMediaState:MediaStatePlaying];
+	[self fillSongIndices];
+	[self moveNext];
+	[self resume];
 }
 
 - (void) resume {
-	if (![self checkAvailability]) {
+	if (![self checkAvailability] || !queue.activeSong) {
 		return;
 	}
 	
@@ -167,13 +178,17 @@ static MediaPlayer *instance;
 }
 
 - (void) stop {
-	if (![self checkAvailability]) {
+	if (![self checkAvailability] || !queue.activeSong) {
 		return;
 	}
 	
 	[queue.activeSong.audioPlayer pause];
 	queue.activeSong.audioPlayer.currentTime = 0;
 	[self setMediaState:MediaStateStopped];
+	
+	// The music stops, activate the ambient category again.
+	[[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryAmbient error:nil];
+	soloModeActivated = NO;
 }
 
 - (BOOL) checkAvailability {
@@ -204,12 +219,27 @@ static MediaPlayer *instance;
 }
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+	if ([remainingSongIndices count] == 0 && !isRepeating) {
+		// The music stops, activate the ambient category again.
+		[[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryAmbient error:nil];
+		soloModeActivated = NO;
+		return;
+	}
+	
 	[self moveNext];
 	[self resume];
 }
 
+- (void) fillSongIndices {
+	[remainingSongIndices removeAllObjects];
+	for (int i = 0; i < queue.count; i++) {
+		[remainingSongIndices addObject:[NSNumber numberWithInt:i]];
+	}
+}
+
 - (void) dealloc
 {
+	[remainingSongIndices release];
 	[activeSongChanged release];
 	[mediaStateChanged release];
 	[queue release];

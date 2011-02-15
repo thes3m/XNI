@@ -74,34 +74,6 @@
 	}
 }
 
-- (void) showAchievementsView {
-	GKAchievementViewController *achievements = [[GKAchievementViewController alloc] init];
-    if (achievements != nil)
-    {
-        achievements.achievementDelegate = self;
-        [self presentModalViewController: achievements animated: YES];
-    }
-    [achievements release];
-}
-
-- (void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController {
-	[self dismissModalViewControllerAnimated:YES];
-}
-
-- (void) showLeaderboardView {
-	GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];
-    if (leaderboardController != nil)
-    {
-        leaderboardController.leaderboardDelegate = self;
-        [self presentModalViewController: leaderboardController animated: YES];
-    }
-	[leaderboardController release];
-}
-
-- (void) leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController {
-	[self dismissModalViewControllerAnimated:YES];	
-}
-
 - (void)loadView {	
     GameView *gameView = [[GameView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
     self.view = gameView;

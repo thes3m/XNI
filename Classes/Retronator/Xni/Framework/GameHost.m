@@ -33,6 +33,7 @@
 	
     SInt32 runResult;
     
+	isExiting = NO;
     while (!isExiting)
     {   
         // We run a very tight autorelease pool loop.

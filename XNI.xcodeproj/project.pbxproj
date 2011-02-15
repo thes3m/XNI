@@ -115,6 +115,11 @@
 		B554FC9B12A45A9D00F20A0D /* VertexPositionNormalTextureArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B554FC9912A45A9D00F20A0D /* VertexPositionNormalTextureArray.m */; };
 		B554FC9E12A45B3300F20A0D /* VertexPositionNormalTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = B554FC9C12A45B3300F20A0D /* VertexPositionNormalTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B554FC9F12A45B3300F20A0D /* VertexPositionNormalTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = B554FC9D12A45B3300F20A0D /* VertexPositionNormalTexture.m */; };
+		B562E6E7130ADB5400017D99 /* Retronator.Devices.Sensors.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6E6130ADB5400017D99 /* Retronator.Devices.Sensors.h */; };
+		B562E6E9130ADB5D00017D99 /* Retronator.Devices.Sensors.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6E8130ADB5D00017D99 /* Retronator.Devices.Sensors.classes.h */; };
+		B562E6EC130ADB8900017D99 /* Accelerometer.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6EA130ADB8900017D99 /* Accelerometer.h */; };
+		B562E6ED130ADB8900017D99 /* Accelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = B562E6EB130ADB8900017D99 /* Accelerometer.m */; };
+		B562E6EF130ADBD400017D99 /* SensorsEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6EE130ADBD400017D99 /* SensorsEnums.h */; };
 		B5672C6C129AFDCE00DE5AAC /* ModelMeshCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5672C6A129AFDCE00DE5AAC /* ModelMeshCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5672C6D129AFDCE00DE5AAC /* ModelMeshCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5672C6B129AFDCE00DE5AAC /* ModelMeshCollection.m */; };
 		B5672C7A129AFE8500DE5AAC /* ModelMeshPartCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5672C78129AFE8500DE5AAC /* ModelMeshPartCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -147,6 +152,7 @@
 		B57E36BF124BE2DD00DDAA42 /* VertexPositionColorTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = B57E36BD124BE2DD00DDAA42 /* VertexPositionColorTexture.m */; };
 		B57E36CC124BE36E00DDAA42 /* VertexPositionColorTextureArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B57E36CA124BE36E00DDAA42 /* VertexPositionColorTextureArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B57E36CD124BE36E00DDAA42 /* VertexPositionColorTextureArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B57E36CB124BE36E00DDAA42 /* VertexPositionColorTextureArray.m */; };
+		B583D38C130A129C00CF268F /* Game+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B583D38B130A129C00CF268F /* Game+Internal.h */; };
 		B594878212AEF3DA00EE601F /* PointStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = B594878112AEF3DA00EE601F /* PointStruct.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B594878512AEF44900EE601F /* XniPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = B594878312AEF44900EE601F /* XniPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B594878612AEF44900EE601F /* XniPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = B594878412AEF44900EE601F /* XniPoint.m */; };
@@ -513,6 +519,11 @@
 		B554FC9912A45A9D00F20A0D /* VertexPositionNormalTextureArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexPositionNormalTextureArray.m; sourceTree = "<group>"; };
 		B554FC9C12A45B3300F20A0D /* VertexPositionNormalTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexPositionNormalTexture.h; sourceTree = "<group>"; };
 		B554FC9D12A45B3300F20A0D /* VertexPositionNormalTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexPositionNormalTexture.m; sourceTree = "<group>"; };
+		B562E6E6130ADB5400017D99 /* Retronator.Devices.Sensors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Devices.Sensors.h; sourceTree = "<group>"; };
+		B562E6E8130ADB5D00017D99 /* Retronator.Devices.Sensors.classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Devices.Sensors.classes.h; sourceTree = "<group>"; };
+		B562E6EA130ADB8900017D99 /* Accelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Accelerometer.h; sourceTree = "<group>"; };
+		B562E6EB130ADB8900017D99 /* Accelerometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Accelerometer.m; sourceTree = "<group>"; };
+		B562E6EE130ADBD400017D99 /* SensorsEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorsEnums.h; sourceTree = "<group>"; };
 		B5672C6A129AFDCE00DE5AAC /* ModelMeshCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMeshCollection.h; sourceTree = "<group>"; };
 		B5672C6B129AFDCE00DE5AAC /* ModelMeshCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelMeshCollection.m; sourceTree = "<group>"; };
 		B5672C78129AFE8500DE5AAC /* ModelMeshPartCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMeshPartCollection.h; sourceTree = "<group>"; };
@@ -545,6 +556,7 @@
 		B57E36BD124BE2DD00DDAA42 /* VertexPositionColorTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexPositionColorTexture.m; sourceTree = "<group>"; };
 		B57E36CA124BE36E00DDAA42 /* VertexPositionColorTextureArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexPositionColorTextureArray.h; sourceTree = "<group>"; };
 		B57E36CB124BE36E00DDAA42 /* VertexPositionColorTextureArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexPositionColorTextureArray.m; sourceTree = "<group>"; };
+		B583D38B130A129C00CF268F /* Game+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Game+Internal.h"; sourceTree = "<group>"; };
 		B594878112AEF3DA00EE601F /* PointStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointStruct.h; sourceTree = "<group>"; };
 		B594878312AEF44900EE601F /* XniPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XniPoint.h; sourceTree = "<group>"; };
 		B594878412AEF44900EE601F /* XniPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XniPoint.m; sourceTree = "<group>"; };
@@ -918,6 +930,26 @@
 			path = GamerServices;
 			sourceTree = "<group>";
 		};
+		B562E6E3130ADB0800017D99 /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				B562E6E5130ADB2700017D99 /* Sensors */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		B562E6E5130ADB2700017D99 /* Sensors */ = {
+			isa = PBXGroup;
+			children = (
+				B562E6E8130ADB5D00017D99 /* Retronator.Devices.Sensors.classes.h */,
+				B562E6E6130ADB5400017D99 /* Retronator.Devices.Sensors.h */,
+				B562E6EE130ADBD400017D99 /* SensorsEnums.h */,
+				B562E6EA130ADB8900017D99 /* Accelerometer.h */,
+				B562E6EB130ADB8900017D99 /* Accelerometer.m */,
+			);
+			path = Sensors;
+			sourceTree = "<group>";
+		};
 		B59AD7E81236E02500F99511 /* Pipeline */ = {
 			isa = PBXGroup;
 			children = (
@@ -1182,6 +1214,7 @@
 		B5DE188611F885E500BF3275 /* Retronator */ = {
 			isa = PBXGroup;
 			children = (
+				B562E6E3130ADB0800017D99 /* Devices */,
 				B5DE188D11F8879500BF3275 /* Xni */,
 			);
 			path = Retronator;
@@ -1220,6 +1253,7 @@
 				B5DE18FA11F88AD900BF3275 /* GameHost.h */,
 				B5DE18FB11F88AD900BF3275 /* GameHost.m */,
 				B5DDE7E911FF04E3000DB38B /* Game.h */,
+				B583D38B130A129C00CF268F /* Game+Internal.h */,
 				B5DDE7EA11FF04E3000DB38B /* Game.m */,
 				B5DE18FC11F88AD900BF3275 /* GameWindow.h */,
 				B53649F1127DE08100CAE30C /* GameWindow+Internal.h */,
@@ -1612,6 +1646,11 @@
 				B507F8BC12E58E7000A7302B /* MediaQueue.h in Headers */,
 				B507F8C512E58EB100A7302B /* MediaQueue+Internal.h in Headers */,
 				B507F8DC12E5925500A7302B /* MediaEnums.h in Headers */,
+				B583D38C130A129C00CF268F /* Game+Internal.h in Headers */,
+				B562E6E7130ADB5400017D99 /* Retronator.Devices.Sensors.h in Headers */,
+				B562E6E9130ADB5D00017D99 /* Retronator.Devices.Sensors.classes.h in Headers */,
+				B562E6EC130ADB8900017D99 /* Accelerometer.h in Headers */,
+				B562E6EF130ADBD400017D99 /* SensorsEnums.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1862,6 +1901,7 @@
 				B507F85212E5756400A7302B /* Song.m in Sources */,
 				B507F87612E58AC300A7302B /* SongReader.m in Sources */,
 				B507F8BD12E58E7000A7302B /* MediaQueue.m in Sources */,
+				B562E6ED130ADB8900017D99 /* Accelerometer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

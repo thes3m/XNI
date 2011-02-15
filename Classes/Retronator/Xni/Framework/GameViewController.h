@@ -11,7 +11,7 @@
 
 #import "Retronator.Xni.Framework.classes.h"
 
-@interface GameViewController : UIViewController <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate> {
+@interface GameViewController : UIViewController {
     GameWindow *gameWindow;
 	DisplayOrientation supportedOrientations;
 }
@@ -25,8 +25,5 @@
 
 + (DisplayOrientation) getSupportedOrientationsFromPlist;
 + (BOOL) getIsFullscreenFromPlist;
-   
-- (void) showAchievementsView;
-- (void) showLeaderboardView;
 
 @end

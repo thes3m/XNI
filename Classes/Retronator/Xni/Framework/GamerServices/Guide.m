@@ -11,8 +11,7 @@
 
 #import "Retronator.Xni.Framework.h"
 
-#import "GameWindow+Internal.h"
-#import "GameViewController.h"
+#import "Game+Internal.h"
 
 @implementation Guide
 
@@ -49,11 +48,31 @@ static Guide *instance = nil;
 }
 
 - (void) showAchievements {
-	[game.window.gameViewController showAchievementsView];
+	GKAchievementViewController *achievements = [[GKAchievementViewController alloc] init];
+    if (achievements != nil)
+    {
+        achievements.achievementDelegate = self;
+		[game presentModalViewController:achievements];
+    }
+    [achievements release];
+}
+
+- (void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController {
+	[game dismissModalViewController];
 }
 
 - (void) showLeaderboard {
-	[game.window.gameViewController showLeaderboardView];
+	GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];
+    if (leaderboardController != nil)
+    {
+        leaderboardController.leaderboardDelegate = self;
+        [game presentModalViewController:leaderboardController];
+    }
+	[leaderboardController release];
+}
+
+- (void) leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController {
+	[game dismissModalViewController];	
 }
 
 @end

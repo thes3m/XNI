@@ -7,6 +7,7 @@
 //
 
 #import "Game.h"
+#import "Game+Internal.h"
 
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Graphics.h"
@@ -273,6 +274,22 @@ static NSArray *drawOrderSort;
 
 - (void) endRun {}
 
+
+// Internal methods
+
+- (void) presentModalViewController:(UIViewController*)viewController {
+	[gameHost.window.gameViewController presentModalViewController:viewController animated:YES];
+
+	// Stop host loop so messages are properly processed.
+	[gameHost exit];
+}
+
+- (void) dismissModalViewController {
+	[gameHost.window.gameViewController dismissModalViewControllerAnimated:YES];
+	
+	// Rerun host loop so game continues.
+    [gameHost performSelector:@selector(run) withObject:nil afterDelay:0];
+}
 
 
 // Private methods for component management.

@@ -57,6 +57,9 @@
 }
 
 - (Song *) activeSong {
+	if (activeSongIndex >= [queue count]) {
+		return nil;
+	}
 	return [queue objectAtIndex:activeSongIndex];
 }
 

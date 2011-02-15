@@ -22,6 +22,8 @@
 	MediaState state;
 	float volume;
 	
+	NSMutableArray *remainingSongIndices;
+	
 	Event *activeSongChanged;
 	Event *mediaStateChanged;
 }

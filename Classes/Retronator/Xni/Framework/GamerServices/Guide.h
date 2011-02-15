@@ -11,7 +11,7 @@
 
 #import "Retronator.Xni.Framework.classes.h"
 
-@interface Guide : NSObject {
+@interface Guide : NSObject <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate> {
 	Game *game;
 	BOOL isVisible;
 }
