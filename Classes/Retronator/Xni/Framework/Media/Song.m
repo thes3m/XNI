@@ -16,7 +16,6 @@
 	self = [super init];
 	if (self != nil) {
 		audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-		[audioPlayer prepareToPlay];
 	}
 	return self;
 }

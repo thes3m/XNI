@@ -115,11 +115,14 @@
 		B554FC9B12A45A9D00F20A0D /* VertexPositionNormalTextureArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B554FC9912A45A9D00F20A0D /* VertexPositionNormalTextureArray.m */; };
 		B554FC9E12A45B3300F20A0D /* VertexPositionNormalTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = B554FC9C12A45B3300F20A0D /* VertexPositionNormalTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B554FC9F12A45B3300F20A0D /* VertexPositionNormalTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = B554FC9D12A45B3300F20A0D /* VertexPositionNormalTexture.m */; };
-		B562E6E7130ADB5400017D99 /* Retronator.Devices.Sensors.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6E6130ADB5400017D99 /* Retronator.Devices.Sensors.h */; };
-		B562E6E9130ADB5D00017D99 /* Retronator.Devices.Sensors.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6E8130ADB5D00017D99 /* Retronator.Devices.Sensors.classes.h */; };
-		B562E6EC130ADB8900017D99 /* Accelerometer.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6EA130ADB8900017D99 /* Accelerometer.h */; };
+		B562E6E7130ADB5400017D99 /* Retronator.Devices.Sensors.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6E6130ADB5400017D99 /* Retronator.Devices.Sensors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B562E6E9130ADB5D00017D99 /* Retronator.Devices.Sensors.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6E8130ADB5D00017D99 /* Retronator.Devices.Sensors.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B562E6EC130ADB8900017D99 /* Accelerometer.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6EA130ADB8900017D99 /* Accelerometer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B562E6ED130ADB8900017D99 /* Accelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = B562E6EB130ADB8900017D99 /* Accelerometer.m */; };
-		B562E6EF130ADBD400017D99 /* SensorsEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6EE130ADBD400017D99 /* SensorsEnums.h */; };
+		B562E6EF130ADBD400017D99 /* SensorsEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6EE130ADBD400017D99 /* SensorsEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B562E781130ADFAB00017D99 /* AccelerometerReadingEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E77F130ADFAB00017D99 /* AccelerometerReadingEventArgs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B562E782130ADFAB00017D99 /* AccelerometerReadingEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = B562E780130ADFAB00017D99 /* AccelerometerReadingEventArgs.m */; };
+		B562E784130AE18400017D99 /* AccelerometerReadingEventArgs+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E783130AE18400017D99 /* AccelerometerReadingEventArgs+Internal.h */; };
 		B5672C6C129AFDCE00DE5AAC /* ModelMeshCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5672C6A129AFDCE00DE5AAC /* ModelMeshCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5672C6D129AFDCE00DE5AAC /* ModelMeshCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5672C6B129AFDCE00DE5AAC /* ModelMeshCollection.m */; };
 		B5672C7A129AFE8500DE5AAC /* ModelMeshPartCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5672C78129AFE8500DE5AAC /* ModelMeshPartCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -524,6 +527,9 @@
 		B562E6EA130ADB8900017D99 /* Accelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Accelerometer.h; sourceTree = "<group>"; };
 		B562E6EB130ADB8900017D99 /* Accelerometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Accelerometer.m; sourceTree = "<group>"; };
 		B562E6EE130ADBD400017D99 /* SensorsEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorsEnums.h; sourceTree = "<group>"; };
+		B562E77F130ADFAB00017D99 /* AccelerometerReadingEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccelerometerReadingEventArgs.h; sourceTree = "<group>"; };
+		B562E780130ADFAB00017D99 /* AccelerometerReadingEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccelerometerReadingEventArgs.m; sourceTree = "<group>"; };
+		B562E783130AE18400017D99 /* AccelerometerReadingEventArgs+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AccelerometerReadingEventArgs+Internal.h"; sourceTree = "<group>"; };
 		B5672C6A129AFDCE00DE5AAC /* ModelMeshCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMeshCollection.h; sourceTree = "<group>"; };
 		B5672C6B129AFDCE00DE5AAC /* ModelMeshCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelMeshCollection.m; sourceTree = "<group>"; };
 		B5672C78129AFE8500DE5AAC /* ModelMeshPartCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMeshPartCollection.h; sourceTree = "<group>"; };
@@ -946,6 +952,9 @@
 				B562E6EE130ADBD400017D99 /* SensorsEnums.h */,
 				B562E6EA130ADB8900017D99 /* Accelerometer.h */,
 				B562E6EB130ADB8900017D99 /* Accelerometer.m */,
+				B562E77F130ADFAB00017D99 /* AccelerometerReadingEventArgs.h */,
+				B562E783130AE18400017D99 /* AccelerometerReadingEventArgs+Internal.h */,
+				B562E780130ADFAB00017D99 /* AccelerometerReadingEventArgs.m */,
 			);
 			path = Sensors;
 			sourceTree = "<group>";
@@ -1651,6 +1660,8 @@
 				B562E6E9130ADB5D00017D99 /* Retronator.Devices.Sensors.classes.h in Headers */,
 				B562E6EC130ADB8900017D99 /* Accelerometer.h in Headers */,
 				B562E6EF130ADBD400017D99 /* SensorsEnums.h in Headers */,
+				B562E781130ADFAB00017D99 /* AccelerometerReadingEventArgs.h in Headers */,
+				B562E784130AE18400017D99 /* AccelerometerReadingEventArgs+Internal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1902,6 +1913,7 @@
 				B507F87612E58AC300A7302B /* SongReader.m in Sources */,
 				B507F8BD12E58E7000A7302B /* MediaQueue.m in Sources */,
 				B562E6ED130ADB8900017D99 /* Accelerometer.m in Sources */,
+				B562E782130ADFAB00017D99 /* AccelerometerReadingEventArgs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

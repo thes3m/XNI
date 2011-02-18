@@ -1,3 +1,3 @@
 #import "SensorsEnums.h"
 
-@class Accelerometer;
+@class Accelerometer, AccelerometerReadingEventArgs;

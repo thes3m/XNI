@@ -182,8 +182,8 @@ static MediaPlayer *instance;
 		return;
 	}
 	
-	[queue.activeSong.audioPlayer pause];
 	queue.activeSong.audioPlayer.currentTime = 0;
+	[queue.activeSong.audioPlayer stop];
 	[self setMediaState:MediaStateStopped];
 	
 	// The music stops, activate the ambient category again.
