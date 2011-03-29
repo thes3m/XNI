@@ -12,7 +12,7 @@
 
 @interface TouchPanel (Internal)
 
-- (void) setView:(UIView *)theView;
+- (void) setView:(GameView *)theView;
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;

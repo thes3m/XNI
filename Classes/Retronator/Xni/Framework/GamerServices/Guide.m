@@ -12,6 +12,7 @@
 #import "Retronator.Xni.Framework.h"
 
 #import "Game+Internal.h"
+#import "XniShowMessageBoxResult.h"
 
 @implementation Guide
 
@@ -22,6 +23,7 @@ static Guide *instance = nil;
 	self = [super init];
 	if (self != nil) {
 		game = theGame;
+		messageBoxResults = [[NSMutableSet alloc] init];
 	}
 	return self;
 }
@@ -35,6 +37,14 @@ static Guide *instance = nil;
 
 @synthesize isVisible;
 
+- (NotificationPosition) notificationPosition {
+	return NotificationPositionCenter;
+}
+
+- (void) setNotificationPosition:(NotificationPosition)value {
+	[NSException raise:@"NotSupportedException" format:@"You can't set the position of notifications on iOS."];
+}
+
 + (void) showAchievements {
 	[instance showAchievements];
 }
@@ -43,11 +53,21 @@ static Guide *instance = nil;
 	[instance showLeaderboard];
 }
 
++ (id<IAsyncResult>) beginShowMessageBoxWithTitle:(NSString*)title text:(NSString*)text buttons:(NSArray*)buttons focusButton:(int)focusButton 
+								 icon:(MessageBoxIcon)icon callback:(Delegate*)callback state:(id)state {
+	return [instance beginShowMessageBoxWithTitle:title text:text buttons:buttons focusButton:focusButton icon:icon callback:callback state:state];
+}
+
++ (NSNumber *) endShowMessageBox:(id <IAsyncResult>)result {
+	return [instance endShowMessageBox:result];
+}
+
 + (Guide*) getInstance {
 	return instance;
 }
 
 - (void) showAchievements {
+	isVisible = YES;
 	GKAchievementViewController *achievements = [[GKAchievementViewController alloc] init];
     if (achievements != nil)
     {
@@ -57,11 +77,8 @@ static Guide *instance = nil;
     [achievements release];
 }
 
-- (void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController {
-	[game dismissModalViewController];
-}
-
 - (void) showLeaderboard {
+	isVisible = YES;
 	GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];
     if (leaderboardController != nil)
     {
@@ -71,8 +88,46 @@ static Guide *instance = nil;
 	[leaderboardController release];
 }
 
-- (void) leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController {
-	[game dismissModalViewController];	
+- (id<IAsyncResult>) beginShowMessageBoxWithTitle:(NSString *)title text:(NSString *)text buttons:(NSArray *)buttons focusButton:(int)focusButton 
+								 icon:(MessageBoxIcon)icon callback:(Delegate*)callback state:(id)state {
+	
+	XniShowMessageBoxResult *result = [[[XniShowMessageBoxResult alloc] initWithAsyncState:state callback:callback] autorelease];
+	[messageBoxResults addObject:result];
+	
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:text delegate:result cancelButtonTitle:nil otherButtonTitles:nil];
+	
+	for (NSString *button in buttons) {
+		[alertView addButtonWithTitle:button];
+	}
+	
+	alertView.cancelButtonIndex = focusButton;
+
+	[alertView show];
+	return result;
 }
+
+- (NSNumber *) endShowMessageBox:(id <IAsyncResult>)result {
+	[messageBoxResults removeObject:result];
+	
+	XniShowMessageBoxResult *messageBoxResult = (XniShowMessageBoxResult*)result;
+	return messageBoxResult.result;
+}
+
+- (void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController {
+	[game dismissModalViewController];
+	isVisible = NO;
+}
+
+- (void) leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController {
+	[game dismissModalViewController];
+	isVisible = NO;
+}
+
+- (void) dealloc
+{
+	[messageBoxResults release];
+	[super dealloc];
+}
+
 
 @end

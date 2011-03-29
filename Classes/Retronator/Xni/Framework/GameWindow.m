@@ -25,7 +25,6 @@
 
 - (id) init {
     if (self = [super init]) {
-        currentOrientation = DisplayOrientationDefault;
         clientSizeChanged = [[Event alloc] init];
 		orientationChanged = [[Event alloc] init];
 		
@@ -37,10 +36,12 @@
 // PROPERTIES
 
 @synthesize clientBounds;
-@synthesize currentOrientation;
-
 @synthesize clientSizeChanged;
 @synthesize orientationChanged;
+
+- (DisplayOrientation) currentOrientation {
+	return [GameViewController getDisplayOrientationForInterfaceOrientation:gameViewController.interfaceOrientation];
+}
 
 - (UIWindow*) window {
 	return window;
@@ -63,14 +64,16 @@
 
 - (void) endScreenDeviceChangeWithClientWidth:(int)clientWidth clientHeight:(int)clientHeight {
 	CGRect realFrame = [UIScreen mainScreen].applicationFrame;
+	float realScale = [UIScreen mainScreen].scale;
+	
 	float realAspectRatio = realFrame.size.width / realFrame.size.height;
 	
 	if (clientWidth == 0) {
-		clientWidth = realFrame.size.width;
+		clientWidth = realFrame.size.width * realScale;
 	}
 	
 	if (clientHeight == 0) {
-		clientHeight = realFrame.size.height;
+		clientHeight = realFrame.size.height * realScale;
 	}
 	
 	float targetAspectRatio = (float)clientWidth/(float)clientHeight;
@@ -78,7 +81,7 @@
 	
 	if (targetAspectRatio >= realAspectRatio) {
 		// Add black borders on top and bottom.
-		targetFrame.size.width = realFrame.size.width;
+		targetFrame.size.width = realFrame.size.width ;
 		targetFrame.size.height = targetFrame.size.width / targetAspectRatio;
 	} else {
 		// Add black borders on left and right.
@@ -92,17 +95,17 @@
 	
 	// Resize the target view.
 	gameViewController.view.frame = targetFrame;
-
-	// Recalculate client bounds.
-	[clientBounds release];
-	clientBounds = [[self calculateClientBounds] retain];
 	
 	// Set scale factor.
 	if (targetAspectRatio >= realAspectRatio) {
-		gameViewController.view.contentScaleFactor = clientWidth / realFrame.size.width;
+		gameViewController.gameView.scale = clientWidth / realFrame.size.width;
 	} else {
-		gameViewController.view.contentScaleFactor = clientHeight / realFrame.size.height;
+		gameViewController.gameView.scale = clientHeight / realFrame.size.height;
 	}
+
+	// Recalculate client bounds.
+	[clientBounds release];
+	clientBounds = [[self calculateClientBounds] retain];	
 }
 
 - (void) initialize {
@@ -119,7 +122,7 @@
 	[window addSubview: gameViewController.view];
 	
 	// Report view to TouchPanel.
-	[[TouchPanel getInstance] setView:gameViewController.view];
+	[[TouchPanel getInstance] setView:gameViewController.gameView];
 	
 	// Present the window.
 	[window makeKeyAndVisible];	
@@ -140,7 +143,7 @@
 
 - (Rectangle*) calculateClientBounds {
 	Rectangle *bounds = [Rectangle rectangleWithCGRect:gameViewController.view.bounds];
-	float scale = gameViewController.view.contentScaleFactor;
+	float scale = gameViewController.gameView.scale;
 	bounds.width *= scale;
 	bounds.height *= scale;
 	return bounds;

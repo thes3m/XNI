@@ -12,6 +12,8 @@
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Input.Touch.h"
 
+#import "GameView.h"
+
 @interface XniTouchLocation : NSObject {
 	int identifier;
 	Vector2 *position;
@@ -23,7 +25,7 @@
 
 @property (nonatomic) TouchLocationState state;
 
-- (void) moveIfPressed;
+- (void) update;
 - (void) moveToPosition:(Vector2*)newPosition;
 
 - (TouchLocation*) createTouchLocation;
@@ -39,7 +41,7 @@ static int nextID = 0;
 	self = [super init];
 	if (self != nil) {
 		identifier = nextID++;
-		position = [thePosition retain];
+		position = [[Vector2 alloc] initWithVector2:thePosition];
 		previousPosition = nil;
 		state = TouchLocationStatePressed;
 	}
@@ -48,16 +50,16 @@ static int nextID = 0;
 
 @synthesize state;
 
-- (void) moveIfPressed {
-	if (state == TouchLocationStatePressed) {
-		state = TouchLocationStateMoved;
-	}
+- (void) update {
+	[self moveToPosition:position];
 }
 
 - (void) moveToPosition:(Vector2*)newPosition {
-	[previousPosition release];
-	previousPosition = position;
-	position = [newPosition retain];
+	if (!previousPosition) {
+		previousPosition = [[Vector2 alloc] init];
+	}
+	[previousPosition set:position];
+	[position set:newPosition];
 	state = TouchLocationStateMoved;
 }
 
@@ -117,7 +119,7 @@ static TouchPanel *instance;
     return instance;
 }
 
-- (void) setView:(UIView *)theView {
+- (void) setView:(GameView *)theView {
 	view = theView;
 }
 
@@ -131,7 +133,7 @@ static TouchPanel *instance;
 		[collection addObject:[touch createTouchLocation]];
 		
 		// After get state is done, all pressed touches should be moved.
-		[touch moveIfPressed];
+		[touch update];
 	}
 	return collection;
 }
@@ -147,7 +149,7 @@ static TouchPanel *instance;
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-	float scale = view.contentScaleFactor;
+	float scale = view.scale;
 	for (UITouch *touch in touches) {
 		XniTouchLocation *location = [touchLocations objectForKey:touch];	
 		if (location) {			
@@ -194,14 +196,11 @@ static TouchPanel *instance;
 	lateReleaseTouches = temp;
 	
 	// Add new touches
-	float scale = view.contentScaleFactor;
+	float scale = view.scale;
 	for (UITouch *touch in addTouches) {
 		CGPoint position = [touch locationInView:view];
 		XniTouchLocation *location = [[[XniTouchLocation alloc] 
 											initWithPosition:[Vector2 vectorWithX:position.x * scale y:position.y * scale]] autorelease];
-		if (position.x == 0 && position.y == 0) {
-			NSLog(@"BOOMSDFS");
-		}
 		
 		CFDictionaryAddValue((CFMutableDictionaryRef)touchLocations, touch, location);
 	}

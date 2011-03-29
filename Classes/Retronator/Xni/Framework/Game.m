@@ -278,8 +278,10 @@ static NSArray *drawOrderSort;
 // Internal methods
 
 - (void) presentModalViewController:(UIViewController*)viewController {
-	[gameHost.window.gameViewController presentModalViewController:viewController animated:YES];
-
+	if (viewController) {
+		[gameHost.window.gameViewController presentModalViewController:viewController animated:YES];
+	}
+	
 	// Stop host loop so messages are properly processed.
 	[gameHost exit];
 }

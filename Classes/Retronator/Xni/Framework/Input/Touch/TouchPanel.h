@@ -12,8 +12,10 @@
 #import "Retronator.Xni.Framework.classes.h"
 #import "Retronator.Xni.Framework.Input.Touch.classes.h"
 
+@class GameView;
+
 @interface TouchPanel : NSObject {
-	UIView *view;
+	GameView *view;
 	
 	int displayWidth;
 	int displayHeight;

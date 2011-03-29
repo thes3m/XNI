@@ -6,3 +6,6 @@
 @class Delegate, Event, EventArgs;
 
 // Arrays
+
+// Threading
+@protocol IAsyncResult;

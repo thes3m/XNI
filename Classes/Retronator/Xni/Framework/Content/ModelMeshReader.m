@@ -17,9 +17,7 @@
 
 - (id) readFromInput:(ContentReader *)input into:(id)existingInstance {
 	ModelMeshContent *content = input.content;
-	
-	NSLog(@"Mesh: %@", content.name);
-	
+		
 	// Create all model mesh parts.
 	NSMutableArray *meshParts = [NSMutableArray array];
 	for (ModelMeshPartContent *meshPartContent in content.meshParts) {

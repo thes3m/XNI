@@ -15,5 +15,6 @@
 }
 
 @property (nonatomic, readonly) Event *viewSizeChanged;
+@property (nonatomic) float scale;
 
 @end

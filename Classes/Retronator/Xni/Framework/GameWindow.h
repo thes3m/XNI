@@ -15,7 +15,6 @@
 
 @interface GameWindow : NSObject {
     Rectangle *clientBounds;
-    DisplayOrientation currentOrientation;
     Event *clientSizeChanged;
     Event *orientationChanged;
     

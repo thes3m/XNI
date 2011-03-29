@@ -26,6 +26,10 @@
 
 @synthesize supportedOrientations;
 
+- (GameView *) gameView {
+	return (GameView*)self.view;
+}
+
 + (DisplayOrientation) getDisplayOrientationForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
 		return DisplayOrientationPortrait;

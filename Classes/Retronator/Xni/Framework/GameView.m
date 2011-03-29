@@ -18,7 +18,6 @@
 		
         CAEAGLLayer *eaglLayer = (CAEAGLLayer*)self.layer;
         		
-		//eaglLayer.contentsScale = [UIScreen mainScreen].scale;
         eaglLayer.opaque = YES;
 		eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
                                         [NSNumber numberWithBool:NO], kEAGLDrawablePropertyRetainedBacking,
@@ -30,6 +29,16 @@
 }
 
 @synthesize viewSizeChanged;
+
+- (float) scale {
+	CAEAGLLayer *eaglLayer = (CAEAGLLayer*)self.layer;
+	return eaglLayer.contentsScale;
+}
+
+- (void) setScale:(float)value {
+	CAEAGLLayer *eaglLayer = (CAEAGLLayer*)self.layer;	
+	eaglLayer.contentsScale = value;
+}
 
 + (Class) layerClass
 {

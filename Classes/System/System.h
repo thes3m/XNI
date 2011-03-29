@@ -8,3 +8,6 @@
 #import "EventArgs.h"
 
 // Arrays
+
+// Threading
+#import "IAsyncResult.h"

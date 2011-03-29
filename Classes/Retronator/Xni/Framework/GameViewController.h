@@ -10,6 +10,7 @@
 #import <GameKit/GameKit.h>
 
 #import "Retronator.Xni.Framework.classes.h"
+@class GameView;
 
 @interface GameViewController : UIViewController {
     GameWindow *gameWindow;
@@ -19,6 +20,7 @@
 - initWithGameWindow: (GameWindow*)theGameWindow;
 
 @property (nonatomic) DisplayOrientation supportedOrientations;
+@property (nonatomic, readonly) GameView *gameView;
 
 + (DisplayOrientation) getDisplayOrientationForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 + (UIInterfaceOrientation) getUIInterfaceOrientationFromString:(NSString*)interfaceOrientation;
