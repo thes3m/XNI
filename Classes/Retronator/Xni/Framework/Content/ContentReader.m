@@ -15,7 +15,8 @@
 @implementation ContentReader
 
 - (id) initWithContentManager:(ContentManager *)theContentManager Content:(id)theContent {
-	if (self = [super init]) {
+	self = [super init];
+    if (self) {
 		contentManager = theContentManager;
 		
 		contentStack = [[NSMutableArray alloc] init];
@@ -42,7 +43,7 @@
 		ExternalReference *externalReference = (ExternalReference*)source;
 				
 		// We should load the item with content manager.
-		result = [[contentManager load:externalReference.name fromFile:externalReference.filename] autorelease];	// TODO: Be sure to remove this release when content manager is coded correctly.
+		result = [contentManager load:externalReference.name fromFile:externalReference.filename];
 	} else {
 		// Get the correct reader for item.
 		ContentTypeReader *typeReader = [contentManager.readerManager getTypeReaderFor:[source class]];

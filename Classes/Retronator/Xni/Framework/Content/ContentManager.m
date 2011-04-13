@@ -21,7 +21,8 @@
 }
 
 - (id) initWithServiceProvider:(id <IServiceProvider>)theServiceProvider andRootDirectory:(NSString *)theRootDirectory {
-	if (self = [super init]) {
+	self = [super init];
+    if (self) {
 		rootDirectory = theRootDirectory;
 		serviceProvider = theServiceProvider;
 		
@@ -83,7 +84,7 @@
 	// Check if we have already loaded this file.
 	id existing = [loadedFiles objectForKey:filePath];
 	if (existing) {
-		return [existing retain]; // TODO: Expecting a retained object crap! Remove when proper.
+		return existing;
 	}
 	
 	// Find extension and absolute path.
@@ -174,8 +175,7 @@
 	
 	[pool release];
 	
-	// We are returning a retained object since the loaded asset is always used for a longer time.
-	return result;
+	return [result autorelease];
 }
 
 - (void) unload {
