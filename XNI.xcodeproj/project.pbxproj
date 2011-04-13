@@ -34,6 +34,221 @@
 		B54543E6129B4727002A28BE /* VertexBufferReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B54543E4129B4727002A28BE /* VertexBufferReader.m */; };
 		B54543EA129B473A002A28BE /* ModelMeshPartReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B54543E8129B473A002A28BE /* ModelMeshPartReader.m */; };
 		B54543F8129B47A1002A28BE /* ModelMeshReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B54543F6129B47A1002A28BE /* ModelMeshReader.m */; };
+		B54E74811356233D007AD718 /* Retronator.Devices.Sensors.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6E8130ADB5D00017D99 /* Retronator.Devices.Sensors.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74821356233D007AD718 /* Retronator.Devices.Sensors.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6E6130ADB5400017D99 /* Retronator.Devices.Sensors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74831356233D007AD718 /* SensorsEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6EE130ADBD400017D99 /* SensorsEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74841356233D007AD718 /* Accelerometer.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E6EA130ADB8900017D99 /* Accelerometer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74851356233D007AD718 /* AccelerometerReadingEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = B562E77F130ADFAB00017D99 /* AccelerometerReadingEventArgs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74861356233D007AD718 /* Retronator.Xni.Framework.Audio.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADC5D12B83888004E2DB0 /* Retronator.Xni.Framework.Audio.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74871356233D007AD718 /* Retronator.Xni.Framework.Audio.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADC5B12B83876004E2DB0 /* Retronator.Xni.Framework.Audio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74881356233D007AD718 /* AudioEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADC5912B83868004E2DB0 /* AudioEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74891356233D007AD718 /* SoundEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADC4D12B8358C004E2DB0 /* SoundEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E748A1356233D007AD718 /* SoundEffectInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADC5F12B838AD004E2DB0 /* SoundEffectInstance.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E748B1356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.Audio.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADC6612B83E33004E2DB0 /* Retronator.Xni.Framework.Content.Pipeline.Audio.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E748C1356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.Audio.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADC6412B83E16004E2DB0 /* Retronator.Xni.Framework.Content.Pipeline.Audio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E748D1356233D007AD718 /* AudioContentEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADC9112B83FF2004E2DB0 /* AudioContentEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E748E1356233D007AD718 /* AudioContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADC9312B84088004E2DB0 /* AudioContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E748F1356233D007AD718 /* AudioFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADC9712B84095004E2DB0 /* AudioFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74901356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8191236E55E00F99511 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74911356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD81B1236E56800F99511 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74921356233D007AD718 /* BitmapContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD86C1236ED3900F99511 /* BitmapContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74931356233D007AD718 /* PixelBitmapContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8801236EFF200F99511 /* PixelBitmapContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74941356233D007AD718 /* ColorPixelBitmapContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8546B1239484700E6FD71 /* ColorPixelBitmapContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74951356233D007AD718 /* MipmapChain.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC50B123A6F3600B72347 /* MipmapChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74961356233D007AD718 /* MipmapChainCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC50F123A739100B72347 /* MipmapChainCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74971356233D007AD718 /* TextureContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8661236EC2300F99511 /* TextureContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74981356233D007AD718 /* Texture2DContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC525123A79E800B72347 /* Texture2DContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74991356233D007AD718 /* VectorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F85385123929F800E6FD71 /* VectorConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E749A1356233D007AD718 /* NodeContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7EC52129AE1A00015B663 /* NodeContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E749B1356233D007AD718 /* NodeContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FE12A2129FDDF70081F7A7 /* NodeContentCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E749C1356233D007AD718 /* MeshContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7EC59129AE1BF0015B663 /* MeshContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E749D1356233D007AD718 /* GeometryContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FE12F0129FE8220081F7A7 /* GeometryContentCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E749E1356233D007AD718 /* PositionCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FE12F4129FE8310081F7A7 /* PositionCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E749F1356233D007AD718 /* GeometryContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7EC5D129AE1CD0015B663 /* GeometryContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74A01356233D007AD718 /* VertexContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7EC65129AE2340015B663 /* VertexContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74A11356233D007AD718 /* VertexChannelCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FE13C812A00AC60081F7A7 /* VertexChannelCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74A21356233D007AD718 /* VertexChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FE13D312A00BE50081F7A7 /* VertexChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74A31356233D007AD718 /* IndirectPositionCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FE13D912A00C6B0081F7A7 /* IndirectPositionCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74A41356233D007AD718 /* VertexChannelNames.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FE146512A01BB50081F7A7 /* VertexChannelNames.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74A51356233D007AD718 /* IndexCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7EC69129AE2410015B663 /* IndexCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74A61356233D007AD718 /* MaterialContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7EC6D129AE2530015B663 /* MaterialContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74A71356233D007AD718 /* BasicMaterialContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7EC71129AE2860015B663 /* BasicMaterialContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74A81356233D007AD718 /* TextureReferenceDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = B554F7B712A3B19100F20A0D /* TextureReferenceDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74A91356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.Processors.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7ECBE129AE6620015B663 /* Retronator.Xni.Framework.Content.Pipeline.Processors.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74AA1356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.Processors.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7ECBC129AE6560015B663 /* Retronator.Xni.Framework.Content.Pipeline.Processors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74AB1356233D007AD718 /* TextureProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7ECAC129AE5B40015B663 /* TextureProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74AC1356233D007AD718 /* FontTextureProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5ED4CBE12BF895B00A58E29 /* FontTextureProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74AD1356233D007AD718 /* ModelProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7ECB0129AE5C50015B663 /* ModelProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74AE1356233D007AD718 /* MaterialProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7ECB4129AE5D40015B663 /* MaterialProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74AF1356233D007AD718 /* SoundEffectProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADC8512B83F75004E2DB0 /* SoundEffectProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74B01356233D007AD718 /* SongProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADC7D12B83EFD004E2DB0 /* SongProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74B11356233D007AD718 /* ModelContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7EC75129AE2E10015B663 /* ModelContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74B21356233D007AD718 /* ModelMeshContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EFD742129B2A7800FDC150 /* ModelMeshContentCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74B31356233D007AD718 /* ModelMeshContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7EC79129AE2ED0015B663 /* ModelMeshContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74B41356233D007AD718 /* ModelMeshPartContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EFD746129B2A8900FDC150 /* ModelMeshPartContentCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74B51356233D007AD718 /* ModelMeshPartContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7EC7D129AE2FD0015B663 /* ModelMeshPartContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74B61356233D007AD718 /* VertexBufferContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7EC81129AE30C0015B663 /* VertexBufferContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74B71356233D007AD718 /* VertexDeclarationContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FE14BC12A02DCD0081F7A7 /* VertexDeclarationContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74B81356233D007AD718 /* ModelBoneContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B554F94B12A4033600F20A0D /* ModelBoneContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74B91356233D007AD718 /* ModelBoneContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B554F94F12A4034100F20A0D /* ModelBoneContentCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74BA1356233D007AD718 /* SoundEffectContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADC8112B83F62004E2DB0 /* SoundEffectContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74BB1356233D007AD718 /* SongContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADC7912B83EE9004E2DB0 /* SongContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74BC1356233D007AD718 /* SpriteFontContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5ED4CC712BF898900A58E29 /* SpriteFontContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74BD1356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD80D1236E22B00F99511 /* Retronator.Xni.Framework.Content.Pipeline.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74BE1356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD80B1236E21900F99511 /* Retronator.Xni.Framework.Content.Pipeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74BF1356233D007AD718 /* ChildCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FE12AE129FE1730081F7A7 /* ChildCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74C01356233E007AD718 /* OpaqueDataDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = B554F7F112A3C23300F20A0D /* OpaqueDataDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74C11356233E007AD718 /* NamedValueDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = B554F7D112A3BD1B00F20A0D /* NamedValueDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74C21356233E007AD718 /* ExternalReference.h in Headers */ = {isa = PBXBuildFile; fileRef = B554F7BF12A3B48600F20A0D /* ExternalReference.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74C31356233E007AD718 /* ContentIdentity.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8211236E76E00F99511 /* ContentIdentity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74C41356233E007AD718 /* ContentItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD81D1236E59A00F99511 /* ContentItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74C51356233E007AD718 /* IContentProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7ECD6129AE6CA0015B663 /* IContentProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74C61356233E007AD718 /* ContentProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7ECD2129AE6A70015B663 /* ContentProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74C71356233E007AD718 /* IContentImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7ECD8129AE6D20015B663 /* IContentImporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74C81356233E007AD718 /* ContentImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD7EE1236E07300F99511 /* ContentImporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74C91356233E007AD718 /* TextureImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD80F1236E25700F99511 /* TextureImporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74CA1356233E007AD718 /* XImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7ECB8129AE6120015B663 /* XImporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74CB1356233E007AD718 /* XImporterReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B54F9BBF12A2CA1B00F7411F /* XImporterReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74CC1356233E007AD718 /* WavImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADCCD12B84FD8004E2DB0 /* WavImporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74CD1356233E007AD718 /* Mp3Importer.h in Headers */ = {isa = PBXBuildFile; fileRef = B51ADCD112B84FE1004E2DB0 /* Mp3Importer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74CE1356233E007AD718 /* Retronator.Xni.Framework.Content.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A1C83012353F9B00DB60CB /* Retronator.Xni.Framework.Content.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74CF1356233E007AD718 /* Retronator.Xni.Framework.Content.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A1C82E12353F8700DB60CB /* Retronator.Xni.Framework.Content.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74D01356233E007AD718 /* ContentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A1C83212353FBB00DB60CB /* ContentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74D11356233E007AD718 /* ContentReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC5BB123A915700B72347 /* ContentReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74D21356233E007AD718 /* ContentTypeReaderManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC5C5123A928A00B72347 /* ContentTypeReaderManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74D31356233E007AD718 /* ContentTypeReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC5C1123A927500B72347 /* ContentTypeReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74D41356233E007AD718 /* Texture2DReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC5C9123A92BB00B72347 /* Texture2DReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74D51356233E007AD718 /* ModelReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B5672D18129B174100DE5AAC /* ModelReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74D61356233E007AD718 /* ModelMeshReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B54543F5129B47A1002A28BE /* ModelMeshReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74D71356233E007AD718 /* ModelMeshPartReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B54543E7129B473A002A28BE /* ModelMeshPartReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74D81356233E007AD718 /* BasicEffectReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B54543DB129B4705002A28BE /* BasicEffectReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74D91356233E007AD718 /* IndexBufferReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B54543DF129B4716002A28BE /* IndexBufferReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74DA1356233E007AD718 /* VertexBufferReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B54543E3129B4727002A28BE /* VertexBufferReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74DB1356233E007AD718 /* ModelBoneReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B554F9B312A427DD00F20A0D /* ModelBoneReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74DC1356233E007AD718 /* VertexDeclarationReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B554FA0B12A4362B00F20A0D /* VertexDeclarationReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74DD1356233E007AD718 /* SoundEffectReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B50FE48612B885BC003D4F1A /* SoundEffectReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74DE1356233E007AD718 /* SongReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F87312E58AC300A7302B /* SongReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74DF1356233E007AD718 /* SpriteFontReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B5ED4CED12BF8D9100A58E29 /* SpriteFontReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74E013562414007AD718 /* Retronator.Xni.Framework.GamerServices.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B52B2B4712ADAEEC00E8A377 /* Retronator.Xni.Framework.GamerServices.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74E113562414007AD718 /* Retronator.Xni.Framework.GamerServices.h in Headers */ = {isa = PBXBuildFile; fileRef = B52B2B4912ADAEF800E8A377 /* Retronator.Xni.Framework.GamerServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74E213562414007AD718 /* GamerServicesEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F5039C131556AF007AB367 /* GamerServicesEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74E313562414007AD718 /* Guide.h in Headers */ = {isa = PBXBuildFile; fileRef = B52B2B4B12ADAF1000E8A377 /* Guide.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74E413562414007AD718 /* XniShowMessageBoxResult.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F503AD13156241007AB367 /* XniShowMessageBoxResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74E513562414007AD718 /* Gamer.h in Headers */ = {isa = PBXBuildFile; fileRef = B572BC03130EB27A00B6DB47 /* Gamer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74E613562414007AD718 /* SignedInGamer.h in Headers */ = {isa = PBXBuildFile; fileRef = B572BC0B130EB33700B6DB47 /* SignedInGamer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74E713562414007AD718 /* SignedInGamerCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B572BC07130EB32100B6DB47 /* SignedInGamerCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74E813562414007AD718 /* GamerProfile.h in Headers */ = {isa = PBXBuildFile; fileRef = B572BC11130EB43500B6DB47 /* GamerProfile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74E913562414007AD718 /* Achievement.h in Headers */ = {isa = PBXBuildFile; fileRef = B572BC42130EB70100B6DB47 /* Achievement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74EA13562414007AD718 /* AchievementCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B572BC3E130EB6D900B6DB47 /* AchievementCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74EB13562414007AD718 /* Retronator.Xni.Framework.Graphics.PackedVector.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD89F1236F1FF00F99511 /* Retronator.Xni.Framework.Graphics.PackedVector.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74EC13562414007AD718 /* Retronator.Xni.Framework.Graphics.PackedVector.h in Headers */ = {isa = PBXBuildFile; fileRef = B59AD8A11236F20B00F99511 /* Retronator.Xni.Framework.Graphics.PackedVector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74ED13562414007AD718 /* PackedVectorStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74EE13562414007AD718 /* Retronator.Xni.Framework.Graphics.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82E11FF1213000DB38B /* Retronator.Xni.Framework.Graphics.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74EF13562414007AD718 /* Retronator.Xni.Framework.Graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE83011FF1222000DB38B /* Retronator.Xni.Framework.Graphics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74F013562414007AD718 /* GraphicsEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C911FF2AD6000DB38B /* GraphicsEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74F113562414007AD718 /* GraphicsResource.h in Headers */ = {isa = PBXBuildFile; fileRef = B508070A122E4FBB00C330E2 /* GraphicsResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74F213562415007AD718 /* Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = B50806FD122E4ECF00C330E2 /* Texture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74F313562415007AD718 /* Texture2D.h in Headers */ = {isa = PBXBuildFile; fileRef = B5080701122E4EE900C330E2 /* Texture2D.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74F413562415007AD718 /* Effect.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B7812429BBD00DDD99A /* Effect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74F513562415007AD718 /* EffectTechnique.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA65D5124952C9001245A4 /* EffectTechnique.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74F613562415007AD718 /* EffectPass.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA65CD12495297001245A4 /* EffectPass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74F713562415007AD718 /* BasicEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA660012495618001245A4 /* BasicEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74F813562415007AD718 /* DirectionalLight.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA660B124956CE001245A4 /* DirectionalLight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74F913562415007AD718 /* VertexStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA634E12491709001245A4 /* VertexStructs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74FA13562415007AD718 /* VertexElement.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC2BA1248F2990066F5ED /* VertexElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74FB13562415007AD718 /* VertexPositionColor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA636D124917E2001245A4 /* VertexPositionColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74FC13562415007AD718 /* VertexPositionTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA65511249482D001245A4 /* VertexPositionTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74FD13562415007AD718 /* VertexPositionColorTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = B57E36BC124BE2DD00DDAA42 /* VertexPositionColorTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74FE13562415007AD718 /* VertexPositionNormalTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = B554FC9C12A45B3300F20A0D /* VertexPositionNormalTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E74FF13562415007AD718 /* VertexDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC2AC1248F0C40066F5ED /* VertexDeclaration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750013562415007AD718 /* VertexArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA638D1249229D001245A4 /* VertexArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750113562415007AD718 /* VertexPositionColorArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA655E1249495C001245A4 /* VertexPositionColorArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750213562415007AD718 /* VertexPositionTextureArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA657612494AC3001245A4 /* VertexPositionTextureArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750313562415007AD718 /* VertexPositionColorTextureArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B57E36CA124BE36E00DDAA42 /* VertexPositionColorTextureArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750413562415007AD718 /* VertexPositionNormalTextureArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B554FC9812A45A9D00F20A0D /* VertexPositionNormalTextureArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750513562415007AD718 /* IndexArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FB745512A4ED6E00DB9234 /* IndexArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750613562415007AD718 /* ShortIndexArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FB745912A4F01400DB9234 /* ShortIndexArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750713562415007AD718 /* VertexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC2D01248F98D0066F5ED /* VertexBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750813562415007AD718 /* VertexBufferBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC2EA1248FC7A0066F5ED /* VertexBufferBinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750913562415007AD718 /* IndexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC1CD1248D4CB0066F5ED /* IndexBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750A13562415007AD718 /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7EC85129AE3570015B663 /* Model.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750B13562415007AD718 /* ModelMeshCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5672C6A129AFDCE00DE5AAC /* ModelMeshCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750C13562415007AD718 /* ModelMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7EC89129AE3640015B663 /* ModelMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750D13562415007AD718 /* ModelEffectCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5672CC0129B02D100DE5AAC /* ModelEffectCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750E13562415007AD718 /* ModelMeshPartCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5672C78129AFE8500DE5AAC /* ModelMeshPartCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E750F13562415007AD718 /* ModelMeshPart.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E7EC8D129AE36E0015B663 /* ModelMeshPart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751013562415007AD718 /* ModelBone.h in Headers */ = {isa = PBXBuildFile; fileRef = B554F8CE12A3F3E400F20A0D /* ModelBone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751113562415007AD718 /* ModelBoneCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B554F8DD12A3F3FD00F20A0D /* ModelBoneCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751213562415007AD718 /* BlendState.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B6012429AEC00DDD99A /* BlendState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751313562415007AD718 /* DepthStencilState.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B6412429AF900DDD99A /* DepthStencilState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751413562416007AD718 /* RasterizerState.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B6812429B0E00DDD99A /* RasterizerState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751513562416007AD718 /* SamplerState.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B6C12429B1A00DDD99A /* SamplerState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751613562416007AD718 /* XniSamplerEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F415DC127781D80012BAF1 /* XniSamplerEventArgs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751713562416007AD718 /* SamplerStateCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC1DE1248D5640066F5ED /* SamplerStateCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751813562416007AD718 /* TextureCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BBC1EF1248D6090066F5ED /* TextureCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751913562416007AD718 /* Viewport.h in Headers */ = {isa = PBXBuildFile; fileRef = B57E3663124BC23E00DDAA42 /* Viewport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751A13562416007AD718 /* IGraphicsDeviceService.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82A11FF10EF000DB38B /* IGraphicsDeviceService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751B13562416007AD718 /* GraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE85A11FF1326000DB38B /* GraphicsDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751C13562416007AD718 /* ReachGraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C111FF29E8000DB38B /* ReachGraphicsDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751D13562416007AD718 /* HiDefGraphicsDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE8C511FF2A23000DB38B /* HiDefGraphicsDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751E13562416007AD718 /* SpriteBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E78B481242925600DDD99A /* SpriteBatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E751F13562416007AD718 /* SpriteFont.h in Headers */ = {isa = PBXBuildFile; fileRef = B5ED4C9B12BF82FE00A58E29 /* SpriteFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752013562416007AD718 /* Retronator.Xni.Framework.Input.Touch.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC59FB1252BE32001E7DFC /* Retronator.Xni.Framework.Input.Touch.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752113562416007AD718 /* Retronator.Xni.Framework.Input.Touch.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC59FD1252BE3B001E7DFC /* Retronator.Xni.Framework.Input.Touch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752213562416007AD718 /* InputEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A181252BF63001E7DFC /* InputEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752313562416007AD718 /* TouchPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC59F71252B917001E7DFC /* TouchPanel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752413562416007AD718 /* TouchCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A051252BE9E001E7DFC /* TouchCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752513562417007AD718 /* TouchLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A0E1252BEDF001E7DFC /* TouchLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752613562417007AD718 /* GestureSample.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A4D1252C2DF001E7DFC /* GestureSample.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752713562417007AD718 /* Retronator.Xni.Framework.Input.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EC5A921252C710001E7DFC /* Retronator.Xni.Framework.Input.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752813562417007AD718 /* Retronator.Xni.Framework.Media.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F84412E5753500A7302B /* Retronator.Xni.Framework.Media.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752913562417007AD718 /* Retronator.Xni.Framework.Media.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F84212E5752C00A7302B /* Retronator.Xni.Framework.Media.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752A13562417007AD718 /* MediaEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F8DB12E5925500A7302B /* MediaEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752B13562417007AD718 /* Song.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F84F12E5756400A7302B /* Song.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752C13562417007AD718 /* MediaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F83E12E5751700A7302B /* MediaPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752D13562417007AD718 /* MediaQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = B507F8BA12E58E7000A7302B /* MediaQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752E13562417007AD718 /* Retronator.Xni.Framework.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189F11F8888B00BF3275 /* Retronator.Xni.Framework.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E752F13562417007AD718 /* Retronator.Xni.Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18A011F8888B00BF3275 /* Retronator.Xni.Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753013562417007AD718 /* FrameworkEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B52BADAC1255426600B308F6 /* FrameworkEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753113562417007AD718 /* Protocols.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE89411FF16A3000DB38B /* Protocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753213562417007AD718 /* PointStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = B594878112AEF3DA00EE601F /* PointStruct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753313562417007AD718 /* XniPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = B594878312AEF44900EE601F /* XniPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753413562418007AD718 /* RectangleStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE190611F88B5D00BF3275 /* RectangleStruct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753513562418007AD718 /* Rectangle.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE190211F88AF500BF3275 /* Rectangle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753613562418007AD718 /* Color.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE90711FF352E000DB38B /* Color.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753713562418007AD718 /* GameHost.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18FA11F88AD900BF3275 /* GameHost.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753813562418007AD718 /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7E911FF04E3000DB38B /* Game.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753913562418007AD718 /* GameWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18FC11F88AD900BF3275 /* GameWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753A13562418007AD718 /* GameServiceContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7ED11FF06BB000DB38B /* GameServiceContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753B13562418007AD718 /* IGraphicsDeviceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82C11FF10FD000DB38B /* IGraphicsDeviceManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753C13562418007AD718 /* GraphicsDeviceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE98F11FF546B000DB38B /* GraphicsDeviceManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753D13562418007AD718 /* IGameComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80111FF0AE3000DB38B /* IGameComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753E13562418007AD718 /* IUpdatable.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80411FF0B2D000DB38B /* IUpdatable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E753F13562419007AD718 /* IDrawable.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80611FF0B3C000DB38B /* IDrawable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754013562419007AD718 /* GameComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B50769121264EE9500E4474F /* GameComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754113562419007AD718 /* DrawableGameComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B507691A1264EF0B00E4474F /* DrawableGameComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754213562419007AD718 /* GameComponentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE7FD11FF0A0F000DB38B /* GameComponentCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754313562419007AD718 /* GameComponentCollectionEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE80811FF0C24000DB38B /* GameComponentCollectionEventArgs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754413562419007AD718 /* GameTime.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDE82011FF0D4F000DB38B /* GameTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754513562419007AD718 /* Vector2Struct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853B71239335900E6FD71 /* Vector2Struct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754613562419007AD718 /* Vector2.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853B31239334300E6FD71 /* Vector2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754713562419007AD718 /* Vector3Struct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853BB1239336C00E6FD71 /* Vector3Struct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754813562419007AD718 /* Vector3.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853AF1239331C00E6FD71 /* Vector3.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E75491356241A007AD718 /* Vector4Struct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8539F12392E4500E6FD71 /* Vector4Struct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754A1356241A007AD718 /* Vector4.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F8539B12392E2000E6FD71 /* Vector4.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754B1356241A007AD718 /* Quaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853CB1239357400E6FD71 /* Quaternion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754C1356241A007AD718 /* MatrixStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853A3123931F100E6FD71 /* MatrixStruct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754D1356241A007AD718 /* Matrix.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F853A5123931F900E6FD71 /* Matrix.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754E1356241A007AD718 /* System.classes.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189E11F8886D00BF3275 /* System.classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E754F1356241A007AD718 /* System.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE18A311F888BC00BF3275 /* System.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E75501356241A007AD718 /* Delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189211F8884A00BF3275 /* Delegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E75511356241B007AD718 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189411F8884A00BF3275 /* Event.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E75521356241B007AD718 /* EventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DE189611F8884A00BF3275 /* EventArgs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E75531356241B007AD718 /* IServiceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B56CC559123A846C00B72347 /* IServiceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E75541356241B007AD718 /* XniAdaptiveArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA637C124921D0001245A4 /* XniAdaptiveArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E75551356241B007AD718 /* Collection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FE132E129FEC9A0081F7A7 /* Collection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E75561356241B007AD718 /* ReadOnlyCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B554F8F112A3F6AB00F20A0D /* ReadOnlyCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E75571356241B007AD718 /* IAsyncResult.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F503AB13155D55007AB367 /* IAsyncResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B54F9BC212A2CA1B00F7411F /* XImporterReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B54F9BC012A2CA1B00F7411F /* XImporterReader.m */; };
 		B554F7BA12A3B19100F20A0D /* TextureReferenceDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = B554F7B812A3B19100F20A0D /* TextureReferenceDictionary.m */; };
 		B554F7C212A3B48600F20A0D /* ExternalReference.m in Sources */ = {isa = PBXBuildFile; fileRef = B554F7C012A3B48600F20A0D /* ExternalReference.m */; };
@@ -1197,6 +1412,221 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54E74811356233D007AD718 /* Retronator.Devices.Sensors.classes.h in Headers */,
+				B54E74821356233D007AD718 /* Retronator.Devices.Sensors.h in Headers */,
+				B54E74831356233D007AD718 /* SensorsEnums.h in Headers */,
+				B54E74841356233D007AD718 /* Accelerometer.h in Headers */,
+				B54E74851356233D007AD718 /* AccelerometerReadingEventArgs.h in Headers */,
+				B54E74861356233D007AD718 /* Retronator.Xni.Framework.Audio.classes.h in Headers */,
+				B54E74871356233D007AD718 /* Retronator.Xni.Framework.Audio.h in Headers */,
+				B54E74881356233D007AD718 /* AudioEnums.h in Headers */,
+				B54E74891356233D007AD718 /* SoundEffect.h in Headers */,
+				B54E748A1356233D007AD718 /* SoundEffectInstance.h in Headers */,
+				B54E748B1356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.Audio.classes.h in Headers */,
+				B54E748C1356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.Audio.h in Headers */,
+				B54E748D1356233D007AD718 /* AudioContentEnums.h in Headers */,
+				B54E748E1356233D007AD718 /* AudioContent.h in Headers */,
+				B54E748F1356233D007AD718 /* AudioFormat.h in Headers */,
+				B54E74901356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.classes.h in Headers */,
+				B54E74911356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.h in Headers */,
+				B54E74921356233D007AD718 /* BitmapContent.h in Headers */,
+				B54E74931356233D007AD718 /* PixelBitmapContent.h in Headers */,
+				B54E74941356233D007AD718 /* ColorPixelBitmapContent.h in Headers */,
+				B54E74951356233D007AD718 /* MipmapChain.h in Headers */,
+				B54E74961356233D007AD718 /* MipmapChainCollection.h in Headers */,
+				B54E74971356233D007AD718 /* TextureContent.h in Headers */,
+				B54E74981356233D007AD718 /* Texture2DContent.h in Headers */,
+				B54E74991356233D007AD718 /* VectorConverter.h in Headers */,
+				B54E749A1356233D007AD718 /* NodeContent.h in Headers */,
+				B54E749B1356233D007AD718 /* NodeContentCollection.h in Headers */,
+				B54E749C1356233D007AD718 /* MeshContent.h in Headers */,
+				B54E749D1356233D007AD718 /* GeometryContentCollection.h in Headers */,
+				B54E749E1356233D007AD718 /* PositionCollection.h in Headers */,
+				B54E749F1356233D007AD718 /* GeometryContent.h in Headers */,
+				B54E74A01356233D007AD718 /* VertexContent.h in Headers */,
+				B54E74A11356233D007AD718 /* VertexChannelCollection.h in Headers */,
+				B54E74A21356233D007AD718 /* VertexChannel.h in Headers */,
+				B54E74A31356233D007AD718 /* IndirectPositionCollection.h in Headers */,
+				B54E74A41356233D007AD718 /* VertexChannelNames.h in Headers */,
+				B54E74A51356233D007AD718 /* IndexCollection.h in Headers */,
+				B54E74A61356233D007AD718 /* MaterialContent.h in Headers */,
+				B54E74A71356233D007AD718 /* BasicMaterialContent.h in Headers */,
+				B54E74A81356233D007AD718 /* TextureReferenceDictionary.h in Headers */,
+				B54E74A91356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.Processors.classes.h in Headers */,
+				B54E74AA1356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.Processors.h in Headers */,
+				B54E74AB1356233D007AD718 /* TextureProcessor.h in Headers */,
+				B54E74AC1356233D007AD718 /* FontTextureProcessor.h in Headers */,
+				B54E74AD1356233D007AD718 /* ModelProcessor.h in Headers */,
+				B54E74AE1356233D007AD718 /* MaterialProcessor.h in Headers */,
+				B54E74AF1356233D007AD718 /* SoundEffectProcessor.h in Headers */,
+				B54E74B01356233D007AD718 /* SongProcessor.h in Headers */,
+				B54E74B11356233D007AD718 /* ModelContent.h in Headers */,
+				B54E74B21356233D007AD718 /* ModelMeshContentCollection.h in Headers */,
+				B54E74B31356233D007AD718 /* ModelMeshContent.h in Headers */,
+				B54E74B41356233D007AD718 /* ModelMeshPartContentCollection.h in Headers */,
+				B54E74B51356233D007AD718 /* ModelMeshPartContent.h in Headers */,
+				B54E74B61356233D007AD718 /* VertexBufferContent.h in Headers */,
+				B54E74B71356233D007AD718 /* VertexDeclarationContent.h in Headers */,
+				B54E74B81356233D007AD718 /* ModelBoneContent.h in Headers */,
+				B54E74B91356233D007AD718 /* ModelBoneContentCollection.h in Headers */,
+				B54E74BA1356233D007AD718 /* SoundEffectContent.h in Headers */,
+				B54E74BB1356233D007AD718 /* SongContent.h in Headers */,
+				B54E74BC1356233D007AD718 /* SpriteFontContent.h in Headers */,
+				B54E74BD1356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.classes.h in Headers */,
+				B54E74BE1356233D007AD718 /* Retronator.Xni.Framework.Content.Pipeline.h in Headers */,
+				B54E74BF1356233D007AD718 /* ChildCollection.h in Headers */,
+				B54E74C01356233E007AD718 /* OpaqueDataDictionary.h in Headers */,
+				B54E74C11356233E007AD718 /* NamedValueDictionary.h in Headers */,
+				B54E74C21356233E007AD718 /* ExternalReference.h in Headers */,
+				B54E74C31356233E007AD718 /* ContentIdentity.h in Headers */,
+				B54E74C41356233E007AD718 /* ContentItem.h in Headers */,
+				B54E74C51356233E007AD718 /* IContentProcessor.h in Headers */,
+				B54E74C61356233E007AD718 /* ContentProcessor.h in Headers */,
+				B54E74C71356233E007AD718 /* IContentImporter.h in Headers */,
+				B54E74C81356233E007AD718 /* ContentImporter.h in Headers */,
+				B54E74C91356233E007AD718 /* TextureImporter.h in Headers */,
+				B54E74CA1356233E007AD718 /* XImporter.h in Headers */,
+				B54E74CB1356233E007AD718 /* XImporterReader.h in Headers */,
+				B54E74CC1356233E007AD718 /* WavImporter.h in Headers */,
+				B54E74CD1356233E007AD718 /* Mp3Importer.h in Headers */,
+				B54E74CE1356233E007AD718 /* Retronator.Xni.Framework.Content.classes.h in Headers */,
+				B54E74CF1356233E007AD718 /* Retronator.Xni.Framework.Content.h in Headers */,
+				B54E74D01356233E007AD718 /* ContentManager.h in Headers */,
+				B54E74D11356233E007AD718 /* ContentReader.h in Headers */,
+				B54E74D21356233E007AD718 /* ContentTypeReaderManager.h in Headers */,
+				B54E74D31356233E007AD718 /* ContentTypeReader.h in Headers */,
+				B54E74D41356233E007AD718 /* Texture2DReader.h in Headers */,
+				B54E74D51356233E007AD718 /* ModelReader.h in Headers */,
+				B54E74D61356233E007AD718 /* ModelMeshReader.h in Headers */,
+				B54E74D71356233E007AD718 /* ModelMeshPartReader.h in Headers */,
+				B54E74D81356233E007AD718 /* BasicEffectReader.h in Headers */,
+				B54E74D91356233E007AD718 /* IndexBufferReader.h in Headers */,
+				B54E74DA1356233E007AD718 /* VertexBufferReader.h in Headers */,
+				B54E74DB1356233E007AD718 /* ModelBoneReader.h in Headers */,
+				B54E74DC1356233E007AD718 /* VertexDeclarationReader.h in Headers */,
+				B54E74DD1356233E007AD718 /* SoundEffectReader.h in Headers */,
+				B54E74DE1356233E007AD718 /* SongReader.h in Headers */,
+				B54E74DF1356233E007AD718 /* SpriteFontReader.h in Headers */,
+				B54E74E013562414007AD718 /* Retronator.Xni.Framework.GamerServices.classes.h in Headers */,
+				B54E74E113562414007AD718 /* Retronator.Xni.Framework.GamerServices.h in Headers */,
+				B54E74E213562414007AD718 /* GamerServicesEnums.h in Headers */,
+				B54E74E313562414007AD718 /* Guide.h in Headers */,
+				B54E74E413562414007AD718 /* XniShowMessageBoxResult.h in Headers */,
+				B54E74E513562414007AD718 /* Gamer.h in Headers */,
+				B54E74E613562414007AD718 /* SignedInGamer.h in Headers */,
+				B54E74E713562414007AD718 /* SignedInGamerCollection.h in Headers */,
+				B54E74E813562414007AD718 /* GamerProfile.h in Headers */,
+				B54E74E913562414007AD718 /* Achievement.h in Headers */,
+				B54E74EA13562414007AD718 /* AchievementCollection.h in Headers */,
+				B54E74EB13562414007AD718 /* Retronator.Xni.Framework.Graphics.PackedVector.classes.h in Headers */,
+				B54E74EC13562414007AD718 /* Retronator.Xni.Framework.Graphics.PackedVector.h in Headers */,
+				B54E74ED13562414007AD718 /* PackedVectorStructs.h in Headers */,
+				B54E74EE13562414007AD718 /* Retronator.Xni.Framework.Graphics.classes.h in Headers */,
+				B54E74EF13562414007AD718 /* Retronator.Xni.Framework.Graphics.h in Headers */,
+				B54E74F013562414007AD718 /* GraphicsEnums.h in Headers */,
+				B54E74F113562414007AD718 /* GraphicsResource.h in Headers */,
+				B54E74F213562415007AD718 /* Texture.h in Headers */,
+				B54E74F313562415007AD718 /* Texture2D.h in Headers */,
+				B54E74F413562415007AD718 /* Effect.h in Headers */,
+				B54E74F513562415007AD718 /* EffectTechnique.h in Headers */,
+				B54E74F613562415007AD718 /* EffectPass.h in Headers */,
+				B54E74F713562415007AD718 /* BasicEffect.h in Headers */,
+				B54E74F813562415007AD718 /* DirectionalLight.h in Headers */,
+				B54E74F913562415007AD718 /* VertexStructs.h in Headers */,
+				B54E74FA13562415007AD718 /* VertexElement.h in Headers */,
+				B54E74FB13562415007AD718 /* VertexPositionColor.h in Headers */,
+				B54E74FC13562415007AD718 /* VertexPositionTexture.h in Headers */,
+				B54E74FD13562415007AD718 /* VertexPositionColorTexture.h in Headers */,
+				B54E74FE13562415007AD718 /* VertexPositionNormalTexture.h in Headers */,
+				B54E74FF13562415007AD718 /* VertexDeclaration.h in Headers */,
+				B54E750013562415007AD718 /* VertexArray.h in Headers */,
+				B54E750113562415007AD718 /* VertexPositionColorArray.h in Headers */,
+				B54E750213562415007AD718 /* VertexPositionTextureArray.h in Headers */,
+				B54E750313562415007AD718 /* VertexPositionColorTextureArray.h in Headers */,
+				B54E750413562415007AD718 /* VertexPositionNormalTextureArray.h in Headers */,
+				B54E750513562415007AD718 /* IndexArray.h in Headers */,
+				B54E750613562415007AD718 /* ShortIndexArray.h in Headers */,
+				B54E750713562415007AD718 /* VertexBuffer.h in Headers */,
+				B54E750813562415007AD718 /* VertexBufferBinding.h in Headers */,
+				B54E750913562415007AD718 /* IndexBuffer.h in Headers */,
+				B54E750A13562415007AD718 /* Model.h in Headers */,
+				B54E750B13562415007AD718 /* ModelMeshCollection.h in Headers */,
+				B54E750C13562415007AD718 /* ModelMesh.h in Headers */,
+				B54E750D13562415007AD718 /* ModelEffectCollection.h in Headers */,
+				B54E750E13562415007AD718 /* ModelMeshPartCollection.h in Headers */,
+				B54E750F13562415007AD718 /* ModelMeshPart.h in Headers */,
+				B54E751013562415007AD718 /* ModelBone.h in Headers */,
+				B54E751113562415007AD718 /* ModelBoneCollection.h in Headers */,
+				B54E751213562415007AD718 /* BlendState.h in Headers */,
+				B54E751313562415007AD718 /* DepthStencilState.h in Headers */,
+				B54E751413562416007AD718 /* RasterizerState.h in Headers */,
+				B54E751513562416007AD718 /* SamplerState.h in Headers */,
+				B54E751613562416007AD718 /* XniSamplerEventArgs.h in Headers */,
+				B54E751713562416007AD718 /* SamplerStateCollection.h in Headers */,
+				B54E751813562416007AD718 /* TextureCollection.h in Headers */,
+				B54E751913562416007AD718 /* Viewport.h in Headers */,
+				B54E751A13562416007AD718 /* IGraphicsDeviceService.h in Headers */,
+				B54E751B13562416007AD718 /* GraphicsDevice.h in Headers */,
+				B54E751C13562416007AD718 /* ReachGraphicsDevice.h in Headers */,
+				B54E751D13562416007AD718 /* HiDefGraphicsDevice.h in Headers */,
+				B54E751E13562416007AD718 /* SpriteBatch.h in Headers */,
+				B54E751F13562416007AD718 /* SpriteFont.h in Headers */,
+				B54E752013562416007AD718 /* Retronator.Xni.Framework.Input.Touch.classes.h in Headers */,
+				B54E752113562416007AD718 /* Retronator.Xni.Framework.Input.Touch.h in Headers */,
+				B54E752213562416007AD718 /* InputEnums.h in Headers */,
+				B54E752313562416007AD718 /* TouchPanel.h in Headers */,
+				B54E752413562416007AD718 /* TouchCollection.h in Headers */,
+				B54E752513562417007AD718 /* TouchLocation.h in Headers */,
+				B54E752613562417007AD718 /* GestureSample.h in Headers */,
+				B54E752713562417007AD718 /* Retronator.Xni.Framework.Input.h in Headers */,
+				B54E752813562417007AD718 /* Retronator.Xni.Framework.Media.classes.h in Headers */,
+				B54E752913562417007AD718 /* Retronator.Xni.Framework.Media.h in Headers */,
+				B54E752A13562417007AD718 /* MediaEnums.h in Headers */,
+				B54E752B13562417007AD718 /* Song.h in Headers */,
+				B54E752C13562417007AD718 /* MediaPlayer.h in Headers */,
+				B54E752D13562417007AD718 /* MediaQueue.h in Headers */,
+				B54E752E13562417007AD718 /* Retronator.Xni.Framework.classes.h in Headers */,
+				B54E752F13562417007AD718 /* Retronator.Xni.Framework.h in Headers */,
+				B54E753013562417007AD718 /* FrameworkEnums.h in Headers */,
+				B54E753113562417007AD718 /* Protocols.h in Headers */,
+				B54E753213562417007AD718 /* PointStruct.h in Headers */,
+				B54E753313562417007AD718 /* XniPoint.h in Headers */,
+				B54E753413562418007AD718 /* RectangleStruct.h in Headers */,
+				B54E753513562418007AD718 /* Rectangle.h in Headers */,
+				B54E753613562418007AD718 /* Color.h in Headers */,
+				B54E753713562418007AD718 /* GameHost.h in Headers */,
+				B54E753813562418007AD718 /* Game.h in Headers */,
+				B54E753913562418007AD718 /* GameWindow.h in Headers */,
+				B54E753A13562418007AD718 /* GameServiceContainer.h in Headers */,
+				B54E753B13562418007AD718 /* IGraphicsDeviceManager.h in Headers */,
+				B54E753C13562418007AD718 /* GraphicsDeviceManager.h in Headers */,
+				B54E753D13562418007AD718 /* IGameComponent.h in Headers */,
+				B54E753E13562418007AD718 /* IUpdatable.h in Headers */,
+				B54E753F13562419007AD718 /* IDrawable.h in Headers */,
+				B54E754013562419007AD718 /* GameComponent.h in Headers */,
+				B54E754113562419007AD718 /* DrawableGameComponent.h in Headers */,
+				B54E754213562419007AD718 /* GameComponentCollection.h in Headers */,
+				B54E754313562419007AD718 /* GameComponentCollectionEventArgs.h in Headers */,
+				B54E754413562419007AD718 /* GameTime.h in Headers */,
+				B54E754513562419007AD718 /* Vector2Struct.h in Headers */,
+				B54E754613562419007AD718 /* Vector2.h in Headers */,
+				B54E754713562419007AD718 /* Vector3Struct.h in Headers */,
+				B54E754813562419007AD718 /* Vector3.h in Headers */,
+				B54E75491356241A007AD718 /* Vector4Struct.h in Headers */,
+				B54E754A1356241A007AD718 /* Vector4.h in Headers */,
+				B54E754B1356241A007AD718 /* Quaternion.h in Headers */,
+				B54E754C1356241A007AD718 /* MatrixStruct.h in Headers */,
+				B54E754D1356241A007AD718 /* Matrix.h in Headers */,
+				B54E754E1356241A007AD718 /* System.classes.h in Headers */,
+				B54E754F1356241A007AD718 /* System.h in Headers */,
+				B54E75501356241A007AD718 /* Delegate.h in Headers */,
+				B54E75511356241B007AD718 /* Event.h in Headers */,
+				B54E75521356241B007AD718 /* EventArgs.h in Headers */,
+				B54E75531356241B007AD718 /* IServiceProvider.h in Headers */,
+				B54E75541356241B007AD718 /* XniAdaptiveArray.h in Headers */,
+				B54E75551356241B007AD718 /* Collection.h in Headers */,
+				B54E75561356241B007AD718 /* ReadOnlyCollection.h in Headers */,
+				B54E75571356241B007AD718 /* IAsyncResult.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1432,8 +1862,10 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XNI_Prefix.pch;
-				INSTALL_PATH = /usr/local/lib;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				PRODUCT_NAME = XNI;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -1446,8 +1878,9 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XNI_Prefix.pch;
-				INSTALL_PATH = /usr/local/lib;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				PRODUCT_NAME = XNI;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1461,9 +1894,11 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
