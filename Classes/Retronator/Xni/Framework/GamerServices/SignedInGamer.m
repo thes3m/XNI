@@ -11,4 +11,9 @@
 
 @implementation SignedInGamer
 
+- (AchievementCollection *)getAchievements {
+    [NSException raise:@"NotImplementedException" format:@"This method is not yet implemented."];
+    return nil;
+}
+
 @end
