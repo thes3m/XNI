@@ -44,7 +44,8 @@ static NSArray *drawOrderSort;
 
 - (id) init
 {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         // Allocation and early initialization that doesn't depend on the graphics device.
         gameTime = [[GameTime alloc] init];
 		
@@ -194,7 +195,7 @@ static NSArray *drawOrderSort;
 
 - (void) applicationDidFinishLaunching:(UIApplication *)application {    
     NSLog(@"Application has started.");
-    [self run];
+    [self performSelector:@selector(run) withObject:nil afterDelay:0];
 }
 
 - (void) applicationWillResignActive:(UIApplication *)application

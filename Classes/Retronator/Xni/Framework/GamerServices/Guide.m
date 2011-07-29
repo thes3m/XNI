@@ -94,7 +94,7 @@ static Guide *instance = nil;
 	XniShowMessageBoxResult *result = [[[XniShowMessageBoxResult alloc] initWithAsyncState:state callback:callback] autorelease];
 	[messageBoxResults addObject:result];
 	
-	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:text delegate:result cancelButtonTitle:nil otherButtonTitles:nil];
+	UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:title message:text delegate:result cancelButtonTitle:nil otherButtonTitles:nil] autorelease];
 	
 	for (NSString *button in buttons) {
 		[alertView addButtonWithTitle:button];

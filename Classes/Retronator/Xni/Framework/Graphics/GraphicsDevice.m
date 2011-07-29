@@ -30,7 +30,8 @@
 
 - (id) initWithGame:(Game*)theGame
 {
-	if (self = [super init])
+    self = [super init];
+	if (self)
 	{
         game = theGame;
         multisampling = NO;

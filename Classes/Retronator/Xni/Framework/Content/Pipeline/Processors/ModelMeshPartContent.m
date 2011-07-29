@@ -29,7 +29,7 @@
 		numVertices = theNumVertices;
 		startIndex = theStartIndex;
 		primitiveCount = thePrimitiveCount;
-		tag = [tag retain];
+		tag = [theTag retain];
 		indexBuffer = [theIndexBuffer retain];
 		vertexBuffer = [theVertexBuffer retain];
 		material = [theMaterial retain];

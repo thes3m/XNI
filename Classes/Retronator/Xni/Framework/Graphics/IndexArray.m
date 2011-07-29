@@ -13,7 +13,8 @@
 @implementation IndexArray
 
 - (id) initWithItemSize:(int)itemSize initialCapacity:(int)initialCapacity {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         array = [[XniAdaptiveArray alloc] initWithItemSize:itemSize initialCapacity:initialCapacity];
     }
     return self;

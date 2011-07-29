@@ -14,7 +14,8 @@
 
 
 - (id) initWithInitialCapacity:(int)initialCapacity {
-	if (self = [super initWithItemSize:sizeof(short) initialCapacity:initialCapacity]) {
+	self = [super initWithItemSize:sizeof(short) initialCapacity:initialCapacity];
+    if (self) {
 	}
 	return self;
 }

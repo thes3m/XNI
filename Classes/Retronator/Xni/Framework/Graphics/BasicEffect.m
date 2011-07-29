@@ -22,7 +22,8 @@
 @implementation BasicEffect
 
 -(id) initWithGraphicsDevice:(GraphicsDevice *)theGraphicsDevice {
-    if (self = [super initWithGraphicsDevice:theGraphicsDevice]) {
+    self = [super initWithGraphicsDevice:theGraphicsDevice];
+    if (self) {
         // Create the main pass.
         BasicEffectPass *mainPass = [[[BasicEffectPass alloc] initWithBasicEffect:self graphicsDevice:graphicsDevice] autorelease];
         NSArray *passes = [NSArray arrayWithObject:mainPass];
@@ -120,7 +121,8 @@
 @implementation BasicEffectPass
 
 - (id) initWithBasicEffect:(BasicEffect *)theBasicEffect graphicsDevice:(GraphicsDevice*)theGraphicsDevice {
-    if (self = [super initWithName:@"BasicEffectPass" graphicsDevice:theGraphicsDevice]) {
+    self = [super initWithName:@"BasicEffectPass" graphicsDevice:theGraphicsDevice];
+    if (self) {
         basicEffect = theBasicEffect;
     }
     return self;

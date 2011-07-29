@@ -15,7 +15,8 @@
 @implementation GameHost
 
 - (id) init {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
 		[MediaPlayer load];
         window = [[GameWindow alloc] init]; 		
     }
