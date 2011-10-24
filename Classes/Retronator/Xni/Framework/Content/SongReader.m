@@ -20,8 +20,8 @@
 
 - (id) readFromInput:(ContentReader *)input into:(id)existingInstance {
 	SongContent *content = input.content;
-	
-	Song *song = [[[Song alloc] initWithUrl:content.url] autorelease];
+		
+    Song *song = [[[Song alloc] initWithUrl:content.url] autorelease];
 	
 	return song;
 }

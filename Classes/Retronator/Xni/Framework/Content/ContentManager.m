@@ -92,9 +92,6 @@
 	NSString *extension = [filePath pathExtension];
 	NSString *absolutePath = [[NSBundle mainBundle] pathForResource:fileName ofType:extension inDirectory:rootDirectory];
 	
-	// Bug in NSBundle - we are returned an object that doesn't have an object count 0, so we release it ourselves to avoid a leak.
-	[absolutePath autorelease];
-	
 	if (!absolutePath) {
 		[NSException raise:@"InvalidArgumentException" format:@"Could not locate file '%@' in directory '%@'", filePath, rootDirectory];
 	}
@@ -131,12 +128,12 @@
 			processor = [[[SoundEffectProcessor alloc] init] autorelease];
 		}
 	} else if ([extension isEqualToString:@"mp3"]) {
-		// Mp3 audio content
+ 		// Mp3 audio content
 		if (!importer) {
-			importer = [[[Mp3Importer alloc] init] autorelease];
+ 			importer = [[[Mp3Importer alloc] init] autorelease];
 		}
 		if (!processor) {
-			processor = [[[SongProcessor alloc] init] autorelease];
+ 			processor = [[[SongProcessor alloc] init] autorelease];
 		}
 	}	
 	
@@ -147,12 +144,12 @@
 	
 	// Import content.
 	id content = [importer importFile:absolutePath];
-	
+
 	// Process content if we have a processor.
 	if (processor) {
 		content = [processor process:content];
 	}
-	
+
 	// Create a reader for converting into realtime data.
 	input = [[ContentReader alloc] initWithContentManager:self Content:content];	
 	
@@ -172,7 +169,7 @@
 	[loadedFiles setObject:result forKey:filePath];
 	
 	[input release];
-	
+
 	[pool release];
 	
 	return [result autorelease];

@@ -106,7 +106,7 @@ typedef enum {
 
 typedef enum {
 	IndexElementSizeSixteenBits = 2,
-	//IndexElementSizeThrityTwoBits = 4,
+	//IndexElementSizeThirtyTwoBits = 4,
 } IndexElementSize;
 
 typedef enum {

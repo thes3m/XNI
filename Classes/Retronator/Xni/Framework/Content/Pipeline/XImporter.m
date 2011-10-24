@@ -259,6 +259,11 @@
 		/*int materialIndex =*/ [reader readInt];
 		[reader skipNextNonWhitespace];
 	}
+    
+    // Handle an extra semicolon
+    if ([reader currentCharacter] == ';') {
+        [reader skipNextNonWhitespace];
+    }
 	
 	for (int i = 0; i < materialCount; i++) {
 		MaterialContent *material = [self readTemplateWithReader:reader];	

@@ -36,10 +36,10 @@
 @synthesize graphicsProfile;
 @synthesize isFullScreen;
 @synthesize preferMultiSampling;
-@synthesize preferedSurfaceFormat;
-@synthesize preferedBackBufferWidth;
-@synthesize preferedBackBufferHeight;
-@synthesize preferedDepthStencilFormat;
+@synthesize preferredSurfaceFormat;
+@synthesize preferredBackBufferWidth;
+@synthesize preferredBackBufferHeight;
+@synthesize preferredDepthStencilFormat;
 @synthesize supportedOrientations;
 
 @synthesize graphicsDevice;
@@ -72,7 +72,7 @@
 - (void) applyChanges {
 	[game.window setSupportedOrientations:supportedOrientations];
     [game.window beginScreenDeviceChangeWithFullscreen:isFullScreen];
-	[game.window endScreenDeviceChangeWithClientWidth:self.preferedBackBufferWidth clientHeight:self.preferedBackBufferHeight];
+	[game.window endScreenDeviceChangeWithClientWidth:self.preferredBackBufferWidth clientHeight:self.preferredBackBufferHeight];
 	
 	if (graphicsDevice != nil && graphicsDevice.graphicsProfile != graphicsProfile) {
 		// Different graphics profile requested.

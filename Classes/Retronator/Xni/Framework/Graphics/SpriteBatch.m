@@ -354,6 +354,8 @@ static VertexPositionColorTextureStruct vertices[4];
 		case SpriteSortModeFrontToBack:
 			[sprites sortUsingDescriptors:frontToBackSort];
 			break;
+        default:
+            break;
 	}
 	
 	// Apply the graphics device states.

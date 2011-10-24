@@ -905,7 +905,7 @@
 		B56CC5C6123A928A00B72347 /* ContentTypeReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTypeReaderManager.m; sourceTree = "<group>"; };
 		B56CC5C9123A92BB00B72347 /* Texture2DReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2DReader.h; sourceTree = "<group>"; };
 		B56CC5CA123A92BB00B72347 /* Texture2DReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2DReader.m; sourceTree = "<group>"; };
-		B570A31E13E1DC3B0085E85E /* libXNI copy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libXNI copy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B570A31E13E1DC3B0085E85E /* libXNI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXNI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B572BC03130EB27A00B6DB47 /* Gamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gamer.h; sourceTree = "<group>"; };
 		B572BC04130EB27A00B6DB47 /* Gamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gamer.m; sourceTree = "<group>"; };
 		B572BC07130EB32100B6DB47 /* SignedInGamerCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignedInGamerCollection.h; sourceTree = "<group>"; };
@@ -1200,7 +1200,7 @@
 			isa = PBXGroup;
 			children = (
 				D2AAC07E0554694100DB518D /* libXNI.a */,
-				B570A31E13E1DC3B0085E85E /* libXNI copy.a */,
+				B570A31E13E1DC3B0085E85E /* libXNI.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2256,7 +2256,7 @@
 			);
 			name = "XNI Release";
 			productName = XNI;
-			productReference = B570A31E13E1DC3B0085E85E /* libXNI copy.a */;
+			productReference = B570A31E13E1DC3B0085E85E /* libXNI.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		D2AAC07D0554694100DB518D /* XNI */ = {
@@ -2282,7 +2282,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = Retronator;
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "XNI" */;
@@ -2672,7 +2672,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XNI_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				PRODUCT_NAME = XNI;
 				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include;
@@ -2689,7 +2689,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XNI_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				PRODUCT_NAME = XNI;
 				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include;
@@ -2739,7 +2739,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XNI_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				PRODUCT_NAME = XNI;
 				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include;
@@ -2756,7 +2756,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XNI_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				PRODUCT_NAME = XNI;
 				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include;

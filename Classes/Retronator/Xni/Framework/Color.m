@@ -66,16 +66,16 @@
 // PROPERTIES
 
 - (Byte) r {return (Byte)packedValue;}
-- (void) setR:(Byte)value {packedValue = packedValue & 0xffffff00 | value;}
+- (void) setR:(Byte)value {packedValue = (packedValue & 0xffffff00) | value;}
 
 - (Byte) g {return (Byte)(packedValue >> 8);}
-- (void) setG:(Byte)value {packedValue = packedValue & 0xffff00ff | ((uint)value << 8);}
+- (void) setG:(Byte)value {packedValue = (packedValue & 0xffff00ff) | ((uint)value << 8);}
 
 - (Byte) b {return (Byte)(packedValue >> 16);}
-- (void) setB:(Byte)value {packedValue = packedValue & 0xff00ffff | ((uint)value << 16);}
+- (void) setB:(Byte)value {packedValue = (packedValue & 0xff00ffff) | ((uint)value << 16);}
 
 - (Byte) a {return (Byte)(packedValue >> 24);}
-- (void) setA:(Byte)value {packedValue = packedValue & 0x00ffffff | ((uint)value << 24);}
+- (void) setA:(Byte)value {packedValue = (packedValue & 0x00ffffff) | ((uint)value << 24);}
 
 @synthesize packedValue;
 

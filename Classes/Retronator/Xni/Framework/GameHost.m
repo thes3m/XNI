@@ -30,8 +30,7 @@
     NSLog(@"Starting the game loop.");
     
     game = [self delegate];
-    
-	
+    	
     SInt32 runResult;
     
 	isExiting = NO;

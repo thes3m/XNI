@@ -18,10 +18,10 @@
 	GraphicsProfile graphicsProfile;
     BOOL isFullScreen;
 	BOOL preferMultiSampling;
-	SurfaceFormat preferedSurfaceFormat;
-	int preferedBackBufferWidth;
-	int preferedBackBufferHeight;
-	DepthFormat preferedDepthStencilFormat;
+	SurfaceFormat preferredSurfaceFormat;
+	int preferredBackBufferWidth;
+	int preferredBackBufferHeight;
+	DepthFormat preferredDepthStencilFormat;
 	DisplayOrientation supportedOrientations;
     
     Game *game;
@@ -37,10 +37,10 @@
 @property (nonatomic) GraphicsProfile graphicsProfile;
 @property (nonatomic) BOOL isFullScreen;
 @property (nonatomic) BOOL preferMultiSampling;
-@property (nonatomic) SurfaceFormat preferedSurfaceFormat;
-@property (nonatomic) int preferedBackBufferWidth;
-@property (nonatomic) int preferedBackBufferHeight;
-@property (nonatomic) DepthFormat preferedDepthStencilFormat;
+@property (nonatomic) SurfaceFormat preferredSurfaceFormat;
+@property (nonatomic) int preferredBackBufferWidth;
+@property (nonatomic) int preferredBackBufferHeight;
+@property (nonatomic) DepthFormat preferredDepthStencilFormat;
 @property (nonatomic) DisplayOrientation supportedOrientations;
 
 - (void) toggleFullscreen;

@@ -57,7 +57,7 @@ static NSArray *drawOrderSort;
 		// First it is used for constructing a list of components, that need to be initialized.
 		// In run it is used to make a copy of enabled/visible components for enumerating over them.
 		componentsList = [[NSMutableArray alloc] init];
-		
+        
 		initializedComponents = [[NSMutableSet alloc] init];
 		
         [components.componentAdded subscribeDelegate:

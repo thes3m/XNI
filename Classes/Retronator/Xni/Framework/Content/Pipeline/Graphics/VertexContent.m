@@ -20,7 +20,9 @@
 	self = [super init];
 	if (self != nil) {
 		channels = [[VertexChannelCollection alloc] initWithParent:self];
-		positionIndices = [[IndexCollection alloc] init];
+		positionIndices = [[VertexChannel alloc] initWithElementType:[NSNumber class] 
+                                                                name:[VertexChannelNames encodeUsage:VertexElementUsagePosition usageIndex:0] 
+                                                         channelData:nil];
 		positions = [[IndirectPositionCollection alloc] initWithPositionIndices:positionIndices positions:thePositions];
 	}
 	return self;

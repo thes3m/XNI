@@ -123,7 +123,7 @@ static inline BOOL IsOnBlack(Byte *color) {
 		for (int y = 0; y < bitmap.height; y++) {
 			Byte *color = [bitmap getPixelAtX:x Y:y];
 						
-			if (!IsOnCharacter(color) || !usesAlpha && IsOnBlack(color)) {
+			if (!IsOnCharacter(color) || (!usesAlpha && IsOnBlack(color))) {
 				// If the sprite font does not use an alpha channel we should key the black color.
 				// Always also key the separator color.
 				for (int i = 0; i < 4; i++) {
