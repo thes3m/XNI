@@ -86,10 +86,12 @@
 		self.blendFactor = [Color white];
 		self.blendState = [BlendState opaque];
 		self.depthStencilState = [DepthStencilState defaultDepth];
+        glDepthRangef(0, 1);
 		graphicsDeviceStatus = GraphicsDeviceStatusNormal;
 		self.indices = nil;
 		self.rasterizerState = [RasterizerState cullCounterClockwise];
 		self.referenceStencil = 0;
+        activeTextureIndex = -1;
 		[samplerStates setItem:[SamplerState linearClamp] atIndex:0];
 		
 		// Create events.
@@ -108,30 +110,54 @@
 @synthesize blendState;
 - (void) setBlendState:(BlendState*)value {
 	if (value != blendState) {
-		[value retain];
-		[blendState release];
-		blendState = value;
+        BlendState *old = blendState;
+		blendState = [value retain];
 		
 		// Apply the blend state.
-		glBlendFunc(blendState.colorSourceBlend, blendState.colorDestinationBlend);
-		
+		if (old.colorSourceBlend != blendState.colorSourceBlend ||
+            old.colorDestinationBlend != blendState.colorDestinationBlend ||
+            old.alphaSourceBlend != blendState.alphaSourceBlend ||
+            old.alphaDestinationBlend != blendState.alphaDestinationBlend) {
+            
+            glBlendFuncSeparate(blendState.colorSourceBlend, 
+                                blendState.colorDestinationBlend, 
+                                blendState.alphaSourceBlend,
+                                blendState.alphaDestinationBlend);
+        }
+        
+        if (old.colorBlendFunction != blendState.colorBlendFunction ||
+            old.alphaBlendFunction != blendState.alphaBlendFunction) {
+            
+            glBlendEquationSeparate(blendState.colorBlendFunction,
+                                    blendState.alphaBlendFunction);
+        }
+        
+		[old release];
 	}
 }
 
 @synthesize depthStencilState;
 - (void) setDepthStencilState:(DepthStencilState*)value {
 	if (value != depthStencilState) {
-		[value retain];
-		[depthStencilState release];
-		depthStencilState = value;
+		DepthStencilState *old = depthStencilState;
+        depthStencilState = [value retain];
 		
 		// Apply depth state.
-		FLAG_BLOCK(depthStencilState.depthBufferEnable, GL_DEPTH_TEST)
-		glDepthFunc(depthStencilState.depthBufferFunction);
-		glDepthMask(depthStencilState.depthBufferWriteEnable);
-		glDepthRangef(0, 1);
-		
+        if (old.depthBufferEnable != depthStencilState.depthBufferEnable) {
+            FLAG_BLOCK(depthStencilState.depthBufferEnable, GL_DEPTH_TEST)
+        }
+        
+        if (old.depthBufferFunction != depthStencilState.depthBufferFunction) {
+            glDepthFunc(depthStencilState.depthBufferFunction);
+        }
+        
+        if (old.depthBufferWriteEnable != depthStencilState.depthBufferWriteEnable) {
+            glDepthMask(depthStencilState.depthBufferWriteEnable);
+        }
+        		
 		// TODO: Apply stencil state.
+        
+        [old release];
 	}
 }
 
@@ -337,7 +363,7 @@
 	[GraphicsDevice getFormat:&format AndType:&type ForSurfaceFormat:texture.format];
 	
     glBindTexture(GL_TEXTURE_2D, texture.textureId);	
-    
+        
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR); 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -348,7 +374,7 @@
 	} else {
 		glTexImage2D(GL_TEXTURE_2D, level, format, texture.width, texture.height, 0, format, type, data);
     }
-	
+    	
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
@@ -452,7 +478,10 @@
 }
 
 - (void) applySamplerState:(id)sender eventArgs:(XniSamplerEventArgs*)e {
-	glActiveTexture(e.samplerIndex);
+	if (activeTextureIndex != e.samplerIndex) {
+        activeTextureIndex = e.samplerIndex;
+        glActiveTexture(GL_TEXTURE0 + e.samplerIndex);
+    }
 	
 	Texture *texture = [textures itemAtIndex:e.samplerIndex];
 	

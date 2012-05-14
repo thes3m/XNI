@@ -12,6 +12,8 @@
 
 #import "SpriteFont+Internal.h"
 
+#import "XniAdaptiveArray.h"
+
 typedef struct {
 	float x;
 	float y;
@@ -60,6 +62,8 @@ static inline void SpriteSetSource(XniSprite *sprite, Rectangle *source, Texture
 	} else {
 		sprite->source.width = 1;
 		sprite->source.height = 1;
+        sprite->source.x = 0;
+        sprite->source.y = 0;
 	}
 	
 	if (effects & SpriteEffectsFlipHorizontally) {
@@ -76,8 +80,12 @@ static inline void SpriteSetSource(XniSprite *sprite, Rectangle *source, Texture
 static inline void SpriteSetVertices(XniSprite *sprite, float positionX, float positionY, float originX, float originY, float scaleX, float scaleY, float rotation, float width, float height) {
 	float x = originX * scaleX;
 	float y = -originY * scaleY;
-	float c = cos(rotation);
-	float s = sin(rotation);
+	float c = 1;
+	float s = 0;
+	if (rotation) {
+        c = cosf(rotation);
+        s = sinf(rotation);
+    }
 	sprite->position.x = positionX - x * c - y * s;
 	sprite->position.y = positionY - x * s + y * c;
 	sprite->width.x = width * scaleX * c;
@@ -90,7 +98,9 @@ static inline void SpriteSetDestinationFast(XniSprite *sprite, Rectangle *destin
 	sprite->position.x = destination.x;
 	sprite->position.y = destination.y;
 	sprite->width.x = destination.width;
+    sprite->width.y = 0;
 	sprite->height.y = destination.height;
+    sprite->height.x = 0;
 }
 
 static inline void SpriteSetDestination(XniSprite *sprite, Rectangle *destination, float originX, float originY, float rotation) {
@@ -113,13 +123,37 @@ static inline void SpriteSetPosition(XniSprite *sprite, Vector2 *position, float
 
 - (void) setProjection;
 - (void) apply;
-- (void) draw:(XniSprite*)sprite;
+void draw(XniSprite *sprite, NSMutableArray *sprites, SpriteSortMode sortMode, SpriteBatch *it);
 - (void) draw;
 - (void) drawFrom:(int)startIndex to:(int)endIndex;
 
 @end
 
 @implementation SpriteBatch
+
+// Sprite pool
+static XniAdaptiveArray *spritePool;
+
+static inline XniSprite *SpriteFromPool() {
+    if (spritePool.count > 0) {
+        XniSprite *sprite = *(XniSprite**)[spritePool removeLastItem];
+        return sprite;
+    } else {
+        XniSprite *sprite = [[XniSprite alloc] init];
+        return sprite;
+    }
+}
+
+static inline void ReturnSpriteToPool(XniSprite *sprite) {
+    [spritePool addItem:&sprite];
+}
+
+static inline void ReturnSpritesToPool(NSArray *sprites) {
+    for (XniSprite *sprite in sprites) {
+        [spritePool addItem:&sprite];
+    }
+}
+
 
 // Recyclable vertices
 static VertexPositionColorTextureStruct vertices[4];
@@ -151,6 +185,8 @@ static VertexPositionColorTextureStruct vertices[4];
 	textureSort = [[NSArray arrayWithObject:textureSortDescriptor] retain];
 	frontToBackSort = [[NSArray arrayWithObject:depthAscendingSortDescriptor] retain];
 	backToFrontSort = [[NSArray arrayWithObject:depthDescendingSortDescriptor] retain];
+    
+    spritePool = [[XniAdaptiveArray alloc] initWithItemSize:sizeof(XniSprite*) initialCapacity:64];
 }
 
 - (void) setProjection {
@@ -185,7 +221,14 @@ static VertexPositionColorTextureStruct vertices[4];
 		 DepthStencilState:(DepthStencilState*)theDepthStencilState 
 		   RasterizerState:(RasterizerState*)theRasterizerState 
 					Effect:(Effect*)theEffect {
-	[self beginWithSortMode:theSortMode BlendState:theBlendState SamplerState:theSamplerState DepthStencilState:theDepthStencilState RasterizerState:theRasterizerState Effect:theEffect TransformMatrix:nil];
+    
+    // Make sure not to overwrite the world transform in basic effect.
+    Matrix *transform = nil;
+    if ([theEffect isKindOfClass:[BasicEffect class]]) {
+		transform = ((BasicEffect*)theEffect).world;
+	}
+    
+	[self beginWithSortMode:theSortMode BlendState:theBlendState SamplerState:theSamplerState DepthStencilState:theDepthStencilState RasterizerState:theRasterizerState Effect:theEffect TransformMatrix:transform];
 }
 
 - (void) beginWithSortMode:(SpriteSortMode)theSortMode 
@@ -223,72 +266,72 @@ static VertexPositionColorTextureStruct vertices[4];
 }
 
 - (void) draw:(Texture2D*)texture toRectangle:(Rectangle*)destinationRectangle tintWithColor:(Color*)color {
-	XniSprite *sprite = [[[XniSprite alloc] init] autorelease];
+	XniSprite *sprite = SpriteFromPool();
 	sprite->texture = texture;
 	SpriteSetDestinationFast(sprite, destinationRectangle);
 	SpriteSetSource(sprite, nil, texture, SpriteEffectsNone);
 	sprite->color = color.packedValue;
-	[self draw:sprite];
+    draw(sprite, sprites, sortMode, self);
 }
 
 - (void) draw:(Texture2D*)texture toRectangle:(Rectangle*)destinationRectangle fromRectangle:(Rectangle*)sourceRectangle tintWithColor:(Color*)color {
-	XniSprite *sprite = [[[XniSprite alloc] init] autorelease];
+	XniSprite *sprite = SpriteFromPool();
 	sprite->texture = texture;
 	SpriteSetDestinationFast(sprite, destinationRectangle);
 	SpriteSetSource(sprite, sourceRectangle, texture, SpriteEffectsNone);
 	sprite->color = color.packedValue;
-	[self draw:sprite];	
+    draw(sprite, sprites, sortMode, self);
 }
 
 - (void) draw:(Texture2D*)texture toRectangle:(Rectangle*)destinationRectangle fromRectangle:(Rectangle*)sourceRectangle tintWithColor:(Color*)color
 	 rotation:(float)rotation origin:(Vector2*)origin effects:(SpriteEffects)effects layerDepth:(float)layerDepth {
-	XniSprite *sprite = [[[XniSprite alloc] init] autorelease];
+	XniSprite *sprite = SpriteFromPool();
 	sprite->texture = texture;
 	SpriteSetDestination(sprite, destinationRectangle, origin.x, origin.y, rotation);
 	SpriteSetSource(sprite, sourceRectangle, texture, effects);
 	sprite->color = color.packedValue;
 	sprite->layerDepth = layerDepth;
-	[self draw:sprite];		
+    draw(sprite, sprites, sortMode, self);
 }
 
 - (void) draw:(Texture2D*)texture to:(Vector2*)position tintWithColor:(Color*)color {
-	XniSprite *sprite = [[[XniSprite alloc] init] autorelease];
+	XniSprite *sprite = SpriteFromPool();
 	sprite->texture = texture;
 	SpriteSetPositionFast(sprite, position, texture.width, texture.height);
 	SpriteSetSource(sprite, nil, texture, SpriteEffectsNone);
 	sprite->color = color.packedValue;
-	[self draw:sprite];	
+    draw(sprite, sprites, sortMode, self);
 }
 
 - (void) draw:(Texture2D*)texture to:(Vector2*)position fromRectangle:(Rectangle*)sourceRectangle tintWithColor:(Color*)color {
-	XniSprite *sprite = [[[XniSprite alloc] init] autorelease];
+	XniSprite *sprite = SpriteFromPool();
 	sprite->texture = texture;
 	SpriteSetPositionFast(sprite, position, sourceRectangle ? sourceRectangle.width : texture.width, sourceRectangle ? sourceRectangle.height : texture.height);
 	SpriteSetSource(sprite, sourceRectangle, texture, SpriteEffectsNone);
 	sprite->color = color.packedValue;
-	[self draw:sprite];	
+    draw(sprite, sprites, sortMode, self);
 }
 
 - (void) draw:(Texture2D*)texture to:(Vector2*)position fromRectangle:(Rectangle*)sourceRectangle tintWithColor:(Color*)color
 	 rotation:(float)rotation origin:(Vector2*)origin scaleUniform:(float)scale effects:(SpriteEffects)effects layerDepth:(float)layerDepth {
-	XniSprite *sprite = [[[XniSprite alloc] init] autorelease];
+	XniSprite *sprite = SpriteFromPool();
 	sprite->texture = texture;
 	SpriteSetPosition(sprite, position, origin.x, origin.y, scale, scale, rotation, sourceRectangle ? sourceRectangle.width : texture.width, sourceRectangle ? sourceRectangle.height : texture.height);
 	SpriteSetSource(sprite, sourceRectangle, texture, effects);
 	sprite->color = color.packedValue;
 	sprite->layerDepth = layerDepth;
-	[self draw:sprite];			
+    draw(sprite, sprites, sortMode, self);
 }
 
 - (void) draw:(Texture2D*)texture to:(Vector2*)position fromRectangle:(Rectangle*)sourceRectangle tintWithColor:(Color*)color
 	 rotation:(float)rotation origin:(Vector2*)origin scale:(Vector2*)scale effects:(SpriteEffects)effects layerDepth:(float)layerDepth {
-	XniSprite *sprite = [[[XniSprite alloc] init] autorelease];
+	XniSprite *sprite = SpriteFromPool();
 	sprite->texture = texture;
 	SpriteSetPosition(sprite, position, origin.x, origin.y, scale.x, scale.y, rotation, sourceRectangle ? sourceRectangle.width : texture.width, sourceRectangle ? sourceRectangle.height : texture.height);
 	SpriteSetSource(sprite, sourceRectangle, texture, effects);
 	sprite->color = color.packedValue;
 	sprite->layerDepth = layerDepth;
-	[self draw:sprite];		
+    draw(sprite, sprites, sortMode, self);
 }
 
 - (void) drawStringWithSpriteFont:(SpriteFont*)spriteFont text:(NSString*)text to:(Vector2*)position tintWithColor:(Color*)color {
@@ -326,11 +369,12 @@ static VertexPositionColorTextureStruct vertices[4];
 	}
 }
 
-- (void) draw:(XniSprite *)sprite {
+void draw(XniSprite *sprite, NSMutableArray *sprites, SpriteSortMode sortMode, SpriteBatch *it) {
 	[sprites addObject:sprite];
 	
 	if (sortMode == SpriteSortModeImmediate) {
-		[self draw];
+		[it draw];
+        ReturnSpritesToPool(sprites);
 		[sprites removeAllObjects];
 	}
 }
@@ -365,6 +409,7 @@ static VertexPositionColorTextureStruct vertices[4];
 	[self draw];
 	
 	// Clean up.
+    ReturnSpritesToPool(sprites);
 	[sprites removeAllObjects];
 	beginCalled = NO;
 }
@@ -430,7 +475,7 @@ static VertexPositionColorTextureStruct vertices[4];
 		vertices[3].position.x = vertices[0].position.x + sprite->height.x + sprite->width.x;
 		vertices[3].position.y = vertices[0].position.y + sprite->height.y + sprite->width.y;
 		vertices[3].position.z = sprite->layerDepth;
-	
+        
 		vertices[0].texture.x = sprite->source.x;
 		vertices[1].texture.x = sprite->source.x;
 		vertices[2].texture.x = sprite->source.x + sprite->source.width;

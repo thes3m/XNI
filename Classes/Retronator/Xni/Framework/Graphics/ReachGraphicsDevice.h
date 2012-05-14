@@ -12,6 +12,9 @@
 
 
 @interface ReachGraphicsDevice : GraphicsDevice {
+    BOOL lightsActive[8];
 }
+
+- (void) setLight:(uint)lightname to:(BOOL)value;
 
 @end

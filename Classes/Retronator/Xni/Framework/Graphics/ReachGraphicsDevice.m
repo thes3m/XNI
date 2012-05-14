@@ -38,6 +38,18 @@
 
 @implementation ReachGraphicsDevice
 
+- (id)initWithGame:(Game *)theGame {
+    self = [super initWithGame:theGame];
+    if (self) {
+        // Disable lights.
+        for (int i=0; i<8; i++) {
+            lightsActive[i] = false;
+            glDisable(GL_LIGHT0 + i);
+        }
+    }
+    return self;
+}
+
 - (EAGLContext*) createContext { 
 	return [[[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1] autorelease]; 
 }
@@ -59,7 +71,7 @@
 					  minVertexIndex:(int)minVertexIndex
 						 numVertices:(int)numVertices
 						  startIndex:(int)startIndex
-					  primitiveCount:(int)primitiveCount;
+					  primitiveCount:(int)primitiveCount
 {
 	[self enableVertexBuffers];
 	
@@ -174,6 +186,19 @@
     
     [self disableDeclaration:vertexDeclaration]; 
 	
+}
+
+- (void)setLight:(uint)lightname to:(BOOL)value {
+    int index = lightname - GL_LIGHT0;
+    
+    if (value != lightsActive[index]) {
+        lightsActive[index] = value;
+        if (value) {
+            glEnable(lightname);
+        } else {
+            glDisable(lightname);
+        }
+    }
 }
 
 // Private methods

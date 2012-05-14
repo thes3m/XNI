@@ -57,11 +57,21 @@
 	float projectionY = -((source.y - y) * 2 / height) + 1;
 	float projectionZ = (source.z - minDepth) / (maxDepth - minDepth);
 	
-	Vector4 *objectSpace = [Vector4 vectorWithX:projectionX y:projectionY z:projectionZ w:1];
-	[objectSpace transformWith:[Matrix invert:projection]];
-	[objectSpace transformWith:[Matrix invert:view]];
-	[objectSpace transformWith:[Matrix invert:world]];
-	[objectSpace multiplyBy:1/objectSpace.w];
+	Vector4Struct objectSpace = Vector4Make(projectionX,projectionY,projectionZ,1);
+    
+    MatrixStruct m = *projection.data;
+    MatrixInvert(&m);
+    Vector4Transform(&objectSpace, &m, &objectSpace);
+
+    m = *view.data;
+    MatrixInvert(&m);
+    Vector4Transform(&objectSpace, &m, &objectSpace);
+    
+    m = *world.data;
+    MatrixInvert(&m);
+    Vector4Transform(&objectSpace, &m, &objectSpace);
+	
+    Vector4Multiply(&objectSpace, 1/objectSpace.w, &objectSpace);
 	
 	return [Vector3 vectorWithX:objectSpace.x y:objectSpace.y z:objectSpace.z];
 }

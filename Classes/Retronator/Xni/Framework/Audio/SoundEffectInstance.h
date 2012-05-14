@@ -16,6 +16,7 @@
 @private
 	BOOL isLooped;	
 	float pan, pitch, volume;
+    SoundEffect *parent;
 	NSUInteger sourceID;
 }
 

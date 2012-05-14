@@ -14,6 +14,8 @@
 #import "Retronator.Xni.Framework.Content.h"
 #import "TouchPanel+Internal.h"
 #import "GameWindow+Internal.h"
+#import "GameViewController.h"
+#import "GameView.h"
 #import "Guide+Internal.h"
 #import "SoundEffect+Internal.h"
 
@@ -57,9 +59,7 @@ static NSArray *drawOrderSort;
 		// First it is used for constructing a list of components, that need to be initialized.
 		// In run it is used to make a copy of enabled/visible components for enumerating over them.
 		componentsList = [[NSMutableArray alloc] init];
-        
-		initializedComponents = [[NSMutableSet alloc] init];
-		
+        		
         [components.componentAdded subscribeDelegate:
 		 [Delegate delegateWithTarget:self Method:@selector(componentAddedTo:eventArgs:)]];
 		
@@ -84,7 +84,7 @@ static NSArray *drawOrderSort;
 		[Guide initializeWithGame:self];
 		
         // Get the game host.
-        gameHost = (GameHost*)[UIApplication sharedApplication];
+        gameHost = (GameHost*)[UIApplication sharedApplication];        
     }
     
     return self;
@@ -130,15 +130,26 @@ static NSArray *drawOrderSort;
     inRun = YES;
     [self beginRun];
     
-    // First update with zero gameTime.
-    [self updateWithGameTime:gameTime];    
-    lastFrameTime = [[NSDate alloc] init];
+    // First frame with zero gameTime.
+    [self updateWithGameTime:gameTime];   
+    
+    if ([self beginDraw]) {
+        [self drawWithGameTime:gameTime];
+        [self endDraw];
+    }
+    
+    // Force redraw.
+    [self.window.gameViewController.gameView layoutSubviews];
     
     // Run the game host with a delay event, so we don't block this method.
     [gameHost performSelector:@selector(run) withObject:nil afterDelay:0];
 }
 
 - (void) tick {
+    if (!lastFrameTime) {
+        lastFrameTime = [[NSDate alloc] init];
+    }
+    
     // Sleep if inactive.
     if (!isActive) {
         CFRunLoopRunInMode(kCFRunLoopDefaultMode, inactiveSleepTime, NO);
@@ -195,7 +206,8 @@ static NSArray *drawOrderSort;
 
 - (void) applicationDidFinishLaunching:(UIApplication *)application {    
     NSLog(@"Application has started.");
-    [self performSelector:@selector(run) withObject:nil afterDelay:0];
+    
+    [self run];
 }
 
 - (void) applicationWillResignActive:(UIApplication *)application
@@ -235,7 +247,6 @@ static NSArray *drawOrderSort;
 	while ([componentsList count] > 0) {
 		id<IGameComponent> component = [componentsList objectAtIndex:0];
         [component initialize];
-		[initializedComponents addObject:component];
 		[componentsList removeObjectAtIndex:0];
 	}
     initializeDone = YES;
@@ -270,7 +281,7 @@ static NSArray *drawOrderSort;
 - (void) endDraw {
     [graphicsDeviceManager endDraw];
 }
-
+ 
 - (void) unloadContent {}
 
 - (void) endRun {}
@@ -310,10 +321,7 @@ static NSArray *drawOrderSort;
 - (void) componentAddedTo:(GameComponentCollection*)sender eventArgs:(GameComponentCollectionEventArgs*)e {
     // Initialize component if it's being added after main initialize has been called.
 	if (initializeDone) {
-		if (![initializedComponents containsObject:e.gameComponent]) {
-			[e.gameComponent initialize];
-			[initializedComponents addObject:e.gameComponent];
-		}
+        [e.gameComponent initialize];
     } else {
 		[componentsList addObject:e.gameComponent];
 	}
@@ -411,7 +419,6 @@ static NSArray *drawOrderSort;
 	[self unloadContent];
     [gameTime release];
     
-	[initializedComponents release];
 	[componentsList release];	
 	[enabledComponents release];
 	[visibleComponents release];

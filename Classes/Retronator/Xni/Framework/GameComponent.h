@@ -26,4 +26,7 @@
 
 @property (nonatomic, readonly) Game *game;
 
+- (void) onEnabledChanged;
+- (void) onUpdateOrderChanged;
+
 @end

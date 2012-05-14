@@ -28,7 +28,13 @@
 @property (nonatomic) int y;
 @property (nonatomic, readonly) PointStruct *data;
 
++ (XniPoint*) add:(XniPoint*)value1 to:(XniPoint*)value2;
++ (XniPoint*) subtract:(XniPoint*)value1 by:(XniPoint*)value2;
+
 - (XniPoint*) set:(XniPoint*)value;
+
+- (XniPoint*) add:(XniPoint*)value;
+- (XniPoint*) subtract:(XniPoint*)value;
 
 - (BOOL) equals:(XniPoint*)point;
 

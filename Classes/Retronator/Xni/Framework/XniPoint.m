@@ -59,9 +59,31 @@
 
 // METHODS
 
++ (XniPoint *)add:(XniPoint *)value1 to:(XniPoint *)value2 {
+    PointStruct resultData;
+    PointAdd(value1.data, value2.data, &resultData);
+    return [XniPoint pointWithStruct:&resultData];
+}
+
++ (XniPoint *)subtract:(XniPoint *)value1 by:(XniPoint *)value2 {
+    PointStruct resultData;
+    PointSubtract(value1.data, value2.data, &resultData);
+    return [XniPoint pointWithStruct:&resultData];
+}
+
 - (XniPoint*) set:(XniPoint*)value {
 	data = *value.data;
 	return self;
+}
+
+- (XniPoint *)add:(XniPoint *)value {
+    PointAdd(&data, value.data, &data);
+    return self;
+}
+
+- (XniPoint *)subtract:(XniPoint *)value {
+    PointSubtract(&data, value.data, &data);
+    return self;
 }
 
 - (id) copyWithZone:(NSZone *)zone {

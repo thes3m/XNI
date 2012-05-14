@@ -18,7 +18,7 @@
     self = [super init];
     if (self) {
 		[MediaPlayer load];
-        window = [[GameWindow alloc] init]; 		
+        window = [[GameWindow alloc] init]; 	
     }
     return self;
 }

@@ -29,4 +29,7 @@
 - (void) loadContent;
 - (void) unloadContent;
 
+- (void) onVisibleChanged;
+- (void) onDrawOrderChanged;
+
 @end

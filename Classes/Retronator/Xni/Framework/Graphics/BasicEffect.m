@@ -13,6 +13,7 @@
 
 @interface BasicEffectPass : EffectPass {
     BasicEffect *basicEffect;	
+    ReachGraphicsDevice *reachGraphicsDevice;
 }
 
 - (id) initWithBasicEffect:(BasicEffect*)theBasicEffect graphicsDevice:(GraphicsDevice*)theGraphicsDevice;
@@ -124,6 +125,7 @@
     self = [super initWithName:@"BasicEffectPass" graphicsDevice:theGraphicsDevice];
     if (self) {
         basicEffect = theBasicEffect;
+        reachGraphicsDevice = (ReachGraphicsDevice*)theGraphicsDevice;
     }
     return self;
 }
@@ -153,7 +155,7 @@
     // Set texturing.
     if (basicEffect.textureEnabled) {
 		[graphicsDevice.textures setItem:basicEffect.texture atIndex:0];	
-		glActiveTexture(GL_TEXTURE0);
+		//glActiveTexture(GL_TEXTURE0);
         glEnable(GL_TEXTURE_2D);
     } else {
         glDisable(GL_TEXTURE_2D);
@@ -188,10 +190,9 @@
 }
 
 - (void) activateLight:(DirectionalLight *)light name:(uint)lightName {
-    if (light.enabled) {
-        glEnable(lightName);
-    } else {
-        glDisable(lightName);
+    [reachGraphicsDevice setLight:lightName to:light.enabled];
+    
+    if (!light.enabled) {
         return;
     }
     

@@ -17,6 +17,7 @@
 }
 
 - (id) initWithItemSize:(int)theItemSize initialCapacity:(int)theCapacity;
+- (id) initWithArray:(XniAdaptiveArray*)source;
 
 @property (nonatomic, readonly) int itemSize;
 @property (nonatomic, readonly) void *array;
@@ -24,5 +25,6 @@
 
 - (void) addItem:(void*)item;
 - (void) clear;
+- (void*) removeLastItem;
 
 @end

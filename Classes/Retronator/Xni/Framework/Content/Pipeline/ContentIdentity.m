@@ -15,4 +15,12 @@
 @synthesize sourceFilename;
 @synthesize sourceTool;
 
+- (void)dealloc
+{
+    [fragmentIdentifier release];
+    [sourceFilename release];
+    [sourceTool release];
+    [super dealloc];
+}
+
 @end

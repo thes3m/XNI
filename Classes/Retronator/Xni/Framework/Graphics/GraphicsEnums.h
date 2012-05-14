@@ -18,11 +18,11 @@ typedef enum {
 } Blend;
 
 typedef enum {
-	BlendFunctionAdd,
-	BlendFunctionMax,
-	BlendFunctionMin,
-	BlendFunctionReverseSubstract,
-	BlendFunctionSubtract
+	BlendFunctionAdd = GL_FUNC_ADD,
+	//BlendFunctionMax = GL_MAX,
+	//BlendFunctionMin = GL_MIN,
+	BlendFunctionReverseSubstract = GL_FUNC_REVERSE_SUBTRACT,
+	BlendFunctionSubtract = GL_FUNC_SUBTRACT
 } BlendFunction;
 
 typedef enum {

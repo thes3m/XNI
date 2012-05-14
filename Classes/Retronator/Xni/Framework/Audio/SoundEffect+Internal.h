@@ -12,6 +12,8 @@
 
 @interface SoundEffect (Internal)
 
+@property (nonatomic, readonly) NSUInteger bufferID;
+
 + (void) update;
 
 @end

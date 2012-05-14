@@ -11,6 +11,6 @@
 
 @interface SoundEffectInstance (Internal)
 
-- (id) initWithBufferID:(NSUInteger)bufferID;
+- (id) initWithSoundEffect:(SoundEffect*)soundEffect;
 
 @end

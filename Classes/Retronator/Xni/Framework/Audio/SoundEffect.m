@@ -7,6 +7,7 @@
 //
 
 #import "SoundEffect.h"
+#import "SoundEffect+Internal.h"
 
 #import "Retronator.Xni.Framework.Audio.h"
 
@@ -68,6 +69,10 @@ static float masterVolume = 1;
 
 @synthesize duration, name;
 
+- (NSUInteger)bufferID {
+    return bufferID;
+}
+
 + (float) speedOfSound {
 	return speedOfSound;
 }
@@ -125,7 +130,7 @@ static float masterVolume = 1;
 }
 
 - (SoundEffectInstance *) createInstance {
-	return [[[SoundEffectInstance alloc] initWithBufferID:bufferID] autorelease];
+	return [[[SoundEffectInstance alloc] initWithSoundEffect:self] autorelease];
 }
 
 - (BOOL) play {

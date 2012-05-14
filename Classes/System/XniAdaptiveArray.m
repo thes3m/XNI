@@ -19,6 +19,17 @@
     return self;
 }
 
+- (id) initWithArray:(XniAdaptiveArray*)source {
+    if (self = [super init]) {
+        itemSize = source.itemSize;
+        capacity = source.count;
+        count = source.count;
+        array = malloc(capacity * itemSize);
+        memcpy(array, source.array, capacity * itemSize);
+    }
+    return self;    
+}
+
 @synthesize itemSize;
 @synthesize array;
 @synthesize count;
@@ -38,6 +49,11 @@
 
 - (void) clear {
     count = 0;
+}
+
+- (void*)removeLastItem {
+    count--;
+    return array + count * itemSize;
 }
 
 - (void) dealloc

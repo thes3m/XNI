@@ -41,6 +41,7 @@
 	SamplerStateCollection *samplerStates;
 	TextureCollection *textures;
 	Viewport *viewport;
+    int activeTextureIndex;
 	
 	// Events
 	Event *deviceResetting;

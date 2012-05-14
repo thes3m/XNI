@@ -15,15 +15,15 @@
 #import "GameView.h"
 
 @interface XniTouchLocation : NSObject {
+@public
 	int identifier;
 	Vector2 *position;
 	Vector2 *previousPosition;
 	TouchLocationState state;
+    int age;
 }
 
 - (id) initWithPosition:(Vector2*)thePosition;
-
-@property (nonatomic) TouchLocationState state;
 
 - (void) update;
 - (void) moveToPosition:(Vector2*)newPosition;
@@ -48,10 +48,9 @@ static int nextID = 0;
 	return self;
 }
 
-@synthesize state;
-
 - (void) update {
 	[self moveToPosition:position];
+    age++;
 }
 
 - (void) moveToPosition:(Vector2*)newPosition {
@@ -93,6 +92,7 @@ static TouchPanel *instance;
 		lateReleaseTouches = [[NSMutableSet alloc] init];
 		
 		touchLocations = (NSMutableDictionary*)CFDictionaryCreateMutable(NULL, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+		uiTouchesForLocations = (NSMutableDictionary*)CFDictionaryCreateMutable(NULL, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
 	}
 	return self;
 }
@@ -134,7 +134,11 @@ static TouchPanel *instance;
 		
 		// After get state is done, all pressed touches should be moved.
 		[touch update];
-	}
+        if (touch->age > 200) {
+            UITouch *key = [uiTouchesForLocations objectForKey:touch];
+            [removeTouches addObject:key];
+        }
+    }
 	return collection;
 }
 
@@ -152,7 +156,8 @@ static TouchPanel *instance;
 	float scale = view.scale;
 	for (UITouch *touch in touches) {
 		XniTouchLocation *location = [touchLocations objectForKey:touch];	
-		if (location) {			
+		if (location) {
+            location->age = 0;
 			CGPoint position = [touch locationInView:view];
 			[location moveToPosition:[Vector2 vectorWithX:position.x * scale y:position.y * scale]];
 		}
@@ -179,14 +184,21 @@ static TouchPanel *instance;
 - (void) update {
 	// Remove all previously released touches.
 	for (UITouch *touch in removeTouches) {
+        XniTouchLocation *location = [[touchLocations objectForKey:touch] retain];
 		[touchLocations removeObjectForKey:touch];
+        if (location) {
+            [uiTouchesForLocations removeObjectForKey:location];
+            [location release];
+        }
 	}
 	[removeTouches removeAllObjects];
-	
+    	
 	// Set released touches.
 	for (UITouch *touch in releaseTouches) {
 		XniTouchLocation *location = [touchLocations objectForKey:touch];
-		location.state = TouchLocationStateReleased;
+        if (location) {
+            location->state = TouchLocationStateReleased;
+        }
 	}
 	
 	// Shift the pools.
@@ -203,6 +215,7 @@ static TouchPanel *instance;
 											initWithPosition:[Vector2 vectorWithX:position.x * scale y:position.y * scale]] autorelease];
 		
 		CFDictionaryAddValue((CFMutableDictionaryRef)touchLocations, touch, location);
+		CFDictionaryAddValue((CFMutableDictionaryRef)uiTouchesForLocations, location, touch);
 	}
 	[addTouches removeAllObjects];
 	
@@ -215,6 +228,7 @@ static TouchPanel *instance;
 	[releaseTouches release];
 	[lateReleaseTouches release];
 	[touchLocations release];
+    [uiTouchesForLocations release];
 	[super dealloc];
 }
 

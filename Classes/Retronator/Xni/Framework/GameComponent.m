@@ -32,7 +32,7 @@
 - (void) setEnabled:(BOOL)value {
     if (enabled != value) {
         enabled = value;
-        [enabledChanged raiseWithSender:self];
+        [self onEnabledChanged];
     }
 }
 
@@ -40,7 +40,7 @@
 - (void) setUpdateOrder:(int)value {
 	if (updateOrder != value) {
 		updateOrder = value;
-		[updateOrderChanged raiseWithSender:self];
+        [self onUpdateOrderChanged];
 	}
 }
 
@@ -48,6 +48,14 @@
 @synthesize updateOrderChanged;
 
 - (void) initialize {}
+
+- (void) onEnabledChanged {
+    [enabledChanged raiseWithSender:self];
+}
+
+- (void) onUpdateOrderChanged {
+    [updateOrderChanged raiseWithSender:self];
+}
 
 - (void) updateWithGameTime:(GameTime*)gameTime {}
 

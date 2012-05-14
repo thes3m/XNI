@@ -19,6 +19,13 @@
     return self;
 }
 
+- (id)initWithArray:(VertexArray *)source {
+    if (self = [super init]) {
+        array = [[XniAdaptiveArray alloc] initWithArray:source->array];
+    }
+    return self;
+}
+
 - (void *) array {
     return array.array;
 }

@@ -259,3 +259,23 @@ static inline void MatrixDivide(MatrixStruct *value1, MatrixStruct *value2, Matr
 	result->m43 = value1->m43 / value2->m43;
 	result->m44 = value1->m44 / value2->m44;
 }
+
+static inline void MatrixLerp(MatrixStruct *value1, MatrixStruct *value2, float amount, MatrixStruct *result) {
+    float first = 1 - amount;
+    result->m11 = value1->m11 * first + value2->m11 * amount;
+    result->m12 = value1->m12 * first + value2->m12 * amount;
+    result->m13 = value1->m13 * first + value2->m13 * amount;
+    result->m14 = value1->m14 * first + value2->m14 * amount;
+    result->m21 = value1->m21 * first + value2->m21 * amount;
+    result->m22 = value1->m22 * first + value2->m22 * amount;
+    result->m23 = value1->m23 * first + value2->m23 * amount;
+    result->m24 = value1->m24 * first + value2->m24 * amount;
+    result->m31 = value1->m31 * first + value2->m31 * amount;
+    result->m32 = value1->m32 * first + value2->m32 * amount;
+    result->m33 = value1->m33 * first + value2->m33 * amount;
+    result->m34 = value1->m34 * first + value2->m34 * amount;
+    result->m41 = value1->m41 * first + value2->m41 * amount;
+    result->m42 = value1->m42 * first + value2->m42 * amount;
+    result->m43 = value1->m43 * first + value2->m43 * amount;
+    result->m44 = value1->m44 * first + value2->m44 * amount;
+}

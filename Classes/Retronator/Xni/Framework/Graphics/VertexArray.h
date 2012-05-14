@@ -17,6 +17,7 @@
 }
 
 - (id) initWithItemSize:(int)itemSize initialCapacity:(int)initialCapacity;
+- (id) initWithArray:(VertexArray*)source;
 
 @property (nonatomic, readonly) void *array;
 @property (nonatomic, readonly) int count;

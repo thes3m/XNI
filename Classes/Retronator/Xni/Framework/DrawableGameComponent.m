@@ -30,7 +30,7 @@
 - (void) setVisible:(BOOL)value {
 	if (visible != value) {
 		visible = value;
-		[visibleChanged raiseWithSender:self];
+        [self onVisibleChanged];
 	}
 } 
 
@@ -38,7 +38,7 @@
 - (void) setDrawOrder:(int)value {
 	if (drawOrder != value) {
 		drawOrder = value;
-		[drawOrderChanged raiseWithSender:self];
+        [self onDrawOrderChanged];
 	}
 } 
 
@@ -59,6 +59,14 @@
 - (void) loadContent {}
 - (void) drawWithGameTime:(GameTime*)gameTime {}
 - (void) unloadContent {}
+
+- (void)onVisibleChanged {
+    [visibleChanged raiseWithSender:self];
+}
+
+- (void)onDrawOrderChanged {
+    [drawOrderChanged raiseWithSender:self];    
+}
 
 - (void) dealloc
 {

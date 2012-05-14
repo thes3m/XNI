@@ -27,6 +27,7 @@
 	NSMutableSet *releaseTouches;
 	NSMutableSet *lateReleaseTouches;
 	NSMutableDictionary *touchLocations;
+	NSMutableDictionary *uiTouchesForLocations;
 }
 
 @property (nonatomic) int displayWidth;

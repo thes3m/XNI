@@ -91,7 +91,7 @@ static MediaPlayer *instance;
 @synthesize volume;
 
 - (void) setVolume:(float)value {
-	volume = value;
+	volume = MAX(0, MIN(1, value));
 	
 	if (!isMuted) {
 		queue.activeSong.audioPlayer.volume = volume;
@@ -160,8 +160,14 @@ static MediaPlayer *instance;
 	if (![self checkAvailability]) {
 		return;
 	}
+    
+    if (queue.activeSong) {
+        [queue.activeSong.audioPlayer stop];
+	}
 	
+    song.audioPlayer.currentTime = 0;
 	song.audioPlayer.delegate = self;
+    
 	[queue setSong:song];
 	[self fillSongIndices];
 	[self moveNext];
@@ -221,9 +227,10 @@ static MediaPlayer *instance;
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
 	if ([remainingSongIndices count] == 0 && !isRepeating) {
 		// The music stops, activate the ambient category again.
-		[[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryAmbient error:nil];
+        [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryAmbient error:nil];
 		soloModeActivated = NO;
-		return;
+        [self setMediaState:MediaStateStopped];
+ 		return;
 	}
 	
 	[self moveNext];

@@ -8,18 +8,21 @@
 
 #import "SoundEffectInstance.h"
 #import "SoundEffectInstance+Internal.h"
+#import "SoundEffect+Internal.h"
 
 @implementation SoundEffectInstance
 
-- (id) initWithBufferID:(NSUInteger)bufferID
+- (id) initWithSoundEffect:(SoundEffect *)soundEffect
 {
 	self = [super init];
 	if (self != nil) {
+        parent = [soundEffect retain];
+        
 		// grab a source ID from openAL
 		alGenSources(1, &sourceID); 
 		
 		// attach the buffer to the source
-		alSourcei(sourceID, AL_BUFFER, bufferID);
+		alSourcei(sourceID, AL_BUFFER, parent.bufferID);
 		
 		// set some basic source prefs
 		alSourcef(sourceID, AL_PITCH, 1.0f);
@@ -84,6 +87,7 @@
 - (void) dealloc
 {
 	alDeleteSources(1, &sourceID);
+    [parent release];
 	[super dealloc];
 }
 
