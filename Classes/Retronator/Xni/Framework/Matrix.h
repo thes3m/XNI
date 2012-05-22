@@ -25,6 +25,7 @@
 
 + (Matrix*) createScaleUniform:(float)scale;
 + (Matrix*) createScale:(Vector3*)scales;
++ (Matrix*) createScaleX:(float)xScale y:(float)yScale z:(float)zScale;
 
 + (Matrix*) createRotationX:(float)radians;
 + (Matrix*) createRotationY:(float)radians;

@@ -61,6 +61,14 @@
     return matrix;    
 }
 
++ (Matrix *)createScaleX:(float)xScale y:(float)yScale z:(float)zScale {
+    Matrix *matrix = [Matrix identity];
+    matrix.data->m11 = xScale;
+    matrix.data->m22 = yScale;
+    matrix.data->m33 = zScale;
+    return matrix;    
+}
+
 + (Matrix*) createRotationX:(float)radians {
 	Matrix *matrix = [Matrix identity];
 	matrix.data->m22 = cosf(radians);
