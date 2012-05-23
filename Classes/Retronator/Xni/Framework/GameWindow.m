@@ -28,7 +28,10 @@
         clientSizeChanged = [[Event alloc] init];
 		orientationChanged = [[Event alloc] init];
 		
-		clientBounds = [[Rectangle rectangleWithCGRect:[[UIScreen mainScreen] bounds]] retain];		
+		clientBounds = [[Rectangle rectangleWithCGRect:[[UIScreen mainScreen] bounds]] retain];	
+        float scale = [UIScreen mainScreen].scale;
+        clientBounds.width *= scale;
+        clientBounds.height *= scale;
     }
     return self;
 }
