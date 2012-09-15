@@ -52,6 +52,8 @@ typedef struct {
 static NSArray *textureSort;
 static NSArray *frontToBackSort;
 static NSArray *backToFrontSort;
+static Vector2 *currentOrigin;
+static Vector2 *characterOrigin;
 
 static inline void SpriteSetSource(XniSprite *sprite, Rectangle *source, Texture2D *texture, SpriteEffects effects) {
 	if (source) {
@@ -187,6 +189,9 @@ static VertexPositionColorTextureStruct vertices[4];
 	backToFrontSort = [[NSArray arrayWithObject:depthDescendingSortDescriptor] retain];
     
     spritePool = [[XniAdaptiveArray alloc] initWithItemSize:sizeof(XniSprite*) initialCapacity:64];
+    
+    currentOrigin = [[Vector2 alloc] init];
+    characterOrigin = [[Vector2 alloc] init];
 }
 
 - (void) setProjection {
@@ -346,8 +351,10 @@ static VertexPositionColorTextureStruct vertices[4];
 - (void) drawStringWithSpriteFont:(SpriteFont*)spriteFont text:(NSString*)text to:(Vector2*)position tintWithColor:(Color*)color
 						 rotation:(float)rotation origin:(Vector2*)origin scale:(Vector2*)scale effects:(SpriteEffects)effects layerDepth:(float)layerDepth {
 	
-	Vector2 *currentOrigin = [Vector2 vectorWithX:origin.x y:origin.y-spriteFont.lineSpacing];
-	Vector2 *characterOrigin = [Vector2 zero];
+	currentOrigin.x = origin.x;
+    currentOrigin.y = origin.y-spriteFont.lineSpacing;
+	characterOrigin.x = 0;
+    characterOrigin.y = 0;
 	
 	for (int i = 0; i < [text length]; i++) {
 		unichar character = [text characterAtIndex:i];
@@ -509,8 +516,7 @@ void draw(XniSprite *sprite, NSMutableArray *sprites, SpriteSortMode sortMode, S
 	[vertexArray clear];
 }
 
-- (void) dealloc
-{
+- (void) dealloc{
 	[self.graphicsDevice.deviceReset unsubscribeDelegate:[Delegate delegateWithTarget:self Method:@selector(setProjection)]];
 	[basicEffect release];
 	[sprites release];

@@ -83,6 +83,10 @@
 - (void) setVertexBuffer:(VertexBuffer*)vertexBuffer vertexOffset:(int)vertexOffset;
 - (void) setVertexBuffers:(VertexBufferBinding*)vertexBuffer, ... NS_REQUIRES_NIL_TERMINATION;
 
+//Render Targets
+- (void) setRenderTarget:(RenderTarget2D*)renderTarget;
+//- (RenderTarget2D*) getRenderTarget;
+
 // Drawing
 
 // From buffers

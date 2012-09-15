@@ -84,7 +84,7 @@ static NSArray *drawOrderSort;
 		[Guide initializeWithGame:self];
 		
         // Get the game host.
-        gameHost = (GameHost*)[UIApplication sharedApplication];        
+        gameHost = (GameHost*)[UIApplication sharedApplication];
     }
     
     return self;
@@ -286,7 +286,6 @@ static NSArray *drawOrderSort;
 
 - (void) endRun {}
 
-
 // Internal methods
 
 - (void) presentModalViewController:(UIViewController*)viewController {
@@ -404,6 +403,7 @@ static NSArray *drawOrderSort;
 - (void) componentDrawOrderChanged:(id<IDrawable>)sender eventArgs:(EventArgs*)e {
 	[visibleComponents sortUsingDescriptors:drawOrderSort];
 }
+
 
 
 

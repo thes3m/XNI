@@ -114,7 +114,6 @@ static TouchPanel *instance;
 	return [instance readGesture];
 }
 
-
 + (TouchPanel*) getInstance {
     return instance;
 }

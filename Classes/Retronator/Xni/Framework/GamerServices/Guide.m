@@ -123,8 +123,7 @@ static Guide *instance = nil;
 	isVisible = NO;
 }
 
-- (void) dealloc
-{
+- (void) dealloc {
 	[messageBoxResults release];
 	[super dealloc];
 }

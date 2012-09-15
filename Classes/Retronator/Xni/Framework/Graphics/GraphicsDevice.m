@@ -9,7 +9,7 @@
 #import "GraphicsDevice.h"
 #import "GraphicsDevice+Internal.h"
 #import <OpenGLES/ES1/gl.h>
-
+#import <OpenGLES/ES1/glext.h>
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Graphics.h"
 
@@ -18,8 +18,11 @@
 #import "SamplerStateCollection+Internal.h"
 #import "IndexBuffer+Internal.h"
 #import "VertexBuffer+Internal.h"
+#import "RenderTarget2D+Internal.h"
 
-@interface GraphicsDevice()
+@interface GraphicsDevice(){
+    BOOL rrt;
+}
 
 + (void) getFormat:(GLenum*)format AndType:(GLenum*)type ForSurfaceFormat:(SurfaceFormat)surfaceFormat;
 - (void) setData:(void*)data size:(int)sizeInBytes toBufferId:(uint)buffer resourceType:(ResourceType)resourceType bufferUsage:(BufferUsage)bufferUsage; 
@@ -542,8 +545,70 @@
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, magFilter);
 }
 
-- (void) dealloc
-{
+- (void) setRenderTarget:(RenderTarget2D*)renderTarget{
+    if (renderTarget == nil) {
+        if (rrt) {
+            //We had render target before now we have to flip it vertically
+            rrt = NO;
+        }
+		glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, colorRenderbuffer);
+    }else{
+        GLuint rtFramebuffer = [renderTarget colorFramebuffer];
+        GLuint rtRenderbuffer = [renderTarget colorRenderbuffer];
+        
+        GLenum format, type;
+        [GraphicsDevice getFormat:&format AndType:&type ForSurfaceFormat:renderTarget.format];
+        
+        // RENDER TO TEXTURE BUFFER
+        // This is the buffer we will be rendering to and using as a texture
+        // on out screen plane
+        glBindFramebufferOES(GL_FRAMEBUFFER_OES, rtFramebuffer);
+        
+//        glBindRenderbufferOES(GL_RENDERBUFFER_OES, rtRenderbuffer);
+//        
+//        glBindRenderbufferOES(GL_RENDERBUFFER_OES, depthRenderbuffer);
+//        glRenderbufferStorageOES(GL_RENDERBUFFER_OES, GL_DEPTH_COMPONENT16_OES, renderTarget.width, renderTarget.height);
+//        glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_DEPTH_ATTACHMENT_OES, GL_RENDERBUFFER_OES, depthRenderbuffer);
+        
+        // create the texture object
+        glBindTexture(GL_TEXTURE_2D, renderTarget.textureId);
+        
+        // set the texture parameter filtering (feel free to use other TexParams)
+        // you have to do this, forgetting to do this will make it not work.
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+            
+        
+        // fill the texture data (the max texture size needs to be power of 2)
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, renderTarget.width, renderTarget.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+        
+        // attach the frameBuffer to the texture object
+        glFramebufferTexture2DOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_TEXTURE_2D, renderTarget.textureId, 0);
+                
+        //glOrthof(0, renderTarget.width, renderTarget.height, 0, -1, 1);
+        
+        // CHECK FRAME BUFFER STATUS HERE
+        
+        
+//        GLenum status = glCheckFramebufferStatusOES(GL_FRAMEBUFFER);
+//        if(status == GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT){
+//            NSLog(@"GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT");
+//        }else if(status == GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT){
+//            NSLog(@"GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT");
+//        }else if(status == GL_FRAMEBUFFER_UNSUPPORTED){
+//            NSLog(@"GL_FRAMEBUFFER_UNSUPPORTED");
+//        }else if(status == GL_FRAMEBUFFER_COMPLETE){
+//            NSLog(@"GL_FRAMEBUFFER_COMPLETE");
+//        }
+        rrt = YES;
+    }
+}
+
+- (RenderTarget2D*) getRenderTarget{
+    return nil;
+}
+
+- (void) dealloc{
 	[blendState release];
 	[depthStencilState release];
 	[rasterizerState release];

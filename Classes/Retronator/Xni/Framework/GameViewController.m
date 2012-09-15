@@ -78,7 +78,8 @@
 	}
 }
 
-- (void)loadView {	
+- (void)loadView {
+    [super loadView];
     GameView *gameView = [[GameView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
     self.view = gameView;
 	
@@ -116,18 +117,22 @@
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [[TouchPanel getInstance] touchesBegan:touches withEvent:event];
+    [super touchesBegan:touches withEvent:event];
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     [[TouchPanel getInstance] touchesMoved:touches withEvent:event];
+    [super touchesMoved:touches withEvent:event];
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [[TouchPanel getInstance] touchesEnded:touches withEvent:event];
+    [super touchesEnded:touches withEvent:event];
 }
 
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     [[TouchPanel getInstance] touchesCancelled:touches withEvent:event];
+    [super touchesCancelled:touches withEvent:event];
 }
 
 - (void)dealloc {

@@ -19,7 +19,8 @@
 	
 @private
 	Texture2D *texture;
-	NSDictionary *characterMap;
+	Rectangle *characterMap[128];
+    NSDictionary *characterMapD;
 }
 
 @property (nonatomic, readonly) NSSet *characters;

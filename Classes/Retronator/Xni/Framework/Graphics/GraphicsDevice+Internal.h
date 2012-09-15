@@ -12,6 +12,8 @@
 
 @interface GraphicsDevice (Internal)
 
+@property (nonatomic) BOOL rrt;
+
 - (uint) createTexture;
 - (void) releaseTexture:(uint)textureId;
 

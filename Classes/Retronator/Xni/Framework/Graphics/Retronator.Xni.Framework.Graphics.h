@@ -3,6 +3,7 @@
 #import "GraphicsResource.h"
 #import "Texture.h"
 #import "Texture2D.h"
+#import "RenderTarget2D.h"
 #import "Effect.h"
 #import "EffectTechnique.h"
 #import "EffectPass.h"

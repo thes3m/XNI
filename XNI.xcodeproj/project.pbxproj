@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25ACE63C15F735B700EB9C26 /* RenderTarget2D.h in Headers */ = {isa = PBXBuildFile; fileRef = 25AE5D5115F5440B00B73D10 /* RenderTarget2D.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25AE5D5315F5440B00B73D10 /* RenderTarget2D.h in Headers */ = {isa = PBXBuildFile; fileRef = 25AE5D5115F5440B00B73D10 /* RenderTarget2D.h */; };
+		25AE5D5415F5440B00B73D10 /* RenderTarget2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AE5D5215F5440B00B73D10 /* RenderTarget2D.m */; };
+		25B3F9E615F9CC0E00C7DF1E /* RenderTarget2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AE5D5215F5440B00B73D10 /* RenderTarget2D.m */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		B50769151264EE9500E4474F /* GameComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B50769131264EE9500E4474F /* GameComponent.m */; };
 		B507691D1264EF0B00E4474F /* DrawableGameComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B507691B1264EF0B00E4474F /* DrawableGameComponent.m */; };
@@ -762,6 +766,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25A980CC15F92763005F1A78 /* RenderTarget2D+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RenderTarget2D+Internal.h"; sourceTree = "<group>"; };
+		25AE5D5115F5440B00B73D10 /* RenderTarget2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderTarget2D.h; sourceTree = "<group>"; };
+		25AE5D5215F5440B00B73D10 /* RenderTarget2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderTarget2D.m; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B50769121264EE9500E4474F /* GameComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameComponent.h; sourceTree = "<group>"; };
 		B50769131264EE9500E4474F /* GameComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameComponent.m; sourceTree = "<group>"; };
@@ -1501,6 +1508,9 @@
 				B50806FE122E4ECF00C330E2 /* Texture.m */,
 				B5080701122E4EE900C330E2 /* Texture2D.h */,
 				B5080702122E4EE900C330E2 /* Texture2D.m */,
+				25AE5D5115F5440B00B73D10 /* RenderTarget2D.h */,
+				25AE5D5215F5440B00B73D10 /* RenderTarget2D.m */,
+				25A980CC15F92763005F1A78 /* RenderTarget2D+Internal.h */,
 				B5E78B7812429BBD00DDD99A /* Effect.h */,
 				B5E78B7912429BBD00DDD99A /* Effect.m */,
 				B5EA65D5124952C9001245A4 /* EffectTechnique.h */,
@@ -1800,6 +1810,7 @@
 			files = (
 				B570A1A113E1DC3B0085E85E /* Retronator.Devices.Sensors.classes.h in Headers */,
 				B570A1A213E1DC3B0085E85E /* Retronator.Devices.Sensors.h in Headers */,
+				25ACE63C15F735B700EB9C26 /* RenderTarget2D.h in Headers */,
 				B570A1A313E1DC3B0085E85E /* SensorsEnums.h in Headers */,
 				B570A1A413E1DC3B0085E85E /* Accelerometer.h in Headers */,
 				B570A1A513E1DC3B0085E85E /* AccelerometerReadingEventArgs.h in Headers */,
@@ -2235,6 +2246,7 @@
 				B54E75551356241B007AD718 /* Collection.h in Headers */,
 				B54E75561356241B007AD718 /* ReadOnlyCollection.h in Headers */,
 				B54E75571356241B007AD718 /* IAsyncResult.h in Headers */,
+				25AE5D5315F5440B00B73D10 /* RenderTarget2D.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2347,6 +2359,7 @@
 				B570A28A13E1DC3B0085E85E /* Color.m in Sources */,
 				B570A28B13E1DC3B0085E85E /* GraphicsDeviceManager.m in Sources */,
 				B570A28C13E1DC3B0085E85E /* Texture.m in Sources */,
+				25B3F9E615F9CC0E00C7DF1E /* RenderTarget2D.m in Sources */,
 				B570A28D13E1DC3B0085E85E /* Texture2D.m in Sources */,
 				B570A28E13E1DC3B0085E85E /* GraphicsResource.m in Sources */,
 				B570A28F13E1DC3B0085E85E /* ContentManager.m in Sources */,
@@ -2654,6 +2667,7 @@
 				B572BC41130EB6D900B6DB47 /* AchievementCollection.m in Sources */,
 				B572BC45130EB70100B6DB47 /* Achievement.m in Sources */,
 				B5F503B013156241007AB367 /* XniShowMessageBoxResult.m in Sources */,
+				25AE5D5415F5440B00B73D10 /* RenderTarget2D.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

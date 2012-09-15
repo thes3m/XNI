@@ -179,6 +179,10 @@
 	[loadedAssets removeAllObjects];
 }
 
+-(NSString*)description{
+    return [NSString stringWithFormat:@"%@ withAssets:%@",[super description],loadedAssets];
+}
+
 - (void) dealloc
 {
 	[loadedAssets release];

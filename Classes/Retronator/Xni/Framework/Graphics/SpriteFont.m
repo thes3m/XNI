@@ -18,9 +18,15 @@
 	self = [super init];
 	if (self != nil) {
 		texture = [theTexture retain];
-		characterMap = [theCharacterMap retain];
-		
-		characters = [[NSSet alloc] initWithArray:[characterMap allKeys]];
+        characterMapD = [theCharacterMap retain];
+
+        //Array for fast access
+		for (int i = 0; i < 128; i++) {
+            Rectangle *rect = [theCharacterMap objectForKey:[NSNumber numberWithUnsignedShort:i]];
+            characterMap[i] = [rect retain];
+        }
+        
+		characters = [[NSSet alloc] initWithArray:[theCharacterMap allKeys]];
 
 		lineSpacing = theLineSpacing;
 	}
@@ -62,10 +68,16 @@
 }
 
 - (Rectangle *) sourceRectangleForCharacter:(unichar)character {
-	Rectangle *result = [characterMap objectForKey:[NSNumber numberWithChar:character]];
-	
+	Rectangle *result = nil;
+    
+    if (character < 128) {
+        result = characterMap[character];
+    }else{
+        result = [characterMapD objectForKey:[NSNumber numberWithUnsignedChar:character]];
+    }
+    
 	if (!result && defaultCharacter) {
-		result = [characterMap objectForKey:defaultCharacter];
+		result = [characterMapD objectForKey:[NSNumber numberWithUnsignedChar:character]];
 	}
 	
 	if (!result) {
@@ -75,12 +87,14 @@
 	return result;
 }
 
-- (void) dealloc
-{
+- (void) dealloc{
 	[characters release];
 	[defaultCharacter release];
 	[texture release];
-	[characterMap release];
+	//[characterMap release];
+    for (int i = 0; i < 256; i++) {
+        [characterMap[i] release];
+    }
 	[super dealloc];
 }
 

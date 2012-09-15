@@ -1,6 +1,6 @@
 #import "GraphicsEnums.h"
 
-@class GraphicsResource, Texture, Texture2D, Effect, EffectTechnique, EffectPass, BasicEffect, DirectionalLight;
+@class GraphicsResource, Texture, Texture2D, RenderTarget2D, Effect, EffectTechnique, EffectPass, BasicEffect, DirectionalLight;
 
 #import "VertexStructs.h"
 @class VertexElement, VertexPositionColor, VertexPositionTexture, VertexPositionColorTexture, VertexPositionNormalTexture, VertexDeclaration;

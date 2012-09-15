@@ -123,6 +123,7 @@
 	
 	// Add the game view to the window.
 	[window addSubview: gameViewController.view];
+    window.rootViewController = gameViewController;
 	
 	// Report view to TouchPanel.
 	[[TouchPanel getInstance] setView:gameViewController.gameView];
