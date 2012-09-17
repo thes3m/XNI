@@ -43,7 +43,7 @@
         do {
             runResult = CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, YES);
         } while (runResult == kCFRunLoopRunHandledSource);
-		
+        		
         [game tick];
         
         // We release memory every frame.

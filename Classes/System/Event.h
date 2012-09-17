@@ -11,7 +11,7 @@
 #import "System.classes.h"
 
 @interface Event : NSObject {
-    NSMutableSet *delegates;
+    NSMutableArray *delegates;
 }
 
 - (void) subscribeDelegate:(Delegate*)delegate;

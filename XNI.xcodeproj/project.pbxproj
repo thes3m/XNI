@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		25ACE63C15F735B700EB9C26 /* RenderTarget2D.h in Headers */ = {isa = PBXBuildFile; fileRef = 25AE5D5115F5440B00B73D10 /* RenderTarget2D.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		25AE5D5315F5440B00B73D10 /* RenderTarget2D.h in Headers */ = {isa = PBXBuildFile; fileRef = 25AE5D5115F5440B00B73D10 /* RenderTarget2D.h */; };
+		25AE5D5315F5440B00B73D10 /* RenderTarget2D.h in Headers */ = {isa = PBXBuildFile; fileRef = 25AE5D5115F5440B00B73D10 /* RenderTarget2D.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		25AE5D5415F5440B00B73D10 /* RenderTarget2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AE5D5215F5440B00B73D10 /* RenderTarget2D.m */; };
 		25B3F9E615F9CC0E00C7DF1E /* RenderTarget2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AE5D5215F5440B00B73D10 /* RenderTarget2D.m */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };

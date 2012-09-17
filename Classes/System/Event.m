@@ -14,7 +14,7 @@
 
 - (id) init {
     if (self = [super init]) {
-        delegates = [[NSMutableSet alloc] init];
+        delegates = [[NSMutableArray alloc] init];
     }
     return self;
 }
