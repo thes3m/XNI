@@ -50,6 +50,10 @@ static inline void Vector2Multiply(Vector2Struct *value1, float scaleFactor, Vec
     Vector2Set(result, value1->x * scaleFactor, value1->y * scaleFactor);
 }
 
+static inline void Vector2MultiplyComponents(Vector2Struct *value1, Vector2Struct *value2, Vector2Struct *result) {
+    Vector2Set(result, value1->x * value2->x, value1->y * value2->y);
+}
+
 static inline float Vector2DotProduct(Vector2Struct *value1, Vector2Struct *value2) {
     return value1->x * value2->x + value1->y * value2->y;
 }

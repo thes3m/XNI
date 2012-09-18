@@ -68,6 +68,10 @@ static inline void Vector4Multiply(Vector4Struct *value1, float scaleFactor, Vec
     Vector4Set(result, value1->x * scaleFactor, value1->y * scaleFactor, value1->z * scaleFactor, value1->w * scaleFactor);
 }
 
+static inline void Vector4MultiplyComponents(Vector4Struct *value1, Vector4Struct *value2, Vector4Struct *result) {
+    Vector4Set(result, value1->x * value2->x, value1->y * value2->y, value1->z * value2->z, value1->w * value2->w);
+}
+
 static inline void QuaternionMultiply(Vector4Struct *value1, Vector4Struct *value2, Vector4Struct *result) {
     float f12 = (value1->y * value2->z) - (value1->z * value2->y);
     float f11 = (value1->z * value2->x) - (value1->x * value2->z);

@@ -59,6 +59,10 @@ static inline void Vector3Multiply(Vector3Struct *value1, float scaleFactor, Vec
     Vector3Set(result, value1->x * scaleFactor, value1->y * scaleFactor, value1->z * scaleFactor);
 }
 
+static inline void Vector3MultiplyComponents(Vector3Struct *value1, Vector3Struct *value2, Vector3Struct *result) {
+    Vector3Set(result, value1->x * value2->x, value1->y * value2->y, value1->z * value2->z);
+}
+
 static inline void Vector3CrossProduct(Vector3Struct *value1, Vector3Struct *value2, Vector3Struct *result) {
     Vector3Set(result,
                value1->y * value2->z - value1->z * value2->y,
