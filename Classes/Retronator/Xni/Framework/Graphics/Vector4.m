@@ -98,6 +98,12 @@
     return [Vector4 vectorWithStruct:&resultData];
 }
 
++ (Vector4 *)lerp:(Vector4 *)value1 to:(Vector4 *)value2 by:(float)amount {
+    Vector4Struct resultData;
+    Vector4Lerp(value1.data, value2.data, amount, &resultData);
+    return [Vector4 vectorWithStruct:&resultData];
+}
+
 - (float) length {
     return Vector4Length(self.data);
 }

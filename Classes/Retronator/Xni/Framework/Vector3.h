@@ -41,6 +41,8 @@
 + (Vector3*) transform:(Vector3*)value with:(Matrix*)matrix;
 + (Vector3*) transformNormal:(Vector3*)value with:(Matrix*)matrix;
 
++ (Vector3*) lerp:(Vector3*)value1 to:(Vector3*)value2 by:(float)amount;
+
 - (float) length;
 - (float) lengthSquared;
 

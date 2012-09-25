@@ -85,6 +85,9 @@ static NSArray *drawOrderSort;
 		
         // Get the game host.
         gameHost = (GameHost*)[UIApplication sharedApplication];
+        
+        // Initialize game window.
+        [self.window initialize];
     }
     
     return self;
@@ -115,9 +118,6 @@ static NSArray *drawOrderSort;
 // METHODS
 
 - (void) run {    
-    // Initialize game window.
-	[self.window initialize];
-	
     // Create the graphics device so we can finish initialization.
     graphicsDeviceManager = [services getServiceOfType:[Protocols graphicsDeviceManager]];
     graphicsDeviceService = [services getServiceOfType:[Protocols graphicsDeviceService]];

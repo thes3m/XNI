@@ -111,6 +111,12 @@
     return [Vector3 vectorWithStruct:&resultData];
 }
 
++ (Vector3 *)lerp:(Vector3 *)value1 to:(Vector3 *)value2 by:(float)amount {
+    Vector3Struct resultData;
+    Vector3Lerp(value1.data, value2.data, amount, &resultData);
+    return [Vector3 vectorWithStruct:&resultData];
+}
+
 - (float) length {
     return Vector3Length(self.data);
 }

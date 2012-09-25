@@ -90,3 +90,13 @@ static inline void Vector4Transform(Vector4Struct *value, MatrixStruct *matrix, 
                (value->x * matrix->m13) + (value->y * matrix->m23) + (value->z * matrix->m33) + (value->w * matrix->m43),
 			   (value->x * matrix->m14) + (value->y * matrix->m24) + (value->z * matrix->m34) + (value->w * matrix->m44));
 }
+
+static inline void Vector4Lerp(Vector4Struct *value1, Vector4Struct *value2, float amount, Vector4Struct *result) {
+    if (amount <= 0) *result = *value1;
+    if (amount >= 1) *result = *value2;
+    Vector4Set(result,
+               value1->x + (value2->x - value1->x) * amount,
+               value1->y + (value2->y - value1->y) * amount,
+               value1->z + (value2->z - value1->z) * amount,
+               value1->w + (value2->w - value1->w) * amount);
+}

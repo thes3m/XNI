@@ -87,3 +87,12 @@ static inline void Vector3TransformNormal(Vector3Struct *value, MatrixStruct *ma
                (value->x * matrix->m12) + (value->y * matrix->m22) + (value->z * matrix->m32),
                (value->x * matrix->m13) + (value->y * matrix->m23) + (value->z * matrix->m33));
 }
+
+static inline void Vector3Lerp(Vector3Struct *value1, Vector3Struct *value2, float amount, Vector3Struct *result) {
+    if (amount <= 0) *result = *value1;
+    if (amount >= 1) *result = *value2;
+    Vector3Set(result,
+               value1->x + (value2->x - value1->x) * amount,
+               value1->y + (value2->y - value1->y) * amount,
+               value1->z + (value2->z - value1->z) * amount);
+}

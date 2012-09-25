@@ -34,6 +34,7 @@
 + (Vector4*) subtract:(Vector4*)value1 by:(Vector4*)value2;
 + (Vector4*) multiply:(Vector4*)value by:(float)scalar;
 + (Vector4*) transform:(Vector4*)value with:(Matrix*)matrix;
++ (Vector4*) lerp:(Vector4*)value1 to:(Vector4*)value2 by:(float)amount;
 
 - (float) length;
 - (float) lengthSquared;

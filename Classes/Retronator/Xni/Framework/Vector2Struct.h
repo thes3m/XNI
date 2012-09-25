@@ -69,3 +69,11 @@ static inline void Vector2TransformNormal(Vector2Struct *value, MatrixStruct *ma
                (value->x * matrix->m11) + (value->y * matrix->m21),
                (value->x * matrix->m12) + (value->y * matrix->m22));
 }
+
+static inline void Vector2Lerp(Vector2Struct *value1, Vector2Struct *value2, float amount, Vector2Struct *result) {
+    if (amount <= 0) *result = *value1;
+    if (amount >= 1) *result = *value2;
+    Vector2Set(result,
+               value1->x + (value2->x - value1->x) * amount,
+               value1->y + (value2->y - value1->y) * amount);
+}
