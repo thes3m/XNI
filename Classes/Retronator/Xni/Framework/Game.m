@@ -108,6 +108,13 @@ static NSArray *drawOrderSort;
 @synthesize targetElapsedTime;
 @synthesize inactiveSleepTime;
 
+@synthesize usesDisplayLink, displayLinkFrameInterval;
+
+- (void)setDisplayLinkFrameInterval:(int)value {
+    displayLinkFrameInterval = value;
+    [displayLink setFrameInterval:displayLinkFrameInterval];
+}
+
 @synthesize content;
 @synthesize components;
 @synthesize services;
@@ -143,8 +150,14 @@ static NSArray *drawOrderSort;
     // Force redraw.
     [self.window.gameViewController.gameView layoutSubviews];
     
-    // Run the game host with a delay event, so we don't block this method.
-    [gameHost performSelector:@selector(run) withObject:nil afterDelay:0];
+    if (usesDisplayLink) {
+        displayLink = [[CADisplayLink displayLinkWithTarget:self selector:@selector(tick)] retain];
+        [displayLink setFrameInterval:displayLinkFrameInterval];
+        [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    } else {
+        // Run the game host with a delay event, so we don't block this method.
+        [gameHost performSelector:@selector(run) withObject:nil afterDelay:0];
+    }
 }
 
 - (void) tick {
@@ -154,7 +167,9 @@ static NSArray *drawOrderSort;
     
     // Sleep if inactive.
     if (!isActive) {
-        CFRunLoopRunInMode(kCFRunLoopDefaultMode, inactiveSleepTime, NO);
+        if (!usesDisplayLink) {
+            CFRunLoopRunInMode(kCFRunLoopDefaultMode, inactiveSleepTime, NO);
+        }
 		return;
     }
     
@@ -163,7 +178,7 @@ static NSArray *drawOrderSort;
     NSTimeInterval elapsedRealTime = [currentFrameTime timeIntervalSinceDate:lastFrameTime];
     
     // Sleep if we're ahead of the target elapsed time.
-	if (isFixedTimeStep) {
+	if (isFixedTimeStep && !usesDisplayLink) {
 		if (elapsedRealTime < targetElapsedTime) {
 			NSTimeInterval sleepTime = targetElapsedTime - elapsedRealTime;
 			CFRunLoopRunInMode(kCFRunLoopDefaultMode, sleepTime, NO);
@@ -420,6 +435,7 @@ static NSArray *drawOrderSort;
 	
 	[self unloadContent];
     [gameTime release];
+    [displayLink release];
     
 	[componentsList release];	
 	[enabledComponents release];

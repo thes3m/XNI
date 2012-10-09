@@ -26,11 +26,15 @@
 @synthesize window;
 
 - (void) run {    	
-    // Hijack the run loop.
-    NSLog(@"Starting the game loop.");
     
     game = [self delegate];
-    	
+    
+    // If game uses display link we don't need to run our own game loop.
+    if (game.usesDisplayLink) return;
+	
+    // Hijack the run loop.
+    NSLog(@"Starting the game loop.");
+        
     SInt32 runResult;
     
 	isExiting = NO;
@@ -48,16 +52,12 @@
         
         // We release memory every frame.
         [pool release];
-    }
-	
-	/*
-	CADisplayLink *aDisplayLink = [CADisplayLink displayLinkWithTarget:game selector:@selector(tick)];
-	[aDisplayLink setFrameInterval:1];
-	[aDisplayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-	 */
+    }    
 }
 
 - (void) exit {
+    if (game.usesDisplayLink) return;
+
     NSLog(@"Exiting the game loop.");
     isExiting = YES;
 }

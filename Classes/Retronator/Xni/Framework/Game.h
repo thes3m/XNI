@@ -37,6 +37,10 @@
     GameTime *gameTime;
     NSDate *currentFrameTime;
     NSDate *lastFrameTime;
+    
+    BOOL usesDisplayLink;
+    int displayLinkFrameInterval;
+    CADisplayLink *displayLink;
 	
 	// Content manager
 	ContentManager *content;
@@ -62,6 +66,9 @@
 @property (nonatomic) BOOL isFixedTimeStep;
 @property (nonatomic) NSTimeInterval targetElapsedTime;
 @property (nonatomic) NSTimeInterval inactiveSleepTime;
+
+@property (nonatomic) BOOL usesDisplayLink;
+@property (nonatomic) int displayLinkFrameInterval;
 
 @property (nonatomic, retain) ContentManager *content;
 @property (nonatomic, readonly) GameComponentCollection *components;
