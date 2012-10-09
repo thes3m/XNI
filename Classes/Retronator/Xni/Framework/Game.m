@@ -79,6 +79,8 @@ static NSArray *drawOrderSort;
         targetElapsedTime = 1.0 / 60.0;
         inactiveSleepTime = 1.0 / 5.0;
 		maximumElapsedTime = 1.0 / 2.0;
+        displayLinkFrameInterval = 1;
+        usesDisplayLink = NO;
 		
 		// Gamer services
 		[Guide initializeWithGame:self];
