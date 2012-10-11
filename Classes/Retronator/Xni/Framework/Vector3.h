@@ -10,7 +10,7 @@
 
 #import "Retronator.Xni.Framework.classes.h"
 
-@interface Vector3 : NSObject <NSCopying> {
+@interface Vector3 : NSObject <NSCopying, NSCoding> {
     Vector3Struct data;
 }
 

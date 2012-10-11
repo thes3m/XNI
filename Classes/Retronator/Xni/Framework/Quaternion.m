@@ -37,6 +37,20 @@
     return [self initWithVector4Struct:quaternion.data];  
 }
 
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    return [self initWithX:[aDecoder decodeFloatForKey:@"x"]
+                         y:[aDecoder decodeFloatForKey:@"y"]
+                         z:[aDecoder decodeFloatForKey:@"z"]
+                         w:[aDecoder decodeFloatForKey:@"w"]];
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeFloat:data.x forKey:@"x"];
+    [aCoder encodeFloat:data.y forKey:@"y"];
+    [aCoder encodeFloat:data.z forKey:@"z"];
+    [aCoder encodeFloat:data.w forKey:@"w"];
+}
+
 + (Quaternion*) quaternionWithX:(float)x y:(float)y z:(float)z w:(float)w {
     return [[[Quaternion alloc] initWithX:x y:y z:z w:w] autorelease];
 }

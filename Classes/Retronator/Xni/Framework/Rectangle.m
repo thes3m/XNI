@@ -32,6 +32,20 @@
 	return [self initWithRectangleStruct:rectangle.data];
 }
 
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    return [self initWithX:[aDecoder decodeIntForKey:@"x"]
+                         y:[aDecoder decodeIntForKey:@"y"]
+                     width:[aDecoder decodeIntForKey:@"width"]
+                    height:[aDecoder decodeIntForKey:@"height"]];
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeInt:data.x forKey:@"x"];
+    [aCoder encodeInt:data.y forKey:@"y"];
+    [aCoder encodeInt:data.width forKey:@"width"];
+    [aCoder encodeInt:data.height forKey:@"height"];
+}
+
 + (Rectangle*) rectangleWithX:(int)x y:(int)y width:(int)width height:(int)height {
 	return [[[Rectangle alloc] initWithX:x y:y width:width height:height] autorelease];
 }

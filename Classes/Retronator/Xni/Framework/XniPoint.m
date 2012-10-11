@@ -31,6 +31,15 @@
 	return [self initWithPointStruct:point.data];
 }
 
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    return [self initWithIntX:[aDecoder decodeIntForKey:@"x"] y:[aDecoder decodeIntForKey:@"y"]];
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeInt:data.x forKey:@"x"];
+    [aCoder encodeInt:data.y forKey:@"y"];
+}
+
 + (XniPoint*) pointWithX:(int)x y:(int)y {
 	return [[[XniPoint alloc] initWithIntX:x y:y] autorelease];
 }

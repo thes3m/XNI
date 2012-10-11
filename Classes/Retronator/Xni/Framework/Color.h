@@ -10,7 +10,7 @@
 
 #import "Retronator.Xni.Framework.classes.h"
 
-@interface Color : NSObject <NSCopying> {
+@interface Color : NSObject <NSCopying, NSCoding> {
 	uint packedValue;
 }
 

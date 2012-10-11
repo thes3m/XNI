@@ -23,6 +23,25 @@
     return [self initWithMatrixStruct:matrix.data];  
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self) {
+        float *values = &data.m11;
+        for (int i=0; i<16; i++) {
+            values[i] = [aDecoder decodeFloatForKey:[NSString stringWithFormat:@"%i", i]];
+        }
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    float *values = &data.m11;
+    for (int i=0; i<16; i++) {
+        [aCoder encodeFloat:values[i] forKey:[NSString stringWithFormat:@"%i", i]];
+    }
+}
+
 + (Matrix*) matrixWithStruct: (MatrixStruct*)matrixStruct {
     return [[[Matrix alloc] initWithMatrixStruct:matrixStruct] autorelease];
 }

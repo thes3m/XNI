@@ -11,7 +11,7 @@
 
 #import "Retronator.Xni.Framework.classes.h"
 
-@interface XniPoint : NSObject <NSCopying> {
+@interface XniPoint : NSObject <NSCopying, NSCoding> {
 	PointStruct data;
 }
 

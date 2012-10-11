@@ -32,6 +32,15 @@
     return [self initWithVector2Struct:vector.data];  
 }
 
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    return [self initWithX:[aDecoder decodeFloatForKey:@"x"] y:[aDecoder decodeFloatForKey:@"y"]];
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeFloat:data.x forKey:@"x"];
+    [aCoder encodeFloat:data.y forKey:@"y"];
+}
+
 + (Vector2*) vectorWithX:(float)x y:(float)y{
     return [[[Vector2 alloc] initWithX:x y:y] autorelease];
 }

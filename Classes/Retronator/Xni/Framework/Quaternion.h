@@ -10,7 +10,7 @@
 
 #import "Retronator.Xni.Framework.classes.h"
 
-@interface Quaternion : NSObject <NSCopying> {
+@interface Quaternion : NSObject <NSCopying, NSCoding> {
     Vector4Struct data;
 }
 

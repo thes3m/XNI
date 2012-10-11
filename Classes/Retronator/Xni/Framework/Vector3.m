@@ -32,6 +32,18 @@
     return [self initWithVector3Struct:vector.data];  
 }
 
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    return [self initWithX:[aDecoder decodeFloatForKey:@"x"]
+                         y:[aDecoder decodeFloatForKey:@"y"]
+                         z:[aDecoder decodeFloatForKey:@"z"]];
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeFloat:data.x forKey:@"x"];
+    [aCoder encodeFloat:data.y forKey:@"y"];
+    [aCoder encodeFloat:data.z forKey:@"z"];
+}
+
 + (Vector3*) vectorWithX:(float)x y:(float)y z:(float)z {
     return [[[Vector3 alloc] initWithX:x y:y z:z] autorelease];
 }

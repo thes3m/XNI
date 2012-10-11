@@ -10,7 +10,7 @@
 
 #import "Retronator.Xni.Framework.classes.h"
 
-@interface Matrix : NSObject <NSCopying> {
+@interface Matrix : NSObject <NSCopying, NSCoding> {
     MatrixStruct data;
 }
 

@@ -11,7 +11,7 @@
 
 #import "Retronator.Xni.Framework.classes.h"
 
-@interface Rectangle : NSObject <NSCopying> {
+@interface Rectangle : NSObject <NSCopying, NSCoding> {
 	RectangleStruct data;
 }
 

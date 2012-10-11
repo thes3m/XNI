@@ -43,6 +43,18 @@
     return [self initWithRed:color.r green:color.g blue:color.b alpha:color.a];
 }
 
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+        packedValue = [aDecoder decodeIntForKey:@"packedValue"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeInt:packedValue forKey:@"packedValue"];
+}
+
+
 + (Color*) colorWithRed:(int)red green:(int)green blue:(int)blue alpha:(int)alpha {
     return [[[Color alloc] initWithRed:red green:green blue:blue alpha:alpha] autorelease];
 }
