@@ -21,7 +21,6 @@
 	int loopStart;
 
 @private
-	NSURL *fileUrl;
 	ExtAudioFileRef extRef;
 }
 

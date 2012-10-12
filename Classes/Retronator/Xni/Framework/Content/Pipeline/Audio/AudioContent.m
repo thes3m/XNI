@@ -16,7 +16,7 @@
 {
 	self = [super init];
 	if (self != nil) {
-		fileName = theFileName;
+		fileName = [theFileName retain];
 		fileType = theFileType;
 
 		// Load file.
@@ -25,10 +25,12 @@
 		UInt32 thePropertySize = sizeof(theFileFormat);
 		
 		// Open a file with ExtAudioFileOpen().
-		fileUrl = [[NSURL fileURLWithPath:theFileName] retain];
-		extRef = nil;
+		NSURL *fileUrl = [NSURL fileURLWithPath:theFileName];
+		
+        extRef = nil;
 		err = ExtAudioFileOpenURL((CFURLRef)fileUrl, &extRef);
-		if (err) {
+        
+        if (err) {
 			[NSException raise:@"NotSupportedException" format:@"ExtAudioFileOpenURL FAILED, Error = %ld\n", err];
 		}
 		
@@ -111,9 +113,9 @@
 
 - (void) dealloc
 {
-	//if (extRef) ExtAudioFileDispose(extRef);	
+	if (extRef) ExtAudioFileDispose(extRef);	
 	[format release];
-	[fileUrl release];
+    [fileName release];
 	[super dealloc];
 }
 
