@@ -7,7 +7,13 @@
 //
 
 #import "XniSamplerEventArgs.h"
+#import "XniSamplerEventArgs+Internal.h"
 
+@interface XniSamplerEventArgs ()
+
+@property (nonatomic, readwrite) int samplerIndex;
+
+@end
 
 @implementation XniSamplerEventArgs
 

@@ -77,7 +77,7 @@
     }
     
 	if (!result && defaultCharacter) {
-		result = [characterMapD objectForKey:[NSNumber numberWithUnsignedChar:character]];
+		result = [characterMapD objectForKey:defaultCharacter];
 	}
 	
 	if (!result) {

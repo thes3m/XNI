@@ -9,8 +9,15 @@
 #import "SamplerStateCollection.h"
 #import "SamplerStateCollection+Internal.h"
 #import "XniSamplerEventArgs.h"
-
+#import "XniSamplerEventArgs+Internal.h"
 #import "Retronator.Xni.Framework.Graphics.h"
+
+
+@interface SamplerStateCollection (){
+    XniSamplerEventArgs *eventArgs;
+}
+
+@end
 
 @implementation SamplerStateCollection
 
@@ -21,6 +28,7 @@
 		for (int i = 0; i < GL_MAX_TEXTURE_UNITS; i++) {
 			samplerStates[i] = nil;
 		}
+        eventArgs = [[XniSamplerEventArgs alloc] initWithSamplerIndex:0];
 		samplerStateChanged = [[Event alloc] init];
 	}
 	return self;
@@ -37,12 +45,14 @@
 - (void)setItem:(SamplerState*)item atIndex:(NSUInteger)index {
 	if (samplerStates[index] != item) {
 		samplerStates[index] = item;
-		[samplerStateChanged raiseWithSender:self eventArgs:[XniSamplerEventArgs eventArgsWithSamplerIndex:index]];
+        eventArgs.samplerIndex = index;
+		[samplerStateChanged raiseWithSender:self eventArgs:eventArgs];
 	}
 }
 
 - (void) dealloc
 {
+    [eventArgs release];
 	[samplerStateChanged release];
 	[super dealloc];
 }

@@ -766,6 +766,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		254CE83E162C0F2900A27E7C /* XniSamplerEventArgs+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XniSamplerEventArgs+Internal.h"; sourceTree = "<group>"; };
 		25A980CC15F92763005F1A78 /* RenderTarget2D+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RenderTarget2D+Internal.h"; sourceTree = "<group>"; };
 		25AE5D5115F5440B00B73D10 /* RenderTarget2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderTarget2D.h; sourceTree = "<group>"; };
 		25AE5D5215F5440B00B73D10 /* RenderTarget2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderTarget2D.m; sourceTree = "<group>"; };
@@ -1585,6 +1586,7 @@
 				B5E78B6C12429B1A00DDD99A /* SamplerState.h */,
 				B5E78B6D12429B1A00DDD99A /* SamplerState.m */,
 				B5F415DC127781D80012BAF1 /* XniSamplerEventArgs.h */,
+				254CE83E162C0F2900A27E7C /* XniSamplerEventArgs+Internal.h */,
 				B5F415DD127781D80012BAF1 /* XniSamplerEventArgs.m */,
 				B5BBC1DE1248D5640066F5ED /* SamplerStateCollection.h */,
 				B5F415CD127781340012BAF1 /* SamplerStateCollection+Internal.h */,

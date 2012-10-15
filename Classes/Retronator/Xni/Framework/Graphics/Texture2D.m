@@ -9,6 +9,8 @@
 #import "Texture2D.h"
 #import <UIKit/UIKit.h>
 
+#import <OpenGLES/ES1/glext.h>
+
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Graphics.h"
 #import "Retronator.Xni.Framework.Content.Pipeline.Graphics.h"
