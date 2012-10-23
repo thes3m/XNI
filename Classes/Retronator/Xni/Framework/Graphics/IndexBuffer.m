@@ -39,5 +39,11 @@
 	[graphicsDevice setData:data.array toIndexBuffer:self];
 }
 
+- (void)dealloc
+{
+    [graphicsDevice releaseBuffer:bufferID];
+    [super dealloc];
+}
+
 @end
 

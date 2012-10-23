@@ -41,6 +41,7 @@
 
 - (void) dealloc
 {
+    [graphicsDevice releaseBuffer:bufferID];
 	[vertexDeclaration release];
 	[super dealloc];
 }

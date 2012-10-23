@@ -408,6 +408,9 @@
     glBindBuffer(resourceType, 0);
 }
 
+- (void)releaseBuffer:(uint)bufferId {
+    glDeleteBuffers(1, &bufferId);
+}
 
 // Profile specific
 

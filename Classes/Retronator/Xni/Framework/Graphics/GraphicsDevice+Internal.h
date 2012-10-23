@@ -22,7 +22,8 @@
 
 - (uint) createBuffer;
 - (void) setData:(void*)data toIndexBuffer:(IndexBuffer*)buffer; 
-- (void) setData:(void*)data toVertexBuffer:(VertexBuffer*)buffer; 
+- (void) setData:(void*)data toVertexBuffer:(VertexBuffer*)buffer;
+- (void) releaseBuffer:(uint)bufferId;
 
 // Profile specific
 - (EAGLContext*) createContext;
