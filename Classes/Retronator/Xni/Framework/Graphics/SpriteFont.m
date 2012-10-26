@@ -52,7 +52,7 @@
 		} else {
 			// Draw this character
 			Rectangle *sourceRectangle = [self sourceRectangleForCharacter:character];
-			currentPosition.x += sourceRectangle.width + spacing;
+			currentPosition.x += sourceRectangle.width;
 			
 			if (currentPosition.x > size.x) {
 				size.x = currentPosition.x;
@@ -61,6 +61,8 @@
 			if (currentPosition.y > size.y) {
 				size.y = currentPosition.y;
 			}
+            
+            currentPosition.x += spacing;
 		}
 	}	
 	
