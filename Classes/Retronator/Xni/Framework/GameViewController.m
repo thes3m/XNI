@@ -31,17 +31,17 @@
 }
 
 + (DisplayOrientation) getDisplayOrientationForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
-		return DisplayOrientationPortrait;
-	} else {
-		if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
-			return DisplayOrientationLandscapeLeft;
-		} else if (interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
-			return DisplayOrientationLandscapeRight;
-		} else {
-			return DisplayOrientationDefault;
-		}
-	}
+    if (interfaceOrientation == UIInterfaceOrientationPortrait) {
+        return DisplayOrientationPortrait;
+    } else if (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
+        return DisplayOrientationPortraitUpsideDown;
+    } else if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
+        return DisplayOrientationLandscapeLeft;
+    } else if (interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+        return DisplayOrientationLandscapeRight;
+    } else{
+        return DisplayOrientationDefault;
+    }
 }
 
 + (UIInterfaceOrientation) getUIInterfaceOrientationFromString:(NSString*)interfaceOrientation {
@@ -96,6 +96,14 @@
     DisplayOrientation orientation = [GameViewController getDisplayOrientationForInterfaceOrientation:interfaceOrientation];
 	BOOL supported = supportedOrientations & orientation;
     return supported;
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return supportedOrientations;
 }
 
 

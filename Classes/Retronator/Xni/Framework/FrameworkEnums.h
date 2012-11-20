@@ -1,6 +1,9 @@
+#import <UIKit/UIKit.h>
+
 typedef enum {
-	DisplayOrientationDefault = 2,
-	DisplayOrientationLandscapeLeft = 1,
-	DisplayOrientationLandscapeRight = 2,
-	DisplayOrientationPortrait = 4
+	DisplayOrientationDefault = UIInterfaceOrientationMaskAll,
+	DisplayOrientationLandscapeLeft = UIInterfaceOrientationMaskLandscapeLeft,
+	DisplayOrientationLandscapeRight = UIInterfaceOrientationMaskLandscapeRight,
+	DisplayOrientationPortrait = UIInterfaceOrientationMaskPortrait,
+    DisplayOrientationPortraitUpsideDown = UIInterfaceOrientationMaskPortraitUpsideDown
 } DisplayOrientation;

@@ -14,7 +14,9 @@
 #import "GameView.h"
 #import "TouchPanel+Internal.h"
 
-@interface GameWindow()
+@interface GameWindow() {
+    BOOL fakeLandscapeBounds;
+}
 
 - (Rectangle*) calculateClientBounds;
 
@@ -66,9 +68,28 @@
 }
 
 - (void) endScreenDeviceChangeWithClientWidth:(int)clientWidth clientHeight:(int)clientHeight {
-	CGRect realFrame = [UIScreen mainScreen].applicationFrame;
-	float realScale = [UIScreen mainScreen].scale;
 	
+    // Before iOS 6.0 the orientation is handled with a different set of functions. Get version so we can act acordingly.
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    
+    CGRect realFrame = [UIScreen mainScreen].applicationFrame;
+    float realScale = [UIScreen mainScreen].scale;
+    
+    // Set target view frame to full screen frame to determine orientation.
+    gameViewController.view.frame = realFrame;
+    
+    CGRect orientedFrame = gameViewController.view.bounds;
+	NSLog(@"%f, %f", orientedFrame.size.width, orientedFrame.size.height);
+    BOOL deviceIsLandscape = orientedFrame.size.width > orientedFrame.size.height;
+    
+    BOOL clientWantsOnlyLandscape = !(gameViewController.supportedOrientations & DisplayOrientationPortrait);
+    
+    if (deviceIsLandscape || clientWantsOnlyLandscape) {
+        int height = clientHeight;
+        clientHeight = clientWidth;
+        clientWidth = height;
+    }
+    
 	float realAspectRatio = realFrame.size.width / realFrame.size.height;
 	
 	if (clientWidth == 0) {
@@ -77,7 +98,7 @@
 	
 	if (clientHeight == 0) {
 		clientHeight = realFrame.size.height * realScale;
-	}
+	}    
 	
 	float targetAspectRatio = (float)clientWidth/(float)clientHeight;
 	CGRect targetFrame;
@@ -108,7 +129,19 @@
 
 	// Recalculate client bounds.
 	[clientBounds release];
-	clientBounds = [[self calculateClientBounds] retain];	
+	clientBounds = [[self calculateClientBounds] retain];
+    
+    if (version < 6) {
+        // If the user requested a landscape backbuffer and our view is still reporting a portrait orientation,
+        // this will change with a later call, so we should manually adjust the (incorrect) bounds for now.
+        // Also, don't switch the orientation if it is already correctly in landscape.
+        if (clientWantsOnlyLandscape && clientBounds.width < clientBounds.height) {
+            int height = clientBounds.height;
+            clientBounds.height = clientBounds.width;
+            clientBounds.width = height;
+            fakeLandscapeBounds = YES;
+        }
+    }
 }
 
 - (void) initialize {
@@ -141,6 +174,10 @@
     if (![newClientBounds equals:clientBounds]) {
 		[clientBounds release];
         clientBounds = [newClientBounds retain];
+        [clientSizeChanged raiseWithSender:self];
+    } else if (fakeLandscapeBounds) {
+        // Still call client size changed, since the actual screen was in portrait mode before.
+        fakeLandscapeBounds = NO;
         [clientSizeChanged raiseWithSender:self];
     }
 }
