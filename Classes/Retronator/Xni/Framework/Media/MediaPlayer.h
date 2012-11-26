@@ -21,6 +21,8 @@
 	MediaQueue *queue;
 	MediaState state;
 	float volume;
+    
+    Song *songToPlayOnActive;
 	
 	NSMutableArray *remainingSongIndices;
 	

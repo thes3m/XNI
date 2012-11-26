@@ -7,6 +7,7 @@
 //
 
 #import "MediaPlayer.h"
+#import "MediaPlayer+Internal.h"
 
 #import <AudioToolbox/AudioToolbox.h>
 
@@ -19,6 +20,11 @@
 - (BOOL) checkAvailability;
 - (void) setMediaState:(MediaState)value;
 - (void) fillSongIndices;
+
+- (void) setSongToPlayOnActive:(Song*)song;
+
+- (void) toBackground;
+- (void) returnFromBackground;
 
 @end
 
@@ -115,6 +121,8 @@ static MediaPlayer *instance;
 + (void) playSong:(Song*)song { [instance playSong:song];}
 + (void) resume { [instance resume];}
 + (void) stop { [instance stop];}
++ (void) toBackground { [instance toBackground];}
++ (void) returnFromBackground { [instance returnFromBackground];}
 
 - (void) moveNext {
 	if (![self checkAvailability]) {
@@ -158,6 +166,8 @@ static MediaPlayer *instance;
 
 - (void) playSong:(Song*)song {
 	if (![self checkAvailability]) {
+        // Save the song if we might get availability later.
+        [self setSongToPlayOnActive:song];
 		return;
 	}
     
@@ -244,11 +254,51 @@ static MediaPlayer *instance;
 	}
 }
 
+- (void)setSongToPlayOnActive:(Song *)song {
+    [songToPlayOnActive release];
+    songToPlayOnActive = [song retain];
+}
+
+- (void)toBackground {
+    // If music was playing, activate the ambient category while the app is in background.
+    if (soloModeActivated) {
+        [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryAmbient error:nil];
+    }
+}
+
+- (void)returnFromBackground {
+    // If music was playing, try to return to playing if we still have control.
+    // Otherwise the user has started playing his own music and we should remain in ambient.    
+    if (soloModeActivated) {
+        
+        if (self.gameHasControl) {
+            // Everything is OK, set category back to solo.
+            [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategorySoloAmbient error:nil];
+        } else {
+            // Stop music if we lost control.
+            [self setSongToPlayOnActive:queue.activeSong];
+            
+            queue.activeSong.audioPlayer.currentTime = 0;
+            [queue.activeSong.audioPlayer stop];
+            [self setMediaState:MediaStateStopped];
+            
+            soloModeActivated = NO;
+        }
+    } else {
+        if (self.gameHasControl && songToPlayOnActive) {
+            
+            [self playSong:songToPlayOnActive];
+            [self setSongToPlayOnActive:nil];
+        }
+    }
+}
+
 - (void) dealloc
 {
 	[remainingSongIndices release];
 	[activeSongChanged release];
 	[mediaStateChanged release];
+    [songToPlayOnActive release];
 	[queue release];
 	[super dealloc];
 }

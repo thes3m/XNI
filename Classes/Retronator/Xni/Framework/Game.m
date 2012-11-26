@@ -12,12 +12,14 @@
 #import "Retronator.Xni.Framework.h"
 #import "Retronator.Xni.Framework.Graphics.h"
 #import "Retronator.Xni.Framework.Content.h"
+#import "Retronator.Xni.Framework.Media.h"
 #import "TouchPanel+Internal.h"
 #import "GameWindow+Internal.h"
 #import "GameViewController.h"
 #import "GameView.h"
 #import "Guide+Internal.h"
 #import "SoundEffect+Internal.h"
+#import "MediaPlayer+Internal.h"
 
 @interface Game ()
 
@@ -233,6 +235,7 @@ static NSArray *drawOrderSort;
 {
     NSLog(@"Application was deactivated.");
     isActive = NO;
+    [MediaPlayer toBackground];
 	[deactivated raiseWithSender:self];
 }
 
@@ -240,6 +243,7 @@ static NSArray *drawOrderSort;
 {
     NSLog(@"Application was activated.");
     isActive = YES;
+    [MediaPlayer returnFromBackground];
 	[activated raiseWithSender:self];
 }
 

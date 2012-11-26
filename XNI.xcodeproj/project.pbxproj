@@ -664,6 +664,7 @@
 		B57E36BF124BE2DD00DDAA42 /* VertexPositionColorTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = B57E36BD124BE2DD00DDAA42 /* VertexPositionColorTexture.m */; };
 		B57E36CD124BE36E00DDAA42 /* VertexPositionColorTextureArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B57E36CB124BE36E00DDAA42 /* VertexPositionColorTextureArray.m */; };
 		B594878612AEF44900EE601F /* XniPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = B594878412AEF44900EE601F /* XniPoint.m */; };
+		B5956CCA1663BD2700FC01F5 /* MediaPlayer+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B5956CC91663BD2700FC01F5 /* MediaPlayer+Internal.h */; };
 		B59AD7F11236E07300F99511 /* ContentImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD7EF1236E07300F99511 /* ContentImporter.m */; };
 		B59AD8121236E25700F99511 /* TextureImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD8101236E25700F99511 /* TextureImporter.m */; };
 		B59AD8201236E59A00F99511 /* ContentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AD81E1236E59A00F99511 /* ContentItem.m */; };
@@ -936,6 +937,7 @@
 		B594878112AEF3DA00EE601F /* PointStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointStruct.h; sourceTree = "<group>"; };
 		B594878312AEF44900EE601F /* XniPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XniPoint.h; sourceTree = "<group>"; };
 		B594878412AEF44900EE601F /* XniPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XniPoint.m; sourceTree = "<group>"; };
+		B5956CC91663BD2700FC01F5 /* MediaPlayer+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MediaPlayer+Internal.h"; path = "Classes/Retronator/Xni/Framework/MediaPlayer+Internal.h"; sourceTree = SOURCE_ROOT; };
 		B59AD7EE1236E07300F99511 /* ContentImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentImporter.h; sourceTree = "<group>"; };
 		B59AD7EF1236E07300F99511 /* ContentImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentImporter.m; sourceTree = "<group>"; };
 		B59AD80B1236E21900F99511 /* Retronator.Xni.Framework.Content.Pipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retronator.Xni.Framework.Content.Pipeline.h; sourceTree = "<group>"; };
@@ -1260,6 +1262,7 @@
 				B507F85D12E5766C00A7302B /* Song+Internal.h */,
 				B507F85012E5756400A7302B /* Song.m */,
 				B507F83E12E5751700A7302B /* MediaPlayer.h */,
+				B5956CC91663BD2700FC01F5 /* MediaPlayer+Internal.h */,
 				B507F83F12E5751700A7302B /* MediaPlayer.m */,
 				B507F8BA12E58E7000A7302B /* MediaQueue.h */,
 				B507F8C412E58EB100A7302B /* MediaQueue+Internal.h */,
@@ -2249,6 +2252,7 @@
 				B54E75561356241B007AD718 /* ReadOnlyCollection.h in Headers */,
 				B54E75571356241B007AD718 /* IAsyncResult.h in Headers */,
 				25AE5D5315F5440B00B73D10 /* RenderTarget2D.h in Headers */,
+				B5956CCA1663BD2700FC01F5 /* MediaPlayer+Internal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
