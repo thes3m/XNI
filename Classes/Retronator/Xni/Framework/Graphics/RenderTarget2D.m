@@ -17,12 +17,26 @@
 
 @interface RenderTarget2D (){
     GLuint framebuffer;
-    GLuint renderBuffer;
 }
 
 @end
 
 @implementation RenderTarget2D
+
+- (id)initWithGraphicsDevice:(GraphicsDevice *)theGraphicsDevice width:(int)theWidth height:(int)theHeight{
+    
+    return [self initWithGraphicsDevice:theGraphicsDevice width:theWidth height:theHeight mipmap:NO surfaceFormat:SurfaceFormatAlpha8 depthFormat:DepthFormatNone multiSampleCount:0 usage:RenderTargetUsageDiscardContents];
+}
+
+- (id)initWithGraphicsDevice:(GraphicsDevice *)theGraphicsDevice
+                       width:(int)theWidth
+                      height:(int)theHeight
+                      mipmap:(BOOL)theMipmap
+               surfaceFormat:(SurfaceFormat)theSurfaceFormat
+                 depthFormat:(DepthFormat)theDepthFormat{
+    
+    return [self initWithGraphicsDevice:theGraphicsDevice width:theWidth height:theHeight mipmap:NO surfaceFormat:theSurfaceFormat depthFormat:theDepthFormat multiSampleCount:0 usage:RenderTargetUsageDiscardContents];
+}
 
 - (id)initWithGraphicsDevice:(GraphicsDevice *)theGraphicsDevice
                        width:(int)theWidth
@@ -38,9 +52,6 @@
         //Texture is already created by super object.
         //Here we only create a framebuffer.
         glGenFramebuffersOES(1, &framebuffer);
-        
-        glGenRenderbuffersOES(1, &renderBuffer);
-        
     }
     return self;
 }
@@ -51,17 +62,13 @@
     return framebuffer;
 }
 
--(GLuint) colorRenderbuffer{
-    return renderBuffer;
-}
-
 - (void)dealloc{
     glDeleteFramebuffers(1, &framebuffer);
     [super dealloc];
 }
 
-- (void) saveAsPng:(NSData*)textureData width:(int)width height:(int)height{
-    
-}
+//- (void) saveAsPng:(NSData*)textureData width:(int)width height:(int)height{
+//    
+//}
 
 @end

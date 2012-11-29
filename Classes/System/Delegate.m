@@ -61,6 +61,10 @@
     return NO;
 }
 
+-(NSString *)description{
+    return  [NSString stringWithFormat:@"%@: [%@, %@]",[super description],target, NSStringFromSelector(method)];
+}
+
 - (NSUInteger) hash {
     return [target hash] ^ [NSStringFromSelector(method) hash];
 }
