@@ -58,7 +58,7 @@ static Guide *instance = nil;
 	return [instance beginShowMessageBoxWithTitle:title text:text buttons:buttons focusButton:focusButton icon:icon callback:callback state:state];
 }
 
-+ (NSNumber *) endShowMessageBox:(id <IAsyncResult>)result {
++ (NSNumber*) endShowMessageBox:(id <IAsyncResult>)result {
 	return [instance endShowMessageBox:result];
 }
 

@@ -25,5 +25,6 @@
 
 - (void) addComponent:(id<IGameComponent>)component;
 - (void) removeComponent:(id<IGameComponent>)component;
+- (BOOL) contains:(id<IGameComponent>)component;
 
 @end

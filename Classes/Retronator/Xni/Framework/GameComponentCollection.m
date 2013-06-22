@@ -33,6 +33,9 @@
 }
 
 - (void) addComponent:(id<IGameComponent>)component {
+    if ([components containsObject:component]) {
+        NSLog(@"WARNING: Game component added twice:%@", component);
+    }
     [components addObject:component];
     [componentAdded raiseWithSender:self
 						  eventArgs:[GameComponentCollectionEventArgs
@@ -44,6 +47,10 @@
     [componentRemoved raiseWithSender:self
 							eventArgs:[GameComponentCollectionEventArgs
 									   eventArgsWithGameComponent:component]];
+}
+
+- (BOOL) contains:(id<IGameComponent>)component{
+    return [components containsObject:component];
 }
 
 - (NSUInteger) countByEnumeratingWithState:(NSFastEnumerationState *)state 

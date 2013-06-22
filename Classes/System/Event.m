@@ -10,11 +10,18 @@
 
 #import "System.h"
 
+@interface Event (){
+    NSMutableArray *tempEvents;
+}
+
+@end
+
 @implementation Event
 
 - (id) init {
     if (self = [super init]) {
         delegates = [[NSMutableArray alloc] init];
+        tempEvents = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -33,13 +40,16 @@
 }
 
 - (void) raiseWithSender:(id)sender eventArgs:(EventArgs*)e {
-    for (Delegate *delegate in delegates) {
+    [tempEvents addObjectsFromArray:delegates];
+    for (Delegate *delegate in tempEvents) {
         [delegate invokeWithArgument:sender argument:e];
     }
+    [tempEvents removeAllObjects];
 }
 
 - (void) dealloc {
     [delegates release];
+    [tempEvents release];
     [super dealloc];
 }
 

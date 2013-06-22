@@ -193,6 +193,8 @@
 
 + (int) getNumberOfVerticesForPrimitiveType:(PrimitiveType)primitiveType primitiveCount:(int)primitiveCount {
     switch (primitiveType) {
+        case GL_TRIANGLE_FAN:
+            return primitiveCount;
         case PrimitiveTypeLineStrip:
 			return primitiveCount + 1;
         case PrimitiveTypeLineList:
@@ -586,6 +588,7 @@
         
         // CHECK FRAME BUFFER STATUS HERE
         GLenum status = glCheckFramebufferStatusOES(GL_FRAMEBUFFER);
+        
         if(status != GL_FRAMEBUFFER_COMPLETE){
             NSLog(@"Error binding renderTarget");
         }
