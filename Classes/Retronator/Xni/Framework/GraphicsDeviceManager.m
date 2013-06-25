@@ -57,7 +57,7 @@
     [self applyChanges];
     
     // Listen to client size change from now on.
-    [game.window.clientSizeChanged
+    [game.gameWindow.clientSizeChanged
 	  subscribeDelegate:[Delegate delegateWithTarget:self Method:@selector(applyChanges)]];
 }
 
@@ -70,9 +70,9 @@
 }
 
 - (void) applyChanges {
-	[game.window setSupportedOrientations:supportedOrientations];
-    [game.window beginScreenDeviceChangeWithFullscreen:isFullScreen];
-	[game.window endScreenDeviceChangeWithClientWidth:self.preferredBackBufferWidth clientHeight:self.preferredBackBufferHeight];
+	[game.gameWindow setSupportedOrientations:supportedOrientations];
+    [game.gameWindow beginScreenDeviceChangeWithFullscreen:isFullScreen];
+	[game.gameWindow endScreenDeviceChangeWithClientWidth:self.preferredBackBufferWidth clientHeight:self.preferredBackBufferHeight];
 	
 	if (graphicsDevice != nil && graphicsDevice.graphicsProfile != graphicsProfile) {
 		// Different graphics profile requested.

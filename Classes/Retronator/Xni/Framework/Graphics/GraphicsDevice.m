@@ -193,7 +193,7 @@
 
 + (int) getNumberOfVerticesForPrimitiveType:(PrimitiveType)primitiveType primitiveCount:(int)primitiveCount {
     switch (primitiveType) {
-        case GL_TRIANGLE_FAN:
+        case PrimitiveTypeTriangleFan:
             return primitiveCount;
         case PrimitiveTypeLineStrip:
 			return primitiveCount + 1;
@@ -217,7 +217,7 @@
 - (void) reset {
 	[deviceResetting raiseWithSender:self];
 	
-    CAEAGLLayer *layer = (CAEAGLLayer*)game.window.handle;
+    CAEAGLLayer *layer = (CAEAGLLayer*)game.gameWindow.handle;
     
 	if (multisampling) {
 		// Allocate resolve buffer backing based on the current layer size.

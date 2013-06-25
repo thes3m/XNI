@@ -58,7 +58,8 @@
 	Event *activated, *deactivated, *disposed, *exiting;
 }
 
-@property (nonatomic, readonly) GameWindow *window;
+@property (nonatomic, retain) UIWindow *window;
+@property (nonatomic, readonly) GameWindow *gameWindow;
 @property (nonatomic, readonly) GraphicsDevice *graphicsDevice;
 
 @property (nonatomic, readonly) BOOL isActive;
