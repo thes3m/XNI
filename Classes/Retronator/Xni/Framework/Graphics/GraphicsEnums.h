@@ -121,6 +121,7 @@ typedef enum {
     PrimitiveTypeLineStrip = GL_LINE_STRIP,
     PrimitiveTypeTriangleList = GL_TRIANGLES,
     PrimitiveTypeTriangleStrip = GL_TRIANGLE_STRIP,
+    PrimitiveTypeTriangleFan = GL_TRIANGLE_FAN,
 } PrimitiveType;
 
 typedef enum {

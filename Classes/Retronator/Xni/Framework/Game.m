@@ -89,8 +89,6 @@ static NSArray *drawOrderSort;
 		
         // Get the game host.
         gameHost = (GameHost*)[UIApplication sharedApplication];
-        
-        
     }
     
     return self;
@@ -98,7 +96,11 @@ static NSArray *drawOrderSort;
 
 // PROPERTIES
 
-- (GameWindow*) window {
+- (UIWindow*) window {
+    return [gameHost window].window;
+}
+
+- (GameWindow*) gameWindow {
     return [gameHost window];
 }
 
@@ -129,7 +131,7 @@ static NSArray *drawOrderSort;
 
 - (void) run {
     // Initialize game window.
-    [self.window initialize];
+    [self.gameWindow initialize];
     
     // Create the graphics device so we can finish initialization.
     graphicsDeviceManager = [services getServiceOfType:[Protocols graphicsDeviceManager]];
@@ -152,7 +154,7 @@ static NSArray *drawOrderSort;
     }
     
     // Force redraw.
-    [self.window.gameViewController.gameView layoutSubviews];
+    [self.gameWindow.gameViewController.gameView layoutSubviews];
     
     if (usesDisplayLink) {
         displayLink = [[CADisplayLink displayLinkWithTarget:self selector:@selector(tick)] retain];
