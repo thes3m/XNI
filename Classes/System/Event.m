@@ -40,6 +40,7 @@
 }
 
 - (void) raiseWithSender:(id)sender eventArgs:(EventArgs*)e {
+    [tempEvents removeAllObjects];
     [tempEvents addObjectsFromArray:delegates];
     for (Delegate *delegate in tempEvents) {
         [delegate invokeWithArgument:sender argument:e];
