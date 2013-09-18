@@ -12,7 +12,7 @@
 
 @interface PixelBitmapContent : BitmapContent {
 	SurfaceFormat format;
-	int bytesPerPixel;
+	float bytesPerPixel;
 }
 
 - (id) initWithWidth:(int)theWidth height:(int)theHeight format:(SurfaceFormat)theFormat;

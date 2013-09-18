@@ -19,6 +19,7 @@
 #import "IndexBuffer+Internal.h"
 #import "VertexBuffer+Internal.h"
 #import "RenderTarget2D+Internal.h"
+#import "VectorConverter.h"
 
 @interface GraphicsDevice(){
     BOOL rrt;
@@ -363,7 +364,7 @@
 	glDeleteTextures(1, &textureId);
 }
 
-- (void) setData:(void*)data toTexture2D:(Texture2D*)texture SourceRectangle:(Rectangle*)rect level:(int)level {
+- (void) setData:(void*)data toTexture2D:(Texture2D*)texture SourceRectangle:(Rectangle*)rect level:(int)level{
 	GLenum format, type;
 	[GraphicsDevice getFormat:&format AndType:&type ForSurfaceFormat:texture.format];
 	
@@ -374,12 +375,30 @@
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	
-	if (rect) {
-		glTexSubImage2D(GL_TEXTURE_2D, level, rect.x, rect.y, rect.width, rect.height, format, type, data);
-	} else {
-		glTexImage2D(GL_TEXTURE_2D, level, format, texture.width, texture.height, 0, format, type, data);
+    if (texture.format == SurfaceFormatPvrtc4bAlpha || texture.format == SurfaceFormatPvrtc4b || texture.format == SurfaceFormatPvrtc2bAlpha || texture.format == SurfaceFormatPvrtc2b) {
+        float bytesPerPixel = 0;
+        BOOL hasValue = [VectorConverter tryGetSizeInBytesOfSurfaceFormat:texture.format sizeInBytes:&bytesPerPixel];
+        if (hasValue) {
+            int size = (int)(bytesPerPixel*texture.width*texture.height);
+            glCompressedTexImage2D(GL_TEXTURE_2D, level, format, texture.width, texture.height, 0, size, data);
+            
+            GLenum err = glGetError();
+            if (err != GL_NO_ERROR)
+            {
+                NSLog(@"Error uploading compressed texture level: %d. glError: 0x%04X", level, err);
+            }
+            
+        }else{
+            [NSException raise:@"ArgumentException" format:@"The provided format is not supported"];
+        }
+    }else{
+        if (rect) {
+            glTexSubImage2D(GL_TEXTURE_2D, level, rect.x, rect.y, rect.width, rect.height, format, type, data);
+        } else {
+            glTexImage2D(GL_TEXTURE_2D, level, format, texture.width, texture.height, 0, format, type, data);
+        }
     }
-    	
+    
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
@@ -480,6 +499,18 @@
 			*format = GL_RGBA;
 			*type = GL_UNSIGNED_SHORT_5_5_5_1;
 			break;
+        case SurfaceFormatPvrtc4bAlpha:
+            *format = GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG;
+            break;
+        case SurfaceFormatPvrtc4b:
+            *format = GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG;
+            break;
+        case SurfaceFormatPvrtc2bAlpha:
+            *format = GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG;
+            break;
+        case SurfaceFormatPvrtc2b:
+            *format = GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG;
+            break;
 		default:
 			break;
 	}

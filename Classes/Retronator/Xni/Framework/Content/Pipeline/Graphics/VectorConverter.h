@@ -15,7 +15,7 @@
 
 }
 
-+ (BOOL) tryGetSizeInBytesOfSurfaceFormat:(SurfaceFormat)surfaceFormat sizeInBytes:(int*)sizeInBytes;
++ (BOOL) tryGetSizeInBytesOfSurfaceFormat:(SurfaceFormat)surfaceFormat sizeInBytes:(float*)sizeInBytes;
 
 + (BOOL) tryGetVectorTypeOfSurfaceFormat:(SurfaceFormat)surfaceFormat vectorType:(Class*)type;
 

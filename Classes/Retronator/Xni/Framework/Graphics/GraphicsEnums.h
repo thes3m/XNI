@@ -187,7 +187,11 @@ typedef enum {
     //SurfaceFormatHalfSingle,
     //SurfaceFormatHalfVector2,
     //SurfaceFormatHalfVector4,
-    //SurfaceFormatHdrBlendable	
+    //SurfaceFormatHdrBlendable
+    SurfaceFormatPvrtc4b,
+    SurfaceFormatPvrtc2b,
+    SurfaceFormatPvrtc4bAlpha,
+    SurfaceFormatPvrtc2bAlpha
 } SurfaceFormat;
 
 typedef enum {

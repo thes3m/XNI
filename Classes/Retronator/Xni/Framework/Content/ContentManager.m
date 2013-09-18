@@ -106,7 +106,7 @@
 	
 	if ([extension isEqualToString:@"png"] || [extension isEqualToString:@"jpg"] || [extension isEqualToString:@"jpeg"] ||
 		[extension isEqualToString:@"gif"] || [extension isEqualToString:@"tif"] || [extension isEqualToString:@"tiff"] ||
-		[extension isEqualToString:@"ico"] || [extension isEqualToString:@"bmp"]) {
+		[extension isEqualToString:@"ico"] || [extension isEqualToString:@"bmp"] || [extension isEqualToString:@"pvr"]) {
 		// Texture content
 		if (!importer) {
 			importer = [[[TextureImporter alloc] init] autorelease];

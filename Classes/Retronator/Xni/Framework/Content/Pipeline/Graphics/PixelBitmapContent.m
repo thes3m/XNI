@@ -31,13 +31,13 @@
 - (Byte *) getPixelAtX:(int)x Y:(int)y {
 	// Index into the data array at bytesPerPixel intervals.
 	Byte *bytes = (Byte*)[pixelData bytes];
-	return &bytes[(x + y * width) * bytesPerPixel];
+	return &bytes[(int)((x + y * width) * bytesPerPixel)];
 }
 
 - (void) setPixelAtX:(int)x Y:(int)y Value:(Byte *)value {
 	// The value contains bytesPerPixel bytes.
 	Byte *bytes = (Byte*)[pixelData bytes];
-	memcpy(&bytes[(x + y * width) * bytesPerPixel], value, bytesPerPixel);
+	memcpy(&bytes[(int)((x + y * width) * bytesPerPixel)], value, bytesPerPixel);
 }
 
 @end
