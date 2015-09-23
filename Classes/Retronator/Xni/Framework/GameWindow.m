@@ -100,17 +100,17 @@
 		clientHeight = realFrame.size.height * realScale;
 	}    
 	
-	float targetAspectRatio = (float)clientWidth/(float)clientHeight;
+	double targetAspectRatio = (float)clientWidth/(float)clientHeight;
 	CGRect targetFrame;
 	
 	if (targetAspectRatio >= realAspectRatio) {
 		// Add black borders on top and bottom.
 		targetFrame.size.width = realFrame.size.width ;
-		targetFrame.size.height = targetFrame.size.width / targetAspectRatio;
+		targetFrame.size.height = roundf(targetFrame.size.width / targetAspectRatio);
 	} else {
 		// Add black borders on left and right.
 		targetFrame.size.height = realFrame.size.height;
-		targetFrame.size.width = targetFrame.size.height * targetAspectRatio;
+		targetFrame.size.width = roundf(targetFrame.size.height * targetAspectRatio);
 	}
 
 	// Center the window.
