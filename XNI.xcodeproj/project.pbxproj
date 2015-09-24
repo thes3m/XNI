@@ -764,7 +764,513 @@
 		B5FE13DC12A00C6B0081F7A7 /* IndirectPositionCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE13DA12A00C6B0081F7A7 /* IndirectPositionCollection.m */; };
 		B5FE146812A01BB50081F7A7 /* VertexChannelNames.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE146612A01BB50081F7A7 /* VertexChannelNames.m */; };
 		B5FE14BF12A02DCD0081F7A7 /* VertexDeclarationContent.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE14BD12A02DCD0081F7A7 /* VertexDeclarationContent.m */; };
+		C7F1375D1BB2DE8200014401 /* Retronator.Devices.Sensors.classes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B562E6E8130ADB5D00017D99 /* Retronator.Devices.Sensors.classes.h */; };
+		C7F1375E1BB2DE8200014401 /* Retronator.Devices.Sensors.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B562E6E6130ADB5400017D99 /* Retronator.Devices.Sensors.h */; };
+		C7F1375F1BB2DE8200014401 /* SensorsEnums.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B562E6EE130ADBD400017D99 /* SensorsEnums.h */; };
+		C7F137601BB2DE8200014401 /* Accelerometer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B562E6EA130ADB8900017D99 /* Accelerometer.h */; };
+		C7F137611BB2DE8200014401 /* AccelerometerReadingEventArgs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B562E77F130ADFAB00017D99 /* AccelerometerReadingEventArgs.h */; };
+		C7F137621BB2DE8200014401 /* AccelerometerReadingEventArgs+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B562E783130AE18400017D99 /* AccelerometerReadingEventArgs+Internal.h */; };
+		C7F137631BB2DE8200014401 /* Retronator.Xni.Framework.Audio.classes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADC5D12B83888004E2DB0 /* Retronator.Xni.Framework.Audio.classes.h */; };
+		C7F137641BB2DE8200014401 /* Retronator.Xni.Framework.Audio.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADC5B12B83876004E2DB0 /* Retronator.Xni.Framework.Audio.h */; };
+		C7F137651BB2DE8200014401 /* AudioEnums.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADC5912B83868004E2DB0 /* AudioEnums.h */; };
+		C7F137661BB2DE8200014401 /* SoundEffect.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADC4D12B8358C004E2DB0 /* SoundEffect.h */; };
+		C7F137671BB2DE8200014401 /* SoundEffect+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50FE76112B8B11C003D4F1A /* SoundEffect+Internal.h */; };
+		C7F137681BB2DE8200014401 /* SoundEffectInstance.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADC5F12B838AD004E2DB0 /* SoundEffectInstance.h */; };
+		C7F137691BB2DE8200014401 /* SoundEffectInstance+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50FE50612B88F64003D4F1A /* SoundEffectInstance+Internal.h */; };
+		C7F1376A1BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.Audio.classes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADC6612B83E33004E2DB0 /* Retronator.Xni.Framework.Content.Pipeline.Audio.classes.h */; };
+		C7F1376B1BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.Audio.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADC6412B83E16004E2DB0 /* Retronator.Xni.Framework.Content.Pipeline.Audio.h */; };
+		C7F1376C1BB2DE8200014401 /* AudioContentEnums.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADC9112B83FF2004E2DB0 /* AudioContentEnums.h */; };
+		C7F1376D1BB2DE8200014401 /* AudioContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADC9312B84088004E2DB0 /* AudioContent.h */; };
+		C7F1376E1BB2DE8200014401 /* AudioFormat.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADC9712B84095004E2DB0 /* AudioFormat.h */; };
+		C7F1376F1BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.classes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59AD8191236E55E00F99511 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.classes.h */; };
+		C7F137701BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59AD81B1236E56800F99511 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.h */; };
+		C7F137711BB2DE8200014401 /* BitmapContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59AD86C1236ED3900F99511 /* BitmapContent.h */; };
+		C7F137721BB2DE8200014401 /* PixelBitmapContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59AD8801236EFF200F99511 /* PixelBitmapContent.h */; };
+		C7F137731BB2DE8200014401 /* ColorPixelBitmapContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F8546B1239484700E6FD71 /* ColorPixelBitmapContent.h */; };
+		C7F137741BB2DE8200014401 /* MipmapChain.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B56CC50B123A6F3600B72347 /* MipmapChain.h */; };
+		C7F137751BB2DE8200014401 /* MipmapChainCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B56CC50F123A739100B72347 /* MipmapChainCollection.h */; };
+		C7F137761BB2DE8200014401 /* TextureContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59AD8661236EC2300F99511 /* TextureContent.h */; };
+		C7F137771BB2DE8200014401 /* Texture2DContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B56CC525123A79E800B72347 /* Texture2DContent.h */; };
+		C7F137781BB2DE8200014401 /* VectorConverter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F85385123929F800E6FD71 /* VectorConverter.h */; };
+		C7F137791BB2DE8200014401 /* NodeContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7EC52129AE1A00015B663 /* NodeContent.h */; };
+		C7F1377A1BB2DE8200014401 /* NodeContentCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5FE12A2129FDDF70081F7A7 /* NodeContentCollection.h */; };
+		C7F1377B1BB2DE8200014401 /* MeshContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7EC59129AE1BF0015B663 /* MeshContent.h */; };
+		C7F1377C1BB2DE8200014401 /* GeometryContentCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5FE12F0129FE8220081F7A7 /* GeometryContentCollection.h */; };
+		C7F1377D1BB2DE8200014401 /* PositionCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5FE12F4129FE8310081F7A7 /* PositionCollection.h */; };
+		C7F1377E1BB2DE8200014401 /* GeometryContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7EC5D129AE1CD0015B663 /* GeometryContent.h */; };
+		C7F1377F1BB2DE8200014401 /* VertexContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7EC65129AE2340015B663 /* VertexContent.h */; };
+		C7F137801BB2DE8200014401 /* VertexChannelCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5FE13C812A00AC60081F7A7 /* VertexChannelCollection.h */; };
+		C7F137811BB2DE8200014401 /* VertexChannel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5FE13D312A00BE50081F7A7 /* VertexChannel.h */; };
+		C7F137821BB2DE8200014401 /* IndirectPositionCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5FE13D912A00C6B0081F7A7 /* IndirectPositionCollection.h */; };
+		C7F137831BB2DE8200014401 /* VertexChannelNames.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5FE146512A01BB50081F7A7 /* VertexChannelNames.h */; };
+		C7F137841BB2DE8200014401 /* IndexCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7EC69129AE2410015B663 /* IndexCollection.h */; };
+		C7F137851BB2DE8200014401 /* MaterialContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7EC6D129AE2530015B663 /* MaterialContent.h */; };
+		C7F137861BB2DE8200014401 /* BasicMaterialContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7EC71129AE2860015B663 /* BasicMaterialContent.h */; };
+		C7F137871BB2DE8200014401 /* TextureReferenceDictionary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554F7B712A3B19100F20A0D /* TextureReferenceDictionary.h */; };
+		C7F137881BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.Processors.classes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7ECBE129AE6620015B663 /* Retronator.Xni.Framework.Content.Pipeline.Processors.classes.h */; };
+		C7F137891BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.Processors.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7ECBC129AE6560015B663 /* Retronator.Xni.Framework.Content.Pipeline.Processors.h */; };
+		C7F1378A1BB2DE8200014401 /* TextureProcessor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7ECAC129AE5B40015B663 /* TextureProcessor.h */; };
+		C7F1378B1BB2DE8200014401 /* FontTextureProcessor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5ED4CBE12BF895B00A58E29 /* FontTextureProcessor.h */; };
+		C7F1378C1BB2DE8200014401 /* ModelProcessor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7ECB0129AE5C50015B663 /* ModelProcessor.h */; };
+		C7F1378D1BB2DE8200014401 /* MaterialProcessor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7ECB4129AE5D40015B663 /* MaterialProcessor.h */; };
+		C7F1378E1BB2DE8200014401 /* SoundEffectProcessor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADC8512B83F75004E2DB0 /* SoundEffectProcessor.h */; };
+		C7F1378F1BB2DE8200014401 /* SongProcessor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADC7D12B83EFD004E2DB0 /* SongProcessor.h */; };
+		C7F137901BB2DE8200014401 /* ModelContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7EC75129AE2E10015B663 /* ModelContent.h */; };
+		C7F137911BB2DE8200014401 /* ModelContent+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EFD765129B2B8B00FDC150 /* ModelContent+Internal.h */; };
+		C7F137921BB2DE8200014401 /* ModelMeshContentCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EFD742129B2A7800FDC150 /* ModelMeshContentCollection.h */; };
+		C7F137931BB2DE8200014401 /* ModelMeshContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7EC79129AE2ED0015B663 /* ModelMeshContent.h */; };
+		C7F137941BB2DE8200014401 /* ModelMeshContent+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EFD763129B2B8100FDC150 /* ModelMeshContent+Internal.h */; };
+		C7F137951BB2DE8200014401 /* ModelMeshPartContentCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EFD746129B2A8900FDC150 /* ModelMeshPartContentCollection.h */; };
+		C7F137961BB2DE8200014401 /* ModelMeshPartContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7EC7D129AE2FD0015B663 /* ModelMeshPartContent.h */; };
+		C7F137971BB2DE8200014401 /* ModelMeshPartContent+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EFD767129B2B9700FDC150 /* ModelMeshPartContent+Internal.h */; };
+		C7F137981BB2DE8200014401 /* VertexBufferContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7EC81129AE30C0015B663 /* VertexBufferContent.h */; };
+		C7F137991BB2DE8200014401 /* VertexDeclarationContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5FE14BC12A02DCD0081F7A7 /* VertexDeclarationContent.h */; };
+		C7F1379A1BB2DE8200014401 /* ModelBoneContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554F94B12A4033600F20A0D /* ModelBoneContent.h */; };
+		C7F1379B1BB2DE8200014401 /* ModelBoneContent+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554F99712A415AD00F20A0D /* ModelBoneContent+Internal.h */; };
+		C7F1379C1BB2DE8200014401 /* ModelBoneContentCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554F94F12A4034100F20A0D /* ModelBoneContentCollection.h */; };
+		C7F1379D1BB2DE8200014401 /* SoundEffectContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADC8112B83F62004E2DB0 /* SoundEffectContent.h */; };
+		C7F1379E1BB2DE8200014401 /* SoundEffectContent+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50FE47B12B88433003D4F1A /* SoundEffectContent+Internal.h */; };
+		C7F1379F1BB2DE8200014401 /* SongContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADC7912B83EE9004E2DB0 /* SongContent.h */; };
+		C7F137A01BB2DE8200014401 /* SongContent+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B507F85F12E5888C00A7302B /* SongContent+Internal.h */; };
+		C7F137A11BB2DE8200014401 /* SpriteFontContent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5ED4CC712BF898900A58E29 /* SpriteFontContent.h */; };
+		C7F137A21BB2DE8200014401 /* SpriteFontContent+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5ED4CCF12BF8A1600A58E29 /* SpriteFontContent+Internal.h */; };
+		C7F137A31BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.classes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59AD80D1236E22B00F99511 /* Retronator.Xni.Framework.Content.Pipeline.classes.h */; };
+		C7F137A41BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59AD80B1236E21900F99511 /* Retronator.Xni.Framework.Content.Pipeline.h */; };
+		C7F137A51BB2DE8200014401 /* ChildCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5FE12AE129FE1730081F7A7 /* ChildCollection.h */; };
+		C7F137A61BB2DE8200014401 /* OpaqueDataDictionary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554F7F112A3C23300F20A0D /* OpaqueDataDictionary.h */; };
+		C7F137A71BB2DE8200014401 /* NamedValueDictionary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554F7D112A3BD1B00F20A0D /* NamedValueDictionary.h */; };
+		C7F137A81BB2DE8200014401 /* ExternalReference.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554F7BF12A3B48600F20A0D /* ExternalReference.h */; };
+		C7F137A91BB2DE8200014401 /* ContentIdentity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59AD8211236E76E00F99511 /* ContentIdentity.h */; };
+		C7F137AA1BB2DE8200014401 /* ContentItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59AD81D1236E59A00F99511 /* ContentItem.h */; };
+		C7F137AB1BB2DE8200014401 /* IContentProcessor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7ECD6129AE6CA0015B663 /* IContentProcessor.h */; };
+		C7F137AC1BB2DE8200014401 /* ContentProcessor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7ECD2129AE6A70015B663 /* ContentProcessor.h */; };
+		C7F137AD1BB2DE8200014401 /* IContentImporter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7ECD8129AE6D20015B663 /* IContentImporter.h */; };
+		C7F137AE1BB2DE8200014401 /* ContentImporter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59AD7EE1236E07300F99511 /* ContentImporter.h */; };
+		C7F137AF1BB2DE8200014401 /* TextureImporter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59AD80F1236E25700F99511 /* TextureImporter.h */; };
+		C7F137B01BB2DE8200014401 /* XImporter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7ECB8129AE6120015B663 /* XImporter.h */; };
+		C7F137B11BB2DE8200014401 /* XImporterReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B54F9BBF12A2CA1B00F7411F /* XImporterReader.h */; };
+		C7F137B21BB2DE8200014401 /* WavImporter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADCCD12B84FD8004E2DB0 /* WavImporter.h */; };
+		C7F137B31BB2DE8200014401 /* Mp3Importer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B51ADCD112B84FE1004E2DB0 /* Mp3Importer.h */; };
+		C7F137B41BB2DE8200014401 /* Retronator.Xni.Framework.Content.classes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5A1C83012353F9B00DB60CB /* Retronator.Xni.Framework.Content.classes.h */; };
+		C7F137B51BB2DE8200014401 /* Retronator.Xni.Framework.Content.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5A1C82E12353F8700DB60CB /* Retronator.Xni.Framework.Content.h */; };
+		C7F137B61BB2DE8200014401 /* ContentManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5A1C83212353FBB00DB60CB /* ContentManager.h */; };
+		C7F137B71BB2DE8200014401 /* ContentManager+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5454401129B4F4D002A28BE /* ContentManager+Internal.h */; };
+		C7F137B81BB2DE8200014401 /* ContentReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B56CC5BB123A915700B72347 /* ContentReader.h */; };
+		C7F137B91BB2DE8200014401 /* ContentTypeReaderManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B56CC5C5123A928A00B72347 /* ContentTypeReaderManager.h */; };
+		C7F137BA1BB2DE8300014401 /* ContentTypeReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B56CC5C1123A927500B72347 /* ContentTypeReader.h */; };
+		C7F137BB1BB2DE8300014401 /* Texture2DReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B56CC5C9123A92BB00B72347 /* Texture2DReader.h */; };
+		C7F137BC1BB2DE8300014401 /* ModelReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5672D18129B174100DE5AAC /* ModelReader.h */; };
+		C7F137BD1BB2DE8300014401 /* ModelMeshReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B54543F5129B47A1002A28BE /* ModelMeshReader.h */; };
+		C7F137BE1BB2DE8300014401 /* ModelMeshPartReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B54543E7129B473A002A28BE /* ModelMeshPartReader.h */; };
+		C7F137BF1BB2DE8300014401 /* BasicEffectReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B54543DB129B4705002A28BE /* BasicEffectReader.h */; };
+		C7F137C01BB2DE8300014401 /* IndexBufferReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B54543DF129B4716002A28BE /* IndexBufferReader.h */; };
+		C7F137C11BB2DE8300014401 /* VertexBufferReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B54543E3129B4727002A28BE /* VertexBufferReader.h */; };
+		C7F137C21BB2DE8300014401 /* ModelBoneReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554F9B312A427DD00F20A0D /* ModelBoneReader.h */; };
+		C7F137C31BB2DE8300014401 /* VertexDeclarationReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554FA0B12A4362B00F20A0D /* VertexDeclarationReader.h */; };
+		C7F137C41BB2DE8300014401 /* SoundEffectReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50FE48612B885BC003D4F1A /* SoundEffectReader.h */; };
+		C7F137C51BB2DE8300014401 /* SongReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B507F87312E58AC300A7302B /* SongReader.h */; };
+		C7F137C61BB2DE8300014401 /* SpriteFontReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5ED4CED12BF8D9100A58E29 /* SpriteFontReader.h */; };
+		C7F137C71BB2DE8300014401 /* Retronator.Xni.Framework.GamerServices.classes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B52B2B4712ADAEEC00E8A377 /* Retronator.Xni.Framework.GamerServices.classes.h */; };
+		C7F137C81BB2DE8300014401 /* Retronator.Xni.Framework.GamerServices.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B52B2B4912ADAEF800E8A377 /* Retronator.Xni.Framework.GamerServices.h */; };
+		C7F137C91BB2DE8300014401 /* GamerServicesEnums.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F5039C131556AF007AB367 /* GamerServicesEnums.h */; };
+		C7F137CA1BB2DE8300014401 /* Guide.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B52B2B4B12ADAF1000E8A377 /* Guide.h */; };
+		C7F137CB1BB2DE8300014401 /* Guide+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B52B2B4F12ADB20000E8A377 /* Guide+Internal.h */; };
+		C7F137CC1BB2DE8300014401 /* XniShowMessageBoxResult.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F503AD13156241007AB367 /* XniShowMessageBoxResult.h */; };
+		C7F137CD1BB2DE8300014401 /* Gamer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B572BC03130EB27A00B6DB47 /* Gamer.h */; };
+		C7F137CE1BB2DE8300014401 /* SignedInGamer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B572BC0B130EB33700B6DB47 /* SignedInGamer.h */; };
+		C7F137CF1BB2DE8300014401 /* SignedInGamerCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B572BC07130EB32100B6DB47 /* SignedInGamerCollection.h */; };
+		C7F137D01BB2DE8300014401 /* GamerProfile.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B572BC11130EB43500B6DB47 /* GamerProfile.h */; };
+		C7F137D11BB2DE8300014401 /* Achievement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B572BC42130EB70100B6DB47 /* Achievement.h */; };
+		C7F137D21BB2DE8300014401 /* AchievementCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B572BC3E130EB6D900B6DB47 /* AchievementCollection.h */; };
+		C7F137D31BB2DE8300014401 /* Retronator.Xni.Framework.Graphics.PackedVector.classes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59AD89F1236F1FF00F99511 /* Retronator.Xni.Framework.Graphics.PackedVector.classes.h */; };
+		C7F137D41BB2DE8300014401 /* Retronator.Xni.Framework.Graphics.PackedVector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59AD8A11236F20B00F99511 /* Retronator.Xni.Framework.Graphics.PackedVector.h */; };
+		C7F137D51BB2DE8300014401 /* PackedVectorStructs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F8536D1239206700E6FD71 /* PackedVectorStructs.h */; };
+		C7F137D61BB2DE8300014401 /* Retronator.Xni.Framework.Graphics.classes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE82E11FF1213000DB38B /* Retronator.Xni.Framework.Graphics.classes.h */; };
+		C7F137D71BB2DE8300014401 /* Retronator.Xni.Framework.Graphics.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE83011FF1222000DB38B /* Retronator.Xni.Framework.Graphics.h */; };
+		C7F137D81BB2DE8300014401 /* GraphicsEnums.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE8C911FF2AD6000DB38B /* GraphicsEnums.h */; };
+		C7F137D91BB2DE8300014401 /* GraphicsResource.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B508070A122E4FBB00C330E2 /* GraphicsResource.h */; };
+		C7F137DA1BB2DE8300014401 /* Texture.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50806FD122E4ECF00C330E2 /* Texture.h */; };
+		C7F137DB1BB2DE8300014401 /* Texture2D.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5080701122E4EE900C330E2 /* Texture2D.h */; };
+		C7F137DC1BB2DE8300014401 /* RenderTarget2D.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25AE5D5115F5440B00B73D10 /* RenderTarget2D.h */; };
+		C7F137DD1BB2DE8300014401 /* RenderTarget2D+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25A980CC15F92763005F1A78 /* RenderTarget2D+Internal.h */; };
+		C7F137DE1BB2DE8300014401 /* Effect.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E78B7812429BBD00DDD99A /* Effect.h */; };
+		C7F137DF1BB2DE8300014401 /* EffectTechnique.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EA65D5124952C9001245A4 /* EffectTechnique.h */; };
+		C7F137E01BB2DE8300014401 /* EffectPass.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EA65CD12495297001245A4 /* EffectPass.h */; };
+		C7F137E11BB2DE8300014401 /* BasicEffect.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EA660012495618001245A4 /* BasicEffect.h */; };
+		C7F137E21BB2DE8300014401 /* DirectionalLight.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EA660B124956CE001245A4 /* DirectionalLight.h */; };
+		C7F137E31BB2DE8300014401 /* VertexStructs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EA634E12491709001245A4 /* VertexStructs.h */; };
+		C7F137E41BB2DE8300014401 /* VertexElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5BBC2BA1248F2990066F5ED /* VertexElement.h */; };
+		C7F137E51BB2DE8300014401 /* VertexPositionColor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EA636D124917E2001245A4 /* VertexPositionColor.h */; };
+		C7F137E61BB2DE8300014401 /* VertexPositionTexture.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EA65511249482D001245A4 /* VertexPositionTexture.h */; };
+		C7F137E71BB2DE8300014401 /* VertexPositionColorTexture.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B57E36BC124BE2DD00DDAA42 /* VertexPositionColorTexture.h */; };
+		C7F137E81BB2DE8300014401 /* VertexPositionNormalTexture.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554FC9C12A45B3300F20A0D /* VertexPositionNormalTexture.h */; };
+		C7F137E91BB2DE8300014401 /* VertexDeclaration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5BBC2AC1248F0C40066F5ED /* VertexDeclaration.h */; };
+		C7F137EA1BB2DE8300014401 /* VertexArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EA638D1249229D001245A4 /* VertexArray.h */; };
+		C7F137EB1BB2DE8300014401 /* VertexPositionColorArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EA655E1249495C001245A4 /* VertexPositionColorArray.h */; };
+		C7F137EC1BB2DE8300014401 /* VertexPositionTextureArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EA657612494AC3001245A4 /* VertexPositionTextureArray.h */; };
+		C7F137ED1BB2DE8300014401 /* VertexPositionColorTextureArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B57E36CA124BE36E00DDAA42 /* VertexPositionColorTextureArray.h */; };
+		C7F137EE1BB2DE8300014401 /* VertexPositionNormalTextureArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554FC9812A45A9D00F20A0D /* VertexPositionNormalTextureArray.h */; };
+		C7F137EF1BB2DE8300014401 /* IndexArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5FB745512A4ED6E00DB9234 /* IndexArray.h */; };
+		C7F137F01BB2DE8300014401 /* ShortIndexArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5FB745912A4F01400DB9234 /* ShortIndexArray.h */; };
+		C7F137F11BB2DE8300014401 /* VertexBuffer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5BBC2D01248F98D0066F5ED /* VertexBuffer.h */; };
+		C7F137F21BB2DE8300014401 /* VertexBuffer+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554F9EE12A433B500F20A0D /* VertexBuffer+Internal.h */; };
+		C7F137F31BB2DE8300014401 /* VertexBufferBinding.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5BBC2EA1248FC7A0066F5ED /* VertexBufferBinding.h */; };
+		C7F137F41BB2DE8300014401 /* IndexBuffer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5BBC1CD1248D4CB0066F5ED /* IndexBuffer.h */; };
+		C7F137F51BB2DE8300014401 /* Model.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7EC85129AE3570015B663 /* Model.h */; };
+		C7F137F61BB2DE8300014401 /* Model+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5672CD7129B0CAC00DE5AAC /* Model+Internal.h */; };
+		C7F137F71BB2DE8300014401 /* ModelMeshCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5672C6A129AFDCE00DE5AAC /* ModelMeshCollection.h */; };
+		C7F137F81BB2DE8300014401 /* ModelMesh.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7EC89129AE3640015B663 /* ModelMesh.h */; };
+		C7F137F91BB2DE8300014401 /* ModelMesh+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5672CD9129B0CB700DE5AAC /* ModelMesh+Internal.h */; };
+		C7F137FA1BB2DE8300014401 /* ModelEffectCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5672CC0129B02D100DE5AAC /* ModelEffectCollection.h */; };
+		C7F137FB1BB2DE8300014401 /* ModelMeshPartCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5672C78129AFE8500DE5AAC /* ModelMeshPartCollection.h */; };
+		C7F137FC1BB2DE8300014401 /* ModelMeshPart.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E7EC8D129AE36E0015B663 /* ModelMeshPart.h */; };
+		C7F137FD1BB2DE8300014401 /* ModelMeshPart+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5672CDB129B0CC300DE5AAC /* ModelMeshPart+Internal.h */; };
+		C7F137FE1BB2DE8300014401 /* ModelBone.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554F8CE12A3F3E400F20A0D /* ModelBone.h */; };
+		C7F137FF1BB2DE8300014401 /* ModelBone+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554FA2012A43A3A00F20A0D /* ModelBone+Internal.h */; };
+		C7F138001BB2DE8300014401 /* ModelBoneCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554F8DD12A3F3FD00F20A0D /* ModelBoneCollection.h */; };
+		C7F138011BB2DE8300014401 /* BlendState.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E78B6012429AEC00DDD99A /* BlendState.h */; };
+		C7F138021BB2DE8300014401 /* DepthStencilState.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E78B6412429AF900DDD99A /* DepthStencilState.h */; };
+		C7F138031BB2DE8300014401 /* RasterizerState.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E78B6812429B0E00DDD99A /* RasterizerState.h */; };
+		C7F138041BB2DE8300014401 /* SamplerState.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E78B6C12429B1A00DDD99A /* SamplerState.h */; };
+		C7F138051BB2DE8300014401 /* XniSamplerEventArgs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F415DC127781D80012BAF1 /* XniSamplerEventArgs.h */; };
+		C7F138061BB2DE8300014401 /* XniSamplerEventArgs+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 254CE83E162C0F2900A27E7C /* XniSamplerEventArgs+Internal.h */; };
+		C7F138071BB2DE8300014401 /* SamplerStateCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5BBC1DE1248D5640066F5ED /* SamplerStateCollection.h */; };
+		C7F138081BB2DE8300014401 /* SamplerStateCollection+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F415CD127781340012BAF1 /* SamplerStateCollection+Internal.h */; };
+		C7F138091BB2DE8300014401 /* TextureCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5BBC1EF1248D6090066F5ED /* TextureCollection.h */; };
+		C7F1380A1BB2DE8300014401 /* TextureCollection+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F415B1127780840012BAF1 /* TextureCollection+Internal.h */; };
+		C7F1380B1BB2DE8300014401 /* Viewport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B57E3663124BC23E00DDAA42 /* Viewport.h */; };
+		C7F1380C1BB2DE8300014401 /* IGraphicsDeviceService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE82A11FF10EF000DB38B /* IGraphicsDeviceService.h */; };
+		C7F1380D1BB2DE8300014401 /* GraphicsDevice.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE85A11FF1326000DB38B /* GraphicsDevice.h */; };
+		C7F1380E1BB2DE8300014401 /* GraphicsDevice+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554F9DD12A42FD000F20A0D /* GraphicsDevice+Internal.h */; };
+		C7F1380F1BB2DE8300014401 /* ReachGraphicsDevice.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE8C111FF29E8000DB38B /* ReachGraphicsDevice.h */; };
+		C7F138101BB2DE8300014401 /* HiDefGraphicsDevice.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE8C511FF2A23000DB38B /* HiDefGraphicsDevice.h */; };
+		C7F138111BB2DE8300014401 /* SpriteBatch.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E78B481242925600DDD99A /* SpriteBatch.h */; };
+		C7F138121BB2DE8300014401 /* SpriteFont.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5ED4C9B12BF82FE00A58E29 /* SpriteFont.h */; };
+		C7F138131BB2DE8300014401 /* SpriteFont+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5ED4D2412BF92A100A58E29 /* SpriteFont+Internal.h */; };
+		C7F138141BB2DE8300014401 /* Retronator.Xni.Framework.Input.Touch.classes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EC59FB1252BE32001E7DFC /* Retronator.Xni.Framework.Input.Touch.classes.h */; };
+		C7F138151BB2DE8300014401 /* Retronator.Xni.Framework.Input.Touch.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EC59FD1252BE3B001E7DFC /* Retronator.Xni.Framework.Input.Touch.h */; };
+		C7F138161BB2DE8300014401 /* InputEnums.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EC5A181252BF63001E7DFC /* InputEnums.h */; };
+		C7F138171BB2DE8300014401 /* TouchPanel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EC59F71252B917001E7DFC /* TouchPanel.h */; };
+		C7F138181BB2DE8300014401 /* TouchPanel+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B52BACF9125527E200B308F6 /* TouchPanel+Internal.h */; };
+		C7F138191BB2DE8300014401 /* TouchCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EC5A051252BE9E001E7DFC /* TouchCollection.h */; };
+		C7F1381A1BB2DE8300014401 /* TouchLocation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EC5A0E1252BEDF001E7DFC /* TouchLocation.h */; };
+		C7F1381B1BB2DE8300014401 /* GestureSample.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EC5A4D1252C2DF001E7DFC /* GestureSample.h */; };
+		C7F1381C1BB2DE8300014401 /* Retronator.Xni.Framework.Input.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EC5A921252C710001E7DFC /* Retronator.Xni.Framework.Input.h */; };
+		C7F1381D1BB2DE8300014401 /* Retronator.Xni.Framework.Media.classes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B507F84412E5753500A7302B /* Retronator.Xni.Framework.Media.classes.h */; };
+		C7F1381E1BB2DE8300014401 /* Retronator.Xni.Framework.Media.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B507F84212E5752C00A7302B /* Retronator.Xni.Framework.Media.h */; };
+		C7F1381F1BB2DE8300014401 /* MediaEnums.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B507F8DB12E5925500A7302B /* MediaEnums.h */; };
+		C7F138201BB2DE8300014401 /* Song.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B507F84F12E5756400A7302B /* Song.h */; };
+		C7F138211BB2DE8300014401 /* Song+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B507F85D12E5766C00A7302B /* Song+Internal.h */; };
+		C7F138221BB2DE8300014401 /* MediaPlayer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B507F83E12E5751700A7302B /* MediaPlayer.h */; };
+		C7F138231BB2DE8300014401 /* MediaPlayer+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5956CC91663BD2700FC01F5 /* MediaPlayer+Internal.h */; };
+		C7F138241BB2DE8300014401 /* MediaQueue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B507F8BA12E58E7000A7302B /* MediaQueue.h */; };
+		C7F138251BB2DE8300014401 /* MediaQueue+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B507F8C412E58EB100A7302B /* MediaQueue+Internal.h */; };
+		C7F138261BB2DE8300014401 /* Retronator.Xni.Framework.classes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DE189F11F8888B00BF3275 /* Retronator.Xni.Framework.classes.h */; };
+		C7F138271BB2DE8300014401 /* Retronator.Xni.Framework.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DE18A011F8888B00BF3275 /* Retronator.Xni.Framework.h */; };
+		C7F138281BB2DE8300014401 /* FrameworkEnums.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B52BADAC1255426600B308F6 /* FrameworkEnums.h */; };
+		C7F138291BB2DE8300014401 /* Protocols.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE89411FF16A3000DB38B /* Protocols.h */; };
+		C7F1382A1BB2DE8300014401 /* PointStruct.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B594878112AEF3DA00EE601F /* PointStruct.h */; };
+		C7F1382B1BB2DE8300014401 /* XniPoint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B594878312AEF44900EE601F /* XniPoint.h */; };
+		C7F1382C1BB2DE8300014401 /* RectangleStruct.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DE190611F88B5D00BF3275 /* RectangleStruct.h */; };
+		C7F1382D1BB2DE8300014401 /* Rectangle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DE190211F88AF500BF3275 /* Rectangle.h */; };
+		C7F1382E1BB2DE8300014401 /* Color.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE90711FF352E000DB38B /* Color.h */; };
+		C7F1382F1BB2DE8300014401 /* GameHost.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DE18FA11F88AD900BF3275 /* GameHost.h */; };
+		C7F138301BB2DE8300014401 /* Game.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE7E911FF04E3000DB38B /* Game.h */; };
+		C7F138311BB2DE8300014401 /* Game+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B583D38B130A129C00CF268F /* Game+Internal.h */; };
+		C7F138321BB2DE8300014401 /* GameWindow.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DE18FC11F88AD900BF3275 /* GameWindow.h */; };
+		C7F138331BB2DE8400014401 /* GameWindow+Internal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B53649F1127DE08100CAE30C /* GameWindow+Internal.h */; };
+		C7F138341BB2DE8400014401 /* GameViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DE194811F89C0900BF3275 /* GameViewController.h */; };
+		C7F138351BB2DE8400014401 /* GameView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DE194C11F89C1F00BF3275 /* GameView.h */; };
+		C7F138361BB2DE8400014401 /* GameServiceContainer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE7ED11FF06BB000DB38B /* GameServiceContainer.h */; };
+		C7F138371BB2DE8400014401 /* IGraphicsDeviceManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE82C11FF10FD000DB38B /* IGraphicsDeviceManager.h */; };
+		C7F138381BB2DE8400014401 /* GraphicsDeviceManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE98F11FF546B000DB38B /* GraphicsDeviceManager.h */; };
+		C7F138391BB2DE8400014401 /* IGameComponent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE80111FF0AE3000DB38B /* IGameComponent.h */; };
+		C7F1383A1BB2DE8400014401 /* IUpdatable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE80411FF0B2D000DB38B /* IUpdatable.h */; };
+		C7F1383B1BB2DE8400014401 /* IDrawable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE80611FF0B3C000DB38B /* IDrawable.h */; };
+		C7F1383C1BB2DE8400014401 /* GameComponent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50769121264EE9500E4474F /* GameComponent.h */; };
+		C7F1383D1BB2DE8400014401 /* DrawableGameComponent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B507691A1264EF0B00E4474F /* DrawableGameComponent.h */; };
+		C7F1383E1BB2DE8400014401 /* GameComponentCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE7FD11FF0A0F000DB38B /* GameComponentCollection.h */; };
+		C7F1383F1BB2DE8400014401 /* GameComponentCollectionEventArgs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE80811FF0C24000DB38B /* GameComponentCollectionEventArgs.h */; };
+		C7F138401BB2DE8400014401 /* GameTime.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DDE82011FF0D4F000DB38B /* GameTime.h */; };
+		C7F138411BB2DE8400014401 /* Vector2Struct.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F853B71239335900E6FD71 /* Vector2Struct.h */; };
+		C7F138421BB2DE8400014401 /* Vector2.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F853B31239334300E6FD71 /* Vector2.h */; };
+		C7F138431BB2DE8400014401 /* Vector3Struct.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F853BB1239336C00E6FD71 /* Vector3Struct.h */; };
+		C7F138441BB2DE8400014401 /* Vector3.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F853AF1239331C00E6FD71 /* Vector3.h */; };
+		C7F138451BB2DE8400014401 /* Vector4Struct.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F8539F12392E4500E6FD71 /* Vector4Struct.h */; };
+		C7F138461BB2DE8400014401 /* Vector4.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F8539B12392E2000E6FD71 /* Vector4.h */; };
+		C7F138471BB2DE8400014401 /* Quaternion.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F853CB1239357400E6FD71 /* Quaternion.h */; };
+		C7F138481BB2DE8400014401 /* MatrixStruct.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F853A3123931F100E6FD71 /* MatrixStruct.h */; };
+		C7F138491BB2DE8400014401 /* Matrix.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F853A5123931F900E6FD71 /* Matrix.h */; };
+		C7F1384A1BB2DE8400014401 /* System.classes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DE189E11F8886D00BF3275 /* System.classes.h */; };
+		C7F1384B1BB2DE8400014401 /* System.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DE18A311F888BC00BF3275 /* System.h */; };
+		C7F1384C1BB2DE8400014401 /* Delegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DE189211F8884A00BF3275 /* Delegate.h */; };
+		C7F1384D1BB2DE8400014401 /* Event.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DE189411F8884A00BF3275 /* Event.h */; };
+		C7F1384E1BB2DE8400014401 /* EventArgs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5DE189611F8884A00BF3275 /* EventArgs.h */; };
+		C7F1384F1BB2DE8400014401 /* IServiceProvider.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B56CC559123A846C00B72347 /* IServiceProvider.h */; };
+		C7F138501BB2DE8400014401 /* XniAdaptiveArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EA637C124921D0001245A4 /* XniAdaptiveArray.h */; };
+		C7F138511BB2DE8400014401 /* Collection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5FE132E129FEC9A0081F7A7 /* Collection.h */; };
+		C7F138521BB2DE8400014401 /* ReadOnlyCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B554F8F112A3F6AB00F20A0D /* ReadOnlyCollection.h */; };
+		C7F138531BB2DE8400014401 /* IAsyncResult.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5F503AB13155D55007AB367 /* IAsyncResult.h */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C7F1375C1BB2DCD300014401 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				C7F1375D1BB2DE8200014401 /* Retronator.Devices.Sensors.classes.h in CopyFiles */,
+				C7F1375E1BB2DE8200014401 /* Retronator.Devices.Sensors.h in CopyFiles */,
+				C7F1375F1BB2DE8200014401 /* SensorsEnums.h in CopyFiles */,
+				C7F137601BB2DE8200014401 /* Accelerometer.h in CopyFiles */,
+				C7F137611BB2DE8200014401 /* AccelerometerReadingEventArgs.h in CopyFiles */,
+				C7F137621BB2DE8200014401 /* AccelerometerReadingEventArgs+Internal.h in CopyFiles */,
+				C7F137631BB2DE8200014401 /* Retronator.Xni.Framework.Audio.classes.h in CopyFiles */,
+				C7F137641BB2DE8200014401 /* Retronator.Xni.Framework.Audio.h in CopyFiles */,
+				C7F137651BB2DE8200014401 /* AudioEnums.h in CopyFiles */,
+				C7F137661BB2DE8200014401 /* SoundEffect.h in CopyFiles */,
+				C7F137671BB2DE8200014401 /* SoundEffect+Internal.h in CopyFiles */,
+				C7F137681BB2DE8200014401 /* SoundEffectInstance.h in CopyFiles */,
+				C7F137691BB2DE8200014401 /* SoundEffectInstance+Internal.h in CopyFiles */,
+				C7F1376A1BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.Audio.classes.h in CopyFiles */,
+				C7F1376B1BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.Audio.h in CopyFiles */,
+				C7F1376C1BB2DE8200014401 /* AudioContentEnums.h in CopyFiles */,
+				C7F1376D1BB2DE8200014401 /* AudioContent.h in CopyFiles */,
+				C7F1376E1BB2DE8200014401 /* AudioFormat.h in CopyFiles */,
+				C7F1376F1BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.classes.h in CopyFiles */,
+				C7F137701BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.Graphics.h in CopyFiles */,
+				C7F137711BB2DE8200014401 /* BitmapContent.h in CopyFiles */,
+				C7F137721BB2DE8200014401 /* PixelBitmapContent.h in CopyFiles */,
+				C7F137731BB2DE8200014401 /* ColorPixelBitmapContent.h in CopyFiles */,
+				C7F137741BB2DE8200014401 /* MipmapChain.h in CopyFiles */,
+				C7F137751BB2DE8200014401 /* MipmapChainCollection.h in CopyFiles */,
+				C7F137761BB2DE8200014401 /* TextureContent.h in CopyFiles */,
+				C7F137771BB2DE8200014401 /* Texture2DContent.h in CopyFiles */,
+				C7F137781BB2DE8200014401 /* VectorConverter.h in CopyFiles */,
+				C7F137791BB2DE8200014401 /* NodeContent.h in CopyFiles */,
+				C7F1377A1BB2DE8200014401 /* NodeContentCollection.h in CopyFiles */,
+				C7F1377B1BB2DE8200014401 /* MeshContent.h in CopyFiles */,
+				C7F1377C1BB2DE8200014401 /* GeometryContentCollection.h in CopyFiles */,
+				C7F1377D1BB2DE8200014401 /* PositionCollection.h in CopyFiles */,
+				C7F1377E1BB2DE8200014401 /* GeometryContent.h in CopyFiles */,
+				C7F1377F1BB2DE8200014401 /* VertexContent.h in CopyFiles */,
+				C7F137801BB2DE8200014401 /* VertexChannelCollection.h in CopyFiles */,
+				C7F137811BB2DE8200014401 /* VertexChannel.h in CopyFiles */,
+				C7F137821BB2DE8200014401 /* IndirectPositionCollection.h in CopyFiles */,
+				C7F137831BB2DE8200014401 /* VertexChannelNames.h in CopyFiles */,
+				C7F137841BB2DE8200014401 /* IndexCollection.h in CopyFiles */,
+				C7F137851BB2DE8200014401 /* MaterialContent.h in CopyFiles */,
+				C7F137861BB2DE8200014401 /* BasicMaterialContent.h in CopyFiles */,
+				C7F137871BB2DE8200014401 /* TextureReferenceDictionary.h in CopyFiles */,
+				C7F137881BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.Processors.classes.h in CopyFiles */,
+				C7F137891BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.Processors.h in CopyFiles */,
+				C7F1378A1BB2DE8200014401 /* TextureProcessor.h in CopyFiles */,
+				C7F1378B1BB2DE8200014401 /* FontTextureProcessor.h in CopyFiles */,
+				C7F1378C1BB2DE8200014401 /* ModelProcessor.h in CopyFiles */,
+				C7F1378D1BB2DE8200014401 /* MaterialProcessor.h in CopyFiles */,
+				C7F1378E1BB2DE8200014401 /* SoundEffectProcessor.h in CopyFiles */,
+				C7F1378F1BB2DE8200014401 /* SongProcessor.h in CopyFiles */,
+				C7F137901BB2DE8200014401 /* ModelContent.h in CopyFiles */,
+				C7F137911BB2DE8200014401 /* ModelContent+Internal.h in CopyFiles */,
+				C7F137921BB2DE8200014401 /* ModelMeshContentCollection.h in CopyFiles */,
+				C7F137931BB2DE8200014401 /* ModelMeshContent.h in CopyFiles */,
+				C7F137941BB2DE8200014401 /* ModelMeshContent+Internal.h in CopyFiles */,
+				C7F137951BB2DE8200014401 /* ModelMeshPartContentCollection.h in CopyFiles */,
+				C7F137961BB2DE8200014401 /* ModelMeshPartContent.h in CopyFiles */,
+				C7F137971BB2DE8200014401 /* ModelMeshPartContent+Internal.h in CopyFiles */,
+				C7F137981BB2DE8200014401 /* VertexBufferContent.h in CopyFiles */,
+				C7F137991BB2DE8200014401 /* VertexDeclarationContent.h in CopyFiles */,
+				C7F1379A1BB2DE8200014401 /* ModelBoneContent.h in CopyFiles */,
+				C7F1379B1BB2DE8200014401 /* ModelBoneContent+Internal.h in CopyFiles */,
+				C7F1379C1BB2DE8200014401 /* ModelBoneContentCollection.h in CopyFiles */,
+				C7F1379D1BB2DE8200014401 /* SoundEffectContent.h in CopyFiles */,
+				C7F1379E1BB2DE8200014401 /* SoundEffectContent+Internal.h in CopyFiles */,
+				C7F1379F1BB2DE8200014401 /* SongContent.h in CopyFiles */,
+				C7F137A01BB2DE8200014401 /* SongContent+Internal.h in CopyFiles */,
+				C7F137A11BB2DE8200014401 /* SpriteFontContent.h in CopyFiles */,
+				C7F137A21BB2DE8200014401 /* SpriteFontContent+Internal.h in CopyFiles */,
+				C7F137A31BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.classes.h in CopyFiles */,
+				C7F137A41BB2DE8200014401 /* Retronator.Xni.Framework.Content.Pipeline.h in CopyFiles */,
+				C7F137A51BB2DE8200014401 /* ChildCollection.h in CopyFiles */,
+				C7F137A61BB2DE8200014401 /* OpaqueDataDictionary.h in CopyFiles */,
+				C7F137A71BB2DE8200014401 /* NamedValueDictionary.h in CopyFiles */,
+				C7F137A81BB2DE8200014401 /* ExternalReference.h in CopyFiles */,
+				C7F137A91BB2DE8200014401 /* ContentIdentity.h in CopyFiles */,
+				C7F137AA1BB2DE8200014401 /* ContentItem.h in CopyFiles */,
+				C7F137AB1BB2DE8200014401 /* IContentProcessor.h in CopyFiles */,
+				C7F137AC1BB2DE8200014401 /* ContentProcessor.h in CopyFiles */,
+				C7F137AD1BB2DE8200014401 /* IContentImporter.h in CopyFiles */,
+				C7F137AE1BB2DE8200014401 /* ContentImporter.h in CopyFiles */,
+				C7F137AF1BB2DE8200014401 /* TextureImporter.h in CopyFiles */,
+				C7F137B01BB2DE8200014401 /* XImporter.h in CopyFiles */,
+				C7F137B11BB2DE8200014401 /* XImporterReader.h in CopyFiles */,
+				C7F137B21BB2DE8200014401 /* WavImporter.h in CopyFiles */,
+				C7F137B31BB2DE8200014401 /* Mp3Importer.h in CopyFiles */,
+				C7F137B41BB2DE8200014401 /* Retronator.Xni.Framework.Content.classes.h in CopyFiles */,
+				C7F137B51BB2DE8200014401 /* Retronator.Xni.Framework.Content.h in CopyFiles */,
+				C7F137B61BB2DE8200014401 /* ContentManager.h in CopyFiles */,
+				C7F137B71BB2DE8200014401 /* ContentManager+Internal.h in CopyFiles */,
+				C7F137B81BB2DE8200014401 /* ContentReader.h in CopyFiles */,
+				C7F137B91BB2DE8200014401 /* ContentTypeReaderManager.h in CopyFiles */,
+				C7F137BA1BB2DE8300014401 /* ContentTypeReader.h in CopyFiles */,
+				C7F137BB1BB2DE8300014401 /* Texture2DReader.h in CopyFiles */,
+				C7F137BC1BB2DE8300014401 /* ModelReader.h in CopyFiles */,
+				C7F137BD1BB2DE8300014401 /* ModelMeshReader.h in CopyFiles */,
+				C7F137BE1BB2DE8300014401 /* ModelMeshPartReader.h in CopyFiles */,
+				C7F137BF1BB2DE8300014401 /* BasicEffectReader.h in CopyFiles */,
+				C7F137C01BB2DE8300014401 /* IndexBufferReader.h in CopyFiles */,
+				C7F137C11BB2DE8300014401 /* VertexBufferReader.h in CopyFiles */,
+				C7F137C21BB2DE8300014401 /* ModelBoneReader.h in CopyFiles */,
+				C7F137C31BB2DE8300014401 /* VertexDeclarationReader.h in CopyFiles */,
+				C7F137C41BB2DE8300014401 /* SoundEffectReader.h in CopyFiles */,
+				C7F137C51BB2DE8300014401 /* SongReader.h in CopyFiles */,
+				C7F137C61BB2DE8300014401 /* SpriteFontReader.h in CopyFiles */,
+				C7F137C71BB2DE8300014401 /* Retronator.Xni.Framework.GamerServices.classes.h in CopyFiles */,
+				C7F137C81BB2DE8300014401 /* Retronator.Xni.Framework.GamerServices.h in CopyFiles */,
+				C7F137C91BB2DE8300014401 /* GamerServicesEnums.h in CopyFiles */,
+				C7F137CA1BB2DE8300014401 /* Guide.h in CopyFiles */,
+				C7F137CB1BB2DE8300014401 /* Guide+Internal.h in CopyFiles */,
+				C7F137CC1BB2DE8300014401 /* XniShowMessageBoxResult.h in CopyFiles */,
+				C7F137CD1BB2DE8300014401 /* Gamer.h in CopyFiles */,
+				C7F137CE1BB2DE8300014401 /* SignedInGamer.h in CopyFiles */,
+				C7F137CF1BB2DE8300014401 /* SignedInGamerCollection.h in CopyFiles */,
+				C7F137D01BB2DE8300014401 /* GamerProfile.h in CopyFiles */,
+				C7F137D11BB2DE8300014401 /* Achievement.h in CopyFiles */,
+				C7F137D21BB2DE8300014401 /* AchievementCollection.h in CopyFiles */,
+				C7F137D31BB2DE8300014401 /* Retronator.Xni.Framework.Graphics.PackedVector.classes.h in CopyFiles */,
+				C7F137D41BB2DE8300014401 /* Retronator.Xni.Framework.Graphics.PackedVector.h in CopyFiles */,
+				C7F137D51BB2DE8300014401 /* PackedVectorStructs.h in CopyFiles */,
+				C7F137D61BB2DE8300014401 /* Retronator.Xni.Framework.Graphics.classes.h in CopyFiles */,
+				C7F137D71BB2DE8300014401 /* Retronator.Xni.Framework.Graphics.h in CopyFiles */,
+				C7F137D81BB2DE8300014401 /* GraphicsEnums.h in CopyFiles */,
+				C7F137D91BB2DE8300014401 /* GraphicsResource.h in CopyFiles */,
+				C7F137DA1BB2DE8300014401 /* Texture.h in CopyFiles */,
+				C7F137DB1BB2DE8300014401 /* Texture2D.h in CopyFiles */,
+				C7F137DC1BB2DE8300014401 /* RenderTarget2D.h in CopyFiles */,
+				C7F137DD1BB2DE8300014401 /* RenderTarget2D+Internal.h in CopyFiles */,
+				C7F137DE1BB2DE8300014401 /* Effect.h in CopyFiles */,
+				C7F137DF1BB2DE8300014401 /* EffectTechnique.h in CopyFiles */,
+				C7F137E01BB2DE8300014401 /* EffectPass.h in CopyFiles */,
+				C7F137E11BB2DE8300014401 /* BasicEffect.h in CopyFiles */,
+				C7F137E21BB2DE8300014401 /* DirectionalLight.h in CopyFiles */,
+				C7F137E31BB2DE8300014401 /* VertexStructs.h in CopyFiles */,
+				C7F137E41BB2DE8300014401 /* VertexElement.h in CopyFiles */,
+				C7F137E51BB2DE8300014401 /* VertexPositionColor.h in CopyFiles */,
+				C7F137E61BB2DE8300014401 /* VertexPositionTexture.h in CopyFiles */,
+				C7F137E71BB2DE8300014401 /* VertexPositionColorTexture.h in CopyFiles */,
+				C7F137E81BB2DE8300014401 /* VertexPositionNormalTexture.h in CopyFiles */,
+				C7F137E91BB2DE8300014401 /* VertexDeclaration.h in CopyFiles */,
+				C7F137EA1BB2DE8300014401 /* VertexArray.h in CopyFiles */,
+				C7F137EB1BB2DE8300014401 /* VertexPositionColorArray.h in CopyFiles */,
+				C7F137EC1BB2DE8300014401 /* VertexPositionTextureArray.h in CopyFiles */,
+				C7F137ED1BB2DE8300014401 /* VertexPositionColorTextureArray.h in CopyFiles */,
+				C7F137EE1BB2DE8300014401 /* VertexPositionNormalTextureArray.h in CopyFiles */,
+				C7F137EF1BB2DE8300014401 /* IndexArray.h in CopyFiles */,
+				C7F137F01BB2DE8300014401 /* ShortIndexArray.h in CopyFiles */,
+				C7F137F11BB2DE8300014401 /* VertexBuffer.h in CopyFiles */,
+				C7F137F21BB2DE8300014401 /* VertexBuffer+Internal.h in CopyFiles */,
+				C7F137F31BB2DE8300014401 /* VertexBufferBinding.h in CopyFiles */,
+				C7F137F41BB2DE8300014401 /* IndexBuffer.h in CopyFiles */,
+				C7F137F51BB2DE8300014401 /* Model.h in CopyFiles */,
+				C7F137F61BB2DE8300014401 /* Model+Internal.h in CopyFiles */,
+				C7F137F71BB2DE8300014401 /* ModelMeshCollection.h in CopyFiles */,
+				C7F137F81BB2DE8300014401 /* ModelMesh.h in CopyFiles */,
+				C7F137F91BB2DE8300014401 /* ModelMesh+Internal.h in CopyFiles */,
+				C7F137FA1BB2DE8300014401 /* ModelEffectCollection.h in CopyFiles */,
+				C7F137FB1BB2DE8300014401 /* ModelMeshPartCollection.h in CopyFiles */,
+				C7F137FC1BB2DE8300014401 /* ModelMeshPart.h in CopyFiles */,
+				C7F137FD1BB2DE8300014401 /* ModelMeshPart+Internal.h in CopyFiles */,
+				C7F137FE1BB2DE8300014401 /* ModelBone.h in CopyFiles */,
+				C7F137FF1BB2DE8300014401 /* ModelBone+Internal.h in CopyFiles */,
+				C7F138001BB2DE8300014401 /* ModelBoneCollection.h in CopyFiles */,
+				C7F138011BB2DE8300014401 /* BlendState.h in CopyFiles */,
+				C7F138021BB2DE8300014401 /* DepthStencilState.h in CopyFiles */,
+				C7F138031BB2DE8300014401 /* RasterizerState.h in CopyFiles */,
+				C7F138041BB2DE8300014401 /* SamplerState.h in CopyFiles */,
+				C7F138051BB2DE8300014401 /* XniSamplerEventArgs.h in CopyFiles */,
+				C7F138061BB2DE8300014401 /* XniSamplerEventArgs+Internal.h in CopyFiles */,
+				C7F138071BB2DE8300014401 /* SamplerStateCollection.h in CopyFiles */,
+				C7F138081BB2DE8300014401 /* SamplerStateCollection+Internal.h in CopyFiles */,
+				C7F138091BB2DE8300014401 /* TextureCollection.h in CopyFiles */,
+				C7F1380A1BB2DE8300014401 /* TextureCollection+Internal.h in CopyFiles */,
+				C7F1380B1BB2DE8300014401 /* Viewport.h in CopyFiles */,
+				C7F1380C1BB2DE8300014401 /* IGraphicsDeviceService.h in CopyFiles */,
+				C7F1380D1BB2DE8300014401 /* GraphicsDevice.h in CopyFiles */,
+				C7F1380E1BB2DE8300014401 /* GraphicsDevice+Internal.h in CopyFiles */,
+				C7F1380F1BB2DE8300014401 /* ReachGraphicsDevice.h in CopyFiles */,
+				C7F138101BB2DE8300014401 /* HiDefGraphicsDevice.h in CopyFiles */,
+				C7F138111BB2DE8300014401 /* SpriteBatch.h in CopyFiles */,
+				C7F138121BB2DE8300014401 /* SpriteFont.h in CopyFiles */,
+				C7F138131BB2DE8300014401 /* SpriteFont+Internal.h in CopyFiles */,
+				C7F138141BB2DE8300014401 /* Retronator.Xni.Framework.Input.Touch.classes.h in CopyFiles */,
+				C7F138151BB2DE8300014401 /* Retronator.Xni.Framework.Input.Touch.h in CopyFiles */,
+				C7F138161BB2DE8300014401 /* InputEnums.h in CopyFiles */,
+				C7F138171BB2DE8300014401 /* TouchPanel.h in CopyFiles */,
+				C7F138181BB2DE8300014401 /* TouchPanel+Internal.h in CopyFiles */,
+				C7F138191BB2DE8300014401 /* TouchCollection.h in CopyFiles */,
+				C7F1381A1BB2DE8300014401 /* TouchLocation.h in CopyFiles */,
+				C7F1381B1BB2DE8300014401 /* GestureSample.h in CopyFiles */,
+				C7F1381C1BB2DE8300014401 /* Retronator.Xni.Framework.Input.h in CopyFiles */,
+				C7F1381D1BB2DE8300014401 /* Retronator.Xni.Framework.Media.classes.h in CopyFiles */,
+				C7F1381E1BB2DE8300014401 /* Retronator.Xni.Framework.Media.h in CopyFiles */,
+				C7F1381F1BB2DE8300014401 /* MediaEnums.h in CopyFiles */,
+				C7F138201BB2DE8300014401 /* Song.h in CopyFiles */,
+				C7F138211BB2DE8300014401 /* Song+Internal.h in CopyFiles */,
+				C7F138221BB2DE8300014401 /* MediaPlayer.h in CopyFiles */,
+				C7F138231BB2DE8300014401 /* MediaPlayer+Internal.h in CopyFiles */,
+				C7F138241BB2DE8300014401 /* MediaQueue.h in CopyFiles */,
+				C7F138251BB2DE8300014401 /* MediaQueue+Internal.h in CopyFiles */,
+				C7F138261BB2DE8300014401 /* Retronator.Xni.Framework.classes.h in CopyFiles */,
+				C7F138271BB2DE8300014401 /* Retronator.Xni.Framework.h in CopyFiles */,
+				C7F138281BB2DE8300014401 /* FrameworkEnums.h in CopyFiles */,
+				C7F138291BB2DE8300014401 /* Protocols.h in CopyFiles */,
+				C7F1382A1BB2DE8300014401 /* PointStruct.h in CopyFiles */,
+				C7F1382B1BB2DE8300014401 /* XniPoint.h in CopyFiles */,
+				C7F1382C1BB2DE8300014401 /* RectangleStruct.h in CopyFiles */,
+				C7F1382D1BB2DE8300014401 /* Rectangle.h in CopyFiles */,
+				C7F1382E1BB2DE8300014401 /* Color.h in CopyFiles */,
+				C7F1382F1BB2DE8300014401 /* GameHost.h in CopyFiles */,
+				C7F138301BB2DE8300014401 /* Game.h in CopyFiles */,
+				C7F138311BB2DE8300014401 /* Game+Internal.h in CopyFiles */,
+				C7F138321BB2DE8300014401 /* GameWindow.h in CopyFiles */,
+				C7F138331BB2DE8400014401 /* GameWindow+Internal.h in CopyFiles */,
+				C7F138341BB2DE8400014401 /* GameViewController.h in CopyFiles */,
+				C7F138351BB2DE8400014401 /* GameView.h in CopyFiles */,
+				C7F138361BB2DE8400014401 /* GameServiceContainer.h in CopyFiles */,
+				C7F138371BB2DE8400014401 /* IGraphicsDeviceManager.h in CopyFiles */,
+				C7F138381BB2DE8400014401 /* GraphicsDeviceManager.h in CopyFiles */,
+				C7F138391BB2DE8400014401 /* IGameComponent.h in CopyFiles */,
+				C7F1383A1BB2DE8400014401 /* IUpdatable.h in CopyFiles */,
+				C7F1383B1BB2DE8400014401 /* IDrawable.h in CopyFiles */,
+				C7F1383C1BB2DE8400014401 /* GameComponent.h in CopyFiles */,
+				C7F1383D1BB2DE8400014401 /* DrawableGameComponent.h in CopyFiles */,
+				C7F1383E1BB2DE8400014401 /* GameComponentCollection.h in CopyFiles */,
+				C7F1383F1BB2DE8400014401 /* GameComponentCollectionEventArgs.h in CopyFiles */,
+				C7F138401BB2DE8400014401 /* GameTime.h in CopyFiles */,
+				C7F138411BB2DE8400014401 /* Vector2Struct.h in CopyFiles */,
+				C7F138421BB2DE8400014401 /* Vector2.h in CopyFiles */,
+				C7F138431BB2DE8400014401 /* Vector3Struct.h in CopyFiles */,
+				C7F138441BB2DE8400014401 /* Vector3.h in CopyFiles */,
+				C7F138451BB2DE8400014401 /* Vector4Struct.h in CopyFiles */,
+				C7F138461BB2DE8400014401 /* Vector4.h in CopyFiles */,
+				C7F138471BB2DE8400014401 /* Quaternion.h in CopyFiles */,
+				C7F138481BB2DE8400014401 /* MatrixStruct.h in CopyFiles */,
+				C7F138491BB2DE8400014401 /* Matrix.h in CopyFiles */,
+				C7F1384A1BB2DE8400014401 /* System.classes.h in CopyFiles */,
+				C7F1384B1BB2DE8400014401 /* System.h in CopyFiles */,
+				C7F1384C1BB2DE8400014401 /* Delegate.h in CopyFiles */,
+				C7F1384D1BB2DE8400014401 /* Event.h in CopyFiles */,
+				C7F1384E1BB2DE8400014401 /* EventArgs.h in CopyFiles */,
+				C7F1384F1BB2DE8400014401 /* IServiceProvider.h in CopyFiles */,
+				C7F138501BB2DE8400014401 /* XniAdaptiveArray.h in CopyFiles */,
+				C7F138511BB2DE8400014401 /* Collection.h in CopyFiles */,
+				C7F138521BB2DE8400014401 /* ReadOnlyCollection.h in CopyFiles */,
+				C7F138531BB2DE8400014401 /* IAsyncResult.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		254CE83E162C0F2900A27E7C /* XniSamplerEventArgs+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XniSamplerEventArgs+Internal.h"; sourceTree = "<group>"; };
@@ -2284,6 +2790,7 @@
 				B57BEAF71337C17700CBEEEB /* Headers */,
 				D2AAC07B0554694100DB518D /* Sources */,
 				D2AAC07C0554694100DB518D /* Frameworks */,
+				C7F1375C1BB2DCD300014401 /* CopyFiles */,
 			);
 			buildRules = (
 			);
